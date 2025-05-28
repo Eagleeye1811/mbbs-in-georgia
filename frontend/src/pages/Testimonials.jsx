@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Voices_stories = () => {
+const Testimonials = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Voices_stories = () => {
   )
 }
 
-export default Voices_stories
+export default Testimonials

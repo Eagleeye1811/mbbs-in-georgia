@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Nmc_reg = () => {
+const NMCReg = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Nmc_reg = () => {
   )
 }
 
-export default Nmc_reg
+export default NMCReg

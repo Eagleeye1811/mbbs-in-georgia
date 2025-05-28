@@ -1,6 +1,6 @@
 import React from 'react'
 
-const How_to_apply = () => {
+const HowToApply = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const How_to_apply = () => {
   )
 }
 
-export default How_to_apply
+export default HowToApply
