@@ -1,0 +1,12 @@
+@keyframes colorFade {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #ff6b4e;
+  }
+}
+
+.georgia-logo:hover {
+  animation: colorFade 0.3s ease-in-out forwards;
+}
