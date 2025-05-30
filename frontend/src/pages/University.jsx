@@ -1,6 +1,7 @@
 import React ,{useState} from "react"
 import CardItem from "../components/cardItem";
 
+
 const stats = [
   { name: 'Offices worldwide', value: '12' },
   { name: 'Full-time colleagues', value: '300+' },
@@ -72,10 +73,28 @@ export default function University() {
     </div>
   <section className="p-1 mt-4 text-center">
   <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 ">
+  <div className="relative w-full sm:w-80">
   <input
-  placeholder="Search Universities"
-  className="border border-gray-300 rounded-full px-4 py-2 w-full sm:w-80 focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
-/>
+    type="text"
+    placeholder="Search Universities"
+    className="border border-gray-300 rounded-full px-4 py-2 w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
+  />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
+    />
+  </svg>
+</div>
+
 
     <button className="bg-red-500 text-white px-4 py-2 !rounded-full hover:bg-red-500 hover:cursor-pointer">
       Search
