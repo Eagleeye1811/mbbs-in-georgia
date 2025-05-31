@@ -24,22 +24,22 @@ const StudentLifeStyle = () => {
       {/* Main Content Section (With Padding and Centered) */}
       <div className="w-full max-w-5xl mx-auto p-5 space-y-8">
         {/* Features Section */}
-        <div className="grid grid-cols-2 gap-5 text-center">
-          <div className="space-y-6">
-            <Wifi className="mx-auto text-2xl " />
-            <p>Available 24×7</p>
+        <div className="grid grid-cols-2 gap-8 text-center my-12">
+          <div className="space-y-4 p-6 hover:bg-blue-50 rounded-xl transition-all duration-300">
+            <Wifi className="mx-auto w-16 h-16 text-blue-600" />
+            <p className="text-xl font-medium">Available 24×7</p>
           </div>
-          <div className="space-y-2">
-            <ShieldCheck className="mx-auto" />
-            <p>24×7 Security</p>
+          <div className="space-y-4 p-6 hover:bg-blue-50 rounded-xl transition-all duration-300">
+            <ShieldCheck className="mx-auto w-16 h-16 text-blue-600" />
+            <p className="text-xl font-medium">24×7 Security</p>
           </div>
-          <div className="space-y-2">
-            <Tv className="mx-auto" />
-            <p>Social Activities</p>
+          <div className="space-y-4 p-6 hover:bg-blue-50 rounded-xl transition-all duration-300">
+            <Tv className="mx-auto w-16 h-16 text-blue-600" />
+            <p className="text-xl font-medium">Social Activities</p>
           </div>
-          <div className="space-y-2">
-            <BedDouble className="mx-auto" />
-            <p>Access to all comforts</p>
+          <div className="space-y-4 p-6 hover:bg-blue-50 rounded-xl transition-all duration-300">
+            <BedDouble className="mx-auto w-16 h-16 text-blue-600" />
+            <p className="text-xl font-medium">Access to all comforts</p>
           </div>
         </div>
 
