@@ -5,7 +5,7 @@ import "./Navbar.css"; // Create this CSS file for the animation
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/about" },
-  { name: "How To Apply", href: "/how-to-apply" },
+  { name: "How To Apply", href: "/HowToApply" },
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/faqs" },

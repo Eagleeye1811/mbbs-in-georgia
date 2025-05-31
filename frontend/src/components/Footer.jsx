@@ -26,15 +26,15 @@ const Footer = () => {
         <div>
         <h2 className="text-xl font-bold mb-4">Quick links</h2>
         <ul className="space-y-2 text-sm">
-          <li><Link to="/AboutGeorgia">- About Georgia</Link></li>
-          <li><Link to="/HowToApply">- How to Apply</Link></li>
-          <li><Link to="/FAQ">- FAQs</Link></li>
-          <li><Link to="/contact">- Contact Us</Link></li>
-          <li><Link to="/Testimonials">- Student Testimonials</Link></li>
-          <li><Link to="/Universities">- Universities</Link></li>
-          <li><Link to="/NMCReg">- NMC Regulations</Link></li>
-          <li><Link to="/privacyPolicy">- Privacy Policy</Link></li>
-          <li><Link to="/termsAndConditions">- Terms & Conditions</Link></li>
+          <li><Link to="/AboutGeorgia" className='hover:text-red-400'>- About Georgia</Link></li>
+          <li><Link to="/HowToApply" className='hover:text-red-400'>- How to Apply</Link></li>
+          <li><Link to="/FAQ" className='hover:text-red-400'>- FAQs</Link></li>
+          <li><Link to="/ContactUs" className='hover:text-red-400'>- Contact Us</Link></li>
+          <li><Link to="/Testimonials" className='hover:text-red-400'>- Student Testimonials</Link></li>
+          <li><Link to="/Universities" className='hover:text-red-400'>- Universities</Link></li>
+          <li><Link to="/NMCReg" className='hover:text-red-400'>- NMC Regulations</Link></li>
+          <li><Link to="/privacyPolicy" className='hover:text-red-400'>- Privacy Policy</Link></li>
+          <li><Link to="/termsAndConditions" className='hover:text-red-400'>- Terms & Conditions</Link></li>
         </ul>
         </div>
 
@@ -51,10 +51,10 @@ const Footer = () => {
               Mumbai - 400077
             </p>
             <p className="flex items-center">
-              <MdPhone className="mr-2 text-lg" /> +91 9224974342
+              <MdPhone className="mr-2 text-lg" /> +91-9820545774 | +91-8655657557
             </p>
             <p className="flex items-center">
-              <MdEmail className="mr-2 text-lg" /> srcounselling@gmail.com
+              <MdEmail className="mr-2 text-lg" /> nshah@srcounsellingind.com
             </p>
           </div>
 

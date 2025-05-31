@@ -27,7 +27,7 @@ const App = () => {
             <Route path="/NMCReg" element={<NMCReg />} />
             <Route path="/Universities" element={<University />} />
             <Route path="/Testimonials" element={<Testimonials />} />
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/termsAndConditions" element={<TermsConditions />} />
           </Routes>
