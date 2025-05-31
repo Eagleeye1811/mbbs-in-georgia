@@ -179,13 +179,13 @@ const HowToApply = () => {
 
       {/* Application Process Section */}
       <div className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-16 relative">
+        <div className="container mx-auto px-4 ">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 relative ">
             Application Process
           </h2>
 
           {/* Airplane Animation Path */}
-          <div className="relative max-w-4xl mx-auto mb-16 px-6">
+          <div className="relative max-w-4xl mt-10 mx-auto mb-16 px-6">
             {/* Curved Path with SVG */}
             <div className="relative h-24 mb-12">
               <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
@@ -221,7 +221,7 @@ const HowToApply = () => {
                 <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
-                <span className="text-xs mt-1 font-medium">Start</span>
+                <span className="text-xs mt-1 font-medium">INDIA</span>
               </div>
 
               {/* Ending point */}
@@ -229,7 +229,7 @@ const HowToApply = () => {
                 <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
-                <span className="text-xs mt-1 font-medium">Finish</span>
+                <span className="text-xs mt-1 font-medium">GEORGIA</span>
               </div>
               
               {/* Flying airplane - position changes based on current step */}

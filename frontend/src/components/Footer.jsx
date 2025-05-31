@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaXTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
@@ -68,7 +68,8 @@ const Footer = () => {
                 <FaFacebook className="text-2xl hover:text-blue-500" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                <FaXTwitter className="text-2xl hover:text-green-500" />
+                <FaTwitter className="text-2xl hover:text-green-500" />
+
               </a>
             </div>
           </div>
