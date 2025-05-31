@@ -24,7 +24,7 @@ import mtskheta from "../assets/mtskheta.jpg"
 import tbilisi from "../assets/tbilisi.jpg"
 
 
-const ExploreGeorgia = () => {
+const AboutGeorgia = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Header */}
@@ -207,4 +207,4 @@ const ExploreGeorgia = () => {
   );
 };
 
-export default ExploreGeorgia;
+export default AboutGeorgia;
