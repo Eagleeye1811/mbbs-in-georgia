@@ -72,7 +72,7 @@ const Navbar = () => {
               className="flex items-center gap-1 text-white text-sm px-4 py-2 hover:bg-gray-700 rounded"
               onClick={handleLangClick}
             >
-              <span className="text-blue-300">🌐</span> ENG
+              <span className="text-blue-300">🌐</span> {selectedLang}
               <svg
                 className={`w-4 h-4 ml-1 transition-transform ${
                   langDropdown ? "rotate-180" : ""

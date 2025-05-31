@@ -107,7 +107,7 @@ const Home = () => {
       title: (
         <>
           <span className="text-[#232a36]">Missed </span>
-          <span className="text-[#e44e50]">NEET?</span>
+          <span className="text-red-500">NEET?</span>
         </>
       ),
       subtitle: (
@@ -146,7 +146,7 @@ const Home = () => {
     {
       title: (
         <>
-          <span className="text-[#e44e50]">Explore</span>
+          <span className="text-red-500">Explore</span>
           <span className="text-[#232a36]"> Universities</span>
         </>
       ),
@@ -181,7 +181,7 @@ const Home = () => {
     {
       title: (
         <>
-          <span className="text-[#e44e50]">Student</span>
+          <span className="text-red-500">Student</span>
           <span className="text-[#232a36]"> Success Stories</span>
         </>
       ),
@@ -214,6 +214,14 @@ const Home = () => {
       },
     },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNextSlide();
+    }, 5000); // Change slide every 7 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Challenge cards data
   const challengeCards = [
@@ -609,8 +617,8 @@ const Home = () => {
       <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-[#232a36] mb-6">
-              Our Services
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#232a36] mb-4 sm:mb-6">
+              Our <span className="text-red-500">Services</span>
             </h2>
             <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
               From admission to graduation, we provide comprehensive support
@@ -965,9 +973,9 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-[#232a36] mb-6">
-              What Students Say about Us?
+              What <span className="text-red-500">Students</span> Say about Us?
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mb-6 rounded-full"></div>
+            
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1009,7 +1017,7 @@ const Home = () => {
             transition={{ duration: 0.3 }}
           >
             <h2 className="text-5xl font-bold text-[#232a36] mb-4">
-              Wall of Fame
+              Wall of <span className="text-red-500">Fame</span>
             </h2>
             <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
               Moments and memories from our journey helping students achieve
@@ -1180,7 +1188,12 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <SectionHeader
-            title="We Understand Your Struggles"
+            title={
+              <>
+                We Understand Your{" "}
+                <span className="text-red-500">Struggles</span>
+              </>
+            }
             description="Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours."
           />
 
@@ -1201,7 +1214,12 @@ const Home = () => {
       <section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-8">
           <SectionHeader
-            title="Why Choose Georgia for MBBS?"
+            title={
+              <>
+                Why Choose Georgia for{" "}
+                <span className="text-red-500">MBBS</span>?
+              </>
+            }
             description="Georgia offers world-class medical education at affordable prices with international recognition and safety for Indian students."
           />
 
