@@ -1,6 +1,30 @@
 import React from 'react'
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 const ContactUs = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,      
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,     
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY      
+    )
+    .then((result) => {
+        console.log(result.text);
+        alert("Message sent successfully!");
+    }, (error) => {
+        console.log(error.text);
+        alert("Error sending message.");
+    });
+
+    e.target.reset(); // Reset form
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 flex flex-col items-center">
       {/* Form and Info */}
@@ -53,67 +77,76 @@ const ContactUs = () => {
         </div>
 
         {/* Right Side */}
-        <form className="p-10 space-y-6 bg-white rounded-r-xl shadow-inner">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">First name</label>
-              <input 
-                type="text" 
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
-                  hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
-                placeholder="John" 
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Last name</label>
-              <input 
-                type="text" 
-                className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
-                  hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
-                placeholder="Doe" 
-              />
-            </div>
-          </div>
-
+        <form className="p-10 space-y-6 bg-white rounded-r-xl shadow-inner" ref={form} onSubmit={sendEmail}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-gray-700">First name</label>
             <input 
-              type="email" 
+              type="text"
+              name="first_name" 
               className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
                 hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
-              placeholder="you@example.com" 
+              placeholder="John" 
+              required
             />
           </div>
-
           <div>
-            <label className="block text-sm font-medium text-gray-700">Phone number</label>
+            <label className="block text-sm font-medium text-gray-700">Last name</label>
             <input 
               type="text" 
+              name="last_name"
               className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
                 hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
-              placeholder="+91 12345 67890" 
+              placeholder="Doe" 
             />
           </div>
+        </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Message</label>
-            <textarea 
-              rows="4" 
-              className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
-                hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
-              placeholder="Write your message here..."
-            ></textarea>
-          </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <input 
+            type="email" 
+            name="reply_to"
+            className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
+              hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
+            placeholder="you@example.com" 
+            required
+          />
+        </div>
 
-          <div className="text-right">
-            <button 
-              type="submit" 
-              className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 cursor-pointer transition duration-300"
-            >
-              Send message
-            </button>
-          </div>
-        </form>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Phone number</label>
+          <input 
+            type="text" 
+            name="phone"
+            className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
+              hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
+            placeholder="+91 12345 67890" 
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Message</label>
+          <textarea 
+            name="message"
+            rows="4" 
+            className="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm px-3 py-2 
+              hover:border-red-500 focus:border-red-500 focus:ring-red-500 transition duration-200 focus:outline-none" 
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+        </div>
+
+        <div className="text-right">
+          <button 
+            type="submit" 
+            className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 cursor-pointer transition duration-300"
+          >
+            Send message
+          </button>
+        </div>
+      </form>
+
       </div>
 
       {/* Map */}
