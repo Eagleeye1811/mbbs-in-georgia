@@ -1,8 +1,653 @@
-import React from "react";
-import Navbar from "../components/Navbar";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Home = () => {
-  return <div></div>;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 3;
+  // const [focusedCard, setFocusedCard] = useState(null);
+
+  const goToSlide = (slideIndex) => {
+    setCurrentSlide(slideIndex);
+  };
+
+  const goToPrevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
+  // Carousel slide data
+  const carouselSlides = [
+    {
+      title: (
+        <>
+          <span className="text-[#232a36]">Missed </span>
+          <span className="text-[#e44e50]">NEET?</span>
+        </>
+      ),
+      subtitle: (
+        <>
+          <h2 className="text-5xl font-semibold text-[#232a36]">
+            Don't Miss Your Dream
+          </h2>
+          <h3 className="text-3xl">
+            Study <span className="text-[#e44e50]">MBBS in Georgia</span>
+          </h3>
+        </>
+      ),
+      description:
+        "Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours.",
+      buttons: [
+        {
+          to: "/how-to-apply",
+          text: "Apply Now",
+          primary: true,
+        },
+        {
+          to: "/about",
+          text: "Learn More",
+          primary: false,
+        },
+      ],
+      image: {
+        src: "/src/assets/graduation-cap.png",
+        alt: "Graduation Cap",
+        className: "w-40 h-40 mx-auto",
+        containerClass: "p-6",
+        fallbackSrc:
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l11 6l9-4.91V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
+      },
+    },
+    {
+      title: (
+        <>
+          <span className="text-[#e44e50]">Explore</span>
+          <span className="text-[#232a36]"> Universities</span>
+        </>
+      ),
+      subtitle: (
+        <h2 className="text-3xl font-semibold text-[#232a36]">
+          Find the Perfect Medical University
+        </h2>
+      ),
+      description:
+        "Compare top Georgian medical universities with state-of-the-art facilities, experienced faculty, and international recognition at affordable fees.",
+      stats: [
+        { value: "12+", label: "NMC Approved Universities" },
+        { value: "6+", label: "Years of Excellence" },
+        { value: "10k+", label: "Indian Students" },
+        { value: "100%", label: "Visa Success" },
+      ],
+      buttons: [
+        {
+          to: "/universities",
+          text: "View All Universities",
+          primary: true,
+        },
+      ],
+      image: {
+        src: "/src/assets/university.jpg",
+        alt: "Georgian University",
+        className: "rounded-lg max-h-full object-cover",
+        fallbackSrc:
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
+      },
+    },
+    {
+      title: (
+        <>
+          <span className="text-[#e44e50]">Student</span>
+          <span className="text-[#232a36]"> Success Stories</span>
+        </>
+      ),
+      subtitle: (
+        <h2 className="text-3xl font-semibold text-[#232a36]">
+          Hear from our Alumni
+        </h2>
+      ),
+      description:
+        "Learn from students who have successfully completed their MBBS in Georgia and are now practicing medicine around the world.",
+      testimonial: {
+        quote:
+          "Studying MBBS in Georgia was one of the best decisions of my life. The education quality, international exposure, and practical clinical experience prepared me well for my medical career.",
+        name: "Dr. Priya Sharma",
+        designation: "Batch of 2020",
+      },
+      buttons: [
+        {
+          to: "/testimonials",
+          text: "Read More Stories",
+          primary: true,
+        },
+      ],
+      image: {
+        src: "/src/assets/students.jpg",
+        alt: "Student Success",
+        className: "rounded-lg max-h-full object-cover",
+        fallbackSrc:
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z'/%3E%3C/svg%3E",
+      },
+    },
+  ];
+
+  // Challenge cards data
+  const challengeCards = [
+    {
+      number: 1,
+      title: "Missed NEET? Don't Give Up!",
+      icon: (
+        <>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </>
+      ),
+      bgColor: "from-blue-50 to-cyan-100",
+      description:
+        "Every year, thousands of deserving students don't clear NEET due to high competition and limited seats. But your medical dream doesn't have to end here.",
+      quote:
+        '"I missed NEET by just 15 marks. I thought my dream was over until I found this path."',
+    },
+    {
+      number: 2,
+      title: "Still Dreaming of Being a Doctor?",
+      icon: (
+        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+      ),
+      bgColor: "from-red-50 to-pink-100",
+      description:
+        "Your passion for medicine shouldn't be limited by entrance exam results. There are alternative pathways to achieve your dream of becoming a doctor.",
+      quote:
+        '"I refused to give up on my dream. Now I\'m studying in a top medical university in Georgia."',
+    },
+    {
+      number: 3,
+      title: "Expensive Medical Education in India?",
+      icon: (
+        <>
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </>
+      ),
+      bgColor: "from-green-50 to-teal-100",
+      description:
+        "Private medical colleges in India charge 50 lakhs to 1 crore for MBBS. International options can be more affordable with better facilities and global exposure.",
+      quote:
+        '"My family couldn\'t afford Indian private colleges. Georgia offered quality education at 1/3rd the cost."',
+    },
+  ];
+
+  // Comparison cards data
+  const comparisonCards = [
+    {
+      title: "No Donation Required",
+      gradient: "from-amber-400 to-red-500",
+      before: {
+        label: "In India",
+        value: "₹50L - 1Cr",
+        desc: "Private MBBS + Donations",
+      },
+      after: {
+        label: "In Georgia",
+        value: "₹15-25L",
+        desc: "Complete MBBS",
+      },
+      description:
+        "Study MBBS in Georgia at a fraction of the cost compared to private colleges in India, with no donations or hidden fees.",
+    },
+    {
+      title: "WHO/NMC Recognition",
+      gradient: "from-red-400 to-pink-500",
+      before: {
+        label: "Some Foreign Universities",
+        value: "Non-Recognized",
+        desc: "Wasted time & money",
+      },
+      after: {
+        label: "Georgia Universities",
+        value: "100% Recognized",
+        desc: "NMC & WHO approved",
+      },
+      description:
+        "All Georgian medical universities are recognized by WHO, NMC, and other international regulatory bodies.",
+    },
+    {
+      title: "English Medium",
+      gradient: "from-blue-400 to-cyan-500",
+      before: {
+        label: "Some Countries",
+        value: "Language Barrier",
+        desc: "Need to learn local language",
+      },
+      after: {
+        label: "In Georgia",
+        value: "100% English",
+        desc: "Curriculum & Teaching",
+      },
+      description:
+        "Complete MBBS program taught in English, making it accessible for international students with no language barrier.",
+    },
+    {
+      title: "Quality Education",
+      gradient: "from-purple-400 to-indigo-500",
+      before: {
+        label: "Many Foreign Options",
+        value: "Compromised Quality",
+        desc: "Lacking facilities & faculty",
+      },
+      after: {
+        label: "In Georgia",
+        value: "European Standards",
+        desc: "Modern facilities & experienced faculty",
+      },
+      description:
+        "European standard education with modern infrastructure, advanced labs and experienced faculty members.",
+    },
+    {
+      title: "Safety First",
+      gradient: "from-green-400 to-emerald-500",
+      before: {
+        label: "Some Countries",
+        value: "Safety Concerns",
+        desc: "Parents worry about student safety",
+      },
+      after: {
+        label: "Georgia",
+        value: "One of Safest",
+        desc: "Countries in Europe",
+      },
+      description:
+        "Georgia is one of the safest countries in Europe with a very low crime rate and friendly people welcoming to international students.",
+    },
+    {
+      title: "Global Recognition",
+      gradient: "from-teal-400 to-green-500",
+      before: {
+        label: "Some Foreign Degrees",
+        value: "Limited Recognition",
+        desc: "Restricted employment options",
+      },
+      after: {
+        label: "Georgian Degree",
+        value: "Global Acceptance",
+        desc: "Practice in 40+ countries",
+      },
+      description:
+        "Georgian medical degrees are recognized worldwide, allowing graduates to practice medicine or pursue higher studies in many countries.",
+    },
+  ];
+
+  // Reusable components
+  const CarouselDots = () => (
+    <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-3 z-20">
+      {[...Array(totalSlides)].map((_, i) => (
+        <button
+          key={i}
+          onClick={() => goToSlide(i)}
+          className={`w-3 h-3 rounded-full transition-colors ${
+            currentSlide === i ? "bg-red-500" : "bg-gray-400 hover:bg-gray-600"
+          }`}
+          aria-label={`Go to slide ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+  );
+
+  const SectionHeader = ({ title, description }) => (
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-bold text-[#232a36] mb-6">{title}</h2>
+      <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
+        {description}
+      </p>
+    </div>
+  );
+
+  const ChallengeCard = ({
+    number,
+    title,
+    icon,
+    bgColor,
+    description,
+    quote,
+  }) => (
+    <div
+      className={`bg-gradient-to-br ${bgColor} rounded-xl p-8 md:w-1/3 shadow-lg hover:shadow-2xl transition-all duration-300 relative z-10 hover:-translate-y-2 group`}
+    >
+      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-md group-hover:scale-110 transition-transform duration-300">
+        {number}
+      </div>
+      <h3 className="text-2xl font-bold text-[#232a36] mb-4 mt-4 text-center">
+        {title}
+      </h3>
+
+      <div className="flex items-center justify-center mb-6">
+        <div className="w-20 h-20 rounded-full bg-white shadow-inner flex items-center justify-center group-hover:bg-red-50 transition-colors duration-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-10 h-10 text-red-500 group-hover:scale-110 transition-transform duration-300"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {icon}
+          </svg>
+        </div>
+      </div>
+
+      <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300">
+        {description}
+      </p>
+
+      <div className="mt-6 bg-white/70 p-3 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300">
+        <p className="font-medium italic text-sm text-[#232a36]">{quote}</p>
+      </div>
+    </div>
+  );
+
+  const ComparisonCard = ({
+    title,
+    gradient,
+    before,
+    after,
+    description,
+  }) => (
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+      <div
+        className={`h-20 bg-gradient-to-r ${gradient} flex items-center justify-center`}
+      >
+        <h3 className="text-xl text-white font-bold">{title}</h3>
+      </div>
+
+      <div className="p-6 space-y-4">
+        <div className="relative overflow-hidden h-32">
+          {/* Before */}
+          <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg absolute inset-0 transition-transform duration-500 group-hover:translate-y-[-100%]">
+            <div>
+              <span className="block text-sm text-gray-500">
+                {before.label}
+              </span>
+              <span className="text-2xl font-bold text-[#232a36]">
+                {before.value}
+              </span>
+              <span className="block text-sm mt-1">{before.desc}</span>
+            </div>
+            <svg
+              className="w-12 h-12 text-red-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M20 12H4"
+              />
+            </svg>
+          </div>
+
+          {/* After - Slides up on hover */}
+          <div className="absolute inset-0 bg-green-50 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-lg flex items-center justify-between">
+            <div>
+              <span className="block text-sm text-gray-500">
+                {after.label}
+              </span>
+              <span className="text-2xl font-bold text-[#232a36]">
+                {after.value}
+              </span>
+              <span className="block text-sm mt-1">{after.desc}</span>
+            </div>
+            <svg
+              className="w-12 h-12 text-green-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div className="pt-4 border-t border-gray-100">
+          <p className="text-[#4a5568]">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Hero Section with Carousel */}
+      <div className="relative min-h-[600px]">
+        {/* Dynamic Carousel Slides */}
+        {carouselSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <div className="max-w-7xl mx-auto px-8 py-20 h-full flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2 space-y-6">
+                <h1 className="text-6xl font-bold">{slide.title}</h1>
+                {slide.subtitle}
+                <p className="text-lg text-[#4a5568] mt-4">
+                  {slide.description}
+                </p>
+
+                {slide.stats && (
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    {slide.stats.map((stat, idx) => (
+                      <div
+                        key={idx}
+                        className="text-center p-4 bg-white rounded-lg shadow"
+                      >
+                        <h3 className="text-3xl font-bold text-[#e44e50]">
+                          {stat.value}
+                        </h3>
+                        <p className="text-[#4a5568]">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {slide.testimonial && (
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <p className="text-[#4a5568] italic text-lg">
+                      {slide.testimonial.quote}
+                    </p>
+                    <div className="mt-4 flex items-center">
+                      <div className="h-12 w-12 rounded-full bg-gray-300"></div>
+                      <div className="ml-4">
+                        <p className="font-medium text-lg">
+                          {slide.testimonial.name}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          {slide.testimonial.designation}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {slide.buttons && (
+                  <div
+                    className={`${
+                      slide.buttons.length > 1 ? "flex gap-4" : ""
+                    } pt-6`}
+                  >
+                    {slide.buttons.map((button, idx) => (
+                      <Link
+                        key={idx}
+                        to={button.to}
+                        className={`inline-block px-6 py-3 ${
+                          button.primary
+                            ? "bg-red-500 text-white hover:bg-red-600"
+                            : "border border-red-500 text-red-500 hover:bg-red-50"
+                        } font-medium rounded transition ${
+                          button.className || ""
+                        }`}
+                      >
+                        {button.text}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <div className="bg-white p-6 rounded-lg shadow-md w-4/5 aspect-square flex items-center justify-center">
+                  <div className={slide.image.containerClass || ""}>
+                    <img
+                      src={slide.image.src}
+                      alt={slide.image.alt}
+                      className={slide.image.className}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = slide.image.fallbackSrc;
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Navigation Controls */}
+        <button
+          onClick={goToPrevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg z-20 transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={28} className="text-gray-800" />
+        </button>
+
+        <button
+          onClick={goToNextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg z-20 transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={28} className="text-gray-800" />
+        </button>
+
+        <CarouselDots />
+      </div>
+
+      {/* Challenges & Solutions Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <SectionHeader
+            title="We Understand Your Struggles"
+            description="Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours."
+          />
+
+          {/* Journey Path with Challenge Cards */}
+          <div className="relative mb-16">
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-red-300 to-green-200 transform -translate-y-1/2 z-0"></div>
+
+            <div className="flex flex-col md:flex-row gap-8">
+              {challengeCards.map((card, index) => (
+                <ChallengeCard key={index} {...card} />
+              ))}
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="flex flex-col items-center justify-center mt-12">
+            <h3 className="text-3xl font-bold text-center text-[#232a36] mb-6">
+              Your Medical Journey Can Continue in Georgia
+            </h3>
+
+            <div className="bg-gradient-to-r from-red-500 to-red-600 p-1 rounded-lg shadow-lg">
+              <div className="bg-white px-6 py-5 rounded-md flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="md:w-3/4">
+                  <p className="text-lg text-[#4a5568]">
+                    Georgia offers NMC-approved medical universities with
+                    quality education, modern facilities, and affordable fees -
+                    all while being a safe and welcoming country for Indian
+                    students.
+                  </p>
+                </div>
+                <div>
+                  <Link
+                    to="/universities"
+                    className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-red-500 text-white font-medium rounded hover:bg-red-600 transition shadow-md"
+                  >
+                    Explore Options
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Georgia Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-8">
+          <SectionHeader
+            title="Why Choose Georgia for MBBS?"
+            description="Georgia offers world-class medical education at affordable prices with international recognition and safety for Indian students."
+          />
+
+          {/* Comparison Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {comparisonCards.map((card, index) => (
+              <ComparisonCard key={index} {...card} />
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="flex justify-center mt-12">
+            <Link
+              to="/universities"
+              className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition shadow-lg"
+            >
+              Compare Universities
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Any additional sections would go here */}
+    </div>
+  );
 };
 
 export default Home;
