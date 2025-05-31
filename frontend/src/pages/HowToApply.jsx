@@ -179,18 +179,18 @@ const HowToApply = () => {
 
       {/* Application Process Section */}
       <div className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 ">
+        <div className="container mx-auto px-4 py-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 relative ">
             Application Process
           </h2>
 
           {/* Airplane Animation Path */}
-          <div className="relative max-w-4xl mt-10 mx-auto mb-16 px-6">
-            {/* Curved Path with SVG */}
-            <div className="relative h-24 mb-12">
+          <div className="relative max-w-4xl mt-15 mx-auto mb-10 px-6">
+            {/* Curved Path with SVG - Increased height from h-24 to h-36 */}
+            <div className="relative h-36 mb-8 overflow-visible">
               <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
                 <path 
-                  d="M0,50 Q450,0 900,50" 
+                  d="M0,70 Q450,0 900,70" 
                   fill="none" 
                   stroke="#CBD5E0" 
                   strokeWidth="2" 
@@ -198,11 +198,11 @@ const HowToApply = () => {
                   className="w-full"
                 />
                 
-                {/* Step markers along the path */}
+                {/* Step markers along the path - updated y calculation */}
                 {applicationSteps.map((_, index) => {
                   const percentage = index / (applicationSteps.length - 1) * 100;
-                  // Calculate y position on curve using quadratic function
-                  const y = 50 - 50 * Math.sin(Math.PI * index / (applicationSteps.length - 1));
+                  // Adjusted curve calculation with more amplitude to ensure dots are visible
+                  const y = 70 - 65 * Math.sin(Math.PI * index / (applicationSteps.length - 1));
                   return (
                     <circle 
                       key={index} 
@@ -216,23 +216,23 @@ const HowToApply = () => {
                 })}
               </svg>
               
-              {/* Starting point */}
-              <div className="absolute -left-3 top-1/2 flex flex-col items-center transform -translate-y-1/2">
+              {/* Starting point - adjusted to match new curve */}
+              <div className="absolute -left-3 top-[70px] flex flex-col items-center transform -translate-y-1/2">
                 <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 <span className="text-xs mt-1 font-medium">INDIA</span>
               </div>
 
-              {/* Ending point */}
-              <div className="absolute -right-3 top-1/2 flex flex-col items-center transform -translate-y-1/2">
+              {/* Ending point - adjusted to match new curve */}
+              <div className="absolute -right-3 top-[70px] flex flex-col items-center transform -translate-y-1/2">
                 <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 <span className="text-xs mt-1 font-medium">GEORGIA</span>
               </div>
               
-              {/* Flying airplane - position changes based on current step */}
+              {/* Flying airplane - position adjusted for new curve */}
               <div 
                 className="absolute z-20 transform -translate-x-1/2 transition-all duration-700 ease-in-out"
                 style={{
@@ -256,8 +256,8 @@ const HowToApply = () => {
                 ></div>
               </div>
             </div>
-
-            {/* Step labels */}
+            
+            {/* Step labels - keep this part unchanged */}
             <div className="flex justify-between mt-2 px-2">
               {[0, applicationSteps.length-1].map((index) => (
                 <div 
