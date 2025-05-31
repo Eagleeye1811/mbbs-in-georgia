@@ -10,6 +10,7 @@ const navItems = [
   { name: "Student Testimonials", href: "/Testimonials" },
   { name: "FAQs", href: "/FAQ" },
   { name: "NMC Regulations", href: "/NMCReg" },
+  { name: "Student Life Style", href: "/StudentLifeStyle" },
 ]; 
 
 const languages = [
@@ -53,7 +54,7 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`text-sm font-medium px-4 py-2 rounded-md transition ${
+                  className={`text-sm font-medium px-2 py-2 rounded-md transition ${
                     location.pathname === item.href
                       ? "bg-red-500 text-white"
                       : "text-white hover:bg-gray-700"
