@@ -51,12 +51,13 @@ const faqData = [
   }
 ];
 
+
 function FaqItem({ title, content, icon, isExpanded, onToggle }) {
   return(
-    <div className="mb-4 transition-all duration-300 hover:shadow-md">
+    <div className="mb-4 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
       <div 
-        className={`flex justify-between items-center p-4 rounded-t-md cursor-pointer ${
-          isExpanded ? "bg-blue-600 text-white" : "bg-gray-200"
+        className={`flex justify-between items-center p-4 cursor-pointer ${
+          isExpanded ? "bg-[#272e3f] text-white" : "bg-gray-100 hover:bg-gray-200"
         }`}
         onClick={onToggle}
       >
@@ -64,12 +65,10 @@ function FaqItem({ title, content, icon, isExpanded, onToggle }) {
           <i className={`${icon} mr-3 text-xl`}></i>
           {title}
         </div>
-        <i className={`bx bx-chevron-down transition-transform duration-300 ${
-          isExpanded ? "transform rotate-180" : ""
-        }`}></i>
+        <i className={`bx ${isExpanded ? "bx-chevron-up" : "bx-chevron-down"} text-xl transition-transform duration-300`}></i>
       </div>
       {isExpanded && (
-        <div className="bg-white p-5 rounded-b-md shadow-md border-t-0 border border-gray-200">
+        <div className="bg-white p-5 shadow-inner border border-gray-200">
           <div className="leading-relaxed">{content}</div>
         </div>
       )}
@@ -77,4 +76,82 @@ function FaqItem({ title, content, icon, isExpanded, onToggle }) {
   )
 }
 
-export default Faq
+function Faq() {
+  const [expandedId, setExpandedId] = useState(null);
+  
+  const toggleFaq = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+  
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      {/* Hero Section with Navy Header like the image */}
+      <div className="bg-[#272e3f] text-white py-16 mb-8 relative overflow-hidden">
+        {/* Simpler background without pattern */}
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Everything you need to know about studying MBBS in Georgia
+            </p>
+          </div>
+          
+          <div className="flex justify-center mt-8">
+            {/* Enhanced Question Mark Icon */}
+            <div className="relative">
+              <div className="bg-white rounded-full p-4 w-36 h-36 flex items-center justify-center shadow-lg">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-400 to-red-600 opacity-20 animate-pulse"></div>
+                <div className="z-10 flex items-center justify-center">
+                  <i className="bx bx-question-mark text-7xl text-red-500 animate-bounce"></i>
+                </div>
+              </div>
+              {/* Small decorative elements */}
+              <div className="absolute -top-2 -right-2 bg-yellow-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md">
+                <i className="bx bx-bulb text-white text-lg"></i>
+              </div>
+              <div className="absolute -bottom-2 -left-2 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md">
+                <i className="bx bx-book-open text-white text-lg"></i>
+              </div>
+              <div className="absolute -top-2 -left-10 bg-green-500 rounded-full w-6 h-6 flex items-center justify-center shadow-md">
+                <i className="bx bx-check text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Content */}
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8 mb-12">
+          <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">Find Answers</h2>
+          <p className="text-red-500 font-semibold text-center mb-8">
+            Common questions about MBBS in Georgia
+          </p>
+          
+          <div className="space-y-4">
+            {faqData.map((faq) => (
+              <FaqItem 
+                key={faq.id}
+                title={faq.title}
+                content={faq.content}
+                icon={faq.icon}
+                isExpanded={expandedId === faq.id}
+                onToggle={() => toggleFaq(faq.id)}
+              />
+            ))}
+          </div>
+
+          {/* Contact Section */}
+          <div className="mt-12 text-center">
+            <p className="mb-4">Still have questions?</p>
+            <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-md font-medium transition-colors duration-300">
+              Contact Our Counselors
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Faq;
