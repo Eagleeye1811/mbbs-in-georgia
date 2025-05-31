@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import StudentLifeStyle from "./pages/StudentLifeStyle";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/NMCReg" element={<NMCReg />} />
             <Route path="/Universities" element={<University />} />
             <Route path="/Testimonials" element={<Testimonials />} />
+             <Route path="/StudentLifeStyle" element={<StudentLifeStyle />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/termsAndConditions" element={<TermsConditions />} />
@@ -38,4 +40,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;
