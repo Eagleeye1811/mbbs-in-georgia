@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 
-import flag from "../assets/flagg.png"
+import flag from "../assets/flag2.jpg"
 import khinkali from "../assets/khinkali.jpg"
 import khachapuri from "../assets/khachapuri.webp";
 import lobio from "../assets/lobio.webp";
@@ -28,13 +28,25 @@ const AboutGeorgia = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 p-6 shadow-md flex justify-between items-center">
-        <h1 className="text-3xl font-bold font-serif">EXPLORE GEORGIA</h1>
-        <img
-          src={flag}
-          alt="Georgia Flag"
-          className="h-32 w-64"
-        />
+      <header className="relative overflow-hidden p-0 mb-6 min-h-[500px]">
+        {/* Decorative background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-400 to-blue-200 opacity-90 z-0" />
+        {/* Content */}
+        <div className="relative z-20 flex flex-col md:flex-row items-center justify-between px-8 py-8">
+          <div className="text-left">
+            <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-lg mb-2 animate-fade-in-down">
+              Georgia <span className="text-white">–</span> More Than a Destination
+            </h1>
+            <p className="text-lg md:text-xl text-blue-100 max-w-xl animate-fade-in-up font-bold">
+              Discover the magic of Georgia: where ancient culture, breathtaking landscapes, and warm hospitality await you.
+            </p>
+          </div>
+          <img
+            src={flag}
+            alt="Georgia Flag"
+            className="h-44 w-88 md:h-100 md:w-200 rounded-xl border-4 border-none ml-0 md:ml-8 mt-6 md:mt-0 animate-fade-in"
+          />
+        </div>
       </header>
 
       {/* Introduction */}
@@ -51,30 +63,36 @@ const AboutGeorgia = () => {
       <section className="p-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Highlights</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 font-bold">
-          <div className="bg-amber-200 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Mountain className="w-8 h-8 text-blue-600 mb-2" />
-            <p>Scenic Mountains</p>
+          <div className="bg-[#D8EFFF] text-[#000000] shadow-lg  p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Mountain className="w-10 h-10 text-[#0A58CA] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Scenic Mountains</p>
           </div>
-          <div className="bg-blue-300 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Landmark className="w-8 h-8 text-red-600 mb-2" />
-            <p>Historic Sites</p>
+
+          <div className="bg-[#FFE5CC] text-[#000000] shadow-lg  p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Landmark className="w-10 h-10 text-[#D72638] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Historic Sites</p>
           </div>
-          <div className="bg-pink-300 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Wine className="w-8 h-8 text-purple-600 mb-2" />
-            <p>Wine Culture</p>
+
+          <div className="bg-gradient-to-br from-red-100 to-pink-200 text-[#000000] shadow-lg  p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Wine className="w-10 h-10 text-[#9D174D] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Wine Culture</p>
           </div>
-          <div className="bg-fuchsia-300 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Building2 className="w-8 h-8 text-green-600 mb-2" />
-            <p>Modern Cities</p>
+
+          <div className="bg-[#F9D3D3] text-[#000000] shadow-lg  p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Building2 className="w-10 h-10 text-[#B45309] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Modern Cities</p>
           </div>
-          <div className="bg-lime-200 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Trees className="w-8 h-8 text-emerald-600 mb-2" />
-            <p>Nature Reserves</p>
+
+          <div className="bg-[#ddf9ef] text-[#000000] shadow-lg  p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Trees className="w-10 h-10 text-[#059669] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Nature Reserves</p>
           </div>
-          <div className="bg-indigo-300 shadow-md p-4 rounded-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
-            <Flame className="w-8 h-8 text-orange-500 mb-2" />
-            <p>Thermal Baths</p>
+
+          <div className="bg-[#E7E4F2] text-[#000000] shadow-lg p-6 rounded-2xl flex flex-col items-center text-center hover:scale-105 hover: transition-all duration-300 ease-in-out cursor-pointer">
+            <Flame className="w-10 h-10 text-[#EA580C] mb-3 drop-shadow-md" />
+            <p className="font-semibold text-lg">Thermal Baths</p>
           </div>
+
         </div>
       </section>
 
@@ -87,7 +105,7 @@ const AboutGeorgia = () => {
               Tbilisi, the capital and largest city of Georgia, is nestled in the South Caucasus region, where the continents of Europe and Asia converge. Strategically located on the banks of the Kura River and encircled by scenic hills and mountains, Tbilisi enjoys a dramatic natural setting that enhances its timeless appeal. The city’s origin dates back to the 5th century when it was founded by King Vakhtang I Gorgasali, who is considered one of the most revered figures in Georgian history. Over the centuries, Tbilisi has been a significant crossroads of trade and culture, and its location made it a target for various empires. As a result, the city has experienced periods of rule by the Persians, Arabs, Mongols, Ottomans, and Russians, each leaving their mark on its identity, culture, and infrastructure.
             </p>
             <p className="mt-4">
-              Tbilisi’s rich history is reflected in its diverse architecture and culture, blending Eastern and Western styles. The city features ancient Orthodox churches, medieval fortresses, Art Nouveau buildings, Soviet-era blocks, and modern landmarks like the Bridge of Peace. Its Old Town, with narrow streets, colorful balconies, and historic sulphur baths, highlights the city's mix of tradition and innovation, showcasing Tbilisi’s unique charm and resilience.
+              Tbilisi’s rich history is reflected in its diverse architecture and culture, blending Eastern and Western styles. The city features ancient Orthodox churches, medieval fortresses, Art Nouveau buildings, Soviet-era blocks, and modern landmarks like the Bridge of Peace. 
             </p>
           </div>
           <img
@@ -99,7 +117,7 @@ const AboutGeorgia = () => {
           />
         </div>
         <p className="mt-4">
-          Today, Tbilisi stands as a vibrant cultural hub and cosmopolitan center in the region. It is home to numerous theaters, art galleries, museums, and cultural festivals that celebrate both its national heritage and its global connections. The city's nightlife is lively and diverse, with a mix of traditional Georgian taverns and trendy clubs that cater to a growing international audience. Food and wine are integral to the city’s identity—Georgian cuisine is known for its bold flavors and warm hospitality, while the country’s wine tradition is among the oldest in the world. 
+          Today, Tbilisi stands as a vibrant cultural hub and cosmopolitan center in the region. It is home to numerous theaters, art galleries, museums, and cultural festivals that celebrate both its national heritage and its global connections. The city's nightlife is lively and diverse, with a mix of traditional Georgian taverns and trendy clubs that cater to a growing international audience. Food and wine are integral to the city’s identity—Georgian cuisine is known for its bold flavors and warm hospitality, while the country’s wine tradition is among the oldest in the world. Its Old Town, with narrow streets, colorful balconies, and historic sulphur baths, highlights the city's mix of tradition and innovation, showcasing Tbilisi’s unique charm and resilience. 
         </p>
       </section>
 
