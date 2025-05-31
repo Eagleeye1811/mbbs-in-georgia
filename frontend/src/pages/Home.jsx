@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
@@ -8,11 +8,58 @@ import {
   FaHandsHelping,
   FaUniversity,
 } from "react-icons/fa";
+import srLogo from "../assets/logo.png"; // Place your logo image in assets as sr-logo.png
+import { motion, useAnimation } from "framer-motion";
+
+const whyUsFeatures = [
+  {
+    icon: <FaUserGraduate size={32} />,
+    title: "Expert Guidance",
+    front: "Expert Guidance",
+    back: "Personal mentoring from admission to graduation.",
+  },
+  {
+    icon: <FaShieldAlt size={32} />,
+    title: "100% Visa Success",
+    front: "100% Visa Success",
+    back: "Proven track record with proper documentation.",
+  },
+  {
+    icon: <FaUniversity size={32} />,
+    title: "Direct Partnerships",
+    front: "Direct Partnerships",
+    back: "Guaranteed admission to top universities.",
+  },
+  {
+    icon: <FaHandsHelping size={32} />,
+    title: "24/7 Support",
+    front: "24/7 Support",
+    back: "On-ground support for students in Georgia.",
+  },
+  {
+    icon: <FaGlobe size={32} />,
+    title: "Global Recognition",
+    front: "Global Recognition",
+    back: "Degrees accepted in 40+ countries.",
+  },
+];
+
+// SR Counselling stats (customize as needed)
+const srStats = [
+  { label: "Years of Experience", value: "10+" },
+  { label: "Visa Success Rate", value: "100%" },
+  { label: "Students Guided", value: "5000+" },
+  { label: "Top University Partners", value: "12+" },
+];
 
 const Home = () => {
+  // Keep all the state and existing variables at the top level
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
-  // const [focusedCard, setFocusedCard] = useState(null);
+  const [hoveredWhyUs, setHoveredWhyUs] = useState(null);
+  const [flipped, setFlipped] = useState(
+    Array(whyUsFeatures.length).fill(false)
+  );
 
   const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
@@ -77,12 +124,12 @@ const Home = () => {
         "Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours.",
       buttons: [
         {
-          to: "/how-to-apply",
+          to: "/HowToApply",
           text: "Apply Now",
           primary: true,
         },
         {
-          to: "/about",
+          to: "/AboutGeorgia",
           text: "Learn More",
           primary: false,
         },
@@ -118,7 +165,7 @@ const Home = () => {
       ],
       buttons: [
         {
-          to: "/universities",
+          to: "/Universities",
           text: "View All Universities",
           primary: true,
         },
@@ -153,7 +200,7 @@ const Home = () => {
       },
       buttons: [
         {
-          to: "/testimonials",
+          to: "/Testimonials",
           text: "Read More Stories",
           primary: true,
         },
@@ -451,6 +498,561 @@ const Home = () => {
     </div>
   );
 
+  const OurServicesJourney = () => {
+    const [activeStep, setActiveStep] = useState(0);
+    const controls = useAnimation();
+    const pathRef = useRef(null);
+    const [pathPoints, setPathPoints] = useState([]);
+
+    const services = [
+      {
+        title: "University Selection & Admission Guidance",
+        icon: "🏫",
+        description:
+          "Personalized university selection based on your academic profile, budget, and career goals.",
+      },
+      {
+        title: "Document Preparation & Verification",
+        icon: "📋",
+        description:
+          "Complete assistance with application forms, document verification, and translation services.",
+      },
+      {
+        title: "Visa Application & Interview Preparation",
+        icon: "🛂",
+        description:
+          "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
+      },
+      {
+        title: "Accommodation & Pre-Departure Assistance",
+        icon: "🏠",
+        description:
+          "Securing comfortable and affordable accommodation before you arrive in Georgia.",
+      },
+      {
+        title: "Airport Pickup & University Registration",
+        icon: "✈️",
+        description:
+          "Smooth arrival with pickup service and assistance with university registration process.",
+      },
+      {
+        title: "Ongoing Academic & Personal Support",
+        icon: "📚",
+        description:
+          "Regular check-ins and assistance with academic challenges throughout your program.",
+      },
+      {
+        title: "Career Guidance & Placement Assistance",
+        icon: "💼",
+        description:
+          "Career counseling, internship opportunities, and job placement support after graduation.",
+      },
+      {
+        title: "Alumni Network & Mentorship",
+        icon: "👥",
+        description:
+          "Connect with successful alumni and receive mentorship from practicing doctors.",
+      },
+    ];
+
+    // Calculate all path points only once when component mounts
+    useEffect(() => {
+      if (!pathRef.current) return;
+
+      const path = pathRef.current;
+      const pathLength = path.getTotalLength();
+      const calculatedPoints = [];
+
+      for (let i = 0; i < services.length; i++) {
+        const percent = i / (services.length - 1);
+        const position = percent * pathLength;
+        const point = path.getPointAtLength(position);
+        calculatedPoints.push({ x: point.x, y: point.y });
+      }
+
+      setPathPoints(calculatedPoints);
+    }, [services.length]);
+
+    // Move airplane when active step changes
+    useEffect(() => {
+      if (pathPoints.length === 0 || activeStep >= pathPoints.length) return;
+
+      const point = pathPoints[activeStep];
+
+      controls.start({
+        // Adjust the x and y coordinates to ensure plane is exactly on the active dot
+        x: point.x - 32, // Exactly half of the airplane container width
+        y: point.y - 32, // Exactly half of the airplane container height
+        transition: {
+          duration: 0.5,
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        },
+      });
+    }, [activeStep, pathPoints, controls]);
+
+    // Navigation functions
+    const nextStep = () => {
+      setActiveStep((prev) => (prev + 1) % services.length);
+    };
+
+    const prevStep = () => {
+      setActiveStep((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    };
+
+    const goToStep = (index) => {
+      setActiveStep(index);
+    };
+
+    return (
+      <section className="py-20 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-[#232a36] mb-6">
+              Our Services
+            </h2>
+            <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
+              From admission to graduation, we provide comprehensive support
+              throughout your medical education journey.
+            </p>
+          </div>
+
+          {/* Journey Path with Airplane */}
+          <div className="relative h-[400px] mb-12">
+            {/* SVG Path */}
+            <svg
+              className="w-full h-full absolute top-0 left-0"
+              viewBox="0 0 1000 300"
+            >
+              {/* Define filter for drop shadow */}
+              <defs>
+                <linearGradient
+                  id="pathGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#f87171" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#ef4444" stopOpacity="0.9" />
+                </linearGradient>
+
+                <filter
+                  id="shadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                  <feOffset dx="2" dy="2" result="offsetblur" />
+                  <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.3" />
+                  </feComponentTransfer>
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Background decorative dots */}
+              {Array(8)
+                .fill()
+                .map((_, i) => (
+                  <circle
+                    key={`bg-dot-${i}`}
+                    cx={150 + i * 100}
+                    cy={50 + Math.random() * 200}
+                    r={3 + Math.random() * 3}
+                    fill="#f87171"
+                    opacity={0.3 + Math.random() * 0.4}
+                    className="animate-pulse"
+                    style={{ animationDuration: `${3 + Math.random() * 4}s` }}
+                  />
+                ))}
+
+              {/* Main path */}
+              <path
+                ref={pathRef}
+                d="M100,150 C200,50 300,250 400,150 C500,50 600,250 700,150 C800,50 900,150 900,150"
+                fill="none"
+                stroke="url(#pathGradient)"
+                strokeWidth="8"
+                strokeLinecap="round"
+                filter="url(#shadow)"
+              />
+
+              {/* Service step dots - only show after path points are calculated */}
+              {pathPoints.map((point, index) => (
+                <g
+                  key={index}
+                  className="cursor-pointer"
+                  onClick={() => goToStep(index)}
+                >
+                  {/* Outer highlight for active step */}
+                  {activeStep === index && (
+                    <circle
+                      cx={point.x}
+                      cy={point.y}
+                      r={18}
+                      fill="#fff2f2"
+                      className="animate-ping"
+                      style={{
+                        animationDuration: "2s",
+                        animationIterationCount: 1,
+                      }}
+                    />
+                  )}
+
+                  {/* Main dot */}
+                  <circle
+                    cx={point.x}
+                    cy={point.y}
+                    r={activeStep === index ? 12 : 8}
+                    fill={activeStep === index ? "#ef4444" : "#f87171"}
+                    stroke="#fff"
+                    strokeWidth="2"
+                    style={{ transition: "all 0.3s ease" }}
+                  />
+
+                  {/* Step number */}
+                  <text
+                    x={point.x}
+                    y={point.y}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fill="#fff"
+                    fontSize="10"
+                    fontWeight="bold"
+                    pointerEvents="none"
+                  >
+                    {index + 1}
+                  </text>
+                </g>
+              ))}
+            </svg>
+
+            {/* Airplane Icon */}
+            {pathPoints.length > 0 && (
+              <motion.div
+                initial={{ x: pathPoints[0].x - 32, y: pathPoints[0].y - 32 }}
+                animate={controls}
+                className="absolute z-30 pointer-events-none" // Increased z-index to ensure visibility
+              >
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-red-500">
+                  <span className="text-3xl">✈️</span>
+                </div>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Service Details Card */}
+          <div className="flex justify-center">
+            <motion.div
+              key={activeStep}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white rounded-xl shadow-lg w-full max-w-2xl p-8 border-t-4 border-red-500"
+            >
+              <div className="flex items-start mb-6">
+                <div className="bg-red-100 p-4 rounded-full text-3xl mr-4 shadow-md">
+                  {services[activeStep].icon}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#232a36]">
+                    {services[activeStep].title}
+                  </h3>
+                  <span className="text-sm text-red-500 font-medium">
+                    Step {activeStep + 1} of {services.length}
+                  </span>
+                </div>
+              </div>
+              <p className="text-[#4a5568] text-lg mb-6">
+                {services[activeStep].description}
+              </p>
+              <div className="flex justify-between space-x-4">
+                <button
+                  onClick={prevStep}
+                  className="px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition flex items-center"
+                >
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                  Previous
+                </button>
+                <button
+                  onClick={nextStep}
+                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition flex items-center"
+                >
+                  Next
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom step indicators for easy navigation */}
+        <div className="flex justify-center mt-8 gap-2">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToStep(index)}
+              className={`transition-all duration-300 rounded-full ${
+                activeStep === index
+                  ? "bg-red-500 w-8 h-2"
+                  : "bg-red-300 w-2 h-2 hover:bg-red-400"
+              }`}
+              aria-label={`Go to step ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  };
+
+  // Student Testimonial Card Component
+  const TestimonialCard = ({ student }) => {
+    return (
+      <motion.div
+        className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-200 flex flex-col h-full"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.1 }}
+        whileHover={{
+          y: -5,
+          scale: 1.02,
+          boxShadow:
+            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        }}
+      >
+        {/* Top gradient decoration */}
+        <div className="relative">
+          <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-blue-100/50 to-transparent"></div>
+        </div>
+
+        <div className="p-6 flex flex-col h-full">
+          {/* Profile section - fixed height */}
+          <div className="flex flex-col items-center mb-4">
+            <div className="w-20 h-20 rounded-full mb-4 overflow-hidden border-4 border-blue-50 shadow-md">
+              <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                <span className="text-4xl">{student.emoji}</span>
+              </div>
+            </div>
+
+            <h4 className="text-lg font-bold text-[#232a36] mb-1 text-center">
+              {student.name}
+            </h4>
+            <p className="text-sm text-gray-500 text-center mb-4">
+              {student.university}
+            </p>
+          </div>
+
+          {/* Testimonial section - fixed minimum height */}
+          <div className="flex-grow flex flex-col">
+            <div className="bg-gray-50 p-2 rounded-lg border-l-4 border-red-500 mb-4 flex-grow h-30 min-h-[100px] ">
+              <p className="italic text-[#4a5568] line-clamp-4">
+                "{student.testimonial}"
+              </p>
+            </div>
+
+            {/* Details section - fixed position at bottom */}
+            {student.details && (
+              <div className="w-full grid grid-cols-2 gap-2 mt-auto">
+                {student.details.map((detail, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-gray-50 rounded p-2 text-center hover:bg-blue-50 hover:scale-105 transition-all duration-200"
+                  >
+                    <p className="text-xs text-gray-500">{detail.label}</p>
+                    <p className="text-sm font-medium truncate">
+                      {detail.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    );
+  };
+
+  // Update the StudentTestimonials component
+  const StudentTestimonials = () => {
+    const testimonials = [
+      {
+        name: "Priya Sharma",
+        emoji: "👩‍⚕️",
+        university: "Tbilisi State Medical University",
+        testimonial:
+          "The guidance I received was exceptional. From admission to settling in Georgia, every step was smoothly handled. Now I'm confidently pursuing my MBBS dreams.",
+        details: [
+          { label: "Batch", value: "2022" },
+          { label: "From", value: "Delhi, India" },
+        ],
+      },
+      {
+        name: "Rahul Patel",
+        emoji: "👨‍⚕️",
+        university: "Batumi Shota Rustaveli University",
+        testimonial:
+          "I was worried about studying abroad, but the support system here is amazing. The education quality is world-class and the fees are very reasonable.",
+        details: [
+          { label: "Batch", value: "2021" },
+          { label: "From", value: "Mumbai, India" },
+        ],
+      },
+      {
+        name: "Ananya Singh",
+        emoji: "👩‍🎓",
+        university: "European University",
+        testimonial:
+          "Georgia has given me opportunities I never imagined. The international exposure and quality education have prepared me well for a global medical career.",
+        details: [
+          { label: "Batch", value: "2023" },
+          { label: "From", value: "Pune, India" },
+        ],
+      },
+      {
+        name: "Vikram Mehta",
+        emoji: "👨‍🎓",
+        university: "University of Georgia",
+        testimonial:
+          "SR Counselling made my transition to Georgia seamless. Their pre-departure orientation and on-ground support helped me adjust quickly to my new environment.",
+        details: [
+          { label: "Batch", value: "2022" },
+          { label: "From", value: "Jaipur, India" },
+        ],
+      },
+    ];
+
+    return (
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold text-[#232a36] mb-6">
+              What Students Say about Us?
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mb-6 rounded-full"></div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {testimonials.map((student, index) => (
+              <TestimonialCard key={index} student={student} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  // Wall of Fame Section
+  const WallOfFame = () => {
+    // Updated image data for SR Counselling activities and events
+    const images = [
+      { caption: "SR Counselling Office", emoji: "🏢" },
+      { caption: "Student Orientation", emoji: "👨‍🎓" },
+      { caption: "University Visit", emoji: "🏫" },
+      { caption: "Visa Assistance Workshop", emoji: "🛂" },
+      { caption: "Pre-departure Session", emoji: "✈️" },
+      { caption: "Student Welcome Event", emoji: "🎉" },
+      { caption: "Academic Counselling", emoji: "📚" },
+      { caption: "Campus Tour", emoji: "🏛️" },
+      { caption: "Student Housing Tour", emoji: "🏠" },
+      { caption: "Cultural Program", emoji: "🎭" },
+      { caption: "Medical Workshop", emoji: "👨‍⚕️" },
+      { caption: "Career Guidance Session", emoji: "💼" },
+    ];
+
+    return (
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+          >
+            <h2 className="text-5xl font-bold text-[#232a36] mb-4">
+              Wall of Fame
+            </h2>
+            <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
+              Moments and memories from our journey helping students achieve
+              their dreams
+            </p>
+          </motion.div>
+
+          {/* Image gallery grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {images.map((image, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }} // Faster sequence
+                whileHover={{
+                  scale: 1.03,
+                  y: -3,
+                }}
+              >
+                <div className="aspect-square relative overflow-hidden">
+                  {/* Image placeholder with gradient background */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center">
+                    <span className="text-4xl">{image.emoji}</span>
+
+                    {/* Caption overlay that appears on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-3">
+                      <p className="text-white font-medium text-sm text-center">
+                        {image.caption}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section with Carousel */}
@@ -515,7 +1117,11 @@ const Home = () => {
                     {slide.buttons.map((button, idx) => (
                       <Link
                         key={idx}
-                        to={button.to}
+                        to={
+                          button.text === "Learn More"
+                            ? "/AboutGeorgia"
+                            : button.to
+                        }
                         className={`inline-block px-6 py-3 ${
                           button.primary
                             ? "bg-red-500 text-white hover:bg-red-600"
@@ -580,8 +1186,6 @@ const Home = () => {
 
           {/* Journey Path with Challenge Cards */}
           <div className="relative mb-16">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-red-300 to-green-200 transform -translate-y-1/2 z-0"></div>
-
             <div className="flex flex-col md:flex-row gap-8">
               {challengeCards.map((card, index) => (
                 <ChallengeCard key={index} {...card} />
@@ -590,44 +1194,6 @@ const Home = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="flex flex-col items-center justify-center mt-12">
-            <h3 className="text-3xl font-bold text-center text-[#232a36] mb-6">
-              Your Medical Journey Can Continue in Georgia
-            </h3>
-
-            <div className="bg-gradient-to-r from-red-500 to-red-600 p-1 rounded-lg shadow-lg">
-              <div className="bg-white px-6 py-5 rounded-md flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="md:w-3/4">
-                  <p className="text-lg text-[#4a5568]">
-                    Georgia offers NMC-approved medical universities with
-                    quality education, modern facilities, and affordable fees -
-                    all while being a safe and welcoming country for Indian
-                    students.
-                  </p>
-                </div>
-                <div>
-                  <Link
-                    to="/universities"
-                    className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-red-500 text-white font-medium rounded hover:bg-red-600 transition shadow-md"
-                  >
-                    Explore Options
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -649,8 +1215,9 @@ const Home = () => {
           {/* Call to Action */}
           <div className="flex justify-center mt-12">
             <Link
-              to="/universities"
+              to="/Universities"
               className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition shadow-lg"
+              onClick={() => window.scrollTo(0, 0)} // Add this line to scroll to top when clicked
             >
               Compare Universities
               <svg
@@ -670,72 +1237,108 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Orbiting Icons */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8">
-            Why Choose <span className="text-red-500">Us</span> for Your
-            Georgian Journey?
-          </h2>
-          <div className="relative flex items-center justify-center h-80">
-            {/* Central Logo */}
-            <div className="absolute z-10 flex flex-col items-center justify-center h-28 w-28 rounded-full bg-white shadow-lg border-4 border-red-100">
-              <img
-                src="/logo.png"
-                alt="SR Counselling"
-                className="h-14 w-14 mx-auto"
-              />
-              <span className="text-xs font-semibold mt-1 text-red-500">
-                SR Counselling
-              </span>
-            </div>
-            {/* Orbiting Icons & Labels */}
-            {whyUs.map((item, i) => {
-              const angle = (i / whyUs.length) * 2 * Math.PI;
-              const radius = 110;
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-              return (
-                <div
-                  key={i}
-                  className="absolute flex flex-col items-center"
-                  style={{
-                    left: `calc(50% + ${x}px)`,
-                    top: `calc(50% + ${y}px)`,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                >
-                  <div className="bg-red-500 text-white rounded-full h-12 w-12 flex items-center justify-center shadow-lg mb-2">
-                    {item.icon}
-                  </div>
-                  <div className="text-xs font-semibold text-center text-[#232a36] w-20">
-                    {item.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          {/* Features Grid Below */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {whyUs.map((item, i) => (
+      {/* Why Choose Us - Grid Section */}
+      <section className="py-20 bg-white flex flex-col items-center">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Why Choose <span className="text-red-500">Us</span> for Your Georgian
+          Journey?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {whyUsFeatures.map((feature, idx) => (
+            <div
+              key={idx}
+              className="relative w-72 h-44 mx-auto cursor-pointer perspective"
+              onMouseEnter={() =>
+                setFlipped(flipped.map((f, i) => (i === idx ? true : f)))
+              }
+              onMouseLeave={() =>
+                setFlipped(flipped.map((f, i) => (i === idx ? false : f)))
+              }
+            >
               <div
-                key={i}
-                className="flex items-center gap-4 bg-gray-50 rounded-lg p-4 shadow"
+                className={`transition-transform duration-500 transform-style-preserve-3d w-full h-full ${
+                  flipped[idx] ? "rotate-y-180" : ""
+                }`}
               >
-                <div className="bg-red-100 text-red-500 rounded-full p-2">
-                  {item.icon}
+                {/* Front */}
+                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border border-gray-100 backface-hidden">
+                  <div className="bg-red-500 text-white rounded-full p-4 mb-4 shadow-lg">
+                    {feature.icon}
+                  </div>
+                  <h4 className="text-lg font-semibold text-[#232a36]">
+                    {feature.front}
+                  </h4>
                 </div>
-                <div>
-                  <div className="font-bold">{item.label}</div>
-                  <div className="text-xs text-gray-600">{item.desc}</div>
+                {/* Back */}
+                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-red-500 text-white rounded-xl shadow-lg border border-red-200 rotate-y-180 backface-hidden px-6">
+                  <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
+                  <p className="text-sm">{feature.back}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+
+        {/* Stats Bar */}
+        <div className="w-full max-w-3xl bg-gray-50 rounded-lg shadow flex flex-wrap justify-center items-center gap-6 py-6 px-4 mb-12">
+          {srStats.map((stat, idx) => (
+            <div key={idx} className="flex flex-col items-center mx-4">
+              <span className="text-2xl font-bold text-red-500">
+                {stat.value}
+              </span>
+              <span className="text-xs text-gray-600">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Logo, tagline, CTA */}
+        <div className="flex flex-col items-center">
+          <img src={srLogo} alt="SR Counselling" className="h-16 w-16 mb-3" />
+          <span className="text-red-500 font-semibold text-sm mb-4">
+            SR Counselling
+          </span>
+          <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
+            Let us guide you to your dream medical career in Georgia with
+            expertise, support, and trust.
+          </p>
+          <a
+            href="https://www.srcounselling.in/about.php"
+            target="_blank" // Add this line to open in new tab
+            rel="noopener noreferrer" // Add this for security best practice with target="_blank"
+            className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition shadow-lg"
+          >
+            Learn More About Us
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 ml-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        {/* Flip card CSS */}
+        <style>
+          {`
+            .perspective { perspective: 1200px; }
+            .transform-style-preserve-3d { transform-style: preserve-3d; }
+            .backface-hidden { backface-visibility: hidden; }
+            .rotate-y-180 { transform: rotateY(180deg); }
+            .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
+          `}
+        </style>
       </section>
 
-      {/* Any additional sections would go here */}
+      {/* Our Services Journey Section */}
+      <OurServicesJourney />
+      <StudentTestimonials />
+      <WallOfFame />
     </div>
   );
 };
