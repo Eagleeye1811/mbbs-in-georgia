@@ -84,7 +84,7 @@ function Faq() {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-0">
       {/* Hero Section with Navy Header like the image */}
       <div className="bg-[#272e3f] text-white py-16 mb-8 relative overflow-hidden">
         {/* Simpler background without pattern */}
