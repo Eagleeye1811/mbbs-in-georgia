@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  FaUserGraduate,
+  FaShieldAlt,
+  FaGlobe,
+  FaHandsHelping,
+  FaUniversity,
+} from "react-icons/fa";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,6 +25,34 @@ const Home = () => {
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
+
+  const whyUs = [
+    {
+      icon: <FaUserGraduate size={28} />,
+      label: "Expert Guidance",
+      desc: "Personalized mentoring from admission to graduation.",
+    },
+    {
+      icon: <FaShieldAlt size={28} />,
+      label: "100% Visa Success",
+      desc: "Proven track record with proper documentation.",
+    },
+    {
+      icon: <FaUniversity size={28} />,
+      label: "Direct Partnerships",
+      desc: "Guaranteed admission to top universities.",
+    },
+    {
+      icon: <FaHandsHelping size={28} />,
+      label: "24/7 Support",
+      desc: "On-ground support for students in Georgia.",
+    },
+    {
+      icon: <FaGlobe size={28} />,
+      label: "Global Recognition",
+      desc: "Degrees accepted in 40+ countries.",
+    },
+  ];
 
   // Carousel slide data
   const carouselSlides = [
@@ -299,9 +334,7 @@ const Home = () => {
   const SectionHeader = ({ title, description }) => (
     <div className="text-center mb-16">
       <h2 className="text-5xl font-bold text-[#232a36] mb-6">{title}</h2>
-      <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
-        {description}
-      </p>
+      <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">{description}</p>
     </div>
   );
 
@@ -350,13 +383,7 @@ const Home = () => {
     </div>
   );
 
-  const ComparisonCard = ({
-    title,
-    gradient,
-    before,
-    after,
-    description,
-  }) => (
+  const ComparisonCard = ({ title, gradient, before, after, description }) => (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
       <div
         className={`h-20 bg-gradient-to-r ${gradient} flex items-center justify-center`}
@@ -395,9 +422,7 @@ const Home = () => {
           {/* After - Slides up on hover */}
           <div className="absolute inset-0 bg-green-50 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-lg flex items-center justify-between">
             <div>
-              <span className="block text-sm text-gray-500">
-                {after.label}
-              </span>
+              <span className="block text-sm text-gray-500">{after.label}</span>
               <span className="text-2xl font-bold text-[#232a36]">
                 {after.value}
               </span>
@@ -641,6 +666,71 @@ const Home = () => {
                 />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Orbiting Icons */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-8">
+            Why Choose <span className="text-red-500">Us</span> for Your
+            Georgian Journey?
+          </h2>
+          <div className="relative flex items-center justify-center h-80">
+            {/* Central Logo */}
+            <div className="absolute z-10 flex flex-col items-center justify-center h-28 w-28 rounded-full bg-white shadow-lg border-4 border-red-100">
+              <img
+                src="/logo.png"
+                alt="SR Counselling"
+                className="h-14 w-14 mx-auto"
+              />
+              <span className="text-xs font-semibold mt-1 text-red-500">
+                SR Counselling
+              </span>
+            </div>
+            {/* Orbiting Icons & Labels */}
+            {whyUs.map((item, i) => {
+              const angle = (i / whyUs.length) * 2 * Math.PI;
+              const radius = 110;
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+              return (
+                <div
+                  key={i}
+                  className="absolute flex flex-col items-center"
+                  style={{
+                    left: `calc(50% + ${x}px)`,
+                    top: `calc(50% + ${y}px)`,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="bg-red-500 text-white rounded-full h-12 w-12 flex items-center justify-center shadow-lg mb-2">
+                    {item.icon}
+                  </div>
+                  <div className="text-xs font-semibold text-center text-[#232a36] w-20">
+                    {item.label}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/* Features Grid Below */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {whyUs.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 bg-gray-50 rounded-lg p-4 shadow"
+              >
+                <div className="bg-red-100 text-red-500 rounded-full p-2">
+                  {item.icon}
+                </div>
+                <div>
+                  <div className="font-bold">{item.label}</div>
+                  <div className="text-xs text-gray-600">{item.desc}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
