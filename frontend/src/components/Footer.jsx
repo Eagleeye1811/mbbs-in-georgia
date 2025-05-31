@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram, FaFacebook, FaXTwitter } from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
