@@ -965,22 +965,70 @@ const Home = () => {
     return (
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-[#232a36] mb-6">
               What <span className="text-red-500">Students</span> Say about Us?
             </h2>
-            
-          </motion.div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mb-6 rounded-full"></div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {testimonials.map((student, index) => (
-              <TestimonialCard key={index} student={student} />
+              <div
+                key={index}
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+              >
+                {/* Top gradient decoration */}
+                <div className="relative">
+                  <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-blue-100/50 to-transparent"></div>
+                </div>
+
+                <div className="p-6 flex flex-col h-full">
+                  {/* Profile section */}
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="w-20 h-20 rounded-full mb-4 overflow-hidden border-4 border-blue-50 shadow-md">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                        <span className="text-4xl">{student.emoji}</span>
+                      </div>
+                    </div>
+
+                    <h4 className="text-lg font-bold text-[#232a36] mb-1 text-center">
+                      {student.name}
+                    </h4>
+                    <p className="text-sm text-gray-500 text-center mb-4">
+                      {student.university}
+                    </p>
+                  </div>
+
+                  {/* Testimonial section */}
+                  <div className="flex-grow flex flex-col">
+                    <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-red-500 mb-4 flex-grow">
+                      <p className="italic text-[#4a5568] line-clamp-4">
+                        "{student.testimonial}"
+                      </p>
+                    </div>
+
+                    {/* Details section */}
+                    {student.details && (
+                      <div className="w-full grid grid-cols-2 gap-2 mt-auto">
+                        {student.details.map((detail, idx) => (
+                          <div
+                            key={idx}
+                            className="bg-gray-50 rounded p-2 text-center hover:bg-blue-50 transition-all duration-300"
+                          >
+                            <p className="text-xs text-gray-500">
+                              {detail.label}
+                            </p>
+                            <p className="text-sm font-medium truncate">
+                              {detail.value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -990,7 +1038,7 @@ const Home = () => {
 
   // Wall of Fame Section
   const WallOfFame = () => {
-    // Updated image data for SR Counselling activities and events
+    // Images data remains the same
     const images = [
       { caption: "SR Counselling Office", emoji: "🏢" },
       { caption: "Student Orientation", emoji: "👨‍🎓" },
@@ -1009,13 +1057,8 @@ const Home = () => {
     return (
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-          >
+          {/* Section header - simplified animation */}
+          <div className="text-center mb-12">
             <h2 className="text-5xl font-bold text-[#232a36] mb-4">
               Wall of <span className="text-red-500">Fame</span>
             </h2>
@@ -1023,37 +1066,32 @@ const Home = () => {
               Moments and memories from our journey helping students achieve
               their dreams
             </p>
-          </motion.div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mt-6 rounded-full"></div>
+          </div>
 
-          {/* Image gallery grid */}
+          {/* Image grid - simplified and optimized animations */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {images.map((image, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }} // Faster sequence
-                whileHover={{
-                  scale: 1.03,
-                  y: -3,
-                }}
               >
                 <div className="aspect-square relative overflow-hidden">
                   {/* Image placeholder with gradient background */}
                   <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center">
-                    <span className="text-4xl">{image.emoji}</span>
+                    <span className="text-4xl transform transition-transform duration-300 hover:scale-110">
+                      {image.emoji}
+                    </span>
 
                     {/* Caption overlay that appears on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                       <p className="text-white font-medium text-sm text-center">
                         {image.caption}
                       </p>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
