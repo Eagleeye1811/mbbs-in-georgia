@@ -68,7 +68,7 @@ const Footer = () => {
                 <FaFacebook className="text-2xl hover:text-blue-500" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                <FaXTwitter className="text-2xl hover:text-gray-300" />
+                <FaXTwitter className="text-2xl hover:text-green-500" />
               </a>
             </div>
           </div>
