@@ -1,71 +1,71 @@
 import React from 'react'
 import globeImage from '../assets/photo.jpg'; 
+import CardItem from "../components/cardItem";
 
 
 const Testimonials = () => {
   return (
-    <div>
-       {/* Header */}
-      <header className="bg-blue-100 text-center py-10 px-4">
-        <h1 className="text-4xl font-bold font-serif mb-6">
-          Real Stories <br /> from Georgia
-        </h1>
-        <div className="flex justify-center">
-          <img
-            src={globeImage}
-            alt="Education Globe"
-            className="w-[550px] h-[200px] object-contain"
-          />
-        </div>
-      </header>
+    <div className ="bg - blue">
 
+{/* Header */}
+<header className="relative w-full ">
+  {/* Background Image */}
+  <img
+     src="https://visavalley.com/sites/default/files/2024-12/overseas_education_consultants_in_kerala1.jpg"
+    alt="Education Globe"
+    className="w-full h-full object-cover"
+  />
 
-      {/* Main Content */}
-      <main className="p-4 space-y-6">
-        {/* Recent Blogs */}
-        <section>
-          <h2 className="text-lg font-semibold mb-2">Recent Blogs</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-200 h-100 w-11/12 mx-auto" />
-            <div className="bg-gray-200 h-100 w-11/12 mx-auto" />
-          </div>
-        </section>
+{/* Overlay with Text */}
+<div className="absolute inset-0 bg-opacity-40 flex items-center justify-end text-right px-20">
+  <div className="max-w-2xl">
+    <h1 className="text-black text-6xl font-bold font-serif mb-4">
+      Real Stories <br /> from Georgia
+    </h1>
+    <p className="text-black text-xl font-semibold">
+      Join thousands of Indian students transforming their dreams into global success stories — start your journey in Georgia today.
+    </p>
+  </div>
+</div>
 
-        {/* Student Testimonials */}
-        <section>
-          <h2 className="text-lg font-semibold mb-2">Student Testimonials</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-200 h-100 w-11/12 mx-auto" />
-            <div className="bg-gray-200 h-100 w-11/12 mx-auto" />
-          </div>
-        </section>
-
-        {/* Watch Video Stories */}
-        <section>
-          <h2 className="text-lg font-semibold mb-2">Watch video stories</h2>
-          <div className="bg-gray-200 h-100 flex items-center justify-center">
-            <button className="bg-white rounded-full p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6 text-gray-700"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-5.197-3.027A1 1 0 008 9.027v5.946a1 1 0 001.555.832l5.197-3.027a1 1 0 000-1.664z"
-                />
-              </svg>
-            </button>
-          </div>
-        </section>
-      </main> 
-     
+</header>
+{/* Main Content */}
+<main className="max-w-7xl mx-auto px-6 md:px-45 ">
+  {/* Recent Blogs */}
+  <h2 className="text-3xl font-semibold italic py-9">Recent Blogs</h2>
+  <section className="bg-blue-100 py-9 px-7 rounded-xl">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <CardItem
+        imageSrc="https://assets.studies-overseas.com/Banner1_404x262_65ffa3bfeb.png"
+        link="https://www.timeshighereducation.com/student/advice/transferring-my-study-abroad-university"
+      />
+      <CardItem imageSrc="/blog2.jpg" link="https://example.com/blog2" />
+      <CardItem imageSrc="/blog3.jpg" link="https://example.com/blog3" />
     </div>
+  </section>
+
+  {/* Student Testimonials */}
+<section className="mt-15 px-2 py-1 h-200 w-160">
+  <h2 className="text-3xl font-semibold italic py-3">Student Testimonials</h2>
+  <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+    <div className="bg-blue-100 h-50 w-150 rounded-xl" />
+  </div>
+</section>
+
+
+</main>
+ </div>
   )
 }
 
-export default Testimonials
+export default Testimonials
+
+
+
+
+      
