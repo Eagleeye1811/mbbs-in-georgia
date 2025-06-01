@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [langDropdown, setLangDropdown] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("en");
+  const [selectedLang, setSelectedLang] = useState("EN");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = (href) => {
