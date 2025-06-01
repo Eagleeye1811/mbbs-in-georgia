@@ -26,11 +26,11 @@ const Testimonials = () => {
             <div className="flex justify-end space-x-4 mt-8">
               <div className="text-right">
                 <p className="text-white text-4xl font-bold">500+</p>
-                <p className="text-red-400 font-medium">Success Stories</p>
+                <p className="text-red-600 font-medium">Success Stories</p>
               </div>
               <div className="text-right">
                 <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-400 font-medium">Student Satisfaction</p>
+                <p className="text-red-600 font-medium">Student Satisfaction</p>
               </div>
             </div>
             
@@ -44,7 +44,7 @@ const Testimonials = () => {
         <section className="mb-12">
           <h2 className="text-4xl font-bold mb-6 text-center">
             <span className="text-gray-800">Recent </span>
-            <span className="text-red-600">Blogs</span>
+            <span className="text-red-500">Blogs</span>
           </h2>
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 px-8 rounded-2xl shadow-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -81,13 +81,13 @@ const Testimonials = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
                       {blog.title}
                     </h3>
                     <p className="text-gray-600 text-base mb-4 line-clamp-2 font-normal leading-relaxed">
                       {blog.excerpt}
                     </p>
-                    <div className="flex items-center text-red-600 font-medium">
+                    <div className="flex items-center text-red-500 font-medium">
                       Read More 
                       <svg 
                         className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
@@ -114,7 +114,7 @@ const Testimonials = () => {
         <section className="mb-12">
           <h2 className="text-4xl font-bold mb-8 text-center">
             <span className="text-gray-800">Student </span>
-            <span className="text-red-600">Testimonials</span>
+            <span className="text-red-500">Testimonials</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -205,14 +205,11 @@ const Testimonials = () => {
   </svg>
                     </div>
                   </div>
-                  <div className="ml-4 transform transition-all duration-500 
-                    group-hover:translate-x-2">
-                    <h3 className="text-lg font-semibold text-gray-800 
-                      group-hover:text-indigo-600 transition-colors">
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors">
                       {testimonial.name}
                     </h3>
-                    <p className="text-indigo-600 text-sm font-medium 
-                      transform group-hover:scale-105 transition-transform">
+                    <p className="text-red-600 text-sm font-medium">
                       {testimonial.batch}
                     </p>
                     <p className="text-gray-500 text-sm">{testimonial.location}</p>
