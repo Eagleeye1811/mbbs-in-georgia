@@ -1,5 +1,5 @@
 import React from 'react';  
-import { Wifi, ShieldCheck, Tv, BedDouble, Utensils } from "lucide-react";
+import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
 import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
@@ -8,88 +8,110 @@ const StudentLifeStyle = () => {
   return (
     <>
       {/* Header Section */}
-      <div className="w-full relative mb-8">
+      <div className="relative h-[600px] mb-8">
         <img
-          src={studentLifeStyleImg}
+          src="https://i.iheart.com/v3/re/assets.getty/60623a3aec85858a41dcf005?ops=contain(1480,0)"
           alt="Student's Life in Georgia"
-          className="w-full h-full object-cover object-center brightness-"
+          className="w-full h-full object-cover object-center brightness-50"
         />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl">
-             
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent">
+          <div className="container mx-auto px-6 h-full flex items-center">
+            <div className="max-w-3xl space-y-6">
+              <h1 className="text-6xl font-bold text-white font-serif leading-tight">
+                Student's Life
+                <br />
+                <span className="text-red-400">in Georgia</span>
+              </h1>
+              <p className="text-xl text-white/100 leading-relaxed">
+               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
+              </p>
+              <div className="flex space-x-8 pt-4">
+                <div>
+                  <p className="text-4xl font-bold text-white">20+</p>
+                  <p className="text-red-400">Universities</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-white">50K+</p>
+                  <p className="text-red-400">Int'l Students</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-white">95%</p>
+                  <p className="text-red-400">Satisfaction Rate</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content Section (With Padding and Centered) */}
-      <div className="w-full max-w-5xl mx-auto p-5 space-y-8">
-        <div className="py-16 px-4 bg-gradient-to-br from-white via-gray-100 to-white">
-      <div className="text-center mb-16 transform hover:scale-105 transition-transform duration-500">
-        <h2 className="text-5xl font-bold mb-4">
-          <span className="text-gray-800">Campus </span>
-          <span className="text-red-600">Features</span>
-        </h2>
-        <p className="text-gray-600 text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
-          Experience world-class facilities and amenities designed for your comfort and success
-        </p>
-      </div>
+      <div className="w-full max-w-5xl mx-auto p-5 space-y-24"> {/* Changed space-y-8 to space-y-24 for more uniform spacing */}
+        {/* Campus Features Section - Update the wrapper div */}
+        <div className="py-20 px-4 bg-gradient-to-br from-white via-gray-100 to-white rounded-3xl">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-4">
+              <span className="text-gray-800">Campus </span>
+              <span className="text-red-600">Features</span>
+            </h2>
+            <p className="text-gray-600 text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+              Experience world-class facilities and amenities designed for your comfort and success
+            </p>
+          </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        {[
-          {
-            icon: <Wifi className="w-10 h-10 text-red-500" />,
-            title: "High-Speed Internet",
-            description: "Available 24×7 campus-wide WiFi connectivity",
-            color: "from-red-400 to-red-600"
-          },
-          {
-            icon: <ShieldCheck className="w-10 h-10 text-green-500" />,
-            title: "Campus Security",
-            description: "24×7 security with modern surveillance systems",
-            color: "from-green-400 to-green-600"
-          },
-          {
-            icon: <Tv className="w-10 h-10 text-purple-500" />,
-            title: "Entertainment",
-            description: "Regular social activities and entertainment zones",
-            color: "from-purple-400 to-purple-600"
-          },
-          {
-            icon: <BedDouble className="w-10 h-10 text-blue-500" />,
-            title: "Modern Comfort",
-            description: "Well-furnished rooms with all modern amenities",
-            color: "from-blue-400 to-blue-600"
-          }
-        ].map((feature, index) => (
-          <div
-            key={index}
-            className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${feature.color}`}></div>
-            <div className="p-8">
-              <div className="relative w-16 h-16 mx-auto mb-6">
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>
-                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  {feature.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                icon: <Wifi className="w-10 h-10 text-red-500" />,
+                title: "High-Speed Internet",
+                description: "Available 24×7 campus-wide WiFi connectivity",
+                color: "from-red-400 to-red-600"
+              },
+              {
+                icon: <ShieldCheck className="w-10 h-10 text-green-500" />,
+                title: "Campus Security",
+                description: "24×7 security with modern surveillance systems",
+                color: "from-green-400 to-green-600"
+              },
+              {
+                icon: <Tv className="w-10 h-10 text-purple-500" />,
+                title: "Entertainment",
+                description: "Regular social activities and entertainment zones",
+                color: "from-purple-400 to-purple-600"
+              },
+              {
+                icon: <BedDouble className="w-10 h-10 text-blue-500" />,
+                title: "Modern Comfort",
+                description: "Well-furnished rooms with all modern amenities",
+                color: "from-blue-400 to-blue-600"
+              }
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${feature.color}`}></div>
+                <div className="p-8">
+                  <div className="relative w-16 h-16 mx-auto mb-6">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-all duration-500`}></div>
+                    <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 text-center mb-4 group-hover:text-red-600 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 text-center mb-4 group-hover:text-red-600 transition-colors duration-300">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                {feature.description}
-              </p>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
 
-        {/* Accommodation Section */}
-        <div className="space-y-6">
-          <div className="text-center mb-12 transform hover:scale-105 transition-transform duration-500">
+        {/* Accommodation Section - Update the wrapper div */}
+        <div className="space-y-12 py-8"> {/* Changed space-y-6 to space-y-12 */}
+          <div className="text-center mb-12 ">
             <h1 className="text-5xl font-bold mb-4">
               <span className="text-gray-800">Accommodation </span>
               <span className="text-red-600">Facilities</span>
@@ -117,10 +139,10 @@ const StudentLifeStyle = () => {
       <div className="flex items-center p-6 space-x-4">
         <div className="relative">
           <div className="absolute inset-0 bg-blue-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-          <Wifi className="w-10 h-10 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
+          <WashingMachine className="w-10 h-10 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
         </div>
         <p className="text-lg font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
-          Wi-Fi Connectivity
+          Laundry Facilities Available
         </p>
       </div>
     </div>
@@ -168,8 +190,8 @@ const StudentLifeStyle = () => {
           </div>
         </div>
 
-        {/* Hospitality Section */}
-        <div className="space-y-6">
+        {/* Hospitals Section - Update the wrapper div */}
+        <div className="space-y-12 py-8"> {/* Changed space-y-6 to space-y-12 */}
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
               <span className="text-gray-800">Hospitals in </span>
@@ -205,8 +227,8 @@ const StudentLifeStyle = () => {
           </section>
         </div>
 
-        {/* Student's Lifestyle Section */}
-        <div className="space-y-8">
+        {/* Student's Lifestyle Section - Update the wrapper div */}
+        <div className="space-y-12 py-8"> {/* Changed space-y-8 to space-y-12 */}
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
               <span className="text-gray-800">Student's </span>
@@ -264,8 +286,8 @@ const StudentLifeStyle = () => {
           </p>
         </div>
 
-        {/* Related Blogs Section */}
-        <div className="space-y-6">
+        {/* Related Blogs Section - Update the wrapper div */}
+        <div className="space-y-12 py-8"> {/* Changed space-y-6 to space-y-12 */}
           {/* Section Header */}
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
@@ -339,10 +361,10 @@ const StudentLifeStyle = () => {
           </section>
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center">
+        {/* CTA Button - Add padding */}
+        <div className= "flex justify-center py-8">
           <Link to="/testimonials">
-            <button className="group flex items-center space-x-2 bg-red-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <span className="text-lg font-medium">Read More</span>
               <svg 
                 className="w-6 h-6 transform rotate-90 group-hover:translate-x-1 transition-transform" 
