@@ -6,10 +6,9 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/AboutGeorgia" },
   { name: "How To Apply", href: "/HowToApply" },
-  { name: "Universities", href: "/Universities" },
-  { name: "Student Testimonials", href: "/Testimonials" },
+  { name: "Universities", href: "/universities" },
+  { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/FAQ" },
-  { name: "NMC Regulations", href: "/NMCReg" },
   { name: "Student LifeStyle", href: "/StudentLifeStyle" },
 ]; 
 
