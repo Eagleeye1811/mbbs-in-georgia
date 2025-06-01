@@ -54,7 +54,7 @@ export default function University() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">MCI/NMC Approved Universities</h2>
+          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">MCI/NMC Approved <span className="text-red-500">Universities</span></h2>
           <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
           Explore top-ranked medical universities in Georgia offering world-class education with international recognition and affordable fees.
           </p>

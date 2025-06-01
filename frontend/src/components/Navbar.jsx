@@ -4,7 +4,7 @@ import "./Navbar.css"; // Create this CSS file for the animation
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Georgia", href: "/about" },
+  { name: "About Georgia", href: "/AboutGeorgia" },
   { name: "How To Apply", href: "/HowToApply" },
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
@@ -53,7 +53,7 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`text-sm font-medium px-4 py-2 rounded-md transition ${
+                  className={`text-sm font-medium px-2 py-2 rounded-md transition ${
                     location.pathname === item.href
                       ? "bg-red-500 text-white"
                       : "text-white hover:bg-gray-700"
@@ -71,7 +71,7 @@ const Navbar = () => {
               className="flex items-center gap-1 text-white text-sm px-4 py-2 hover:bg-gray-700 rounded"
               onClick={handleLangClick}
             >
-              <span className="text-blue-300">🌐</span> ENG
+              <span className="text-blue-300">🌐</span> {selectedLang}
               <svg
                 className={`w-4 h-4 ml-1 transition-transform ${
                   langDropdown ? "rotate-180" : ""

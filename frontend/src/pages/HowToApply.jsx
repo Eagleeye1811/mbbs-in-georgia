@@ -163,7 +163,7 @@ const HowToApply = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
                 Start your
               </h1>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-400 mb-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-500 mb-3">
                 Journey
               </h1>
               <p className="text-white text-base sm:text-lg max-w-lg">
