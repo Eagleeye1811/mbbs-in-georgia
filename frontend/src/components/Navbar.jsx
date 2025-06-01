@@ -10,7 +10,7 @@ const navItems = [
   { name: "Student Testimonials", href: "/Testimonials" },
   { name: "FAQs", href: "/FAQ" },
   { name: "NMC Regulations", href: "/NMCReg" },
-  { name: "Student Life Style", href: "/StudentLifeStyle" },
+  { name: "Student LifeStyle", href: "/StudentLifeStyle" },
 ]; 
 
 const languages = [
