@@ -9,6 +9,11 @@ const navItems = [
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/faqs" },
+  { name: "Universities", href: "/Universities" },
+  { name: "Student Testimonials", href: "/Testimonials" },
+  { name: "FAQs", href: "/FAQ" },
+  { name: "NMC Regulations", href: "/NMCReg" },
+  { name: "Student LifeStyle", href: "/StudentLifeStyle" },
 ]; 
 
 const languages = [

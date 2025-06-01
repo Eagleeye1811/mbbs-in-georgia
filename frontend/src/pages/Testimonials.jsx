@@ -7,14 +7,14 @@ const Testimonials = () => {
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="relative w-full h-[600px]">
-        {/* Background Image */}
+        {/* Background Image with reduced brightness */}
         <img
-          src="https://visavalley.com/sites/default/files/2024-12/overseas_education_consultants_in_kerala1.jpg"
+          src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Georgia_Weather_in_April_01dbeac399.webp"
           alt="Education Globe"
-          className="w-full h-full object-cover brightness-90"
+          className="w-full h-full object-cover brightness-60" // Changed from brightness-90 to brightness-50
         />
-        {/* Overlay with Text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent flex items-center justify-end text-right px-20">
+        {/* Overlay with darker gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center justify-end text-right px-20">
           <div className="max-w-2xl space-y-6">
             <h1 className="text-white text-6xl font-bold font-serif mb-4 drop-shadow-lg">
               Real Stories <br /> 
@@ -26,11 +26,11 @@ const Testimonials = () => {
             <div className="flex justify-end space-x-4 mt-8">
               <div className="text-right">
                 <p className="text-white text-4xl font-bold">500+</p>
-                <p className="text-red-500 font-medium">Success Stories</p>
+                <p className="text-red-600 font-medium">Success Stories</p>
               </div>
               <div className="text-right">
                 <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-500 font-medium">Student Satisfaction</p>
+                <p className="text-red-600 font-medium">Student Satisfaction</p>
               </div>
             </div>
             
@@ -42,7 +42,7 @@ const Testimonials = () => {
       <main className="flex-grow max-w-7xl mx-auto px-6 md:px-45 py-8">
         {/* Recent Blogs */}
         <section className="mb-12">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 text-center">
             <span className="text-gray-800">Recent </span>
             <span className="text-red-500">Blogs</span>
           </h2>
@@ -176,39 +176,61 @@ const Testimonials = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:bg-red-50"
+                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl 
+                transition-all duration-700 transform hover:-translate-y-2 
+                hover:bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 
+                animate-fade-in-up cursor-pointer"
+                style={{
+                  animationDelay: `${index * 200}ms`,
+                  animationFillMode: 'backwards'
+                }}
               >
-                <div className="flex items-center mb-4 relative">
+                <div className="flex items-center mb-4 relative overflow-hidden">
                   <div className="relative">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full border-2 border-blue-500 object-cover transform group-hover:scale-110 transition-all duration-500"
+                      className="w-16 h-16 rounded-full border-2 border-indigo-500 object-cover 
+                      transform group-hover:scale-110 transition-all duration-700 
+                      group-hover:rotate-6"
                     />
-                    <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                      ✓ 
+                    <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-1.5 
+                      transform group-hover:scale-110 transition-all duration-500">
+                      <svg 
+                        className="w-3.5 h-3.5 text-white"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.084 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.166.865.25 1.336.25 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.437.695.21 1.04z"/>
+  </svg>
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-red-500 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors">
                       {testimonial.name}
                     </h3>
-                    <p className="text-red-500 text-sm font-medium">
+                    <p className="text-red-600 text-sm font-medium">
                       {testimonial.batch}
                     </p>
                     <p className="text-gray-500 text-sm">{testimonial.location}</p>
                   </div>
                 </div>
 
-                <blockquote className="relative mt-6">
+                <blockquote className="relative mt-6 transform transition-all duration-500 
+                  group-hover:translate-x-2">
                   <svg
-                    className="absolute -top-2 -left-2 h-8 w-8 text-gray-200 transform -translate-x-2 -translate-y-2 group-hover:text-red-300 transition-colors"
+                    className="absolute -top-2 -left-2 h-8 w-8 text-indigo-200 
+                    transform -translate-x-2 -translate-y-2 
+                    group-hover:text-purple-300 transition-colors duration-500 
+                    group-hover:rotate-12"
                     fill="currentColor"
                     viewBox="0 0 32 32"
                   >
                     <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                   </svg>
-                  <p className="text-gray-600 italic pl-6 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  <p className="text-gray-600 italic pl-6 leading-relaxed 
+                    group-hover:text-gray-700 transition-colors transform 
+                    group-hover:scale-105 duration-500">
                     "{testimonial.quote}"
                   </p>
                 </blockquote>
