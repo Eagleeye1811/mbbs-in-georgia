@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import skyimg from '../assets/sky_img.jpg';
 import aeroplaneImg from '../assets/aeroplane_f.png';
 // Import the new background image

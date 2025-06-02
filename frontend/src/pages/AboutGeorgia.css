@@ -13,3 +13,12 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.famous-cuisine-tilt {
+  perspective: 800px;
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1), box-shadow 0.25s;
+}
+.famous-cuisine-tilt:active {
+  transform: scale(0.97);
+}
