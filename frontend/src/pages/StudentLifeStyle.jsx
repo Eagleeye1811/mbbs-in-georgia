@@ -483,7 +483,7 @@ const StudentLifeStyle = () => {
         
 
         {/* CTA Button - Reduce padding */}
-        <div className="flex justify-center py-4"> {/* Changed from py-8 */}
+        <div className="flex justify-center "> {/* Changed from py-8 */}
           <Link to="/testimonials">
             <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-500 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <span className="text-lg font-medium">Read More</span>
@@ -505,22 +505,7 @@ const StudentLifeStyle = () => {
         </div>
       </div>
 
-      {/* New Hero Image Section */}
-      <div 
-        className="w-full bg-cover bg-center relative" 
-        style={{
-          backgroundImage: "url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-          height: "450px" // Fixed height of 450px
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-          {/* Content remains unchanged */}
-        </div>
-      </div>
+      
     </>
   );
 }
