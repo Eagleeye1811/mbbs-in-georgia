@@ -1,59 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import skyimg from '../assets/sky_img.jpg';
 import aeroplaneImg from '../assets/aeroplane_f.png';
 import heroSectionImg from '../assets/herosection_img.png';
+import documentList from '../assets/Document_checklist.pdf';
+import nmcRegulations from '../assets/nmc-regulations.pdf'; // You'll need to add this PDF to your assets
 
 const applicationSteps = [
   {
     id: 1,
-    title: "Application Form & Process",
-    description: "Complete step-by-step guidance for your MBBS application",
-    icon: "bx bx-file"
-  },
-  {
-    id: 2,
     title: "Document Collection",
     description: "Prepare and organize all required documents",
     icon: "bx bx-folder-open"
   },
   {
-    id: 3,
+    id: 2,
     title: "University Selection",
     description: "Choose the right Georgian medical university for you",
     icon: "bx bx-buildings"
   },
   {
-    id: 4,
+    id: 3,
     title: "Application Submission",
     description: "Submit your application to your chosen universities",
     icon: "bx bx-send"
   },
   {
-    id: 5,
+    id: 4,
     title: "Admission Letter",
     description: "Receive your official admission letter",
     icon: "bx bx-envelope-open"
   },
   {
-    id: 6, 
+    id: 5, 
     title: "Visa Process",
     description: "Apply for your student visa with our guidance",
     icon: "bx bx-id-card"
   },
   {
-    id: 7,
+    id: 6,
     title: "Fee Payment",
     description: "Complete your tuition and other fee payments",
     icon: "bx bx-credit-card"
   },
   {
-    id: 8,
+    id: 7,
     title: "Travel Arrangements",
     description: "Book flights and prepare for your journey",
-    icon: "bx bx-plane"
+    icon: "bx bx-briefcase-alt"
   },
   {
-    id: 9,
+    id: 8,
     title: "Arrival & Orientation",
     description: "Settle into your new life in Georgia",
     icon: "bx bx-map-pin"
@@ -63,6 +59,7 @@ const applicationSteps = [
 const HowToApply = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [showPdfModal, setShowPdfModal] = useState(false);
   
   const handleStepChange = (index) => {
     // Prevent rapid clicking during animation
@@ -121,6 +118,29 @@ const HowToApply = () => {
 
   const planePosition = calculatePlanePosition();
   const planeRotation = calculatePlaneRotation();
+
+  // Handle PDF download
+  const handleDownloadPdf = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = nmcRegulations;
+    link.download = 'NMC-Regulations.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setShowPdfModal(false);
+  };
+
+  // Handle document checklist download
+  const handleDownloadDocumentChecklist = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = documentList;
+    link.download = 'Document_Checklist.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -342,6 +362,229 @@ const HowToApply = () => {
           </div>
         </div>
       </div>
+
+      {/* Documents Required Section - ADD THE NEW SECTION HERE */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6">
+            Documents Required for Admission & Visa Process
+          </h2>
+          
+          <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden">
+            <div className="p-6 sm:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Left Column */}
+                <div>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">10th Marksheet</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">12th Marksheet</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">NEET Score Card</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">NEET Admit Card</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Valid Passport</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Passport Size Photo</span>
+                        <ul className="text-sm text-gray-600 mt-1 ml-1 space-y-1">
+                          <li>- Size: 35x45 mm</li>
+                          <li>- 80% Face Cover</li>
+                          <li>- White Background</li>
+                          <li>- Matt Finish</li>
+                        </ul>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Father's Passport or Aadhar Card</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Mother's Passport or Aadhar Card</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Right Column */}
+                <div>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Bank Statement (Last 6 months)</span>
+                        <ul className="text-sm text-gray-600 mt-1 ml-1 space-y-1">
+                          <li>- Closing Balance of ₹3 Lakhs</li>
+                          <li>- Bank Manager's Signature & Stamp on every page</li>
+                        </ul>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Birth Certificate (in English)</span>
+                        <span className="text-sm text-gray-600">- if minor</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Power of Attorney</span>
+                        <span className="text-sm text-gray-600">- for minor student</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">PAN Card of Student</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">PAN Card of Parent</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Sponsor Affidavit</span>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <i className="bx bx-check-circle text-red-500 text-xl mt-0.5 mr-3"></i>
+                      <div>
+                        <span className="font-semibold block">Name Change Affidavit</span>
+                        <span className="text-sm text-gray-600">- if there is a difference in name</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Note section */}
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-8 rounded-r">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <i className="bx bx-info-circle text-yellow-400 text-xl"></i>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm text-yellow-700">
+                      <strong>Important:</strong> All documents must be in English or officially translated. Please ensure to bring original copies along with photocopies for verification.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="mt-8 text-center">
+                <button
+                  onClick={handleDownloadDocumentChecklist}
+                  className="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-md transition-colors duration-300 inline-flex items-center"
+                >
+                  <i className="bx bx-download mr-2"></i>
+                  Download Document Checklist
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* NMC Regulations Sticky Button */}
+      <div className="fixed bottom-10 right-6 z-50">
+        <button 
+          onClick={() => setShowPdfModal(true)}
+          className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center"
+          aria-label="NMC Regulations"
+        >
+          <i className="bx bx-file-pdf mr-2 text-xl"></i>
+          NMC Regulations
+        </button>
+      </div>
+
+      {/* PDF Download Modal */}
+      {showPdfModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-800">NMC Regulations</h3>
+              <button 
+                onClick={() => setShowPdfModal(false)}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <i className="bx bx-x text-2xl"></i>
+              </button>
+            </div>
+            
+            <div className="mb-6">
+              <p className="text-gray-600 mb-4">
+                This document contains the latest National Medical Commission (NMC) regulations for studying MBBS abroad.
+              </p>
+              <div className="flex items-center text-blue-600 mb-3">
+                <i className="bx bx-file-pdf text-2xl mr-2"></i>
+                <span className="font-medium">NMC-Regulations.pdf</span>
+              </div>
+            </div>
+            
+            <div className="flex space-x-3">
+              <button 
+                onClick={() => setShowPdfModal(false)}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md transition-colors flex-1"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleDownloadPdf}
+                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition-colors flex-1 flex items-center justify-center"
+              >
+                <i className="bx bx-download mr-2"></i>
+                Download PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

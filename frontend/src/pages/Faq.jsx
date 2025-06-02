@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const faqData = [
   {
@@ -47,7 +48,7 @@ const faqData = [
     id: 8,
     title: "What about internship and practical training?",
     content: "Georgian medical universities provide clinical rotations from the 3rd year onwards. Students complete a one-year internship during their final year of MBBS.",
-    icon: "bx bx-hospital"
+    icon: "bx bxs-buildings"
   }
 ];
 
@@ -78,9 +79,15 @@ function FaqItem({ title, content, icon, isExpanded, onToggle }) {
 
 function Faq() {
   const [expandedId, setExpandedId] = useState(null);
+  const navigate = useNavigate();
   
   const toggleFaq = (id) => {
     setExpandedId(expandedId === id ? null : id);
+  };
+  
+  // Handler to navigate to the ContactUs page
+  const handleContactClick = () => {
+    navigate('/ContactUs');
   };
   
   return (
@@ -141,12 +148,17 @@ function Faq() {
             ))}
           </div>
 
-          {/* Contact Section */}
+          {/* Contact Section - Updated button with onClick handler */}
           <div className="mt-12 text-center">
-            <p className="mb-4">Still have questions?</p>
-            <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-md font-medium transition-colors duration-300">
+            <p className="mb-4">Still have query?</p>
+           
+            <button 
+              className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-md font-medium transition-colors duration-300"
+              onClick={handleContactClick}
+            >
               Contact Our Counselors
             </button>
+            
           </div>
         </div>
       </div>
