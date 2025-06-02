@@ -6,10 +6,9 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/AboutGeorgia" },
   { name: "How To Apply", href: "/HowToApply" },
-  { name: "Universities", href: "/Universities" },
-  { name: "Student Testimonials", href: "/Testimonials" },
+  { name: "Universities", href: "/universities" },
+  { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/FAQ" },
-  { name: "NMC Regulations", href: "/NMCReg" },
   { name: "Student LifeStyle", href: "/StudentLifeStyle" },
 ]; 
 
@@ -23,7 +22,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [langDropdown, setLangDropdown] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("en");
+  const [selectedLang, setSelectedLang] = useState("EN");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = (href) => {
@@ -39,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#232a36] w-full shadow">
+    <nav className="bg-[#232a36] w-full shadow fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo with hover effect */}
@@ -138,7 +137,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Items */}
         {menuOpen && (
-          <div className="lg:hidden flex flex-col gap-1 py-3">
+          <div className="lg:hidden flex flex-col gap-1 py-3 bg-[#232a36]">
             {navItems.map((item) => (
               <button
                 key={item.name}

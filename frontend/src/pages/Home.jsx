@@ -7,102 +7,58 @@ import {
   FaGlobe,
   FaHandsHelping,
   FaUniversity,
+  FaUserShield,
 } from "react-icons/fa";
-import srLogo from "../assets/logo.png"; // Place your logo image in assets as sr-logo.png
+import srLogo from "../assets/logo.png";
 import { motion, useAnimation } from "framer-motion";
 
-const whyUsFeatures = [
-  {
-    icon: <FaUserGraduate size={32} />,
-    title: "Expert Guidance",
-    front: "Expert Guidance",
-    back: "Personal mentoring from admission to graduation.",
-  },
-  {
-    icon: <FaShieldAlt size={32} />,
-    title: "100% Visa Success",
-    front: "100% Visa Success",
-    back: "Proven track record with proper documentation.",
-  },
-  {
-    icon: <FaUniversity size={32} />,
-    title: "Direct Partnerships",
-    front: "Direct Partnerships",
-    back: "Guaranteed admission to top universities.",
-  },
-  {
-    icon: <FaHandsHelping size={32} />,
-    title: "24/7 Support",
-    front: "24/7 Support",
-    back: "On-ground support for students in Georgia.",
-  },
-  {
-    icon: <FaGlobe size={32} />,
-    title: "Global Recognition",
-    front: "Global Recognition",
-    back: "Degrees accepted in 40+ countries.",
-  },
-];
-
-// SR Counselling stats (customize as needed)
-const srStats = [
-  { label: "Years of Experience", value: "10+" },
-  { label: "Visa Success Rate", value: "100%" },
-  { label: "Students Guided", value: "5000+" },
-  { label: "Top University Partners", value: "12+" },
-];
-
-const Home = () => {
-  // Keep all the state and existing variables at the top level
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 3;
-  const [hoveredWhyUs, setHoveredWhyUs] = useState(null);
-  const [flipped, setFlipped] = useState(
-    Array(whyUsFeatures.length).fill(false)
-  );
-
-  const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
-  };
-
-  const goToPrevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-  };
-
-  const whyUs = [
+// Data Constants (same as before)
+const DATA = {
+  whyUsFeatures: [
     {
-      icon: <FaUserGraduate size={28} />,
-      label: "Expert Guidance",
-      desc: "Personalized mentoring from admission to graduation.",
+      icon: <FaUserGraduate size={32} />,
+      title: "Expert Guidance",
+      front: "Expert Guidance",
+      back: "Personal mentoring from admission to graduation.",
     },
     {
-      icon: <FaShieldAlt size={28} />,
-      label: "100% Visa Success",
-      desc: "Proven track record with proper documentation.",
+      icon: <FaShieldAlt size={32} />,
+      title: "100% Visa Success",
+      front: "100% Visa Success",
+      back: "Proven track record with proper documentation.",
     },
     {
-      icon: <FaUniversity size={28} />,
-      label: "Direct Partnerships",
-      desc: "Guaranteed admission to top universities.",
+      icon: <FaUniversity size={32} />,
+      title: "Direct Partnerships",
+      front: "Direct Partnerships",
+      back: "Guaranteed admission to top universities.",
     },
     {
-      icon: <FaHandsHelping size={28} />,
-      label: "24/7 Support",
-      desc: "On-ground support for students in Georgia.",
+      icon: <FaHandsHelping size={32} />,
+      title: "24/7 Support",
+      front: "24/7 Support",
+      back: "On-ground support for students in Georgia.",
     },
     {
-      icon: <FaGlobe size={28} />,
-      label: "Global Recognition",
-      desc: "Degrees accepted in 40+ countries.",
+      icon: <FaGlobe size={32} />,
+      title: "Global Recognition",
+      front: "Global Recognition",
+      back: "Degrees accepted in 40+ countries.",
     },
-  ];
-
-  // Carousel slide data
-  const carouselSlides = [
+    {
+      icon: <FaUserShield size={32} />,
+      title: "Parent Peace of Mind",
+      front: "Parent Peace of Mind",
+      back: "Regular updates and dedicated parent communication channels.",
+    },
+  ],
+  srStats: [
+    { label: "Years of Experience", value: "10+" },
+    { label: "Visa Success Rate", value: "100%" },
+    { label: "Students Guided", value: "5000+" },
+    { label: "Top University Partners", value: "12+" },
+  ],
+  carouselSlides: [
     {
       title: (
         <>
@@ -123,16 +79,8 @@ const Home = () => {
       description:
         "Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours.",
       buttons: [
-        {
-          to: "/HowToApply",
-          text: "Apply Now",
-          primary: true,
-        },
-        {
-          to: "/AboutGeorgia",
-          text: "Learn More",
-          primary: false,
-        },
+        { to: "/HowToApply", text: "Apply Now", primary: true },
+        { to: "/AboutGeorgia", text: "Learn More", primary: false },
       ],
       image: {
         src: "/src/assets/graduation-cap.png",
@@ -151,9 +99,14 @@ const Home = () => {
         </>
       ),
       subtitle: (
-        <h2 className="text-3xl font-semibold text-[#232a36]">
-          Find the Perfect Medical University
-        </h2>
+        <>
+          <h2 className="text-5xl font-semibold text-[#232a36]">
+            Find the Perfect Medical University
+          </h2>
+          <h3 className="text-3xl">
+            <span className="text-[#e44e50]">12+ NMC</span> Approved Options
+          </h3>
+        </>
       ),
       description:
         "Compare top Georgian medical universities with state-of-the-art facilities, experienced faculty, and international recognition at affordable fees.",
@@ -164,11 +117,7 @@ const Home = () => {
         { value: "100%", label: "Visa Success" },
       ],
       buttons: [
-        {
-          to: "/Universities",
-          text: "View All Universities",
-          primary: true,
-        },
+        { to: "/Universities", text: "View All Universities", primary: true },
       ],
       image: {
         src: "/src/assets/university.jpg",
@@ -180,15 +129,21 @@ const Home = () => {
     },
     {
       title: (
-        <>
+        <h1 className="whitespace-nowrap">
           <span className="text-red-500">Student</span>
           <span className="text-[#232a36]"> Success Stories</span>
-        </>
+        </h1>
       ),
       subtitle: (
-        <h2 className="text-3xl font-semibold text-[#232a36]">
-          Hear from our Alumni
-        </h2>
+        <>
+          <h2 className="text-5xl font-semibold text-[#232a36]">
+            Hear from our Alumni
+          </h2>
+          <h3 className="text-3xl">
+            Real <span className="text-[#e44e50]">Experiences</span>, Real
+            Success
+          </h3>
+        </>
       ),
       description:
         "Learn from students who have successfully completed their MBBS in Georgia and are now practicing medicine around the world.",
@@ -199,11 +154,7 @@ const Home = () => {
         designation: "Batch of 2020",
       },
       buttons: [
-        {
-          to: "/Testimonials",
-          text: "Read More Stories",
-          primary: true,
-        },
+        { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
       image: {
         src: "/src/assets/students.jpg",
@@ -213,18 +164,8 @@ const Home = () => {
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z'/%3E%3C/svg%3E",
       },
     },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goToNextSlide();
-    }, 5000); // Change slide every 7 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Challenge cards data
-  const challengeCards = [
+  ],
+  challengeCards: [
     {
       number: 1,
       title: "Missed NEET? Don't Give Up!",
@@ -268,10 +209,8 @@ const Home = () => {
       quote:
         '"My family couldn\'t afford Indian private colleges. Georgia offered quality education at 1/3rd the cost."',
     },
-  ];
-
-  // Comparison cards data
-  const comparisonCards = [
+  ],
+  comparisonCards: [
     {
       title: "No Donation Required",
       gradient: "from-amber-400 to-red-500",
@@ -368,9 +307,457 @@ const Home = () => {
       description:
         "Georgian medical degrees are recognized worldwide, allowing graduates to practice medicine or pursue higher studies in many countries.",
     },
-  ];
+  ],
+  services: [
+    {
+      title: "University Selection & Admission Guidance",
+      icon: "🏫",
+      description:
+        "Personalized university selection based on your academic profile, budget, and career goals.",
+    },
+    {
+      title: "Document Preparation & Verification",
+      icon: "📋",
+      description:
+        "Complete assistance with application forms, document verification, and translation services.",
+    },
+    {
+      title: "Visa Application & Interview Preparation",
+      icon: "🛂",
+      description:
+        "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
+    },
+    {
+      title: "Accommodation & Pre-Departure Assistance",
+      icon: "🏠",
+      description:
+        "Securing comfortable and affordable accommodation before you arrive in Georgia.",
+    },
+    {
+      title: "Airport Pickup & University Registration",
+      icon: "✈️",
+      description:
+        "Smooth arrival with pickup service and assistance with university registration process.",
+    },
+    {
+      title: "Ongoing Academic & Personal Support",
+      icon: "📚",
+      description:
+        "Regular check-ins and assistance with academic challenges throughout your program.",
+    },
+    {
+      title: "Career Guidance & Placement Assistance",
+      icon: "💼",
+      description:
+        "Career counseling, internship opportunities, and job placement support after graduation.",
+    },
+    {
+      title: "Alumni Network & Mentorship",
+      icon: "👥",
+      description:
+        "Connect with successful alumni and receive mentorship from practicing doctors.",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Priya Sharma",
+      emoji: "👩‍⚕️",
+      university: "Tbilisi State Medical University",
+      testimonial:
+        "The guidance I received was exceptional. From admission to settling in Georgia, every step was smoothly handled. Now I'm confidently pursuing my MBBS dreams.",
+      details: [
+        { label: "Batch", value: "2022" },
+        { label: "From", value: "Delhi, India" },
+      ],
+    },
+    {
+      name: "Rahul Patel",
+      emoji: "👨‍⚕️",
+      university: "Batumi Shota Rustaveli University",
+      testimonial:
+        "I was worried about studying abroad, but the support system here is amazing. The education quality is world-class and the fees are very reasonable.",
+      details: [
+        { label: "Batch", value: "2021" },
+        { label: "From", value: "Mumbai, India" },
+      ],
+    },
+    {
+      name: "Ananya Singh",
+      emoji: "👩‍🎓",
+      university: "European University",
+      testimonial:
+        "Georgia has given me opportunities I never imagined. The international exposure and quality education have prepared me well for a global medical career.",
+      details: [
+        { label: "Batch", value: "2023" },
+        { label: "From", value: "Pune, India" },
+      ],
+    },
+    {
+      name: "Vikram Mehta",
+      emoji: "👨‍🎓",
+      university: "University of Georgia",
+      testimonial:
+        "SR Counselling made my transition to Georgia seamless. Their pre-departure orientation and on-ground support helped me adjust quickly to my new environment.",
+      details: [
+        { label: "Batch", value: "2022" },
+        { label: "From", value: "Jaipur, India" },
+      ],
+    },
+  ],
+  wallOfFameImages: [
+    { caption: "SR Counselling Office", emoji: "🏢" },
+    { caption: "Student Orientation", emoji: "👨‍🎓" },
+    { caption: "University Visit", emoji: "🏫" },
+    { caption: "Visa Assistance Workshop", emoji: "🛂" },
+    { caption: "Pre-departure Session", emoji: "✈️" },
+    { caption: "Student Welcome Event", emoji: "🎉" },
+    { caption: "Academic Counselling", emoji: "📚" },
+    { caption: "Campus Tour", emoji: "🏛️" },
+    { caption: "Student Housing Tour", emoji: "🏠" },
+    { caption: "Cultural Program", emoji: "🎭" },
+    { caption: "Medical Workshop", emoji: "👨‍⚕️" },
+    { caption: "Career Guidance Session", emoji: "💼" },
+  ],
+};
 
-  // Reusable components
+// Reusable component definitions
+const SectionHeader = ({ title, description }) => (
+  <div className="text-center mb-16">
+    <h2 className="text-5xl font-bold text-[#232a36] mb-6">{title}</h2>
+    <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">{description}</p>
+  </div>
+);
+
+// 3D Globe Component with Countries and Water
+const Globe3D = ({ activeSlide }) => {
+  const globeRef = useRef(null);
+  const [isRotating, setIsRotating] = useState(true);
+
+  // Handle animation for the globe
+  useEffect(() => {
+    if (!globeRef.current) return;
+
+    // Reset animation when slide changes
+    const globe = globeRef.current;
+    globe.style.animation = "none";
+    setTimeout(() => {
+      globe.style.animation = isRotating ? "spin 20s linear infinite" : "none";
+    }, 10);
+
+    return () => {
+      if (globe) globe.style.animation = "none";
+    };
+  }, [activeSlide, isRotating]);
+
+  return (
+    <div
+      className="relative w-full h-full flex items-center justify-center"
+      onClick={() => setIsRotating(!isRotating)}
+    >
+      {/* Ambient glow effect */}
+      <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-blue-500/10 animate-pulse"></div>
+
+      {/* Globe container */}
+      <div className="relative w-52 h-52 md:w-64 md:h-64">
+        {/* Earth sphere - Ocean base */}
+        <div
+          ref={globeRef}
+          className="absolute inset-0 rounded-full shadow-2xl earth-globe"
+        >
+          {/* Ocean layer */}
+          <div className="absolute inset-0 rounded-full ocean-layer"></div>
+
+          {/* Continents */}
+          <div className="absolute inset-0 rounded-full continents-layer">
+            {/* North America */}
+            <div className="continent north-america"></div>
+
+            {/* South America */}
+            <div className="continent south-america"></div>
+
+            {/* Europe */}
+            <div className="continent europe"></div>
+
+            {/* Africa */}
+            <div className="continent africa"></div>
+
+            {/* Asia */}
+            <div className="continent asia"></div>
+
+            {/* Australia */}
+            <div className="continent australia"></div>
+
+            {/* Antarctica */}
+            <div className="continent antarctica"></div>
+          </div>
+
+          {/* Cloud layer - subtle cloud patterns */}
+          <div className="absolute inset-0 rounded-full clouds-layer"></div>
+
+          {/* Grid lines */}
+          <div className="absolute inset-0 rounded-full grid-lines">
+            {/* Longitude lines */}
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={`long-${i}`}
+                className="absolute inset-0 rounded-full longitude-line"
+                style={{ transform: `rotateY(${i * 15}deg)` }}
+              ></div>
+            ))}
+
+            {/* Latitude lines */}
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={`lat-${i}`}
+                className="absolute inset-0 rounded-full latitude-line"
+                style={{ transform: `rotateX(${i * 30}deg)` }}
+              ></div>
+            ))}
+          </div>
+
+          {/* Highlight for Georgia */}
+          <div
+            className="absolute w-2 h-2 bg-red-500 rounded-full georgia-marker"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+
+          {/* Atmosphere glow */}
+          <div className="absolute inset-0 rounded-full atmosphere-glow"></div>
+        </div>
+
+        {/* Active point indicator */}
+        <div className="absolute flex items-center pointer-events-none georgia-pointer">
+          <div className="bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-medium text-red-500 shadow-lg">
+            Georgia
+          </div>
+          <div className="w-8 h-px bg-red-500"></div>
+        </div>
+      </div>
+
+      {/* Click to interact hint */}
+      <div className="absolute bottom-1 left-0 right-0 text-center">
+        <p className="text-xs text-gray-400">
+          Click globe to {isRotating ? "pause" : "resume"}
+        </p>
+      </div>
+
+      {/* CSS for the realistic globe */}
+      <style jsx="true">{`
+        @keyframes spin {
+          0% {
+            transform: rotateY(0) rotateX(23deg);
+          }
+          100% {
+            transform: rotateY(360deg) rotateX(23deg);
+          }
+        }
+
+        .earth-globe {
+          transform-style: preserve-3d;
+          transform: rotateX(23deg);
+          animation: spin 20s linear infinite;
+          box-shadow: 0 0 50px 5px rgba(59, 130, 246, 0.2);
+        }
+
+        .ocean-layer {
+          background: radial-gradient(circle at 30% 30%, 
+            rgba(32, 156, 255, 1) 0%, 
+            rgba(17, 106, 204, 1) 70%, 
+            rgba(6, 57, 114, 1) 100%);
+        }
+
+        .continents-layer {
+          transform-style: preserve-3d;
+        }
+
+        .continent {
+          position: absolute;
+          background-color: rgba(62, 142, 65, 0.8);
+          box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+          border-radius: 40%;
+        }
+
+        .north-america {
+          width: 28%;
+          height: 28%;
+          top: 15%;
+          left: 12%;
+          clip-path: polygon(
+            30% 0%, 70% 10%, 100% 40%, 90% 70%, 60% 100%, 
+            30% 90%, 10% 50%, 0% 30%, 10% 10%
+          );
+        }
+
+        .south-america {
+          width: 14%;
+          height: 24%;
+          top: 48%;
+          left: 26%;
+          clip-path: polygon(
+            30% 0%, 70% 0%, 100% 30%, 90% 70%, 50% 100%, 
+            20% 85%, 0% 50%, 10% 20%
+          );
+        }
+
+        .europe {
+          width: 15%;
+          height: 15%;
+          top: 20%;
+          left: 48%;
+          clip-path: polygon(
+            0% 30%, 30% 0%, 70% 10%, 100% 30%, 90% 70%,
+            65% 85%, 40% 100%, 10% 90%, 0% 60%
+          );
+        }
+
+        .africa {
+          width: 22%;
+          height: 28%;
+          top: 37%;
+          left: 46%;
+          clip-path: polygon(
+            30% 0%, 70% 0%, 95% 25%, 100% 60%, 75% 90%,
+            50% 100%, 25% 85%, 0% 50%, 10% 20%
+          );
+        }
+
+        .asia {
+          width: 36%;
+          height: 32%;
+          top: 15%;
+          left: 58%;
+          clip-path: polygon(
+            10% 30%, 30% 10%, 60% 0%, 90% 20%, 100% 50%,
+            85% 80%, 60% 100%, 30% 85%, 0% 60%
+          );
+        }
+
+        .australia {
+          width: 16%;
+          height: 14%;
+          top: 60%;
+          left: 78%;
+          clip-path: polygon(
+            20% 0%, 80% 10%, 100% 40%, 90% 80%, 60% 100%,
+            20% 90%, 0% 60%, 10% 20%
+          );
+        }
+
+        .antarctica {
+          width: 24%;
+          height: 10%;
+          bottom: 5%;
+          left: 38%;
+          clip-path: polygon(
+            10% 0%, 90% 0%, 100% 60%, 75% 100%, 25% 100%, 0% 60%
+          );
+          background-color: rgba(240, 240, 250, 0.9);
+        }
+
+        .clouds-layer {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffffff' fill-opacity='0.15' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0z'%3E%3C/path%3E%3C/svg%3E");
+          opacity: 0.3;
+        }
+
+        .grid-lines {
+          transform-style: preserve-3d;
+        }
+
+        .longitude-line,
+        .latitude-line {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transform-style: preserve-3d;
+        }
+
+        .georgia-marker {
+          top: 32%;
+          left: 54%;
+          animation: pulse 2s infinite;
+        }
+
+        .georgia-pointer {
+          top: 22%;
+          right: 10%;
+        }
+
+        .atmosphere-glow {
+          box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.3);
+          opacity: 0.5;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          70% {
+            transform: scale(2.5);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 0;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .north-america,
+          .south-america,
+          .europe,
+          .africa,
+          .asia,
+          .australia,
+          .antarctica {
+            transform: scale(0.85);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+const Home = () => {
+  // State declarations
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = DATA.carouselSlides.length;
+  const [flipped, setFlipped] = useState(
+    Array(DATA.whyUsFeatures.length).fill(false)
+  );
+
+  // ADDED: Fix navbar overlap by adding a ref for the hero section
+  const heroSectionRef = useRef(null);
+
+  // ADDED: Adjust hero section top margin after render
+  useEffect(() => {
+    // Function to adjust hero section position
+    const adjustHeroSection = () => {
+      const navbar = document.querySelector("nav");
+      if (navbar && heroSectionRef.current) {
+        const navHeight = navbar.offsetHeight;
+        heroSectionRef.current.style.paddingTop = `${navHeight}px`;
+      }
+    };
+
+    // Initial adjustment
+    adjustHeroSection();
+
+    // Adjust on window resize
+    window.addEventListener("resize", adjustHeroSection);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", adjustHeroSection);
+    };
+  }, []);
+
+  // Carousel navigation functions
+  const goToSlide = (slideIndex) => setCurrentSlide(slideIndex);
+  const goToPrevSlide = () =>
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  const goToNextSlide = () =>
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+
+  // Component: Carousel Dots
   const CarouselDots = () => (
     <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-3 z-20">
       {[...Array(totalSlides)].map((_, i) => (
@@ -386,13 +773,7 @@ const Home = () => {
     </div>
   );
 
-  const SectionHeader = ({ title, description }) => (
-    <div className="text-center mb-16">
-      <h2 className="text-5xl font-bold text-[#232a36] mb-6">{title}</h2>
-      <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">{description}</p>
-    </div>
-  );
-
+  // Component: Challenge Card
   const ChallengeCard = ({
     number,
     title,
@@ -410,7 +791,6 @@ const Home = () => {
       <h3 className="text-2xl font-bold text-[#232a36] mb-4 mt-4 text-center">
         {title}
       </h3>
-
       <div className="flex items-center justify-center mb-6">
         <div className="w-20 h-20 rounded-full bg-white shadow-inner flex items-center justify-center group-hover:bg-red-50 transition-colors duration-300">
           <svg
@@ -427,17 +807,16 @@ const Home = () => {
           </svg>
         </div>
       </div>
-
       <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300">
         {description}
       </p>
-
       <div className="mt-6 bg-white/70 p-3 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300">
         <p className="font-medium italic text-sm text-[#232a36]">{quote}</p>
       </div>
     </div>
   );
 
+  // Component: Comparison Card
   const ComparisonCard = ({ title, gradient, before, after, description }) => (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
       <div
@@ -506,91 +885,36 @@ const Home = () => {
     </div>
   );
 
+  // Services Journey Section
   const OurServicesJourney = () => {
     const [activeStep, setActiveStep] = useState(0);
     const controls = useAnimation();
     const pathRef = useRef(null);
     const [pathPoints, setPathPoints] = useState([]);
 
-    const services = [
-      {
-        title: "University Selection & Admission Guidance",
-        icon: "🏫",
-        description:
-          "Personalized university selection based on your academic profile, budget, and career goals.",
-      },
-      {
-        title: "Document Preparation & Verification",
-        icon: "📋",
-        description:
-          "Complete assistance with application forms, document verification, and translation services.",
-      },
-      {
-        title: "Visa Application & Interview Preparation",
-        icon: "🛂",
-        description:
-          "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
-      },
-      {
-        title: "Accommodation & Pre-Departure Assistance",
-        icon: "🏠",
-        description:
-          "Securing comfortable and affordable accommodation before you arrive in Georgia.",
-      },
-      {
-        title: "Airport Pickup & University Registration",
-        icon: "✈️",
-        description:
-          "Smooth arrival with pickup service and assistance with university registration process.",
-      },
-      {
-        title: "Ongoing Academic & Personal Support",
-        icon: "📚",
-        description:
-          "Regular check-ins and assistance with academic challenges throughout your program.",
-      },
-      {
-        title: "Career Guidance & Placement Assistance",
-        icon: "💼",
-        description:
-          "Career counseling, internship opportunities, and job placement support after graduation.",
-      },
-      {
-        title: "Alumni Network & Mentorship",
-        icon: "👥",
-        description:
-          "Connect with successful alumni and receive mentorship from practicing doctors.",
-      },
-    ];
-
-    // Calculate all path points only once when component mounts
+    // Calculate path points once
     useEffect(() => {
       if (!pathRef.current) return;
-
       const path = pathRef.current;
       const pathLength = path.getTotalLength();
       const calculatedPoints = [];
 
-      for (let i = 0; i < services.length; i++) {
-        const percent = i / (services.length - 1);
+      for (let i = 0; i < DATA.services.length; i++) {
+        const percent = i / (DATA.services.length - 1);
         const position = percent * pathLength;
         const point = path.getPointAtLength(position);
         calculatedPoints.push({ x: point.x, y: point.y });
       }
-
       setPathPoints(calculatedPoints);
-    }, [services.length]);
+    }, []);
 
-    // Move airplane when active step changes
+    // Move airplane when step changes
     useEffect(() => {
       if (pathPoints.length === 0 || activeStep >= pathPoints.length) return;
-
       const point = pathPoints[activeStep];
-
       controls.start({
-        // Adjust the x and y coordinates to ensure plane is exactly on the active dot
-        x: point.x - 32, // Exactly half of the airplane container width
-        y: point.y - 32, // Exactly half of the airplane container height
+        x: point.x - 32,
+        y: point.y - 32,
         transition: {
           duration: 0.5,
           type: "spring",
@@ -600,18 +924,13 @@ const Home = () => {
       });
     }, [activeStep, pathPoints, controls]);
 
-    // Navigation functions
-    const nextStep = () => {
-      setActiveStep((prev) => (prev + 1) % services.length);
-    };
-
-    const prevStep = () => {
-      setActiveStep((prev) => (prev === 0 ? services.length - 1 : prev - 1));
-    };
-
-    const goToStep = (index) => {
-      setActiveStep(index);
-    };
+    const nextStep = () =>
+      setActiveStep((prev) => (prev + 1) % DATA.services.length);
+    const prevStep = () =>
+      setActiveStep((prev) =>
+        prev === 0 ? DATA.services.length - 1 : prev - 1
+      );
+    const goToStep = (index) => setActiveStep(index);
 
     return (
       <section className="py-20 bg-gray-100">
@@ -626,14 +945,11 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Journey Path with Airplane */}
           <div className="relative h-[400px] mb-12">
-            {/* SVG Path */}
             <svg
               className="w-full h-full absolute top-0 left-0"
               viewBox="0 0 1000 300"
             >
-              {/* Define filter for drop shadow */}
               <defs>
                 <linearGradient
                   id="pathGradient"
@@ -645,7 +961,6 @@ const Home = () => {
                   <stop offset="0%" stopColor="#f87171" stopOpacity="0.6" />
                   <stop offset="100%" stopColor="#ef4444" stopOpacity="0.9" />
                 </linearGradient>
-
                 <filter
                   id="shadow"
                   x="-20%"
@@ -665,7 +980,7 @@ const Home = () => {
                 </filter>
               </defs>
 
-              {/* Background decorative dots */}
+              {/* Background dots */}
               {Array(8)
                 .fill()
                 .map((_, i) => (
@@ -681,7 +996,6 @@ const Home = () => {
                   />
                 ))}
 
-              {/* Main path */}
               <path
                 ref={pathRef}
                 d="M100,150 C200,50 300,250 400,150 C500,50 600,250 700,150 C800,50 900,150 900,150"
@@ -692,14 +1006,13 @@ const Home = () => {
                 filter="url(#shadow)"
               />
 
-              {/* Service step dots - only show after path points are calculated */}
+              {/* Service step dots */}
               {pathPoints.map((point, index) => (
                 <g
                   key={index}
                   className="cursor-pointer"
                   onClick={() => goToStep(index)}
                 >
-                  {/* Outer highlight for active step */}
                   {activeStep === index && (
                     <circle
                       cx={point.x}
@@ -713,8 +1026,6 @@ const Home = () => {
                       }}
                     />
                   )}
-
-                  {/* Main dot */}
                   <circle
                     cx={point.x}
                     cy={point.y}
@@ -724,8 +1035,6 @@ const Home = () => {
                     strokeWidth="2"
                     style={{ transition: "all 0.3s ease" }}
                   />
-
-                  {/* Step number */}
                   <text
                     x={point.x}
                     y={point.y}
@@ -747,7 +1056,7 @@ const Home = () => {
               <motion.div
                 initial={{ x: pathPoints[0].x - 32, y: pathPoints[0].y - 32 }}
                 animate={controls}
-                className="absolute z-30 pointer-events-none" // Increased z-index to ensure visibility
+                className="absolute z-30 pointer-events-none"
               >
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-red-500">
                   <span className="text-3xl">✈️</span>
@@ -756,7 +1065,6 @@ const Home = () => {
             )}
           </div>
 
-          {/* Service Details Card */}
           <div className="flex justify-center">
             <motion.div
               key={activeStep}
@@ -768,19 +1076,19 @@ const Home = () => {
             >
               <div className="flex items-start mb-6">
                 <div className="bg-red-100 p-4 rounded-full text-3xl mr-4 shadow-md">
-                  {services[activeStep].icon}
+                  {DATA.services[activeStep].icon}
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[#232a36]">
-                    {services[activeStep].title}
+                    {DATA.services[activeStep].title}
                   </h3>
                   <span className="text-sm text-red-500 font-medium">
-                    Step {activeStep + 1} of {services.length}
+                    Step {activeStep + 1} of {DATA.services.length}
                   </span>
                 </div>
               </div>
               <p className="text-[#4a5568] text-lg mb-6">
-                {services[activeStep].description}
+                {DATA.services[activeStep].description}
               </p>
               <div className="flex justify-between space-x-4">
                 <button
@@ -826,9 +1134,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Bottom step indicators for easy navigation */}
         <div className="flex justify-center mt-8 gap-2">
-          {services.map((_, index) => (
+          {DATA.services.map((_, index) => (
             <button
               key={index}
               onClick={() => goToStep(index)}
@@ -845,123 +1152,8 @@ const Home = () => {
     );
   };
 
-  // Student Testimonial Card Component
-  const TestimonialCard = ({ student }) => {
-    return (
-      <motion.div
-        className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-200 flex flex-col h-full"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.1 }}
-        whileHover={{
-          y: -5,
-          scale: 1.02,
-          boxShadow:
-            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-        }}
-      >
-        {/* Top gradient decoration */}
-        <div className="relative">
-          <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-blue-100/50 to-transparent"></div>
-        </div>
-
-        <div className="p-6 flex flex-col h-full">
-          {/* Profile section - fixed height */}
-          <div className="flex flex-col items-center mb-4">
-            <div className="w-20 h-20 rounded-full mb-4 overflow-hidden border-4 border-blue-50 shadow-md">
-              <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                <span className="text-4xl">{student.emoji}</span>
-              </div>
-            </div>
-
-            <h4 className="text-lg font-bold text-[#232a36] mb-1 text-center">
-              {student.name}
-            </h4>
-            <p className="text-sm text-gray-500 text-center mb-4">
-              {student.university}
-            </p>
-          </div>
-
-          {/* Testimonial section - fixed minimum height */}
-          <div className="flex-grow flex flex-col">
-            <div className="bg-gray-50 p-2 rounded-lg border-l-4 border-red-500 mb-4 flex-grow h-30 min-h-[100px] ">
-              <p className="italic text-[#4a5568] line-clamp-4">
-                "{student.testimonial}"
-              </p>
-            </div>
-
-            {/* Details section - fixed position at bottom */}
-            {student.details && (
-              <div className="w-full grid grid-cols-2 gap-2 mt-auto">
-                {student.details.map((detail, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-gray-50 rounded p-2 text-center hover:bg-blue-50 hover:scale-105 transition-all duration-200"
-                  >
-                    <p className="text-xs text-gray-500">{detail.label}</p>
-                    <p className="text-sm font-medium truncate">
-                      {detail.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </motion.div>
-    );
-  };
-
-  // Update the StudentTestimonials component
+  // Student Testimonials Section
   const StudentTestimonials = () => {
-    const testimonials = [
-      {
-        name: "Priya Sharma",
-        emoji: "👩‍⚕️",
-        university: "Tbilisi State Medical University",
-        testimonial:
-          "The guidance I received was exceptional. From admission to settling in Georgia, every step was smoothly handled. Now I'm confidently pursuing my MBBS dreams.",
-        details: [
-          { label: "Batch", value: "2022" },
-          { label: "From", value: "Delhi, India" },
-        ],
-      },
-      {
-        name: "Rahul Patel",
-        emoji: "👨‍⚕️",
-        university: "Batumi Shota Rustaveli University",
-        testimonial:
-          "I was worried about studying abroad, but the support system here is amazing. The education quality is world-class and the fees are very reasonable.",
-        details: [
-          { label: "Batch", value: "2021" },
-          { label: "From", value: "Mumbai, India" },
-        ],
-      },
-      {
-        name: "Ananya Singh",
-        emoji: "👩‍🎓",
-        university: "European University",
-        testimonial:
-          "Georgia has given me opportunities I never imagined. The international exposure and quality education have prepared me well for a global medical career.",
-        details: [
-          { label: "Batch", value: "2023" },
-          { label: "From", value: "Pune, India" },
-        ],
-      },
-      {
-        name: "Vikram Mehta",
-        emoji: "👨‍🎓",
-        university: "University of Georgia",
-        testimonial:
-          "SR Counselling made my transition to Georgia seamless. Their pre-departure orientation and on-ground support helped me adjust quickly to my new environment.",
-        details: [
-          { label: "Batch", value: "2022" },
-          { label: "From", value: "Jaipur, India" },
-        ],
-      },
-    ];
-
     return (
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
@@ -973,25 +1165,22 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {testimonials.map((student, index) => (
+            {DATA.testimonials.map((student, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
               >
-                {/* Top gradient decoration */}
                 <div className="relative">
                   <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-blue-100/50 to-transparent"></div>
                 </div>
 
                 <div className="p-6 flex flex-col h-full">
-                  {/* Profile section */}
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-20 h-20 rounded-full mb-4 overflow-hidden border-4 border-blue-50 shadow-md">
                       <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                         <span className="text-4xl">{student.emoji}</span>
                       </div>
                     </div>
-
                     <h4 className="text-lg font-bold text-[#232a36] mb-1 text-center">
                       {student.name}
                     </h4>
@@ -1000,7 +1189,6 @@ const Home = () => {
                     </p>
                   </div>
 
-                  {/* Testimonial section */}
                   <div className="flex-grow flex flex-col">
                     <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-red-500 mb-4 flex-grow">
                       <p className="italic text-[#4a5568] line-clamp-4">
@@ -1008,7 +1196,6 @@ const Home = () => {
                       </p>
                     </div>
 
-                    {/* Details section */}
                     {student.details && (
                       <div className="w-full grid grid-cols-2 gap-2 mt-auto">
                         {student.details.map((detail, idx) => (
@@ -1038,26 +1225,9 @@ const Home = () => {
 
   // Wall of Fame Section
   const WallOfFame = () => {
-    // Images data remains the same
-    const images = [
-      { caption: "SR Counselling Office", emoji: "🏢" },
-      { caption: "Student Orientation", emoji: "👨‍🎓" },
-      { caption: "University Visit", emoji: "🏫" },
-      { caption: "Visa Assistance Workshop", emoji: "🛂" },
-      { caption: "Pre-departure Session", emoji: "✈️" },
-      { caption: "Student Welcome Event", emoji: "🎉" },
-      { caption: "Academic Counselling", emoji: "📚" },
-      { caption: "Campus Tour", emoji: "🏛️" },
-      { caption: "Student Housing Tour", emoji: "🏠" },
-      { caption: "Cultural Program", emoji: "🎭" },
-      { caption: "Medical Workshop", emoji: "👨‍⚕️" },
-      { caption: "Career Guidance Session", emoji: "💼" },
-    ];
-
     return (
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          {/* Section header - simplified animation */}
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold text-[#232a36] mb-4">
               Wall of <span className="text-red-500">Fame</span>
@@ -1069,21 +1239,17 @@ const Home = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mt-6 rounded-full"></div>
           </div>
 
-          {/* Image grid - simplified and optimized animations */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {images.map((image, index) => (
+            {DATA.wallOfFameImages.map((image, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
                 <div className="aspect-square relative overflow-hidden">
-                  {/* Image placeholder with gradient background */}
                   <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center">
                     <span className="text-4xl transform transition-transform duration-300 hover:scale-110">
                       {image.emoji}
                     </span>
-
-                    {/* Caption overlay that appears on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                       <p className="text-white font-medium text-sm text-center">
                         {image.caption}
@@ -1102,99 +1268,163 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section with Carousel */}
-      <div className="relative min-h-[600px]">
-        {/* Dynamic Carousel Slides */}
-        {carouselSlides.map((slide, index) => (
+      <div
+        ref={heroSectionRef}
+        className="relative z-0"
+        style={{
+          height: "450px", // Fixed height of 450px
+          paddingTop: "0px", // Will be set dynamically by useEffect
+        }}
+      >
+        {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
               currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            <div className="max-w-7xl mx-auto px-8 py-20 h-full flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 space-y-6">
-                <h1 className="text-6xl font-bold">{slide.title}</h1>
-                {slide.subtitle}
-                <p className="text-lg text-[#4a5568] mt-4">
-                  {slide.description}
-                </p>
+            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
+              <div className="flex flex-col md:flex-row items-center justify-between h-full">
+                {/* Content side - more space to the left */}
+                <div className="md:w-5/12 lg:w-5/12 md:pr-4">
+                  <div className="space-y-3">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                      {slide.title}
+                    </h1>
 
-                {slide.stats && (
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    {slide.stats.map((stat, idx) => (
-                      <div
-                        key={idx}
-                        className="text-center p-4 bg-white rounded-lg shadow"
-                      >
-                        <h3 className="text-3xl font-bold text-[#e44e50]">
-                          {stat.value}
-                        </h3>
-                        <p className="text-[#4a5568]">{stat.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {slide.testimonial && (
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <p className="text-[#4a5568] italic text-lg">
-                      {slide.testimonial.quote}
-                    </p>
-                    <div className="mt-4 flex items-center">
-                      <div className="h-12 w-12 rounded-full bg-gray-300"></div>
-                      <div className="ml-4">
-                        <p className="font-medium text-lg">
-                          {slide.testimonial.name}
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          {slide.testimonial.designation}
-                        </p>
-                      </div>
+                    {/* Adjusted subtitle sizing */}
+                    <div className="py-1">
+                      {index === 0 ? (
+                        <>
+                          <h2 className="text-2xl md:text-3xl font-semibold text-[#232a36] leading-tight">
+                            Don't Miss Your Dream
+                          </h2>
+                          <h3 className="text-xl md:text-2xl">
+                            Study{" "}
+                            <span className="text-[#e44e50]">
+                              MBBS in Georgia
+                            </span>
+                          </h3>
+                        </>
+                      ) : (
+                        <div className="text-lg md:text-xl">
+                          {slide.subtitle}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                )}
 
-                {slide.buttons && (
-                  <div
-                    className={`${
-                      slide.buttons.length > 1 ? "flex gap-4" : ""
-                    } pt-6`}
-                  >
-                    {slide.buttons.map((button, idx) => (
-                      <Link
-                        key={idx}
-                        to={
-                          button.text === "Learn More"
-                            ? "/AboutGeorgia"
-                            : button.to
-                        }
-                        className={`inline-block px-6 py-3 ${
-                          button.primary
-                            ? "bg-red-500 text-white hover:bg-red-600"
-                            : "border border-red-500 text-red-500 hover:bg-red-50"
-                        } font-medium rounded transition ${
-                          button.className || ""
-                        }`}
+                    {/* Description */}
+                    <p className="text-sm md:text-base text-[#4a5568] line-clamp-3 md:line-clamp-4 max-w-md">
+                      {slide.description}
+                    </p>
+
+                    {/* Stats in a more compact layout */}
+                    {slide.stats && (
+                      <div className="grid grid-cols-2 gap-3 py-2 max-w-md">
+                        {slide.stats.map((stat, idx) => (
+                          <div
+                            key={idx}
+                            className="text-center p-2 bg-white rounded-lg shadow-sm"
+                          >
+                            <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
+                              {stat.value}
+                            </h3>
+                            <p className="text-xs text-[#4a5568]">
+                              {stat.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Testimonial */}
+                    {slide.testimonial && (
+                      <div className="bg-white p-3 rounded-lg shadow-md max-w-md">
+                        <p className="text-[#4a5568] italic text-xs md:text-sm line-clamp-2">
+                          "{slide.testimonial.quote}"
+                        </p>
+                        <div className="mt-1 flex items-center">
+                          <div className="h-6 w-6 md:h-8 md:w-8 rounded-full bg-gray-300"></div>
+                          <div className="ml-2">
+                            <p className="font-medium text-xs md:text-sm">
+                              {slide.testimonial.name}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              {slide.testimonial.designation}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Buttons with consistent spacing */}
+                    {slide.buttons && (
+                      <div
+                        className={`${
+                          slide.buttons.length > 1 ? "flex gap-3" : ""
+                        } pt-2`}
                       >
-                        {button.text}
-                      </Link>
-                    ))}
+                        {slide.buttons.map((button, idx) => (
+                          <Link
+                            key={idx}
+                            to={
+                              button.text === "Learn More"
+                                ? "/AboutGeorgia"
+                                : button.to
+                            }
+                            className={`inline-block px-4 py-2 md:px-5 md:py-3 ${
+                              button.primary
+                                ? "bg-red-500 text-white hover:bg-red-600"
+                                : "border border-red-500 text-red-500 hover:bg-red-50"
+                            } font-medium rounded transition text-sm md:text-base ${
+                              button.className || ""
+                            }`}
+                          >
+                            {button.text}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
+                </div>
 
-              <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <div className="bg-white p-6 rounded-lg shadow-md w-4/5 aspect-square flex items-center justify-center">
-                  <div className={slide.image.containerClass || ""}>
-                    <img
-                      src={slide.image.src}
-                      alt={slide.image.alt}
-                      className={slide.image.className}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = slide.image.fallbackSrc;
-                      }}
-                    />
+                {/* 3D Globe Side - Replaced previous image section */}
+                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-6 md:mt-0">
+                  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg shadow-lg max-w-md w-full aspect-square flex items-center justify-center overflow-hidden">
+                    {/* Interactive 3D Globe */}
+                    <Globe3D activeSlide={currentSlide} />
+
+                    {/* Additional decorative elements */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-blue-400/10 rounded-full blur-xl"></div>
+                      <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-red-400/10 rounded-full blur-xl"></div>
+                    </div>
+
+                    {/* Slide-specific labels */}
+                    {index === 0 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          Your Future Awaits in Georgia
+                        </span>
+                      </div>
+                    )}
+                    {index === 1 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          12+ NMC Approved Universities
+                        </span>
+                      </div>
+                    )}
+                    {index === 2 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          Global Recognition
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1205,22 +1435,37 @@ const Home = () => {
         {/* Navigation Controls */}
         <button
           onClick={goToPrevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg z-20 transition-all"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={28} className="text-gray-800" />
+          <ChevronLeft size={20} className="text-gray-800" />
         </button>
 
         <button
           onClick={goToNextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg z-20 transition-all"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all"
           aria-label="Next slide"
         >
-          <ChevronRight size={28} className="text-gray-800" />
+          <ChevronRight size={20} className="text-gray-800" />
         </button>
 
         <CarouselDots />
       </div>
+
+      {/* ADDED: Custom scrollbar style */}
+      <style jsx="true">{`
+        /* Custom scrollbar styles */
+        div::-webkit-scrollbar {
+          width: 4px;
+        }
+        div::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        div::-webkit-scrollbar-thumb {
+          background-color: rgba(203, 213, 225, 0.5);
+          border-radius: 20px;
+        }
+      `}</style>
 
       {/* Challenges & Solutions Section */}
       <section className="py-20 bg-white">
@@ -1235,16 +1480,13 @@ const Home = () => {
             description="Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours."
           />
 
-          {/* Journey Path with Challenge Cards */}
           <div className="relative mb-16">
             <div className="flex flex-col md:flex-row gap-8">
-              {challengeCards.map((card, index) => (
+              {DATA.challengeCards.map((card, index) => (
                 <ChallengeCard key={index} {...card} />
               ))}
             </div>
           </div>
-
-          {/* Call to Action */}
         </div>
       </section>
 
@@ -1261,19 +1503,17 @@ const Home = () => {
             description="Georgia offers world-class medical education at affordable prices with international recognition and safety for Indian students."
           />
 
-          {/* Comparison Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {comparisonCards.map((card, index) => (
+            {DATA.comparisonCards.map((card, index) => (
               <ComparisonCard key={index} {...card} />
             ))}
           </div>
 
-          {/* Call to Action */}
           <div className="flex justify-center mt-12">
             <Link
               to="/Universities"
               className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition shadow-lg"
-              onClick={() => window.scrollTo(0, 0)} // Add this line to scroll to top when clicked
+              onClick={() => window.scrollTo(0, 0)}
             >
               Compare Universities
               <svg
@@ -1300,7 +1540,7 @@ const Home = () => {
           Journey?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {whyUsFeatures.map((feature, idx) => (
+          {DATA.whyUsFeatures.map((feature, idx) => (
             <div
               key={idx}
               className="relative w-72 h-44 mx-auto cursor-pointer perspective"
@@ -1316,7 +1556,6 @@ const Home = () => {
                   flipped[idx] ? "rotate-y-180" : ""
                 }`}
               >
-                {/* Front */}
                 <div className="absolute w-full h-full flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border border-gray-100 backface-hidden">
                   <div className="bg-red-500 text-white rounded-full p-4 mb-4 shadow-lg">
                     {feature.icon}
@@ -1325,7 +1564,6 @@ const Home = () => {
                     {feature.front}
                   </h4>
                 </div>
-                {/* Back */}
                 <div className="absolute w-full h-full flex flex-col items-center justify-center bg-red-500 text-white rounded-xl shadow-lg border border-red-200 rotate-y-180 backface-hidden px-6">
                   <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
                   <p className="text-sm">{feature.back}</p>
@@ -1337,7 +1575,7 @@ const Home = () => {
 
         {/* Stats Bar */}
         <div className="w-full max-w-3xl bg-gray-50 rounded-lg shadow flex flex-wrap justify-center items-center gap-6 py-6 px-4 mb-12">
-          {srStats.map((stat, idx) => (
+          {DATA.srStats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center mx-4">
               <span className="text-2xl font-bold text-red-500">
                 {stat.value}
@@ -1347,20 +1585,18 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Logo, tagline, CTA */}
+        {/* Logo, tagline, CTA - with larger logo and removed SR Counselling text */}
         <div className="flex flex-col items-center">
-          <img src={srLogo} alt="SR Counselling" className="h-16 w-16 mb-3" />
-          <span className="text-red-500 font-semibold text-sm mb-4">
-            SR Counselling
-          </span>
+          <img src={srLogo} alt="SR Counselling" className="h-24 w-24 mb-6" />
+          {/* Text "SR Counselling" removed */}
           <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
             Let us guide you to your dream medical career in Georgia with
             expertise, support, and trust.
           </p>
           <a
             href="https://www.srcounselling.in/about.php"
-            target="_blank" // Add this line to open in new tab
-            rel="noopener noreferrer" // Add this for security best practice with target="_blank"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition shadow-lg"
           >
             Learn More About Us
@@ -1391,7 +1627,7 @@ const Home = () => {
         </style>
       </section>
 
-      {/* Our Services Journey Section */}
+      {/* Additional Sections */}
       <OurServicesJourney />
       <StudentTestimonials />
       <WallOfFame />
