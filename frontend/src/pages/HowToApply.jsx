@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import skyimg from '../assets/sky_img.jpg';
 import aeroplaneImg from '../assets/aeroplane_f.png';
-import heroSectionImg from '../assets/herosection_img.png';
+// Import the new background image
+import heroSectionImg from '../assets/georgia-how to apply.webp';
 import documentList from '../assets/Document_checklist.pdf';
 import nmcRegulations from '../assets/nmc-regulations.pdf'; // You'll need to add this PDF to your assets
 
@@ -147,56 +148,27 @@ const HowToApply = () => {
       <div 
         className="min-h-[450px] sm:min-h-[500px] duration-200 flex items-center relative"
         style={{
-          backgroundImage: `url(${skyimg})`,
+          backgroundImage: `url(${heroSectionImg})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Darker overlay for better text contrast against the sky background */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        {/* Hero content overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         
-        <div className="container mx-auto px-6 py-8 relative z-10">
-          <div className="flex flex-wrap items-center justify-between ml-20">
-            {/* Left side - Text content */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center sm:text-left sm:items-start">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                Start your
-              </h1>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-500 mb-3">
-                Journey
-              </h1>
-              <p className="text-white text-base sm:text-lg max-w-lg">
-                Begin your medical education journey in Georgia with our step-by-step application process and expert guidance.
-              </p>
-              
-              
-            </div>
-            
-            {/* Right side - Hero image */}
-            <div className="hidden md:flex w-full md:w-1/2 justify-end items-center mt-8 md:mt-0">
-              <div className="relative mr-15">
-                {/* Hero image with animation */}
-                <img 
-                  src={heroSectionImg} 
-                  alt="Application Process" 
-                  className="max-w-md w-full h-auto object-contain relative z-10 animate-float"
-                  style={{
-                    filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
-                    animation: 'float 6s ease-in-out infinite'
-                  }}
-                />
-                {/* Add subtle glow effect behind image */}
-                <div 
-                  className="absolute inset-0 bg-blue-400 bg-opacity-20 rounded-full filter blur-xl z-0" 
-                  style={{transform: 'scale(0.8) translateY(5%)'}}
-                ></div>
-              </div>
-            </div>
-          </div>
+        {/* Hero content */}
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+            <span className="text-white">How to Apply for MBBS</span> <br />
+            <span className="text-[#ff5a5f]">in Georgia</span>
+          </h1>
+          <p className="text-xl text-white max-w-2xl mx-auto">
+            A step-by-step guide to your medical education journey in Georgia
+          </p>
         </div>
       </div>
-
+      
       {/* Application Process Section */}
       <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 py-6">
