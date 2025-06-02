@@ -49,22 +49,22 @@ const Testimonials = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
-                  imageSrc: "https://assets.studies-overseas.com/Banner1_404x262_65ffa3bfeb.png",
-                  title: "Study Abroad Guide",
-                  excerpt: "Essential tips for international students pursuing medical education",
-                  link: "https://www.timeshighereducation.com/student/advice/transferring-my-study-abroad-university"
+                  imageSrc: "https://media.globaladmissions.com/media/asset/2025/5/24601175ab7346caa31c33d21d74bffa.png",
+                  title: "MBBS in GEORGIA",
+                  excerpt: "Georgia is a top choice for Indian medical students...." ,    
+                   link: "https://www.kg2pgeduhub.com/blogs/mbbs-in-georgia/"
                 },
                 {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7Hr_mICfvtFkc2o_fnFpi5gR9DhWiq1GGA&s",
-                  title: "Life in Georgia",
-                  excerpt: "Experience the vibrant culture and education system",
-                  link: "https://example.com/blog2"
+                  imageSrc: "https://blog.rmgoe.org/wp-content/uploads/2022/06/High-Medical-School-Ayeti-Georgia-1.jpg",
+                  title: "The Ultimate Guide to Study MBBS in Georgia",
+                  excerpt: "Are you dreaming of becoming a doctor and exploring the world?...",
+                  link: "https://www.globaladmissions.com/blog/the-ultimate-guide-to-study-mbbs-in-georgia"
                 },
                 {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLy48XpuUVUBXi-SsKLC8ldreJYdG-Yl8Wg&s",
-                  title: "Medical Education",
-                  excerpt: "Comprehensive guide to medical programs",
-                  link: "https://example.com/blog3"
+                  imageSrc: "https://www.shutterstock.com/shutterstock/videos/1085761430/thumb/1.jpg?ip=x480",
+                  title: "Indian Students in Georgia: Experiences & Advice",
+                  excerpt: "Studying abroad is a thrilling experience, but it also...",
+                  link: "https://www.acadfly.com/blogs/indian-students-in-georgia-experience"
                 }
               ].map((blog, index) => (
                 <a 
@@ -119,59 +119,61 @@ const Testimonials = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Rahul Sharma",
-                batch: "2023 Batch",
+                name: "Ritu Panjwani",
                 image: "https://randomuser.me/api/portraits/men/1.jpg",
                 quote:
-                  "Studying MBBS in Georgia was the best decision of my life. The quality of education and practical exposure is exceptional.",
-                rating: 5,
-                location: "New Delhi",
+                  "Sr counseling is the best, Hardik Sir will give you the best guidance possible based on your GRE, toefl and finances, the preparation for visa interviews is great as well.",
+              
               },
               {
-                name: "Priya Patel",
-                batch: "2022 Batch",
+                name: "Pruthvi Mulik",
                 image: "https://randomuser.me/api/portraits/women/2.jpg",
                 quote:
-                  "The faculty support and modern facilities have made my medical education journey amazing. Highly recommend!",
-                rating: 5,
-                location: "Mumbai",
+                  "It was very pleasant and smooth experience with SR counseling in this Covid situation. I highly recommend to join them for your bright future",
+                
               },
               {
-                name: "Amit Kumar",
-                batch: "2023 Batch",
+                name: "Ameeta",
                 image: "https://randomuser.me/api/portraits/men/3.jpg",
                 quote:
-                  "Great learning environment with perfect blend of theoretical and practical knowledge.",
-                rating: 5,
-                location: "Bangalore",
+                  "Excellent counseling by Hardik sir. The staff is good in assistance and quick response..",
               },
               {
-                name: "Sneha Gupta",
-                batch: "2022 Batch",
+                name: "Shivani Darekar",
                 image: "https://randomuser.me/api/portraits/women/4.jpg",
                 quote:
-                  "The international exposure and quality of medical education here is outstanding.",
-                rating: 5,
-                location: "Pune",
+                  "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential and making this entire process such a beautiful journey..",
               },
               {
-                name: "Vikram Singh",
-                batch: "2023 Batch",
+                name: "Kesha Dalal",
                 image: "https://randomuser.me/api/portraits/men/5.jpg",
                 quote:
-                  "Excellent infrastructure and supportive faculty. The clinical training is incredible.",
-                rating: 5,
-                location: "Chandigarh",
+                  "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa and applying into the best universities. ",
               },
               {
-                name: "Neha Sharma",
-                batch: "2022 Batch",
+                name: "Bhavesh Mhatre",
                 image: "https://randomuser.me/api/portraits/women/6.jpg",
                 quote:
-                  "The multicultural environment helped me grow both personally and professionally.",
-                rating: 5,
-                location: "Hyderabad",
+                  "The SR counselling service played a crucial role in simplifying the complex US university admission process for me. ",
               },
+              {
+                name: "Tanisha Luhadia",
+                image: "https://randomuser.me/api/portraits/men/7.jpg",
+                quote:
+                  "I had an amazing experience with SR Counselling. Nirav Sir and Sangini Ma'am provided me with invaluable assistance throughout my counselling journey.",
+              },
+              {
+                name: "Nitya Patel",
+                image: "https://randomuser.me/api/portraits/women/8.jpg",
+                quote:
+                  "My experience with SR COUNSELLING has been amazing. The journey between LOR and last mock interview was fabulous and all the staff over their were so helpful.",
+              },
+              {
+                name: "Jeel Patel",
+                image: "https://randomuser.me/api/portraits/men/9.jpg",
+                quote:
+                  "Sr counselling helps me through my entire going to us journey. Specially sangini mam and ravi sir helps me the most for my university admission to visa proration seamlessly.",
+              }
             ].map((testimonial, index) => (
               <div
                 key={index}
