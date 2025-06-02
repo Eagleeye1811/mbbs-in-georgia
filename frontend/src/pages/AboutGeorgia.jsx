@@ -105,16 +105,17 @@ const AboutGeorgia = () => {
     <div className="bg-white text-gray-800 font-sans">
       {/* Header */}
       <header
-        className="relative overflow-hidden p-0 mb-6 min-h-[750px] bg-cover bg-center pt-20" // Increased pt-20 for more top space
+        className="relative overflow-hidden mb-6 bg-cover bg-center"
         style={{
-          backgroundImage: `url(${georgia})`
+          backgroundImage: `url(${georgia})`,
+          height: "450px" // Fixed height of 450px
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-0" /> {/* Lowered z-index to z-0 */}
+        <div className="absolute inset-0 bg-black/50 z-0" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 py-12 min-h-[750px]">
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 h-full">
           <div className="text-left max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down">
               Georgia <span className="text-white">–</span> More Than a <span className="text-red-500">Destination</span>

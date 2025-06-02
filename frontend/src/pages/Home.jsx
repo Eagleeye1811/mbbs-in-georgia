@@ -12,7 +12,7 @@ import {
 import srLogo from "../assets/logo.png";
 import { motion, useAnimation } from "framer-motion";
 
-// Data Constants (grouped at the top for easy reference and modification)
+// Data Constants (same as before)
 const DATA = {
   whyUsFeatures: [
     {
@@ -428,6 +428,294 @@ const SectionHeader = ({ title, description }) => (
   </div>
 );
 
+// 3D Globe Component with Countries and Water
+const Globe3D = ({ activeSlide }) => {
+  const globeRef = useRef(null);
+  const [isRotating, setIsRotating] = useState(true);
+
+  // Handle animation for the globe
+  useEffect(() => {
+    if (!globeRef.current) return;
+
+    // Reset animation when slide changes
+    const globe = globeRef.current;
+    globe.style.animation = "none";
+    setTimeout(() => {
+      globe.style.animation = isRotating ? "spin 20s linear infinite" : "none";
+    }, 10);
+
+    return () => {
+      if (globe) globe.style.animation = "none";
+    };
+  }, [activeSlide, isRotating]);
+
+  return (
+    <div
+      className="relative w-full h-full flex items-center justify-center"
+      onClick={() => setIsRotating(!isRotating)}
+    >
+      {/* Ambient glow effect */}
+      <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-blue-500/10 animate-pulse"></div>
+
+      {/* Globe container */}
+      <div className="relative w-52 h-52 md:w-64 md:h-64">
+        {/* Earth sphere - Ocean base */}
+        <div
+          ref={globeRef}
+          className="absolute inset-0 rounded-full shadow-2xl earth-globe"
+        >
+          {/* Ocean layer */}
+          <div className="absolute inset-0 rounded-full ocean-layer"></div>
+
+          {/* Continents */}
+          <div className="absolute inset-0 rounded-full continents-layer">
+            {/* North America */}
+            <div className="continent north-america"></div>
+
+            {/* South America */}
+            <div className="continent south-america"></div>
+
+            {/* Europe */}
+            <div className="continent europe"></div>
+
+            {/* Africa */}
+            <div className="continent africa"></div>
+
+            {/* Asia */}
+            <div className="continent asia"></div>
+
+            {/* Australia */}
+            <div className="continent australia"></div>
+
+            {/* Antarctica */}
+            <div className="continent antarctica"></div>
+          </div>
+
+          {/* Cloud layer - subtle cloud patterns */}
+          <div className="absolute inset-0 rounded-full clouds-layer"></div>
+
+          {/* Grid lines */}
+          <div className="absolute inset-0 rounded-full grid-lines">
+            {/* Longitude lines */}
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={`long-${i}`}
+                className="absolute inset-0 rounded-full longitude-line"
+                style={{ transform: `rotateY(${i * 15}deg)` }}
+              ></div>
+            ))}
+
+            {/* Latitude lines */}
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={`lat-${i}`}
+                className="absolute inset-0 rounded-full latitude-line"
+                style={{ transform: `rotateX(${i * 30}deg)` }}
+              ></div>
+            ))}
+          </div>
+
+          {/* Highlight for Georgia */}
+          <div
+            className="absolute w-2 h-2 bg-red-500 rounded-full georgia-marker"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+
+          {/* Atmosphere glow */}
+          <div className="absolute inset-0 rounded-full atmosphere-glow"></div>
+        </div>
+
+        {/* Active point indicator */}
+        <div className="absolute flex items-center pointer-events-none georgia-pointer">
+          <div className="bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-medium text-red-500 shadow-lg">
+            Georgia
+          </div>
+          <div className="w-8 h-px bg-red-500"></div>
+        </div>
+      </div>
+
+      {/* Click to interact hint */}
+      <div className="absolute bottom-1 left-0 right-0 text-center">
+        <p className="text-xs text-gray-400">
+          Click globe to {isRotating ? "pause" : "resume"}
+        </p>
+      </div>
+
+      {/* CSS for the realistic globe */}
+      <style jsx="true">{`
+        @keyframes spin {
+          0% {
+            transform: rotateY(0) rotateX(23deg);
+          }
+          100% {
+            transform: rotateY(360deg) rotateX(23deg);
+          }
+        }
+
+        .earth-globe {
+          transform-style: preserve-3d;
+          transform: rotateX(23deg);
+          animation: spin 20s linear infinite;
+          box-shadow: 0 0 50px 5px rgba(59, 130, 246, 0.2);
+        }
+
+        .ocean-layer {
+          background: radial-gradient(circle at 30% 30%, 
+            rgba(32, 156, 255, 1) 0%, 
+            rgba(17, 106, 204, 1) 70%, 
+            rgba(6, 57, 114, 1) 100%);
+        }
+
+        .continents-layer {
+          transform-style: preserve-3d;
+        }
+
+        .continent {
+          position: absolute;
+          background-color: rgba(62, 142, 65, 0.8);
+          box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+          border-radius: 40%;
+        }
+
+        .north-america {
+          width: 28%;
+          height: 28%;
+          top: 15%;
+          left: 12%;
+          clip-path: polygon(
+            30% 0%, 70% 10%, 100% 40%, 90% 70%, 60% 100%, 
+            30% 90%, 10% 50%, 0% 30%, 10% 10%
+          );
+        }
+
+        .south-america {
+          width: 14%;
+          height: 24%;
+          top: 48%;
+          left: 26%;
+          clip-path: polygon(
+            30% 0%, 70% 0%, 100% 30%, 90% 70%, 50% 100%, 
+            20% 85%, 0% 50%, 10% 20%
+          );
+        }
+
+        .europe {
+          width: 15%;
+          height: 15%;
+          top: 20%;
+          left: 48%;
+          clip-path: polygon(
+            0% 30%, 30% 0%, 70% 10%, 100% 30%, 90% 70%,
+            65% 85%, 40% 100%, 10% 90%, 0% 60%
+          );
+        }
+
+        .africa {
+          width: 22%;
+          height: 28%;
+          top: 37%;
+          left: 46%;
+          clip-path: polygon(
+            30% 0%, 70% 0%, 95% 25%, 100% 60%, 75% 90%,
+            50% 100%, 25% 85%, 0% 50%, 10% 20%
+          );
+        }
+
+        .asia {
+          width: 36%;
+          height: 32%;
+          top: 15%;
+          left: 58%;
+          clip-path: polygon(
+            10% 30%, 30% 10%, 60% 0%, 90% 20%, 100% 50%,
+            85% 80%, 60% 100%, 30% 85%, 0% 60%
+          );
+        }
+
+        .australia {
+          width: 16%;
+          height: 14%;
+          top: 60%;
+          left: 78%;
+          clip-path: polygon(
+            20% 0%, 80% 10%, 100% 40%, 90% 80%, 60% 100%,
+            20% 90%, 0% 60%, 10% 20%
+          );
+        }
+
+        .antarctica {
+          width: 24%;
+          height: 10%;
+          bottom: 5%;
+          left: 38%;
+          clip-path: polygon(
+            10% 0%, 90% 0%, 100% 60%, 75% 100%, 25% 100%, 0% 60%
+          );
+          background-color: rgba(240, 240, 250, 0.9);
+        }
+
+        .clouds-layer {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffffff' fill-opacity='0.15' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0z'%3E%3C/path%3E%3C/svg%3E");
+          opacity: 0.3;
+        }
+
+        .grid-lines {
+          transform-style: preserve-3d;
+        }
+
+        .longitude-line,
+        .latitude-line {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transform-style: preserve-3d;
+        }
+
+        .georgia-marker {
+          top: 32%;
+          left: 54%;
+          animation: pulse 2s infinite;
+        }
+
+        .georgia-pointer {
+          top: 22%;
+          right: 10%;
+        }
+
+        .atmosphere-glow {
+          box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.3);
+          opacity: 0.5;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          70% {
+            transform: scale(2.5);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 0;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .north-america,
+          .south-america,
+          .europe,
+          .africa,
+          .asia,
+          .australia,
+          .antarctica {
+            transform: scale(0.85);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 const Home = () => {
   // State declarations
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -468,12 +756,6 @@ const Home = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   const goToNextSlide = () =>
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-
-  // Auto carousel effect
-  // useEffect(() => {
-  //   const interval = setInterval(goToNextSlide, 20000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   // Component: Carousel Dots
   const CarouselDots = () => (
@@ -985,11 +1267,12 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section with Carousel - Fixed z-index and positioning */}
+      {/* Hero Section with Carousel */}
       <div
         ref={heroSectionRef}
-        className="relative min-h-[600px] z-0"
+        className="relative z-0"
         style={{
+          height: "450px", // Fixed height of 450px
           paddingTop: "0px", // Will be set dynamically by useEffect
         }}
       >
@@ -1000,7 +1283,7 @@ const Home = () => {
               currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 h-full">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
               <div className="flex flex-col md:flex-row items-center justify-between h-full">
                 {/* Content side - more space to the left */}
                 <div className="md:w-5/12 lg:w-5/12 md:pr-4">
@@ -1105,25 +1388,43 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Image side - shifted to the right with more space */}
-                <div className="md:w-6/12 lg:w-6/12 flex justify-end mt-6 md:mt-0">
-                  <div className="bg-white p-4 rounded-lg shadow-md max-w-md w-full aspect-square flex items-center justify-center">
-                    <div className={slide.image.containerClass || ""}>
-                      <img
-                        src={slide.image.src}
-                        alt={slide.image.alt}
-                        className={`${
-                          // Make images larger based on slide type
-                          index === 0
-                            ? "w-48 h-48 md:w-56 md:h-56"
-                            : "w-full h-full object-cover rounded-lg"
-                        } transition-transform duration-500 hover:scale-105`}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = slide.image.fallbackSrc;
-                        }}
-                      />
+                {/* 3D Globe Side - Replaced previous image section */}
+                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-6 md:mt-0">
+                  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg shadow-lg max-w-md w-full aspect-square flex items-center justify-center overflow-hidden">
+                    {/* Interactive 3D Globe */}
+                    <Globe3D activeSlide={currentSlide} />
+
+                    {/* Additional decorative elements */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-blue-400/10 rounded-full blur-xl"></div>
+                      <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-red-400/10 rounded-full blur-xl"></div>
                     </div>
+
+                    {/* Slide-specific labels */}
+                    {index === 0 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          Your Future Awaits in Georgia
+                        </span>
+                      </div>
+                    )}
+                    {index === 1 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          12+ NMC Approved Universities
+                        </span>
+                      </div>
+                    )}
+                    {index === 2 && (
+                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                          Global Recognition
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1131,7 +1432,7 @@ const Home = () => {
           </div>
         ))}
 
-        {/* Navigation Controls - Positioned further to the sides */}
+        {/* Navigation Controls */}
         <button
           onClick={goToPrevSlide}
           className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all"

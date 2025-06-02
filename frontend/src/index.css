@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.standard-hero-height {
+  height: 450px;
+}
+
+.standard-hero-height {
+  @apply bg-gray-900;
+}
