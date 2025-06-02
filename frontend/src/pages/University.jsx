@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import UniversityCard from "../components/UniversityCard";
 import university1Logo from "../assets/Caucasus_University.jpg";
 import university2Logo from "../assets/TSM_University.jpeg";
@@ -115,6 +116,7 @@ export default function University() {
   const [active, setActive] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredUniversities, setFilteredUniversities] = useState(universities);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSearch = () => {
     const updatedUniversities = universities.filter((university) => {
@@ -155,8 +157,8 @@ export default function University() {
         : "bg-gray-400 text-white hover:bg-gray-500"
     }`;
 
-  const handleCardClick = (path) => {
-    window.location.href = path;
+  const handleCardClick = (name) => {
+    navigate(`/university-detail?name=${encodeURIComponent(name)}`); // Navigate to detail page with query parameter
   };
 
   return (
@@ -264,7 +266,7 @@ export default function University() {
                   year={university.year}
                   type={university.type}
                   highlights={university.highlights}
-                  onClick={() => handleCardClick(university.path)}
+                  onClick={() => handleCardClick(university.name)} // Pass university name
                 />
               ))}
             </div>
