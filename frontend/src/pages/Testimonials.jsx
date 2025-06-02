@@ -6,7 +6,7 @@ const Testimonials = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="relative w-full h-[600px]">
+      <header className="relative w-full h-[450px]">
         {/* Background Image with reduced brightness */}
         <img
           src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Georgia_Weather_in_April_01dbeac399.webp"

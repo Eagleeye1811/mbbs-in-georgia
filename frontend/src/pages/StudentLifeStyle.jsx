@@ -8,7 +8,7 @@ const StudentLifeStyle = () => {
   return (
     <>
       {/* Header Section */}
-      <div className="relative h-[600px] mb-8">
+      <div className="relative h-[450px] mb-8">
         <img
           src="https://i.iheart.com/v3/re/assets.getty/60623a3aec85858a41dcf005?ops=contain(1480,0)"
           alt="Student's Life in Georgia"
@@ -381,6 +381,23 @@ const StudentLifeStyle = () => {
               </svg>
             </button>
           </Link>
+        </div>
+      </div>
+
+      {/* New Hero Image Section */}
+      <div 
+        className="w-full bg-cover bg-center relative" 
+        style={{
+          backgroundImage: "url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+          height: "450px" // Fixed height of 450px
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
+          {/* Content remains unchanged */}
         </div>
       </div>
     </>

@@ -91,16 +91,19 @@ function Faq() {
   
   return (
     <div className="min-h-screen bg-gray-50 py-0">
-      {/* Redesigned Hero Section */}
-      <div className="bg-[#272e3f] text-white py-20 mb-8 relative overflow-hidden">
+      {/* Hero Section with standardized 450px height */}
+      <div 
+        className="bg-[#272e3f] text-white relative overflow-hidden" 
+        style={{ height: "450px" }}
+      >
         {/* Background elements */}
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-red-500/10 to-transparent"></div>
           <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/10 to-transparent"></div>
         </div>
         
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="container mx-auto px-4 max-w-5xl relative z-10 h-full flex items-center">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full">
             <div className="md:w-3/5 mb-8 md:mb-0 md:pr-8">
               <h1 className="text-5xl font-bold mb-4">
                 <span className="text-white">Frequently Asked</span> <br />
@@ -162,7 +165,7 @@ function Faq() {
       </div>
 
       {/* FAQ Content */}
-      <div className="faq-section container mx-auto px-4">
+      <div className="faq-section container mx-auto px-4 mt-8">
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8 mb-12">
           <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">Find Answers</h2>
           <p className="text-[#ff5a5f] font-semibold text-center mb-8">
