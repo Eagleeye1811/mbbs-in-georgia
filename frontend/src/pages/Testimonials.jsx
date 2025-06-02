@@ -11,29 +11,28 @@ const Testimonials = () => {
         <img
           src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Georgia_Weather_in_April_01dbeac399.webp"
           alt="Education Globe"
-          className="w-full h-full object-cover brightness-60" // Changed from brightness-90 to brightness-50
+          className="w-full h-full object-cover brightness-60"
         />
-        {/* Overlay with darker gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center justify-end text-right px-20">
+        {/* Overlay with darker gradient - Updated flex alignment */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center px-20">
           <div className="max-w-2xl space-y-6">
             <h1 className="text-white text-6xl font-bold font-serif mb-4 drop-shadow-lg">
               Real Stories <br /> 
-              <span className="text-red-500">from Georgia</span>
+              <span className="text-red-400">from Georgia</span>
             </h1>
             <p className="text-white text-xl font-semibold leading-relaxed drop-shadow-md">
               Join thousands of Indian students transforming their dreams into global success stories — start your journey in Georgia today.
             </p>
-            <div className="flex justify-end space-x-4 mt-8">
-              <div className="text-right">
+            <div className="flex space-x-4 mt-8">
+              <div>
                 <p className="text-white text-4xl font-bold">500+</p>
-                <p className="text-red-600 font-medium">Success Stories</p>
+                <p className="text-red-400 font-medium">Success Stories</p>
               </div>
-              <div className="text-right">
+              <div>
                 <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-600 font-medium">Student Satisfaction</p>
+                <p className="text-red-400 font-medium">Student Satisfaction</p>
               </div>
             </div>
-            
           </div>
         </div>
       </header>
@@ -176,9 +175,9 @@ const Testimonials = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl 
+                className="group bg-gray-300 p-6 rounded-xl shadow-lg hover:shadow-2xl 
                 transition-all duration-700 transform hover:-translate-y-2 
-                hover:bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 
+                hover:bg-gradient-to-br from-gray-50 via-gray-100 to-purple-100 
                 animate-fade-in-up cursor-pointer"
                 style={{
                   animationDelay: `${index * 200}ms`,
@@ -194,7 +193,7 @@ const Testimonials = () => {
                       transform group-hover:scale-110 transition-all duration-700 
                       group-hover:rotate-6"
                     />
-                    <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-1.5 
+                    <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-gray-600 to-purple-600 rounded-full p-1.5 
                       transform group-hover:scale-110 transition-all duration-500">
                       <svg 
                         className="w-3.5 h-3.5 text-white"
@@ -219,9 +218,9 @@ const Testimonials = () => {
                 <blockquote className="relative mt-6 transform transition-all duration-500 
                   group-hover:translate-x-2">
                   <svg
-                    className="absolute -top-2 -left-2 h-8 w-8 text-indigo-200 
+                    className="absolute -top-2 -left-2 h-8 w-8 text-gray-300 
                     transform -translate-x-2 -translate-y-2 
-                    group-hover:text-purple-300 transition-colors duration-500 
+                    group-hover:text-purple-200 transition-colors duration-500 
                     group-hover:rotate-12"
                     fill="currentColor"
                     viewBox="0 0 32 32"

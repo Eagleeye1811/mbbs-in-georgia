@@ -44,10 +44,10 @@ const StudentLifeStyle = () => {
         </div>
       </div>
 
-      {/* Main Content Section (With Padding and Centered) */}
-      <div className="w-full max-w-5xl mx-auto p-5 space-y-24"> {/* Changed space-y-8 to space-y-24 for more uniform spacing */}
+      {/* Main Content Section - Update spacing */}
+      <div className="w-full max-w-5xl mx-auto p-5 space-y-16"> {/* Changed space-y-24 to space-y-16 for more uniform spacing */}
         {/* Campus Features Section - Update the wrapper div */}
-        <div className="py-20 px-4 bg-gradient-to-br from-white via-gray-100 to-white rounded-3xl">
+        <div className="py-20 px-4 bg-gradient-to-br from-white via-gray-200 to-white rounded-3xl">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4">
               <span className="text-gray-800">Campus </span>
@@ -228,7 +228,7 @@ const StudentLifeStyle = () => {
         </div>
 
         {/* Student's Lifestyle Section - Update the wrapper div */}
-        <div className="space-y-12 py-8"> {/* Changed space-y-8 to space-y-12 */}
+        <div className="space-y-12 py-8">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
               <span className="text-gray-800">Student's </span>
@@ -236,27 +236,38 @@ const StudentLifeStyle = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Update grid columns here */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 src: "https://doingmoretoday.com/app/uploads/2021/12/UGA-3-edit.jpg",
                 alt: "Campus Life",
-                title: "Campus Activities"
+                title: "Campus life"
               },
               {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkQK8VkfQclD8YZQ4l1R7iKZwCOXKzhwRzMw&s",
+                src: "https://www.ajc.com/resizer/v2/SXVE5S7YJK5GXRR2ETHO3VJNCY.jpg?auth=9f5959b0cf82b75205094e3b11c45c1e3c9e9a248446dc106d1949dda69edc04&width=790&height=440&smart=true",
                 alt: "Student Events",
-                title: "Social Events"
+                title: "Advanced classes"
               },
               {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDIj9GC5fHjPtTfOA8PX0mDEfWEzi5fkht2Q&s",
+                src: "https://admissionoffice.ge/wp-content/uploads/2020/05/Caucasus-University-Medicine-Student.jpg",
                 alt: "Academic Life",
                 title: "Academic Excellence"
               },
               {
-                src: "https://res.cloudinary.com/dv0jqjrc3/image/fetch/ar_1.48,c_fill,f_auto,q_auto,w_768/https://www.pulte.com/-/media/static-picturepark-assets/uncategorized/2024/09/30/13/15/422410-1--gacollege-lifestylewebjpg.jpg",
-                alt: "Student Housing",
-                title: "Modern Living"
+                src: "https://lcuniversity.edu/wp-content/uploads/2025/02/Wed11.jpg",
+                alt: "Campus Activities",
+                title: "Cultural Integration"
+              },
+              {
+                src: "https://outreach.uga.edu/wp-content/uploads/2025/04/Wight-Internship_Pulaski_Taylor-Regional-Hosp.jpg",
+                alt: "Cultural Events",
+                title: "Internship opportunities"
+              },
+              {
+                src: "https://www.ticketleap.au/wp-content/uploads/2024/01/62a8e9a50f19b73012512a91_college-students-hanging-out-on-campus.jpg",
+                alt: "Student Life",
+                title: "Campus Community"
               }
             ].map((item, index) => (
               <div 
@@ -286,8 +297,8 @@ const StudentLifeStyle = () => {
           </p>
         </div>
 
-        {/* Related Blogs Section - Update the wrapper div */}
-        <div className="space-y-12 py-8"> {/* Changed space-y-6 to space-y-12 */}
+        {/* Related Blogs Section - Update spacing */}
+        <div className="space-y-8 py-4"> {/* Changed from space-y-12 py-8 */}
           {/* Section Header */}
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
@@ -361,10 +372,10 @@ const StudentLifeStyle = () => {
           </section>
         </div>
 
-        {/* CTA Button - Add padding */}
-        <div className= "flex justify-center py-8">
+        {/* CTA Button - Reduce padding */}
+        <div className="flex justify-center py-4"> {/* Changed from py-8 */}
           <Link to="/testimonials">
-            <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-500 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <span className="text-lg font-medium">Read More</span>
               <svg 
                 className="w-6 h-6 transform rotate-90 group-hover:translate-x-1 transition-transform" 
