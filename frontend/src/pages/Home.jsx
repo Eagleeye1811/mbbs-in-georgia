@@ -1211,7 +1211,7 @@ const Home = () => {
           <div className="flex justify-center mt-12">
             <Link
               to="/Universities"
-              className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white  font-bold rounded-lg hover:bg-red-600 transition shadow-lg"
               onClick={() => window.scrollTo(0, 0)}
             >
               Compare Universities
