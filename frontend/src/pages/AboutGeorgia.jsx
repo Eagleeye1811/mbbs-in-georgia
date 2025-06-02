@@ -182,11 +182,10 @@ const AboutGeorgia = () => {
         <h2 className="text-3xl font-extrabold mb-6 text-left text-gray-800 tracking-wide">Tbilisi</h2>
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex-1">
-            <p>
+            <p className="text-justify">
               the capital and largest city of Georgia, is nestled in the South Caucasus region, where the continents of Europe and Asia converge. Strategically located on the banks of the Kura River and encircled by scenic hills and mountains, Tbilisi enjoys a dramatic natural setting that enhances its timeless appeal. The city’s origin dates back to the 5th century when it was founded by King Vakhtang I Gorgasali, who is considered one of the most revered figures in Georgian history. Over the centuries, Tbilisi has been a significant crossroads of trade and culture, and its location made it a target for various empires. As a result, the city has experienced periods of rule by the Persians, Arabs, Mongols, Ottomans, and Russians, each leaving their mark on its identity, culture, and infrastructure.
-
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               Tbilisi’s rich history is reflected in its diverse architecture and culture, blending Eastern and Western styles. The city features ancient Orthodox churches, medieval fortresses, Art Nouveau buildings, Soviet-era blocks, and modern landmarks like the Bridge of Peace. 
             </p>
           </div>
@@ -262,7 +261,7 @@ const AboutGeorgia = () => {
             </div>
           </div>
         </div>
-        <p className="mt-4">
+        <p className="mt-4 text-justify">
           Today, Tbilisi stands as a vibrant cultural hub and cosmopolitan center in the region. It is home to numerous theaters, art galleries, museums, and cultural festivals that celebrate both its national heritage and its global connections. The city's nightlife is lively and diverse, with a mix of traditional Georgian taverns and trendy clubs that cater to a growing international audience. Food and wine are integral to the city’s identity—Georgian cuisine is known for its bold flavors and warm hospitality, while the country’s wine tradition is among the oldest in the world. Its Old Town, with narrow streets, colorful balconies, and historic sulphur baths, highlights the city's mix of tradition and innovation, showcasing Tbilisi’s unique charm and resilience. 
         </p>
       </section>
@@ -401,12 +400,12 @@ const AboutGeorgia = () => {
                     style={{ minHeight: 220, maxHeight: 260 }}
                   />
                   <div className="flex-1 flex items-center justify-center p-4">
-                    <h3 className={`text-xl font-bold text-center ${place.color}`}>{place.title}</h3>
+                    <h3 className={`text-xl font-bold text-justify ${place.color}`}>{place.title}</h3>
                   </div>
                 </div>
                 {/* Back Side */}
                 <div className="absolute w-full h-full backface-hidden bg-gray-500 rounded-2xl shadow-md transform rotate-y-180 p-6 flex items-center justify-center">
-                  <h3 className="text-base text-center text-white">{place.desc}</h3>
+                  <h3 className="text-base text-white text-justify">{place.desc}</h3>
                 </div>
               </div>
             </div>
@@ -416,7 +415,7 @@ const AboutGeorgia = () => {
 
       {/* Why Visit Georgia */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-red-50 py-16 mt-10 text-center relative overflow-hidden">
-        <h2 className="text-5xl font-extrabold mb-10 text-gray-800 drop-shadow-lg tracking-tight">
+        <h2 className="text-5xl font-extrabold mb-10 text-gray-800 ">
           Why <span className="text-red-500">Georgia?</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-12 px-4">
@@ -492,7 +491,7 @@ const AboutGeorgia = () => {
           href="/HowToApply"
           className="inline-block mt-4 px-10 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
         >
-          Start Your Georgian <span className="text-gray-900">Journey</span>
+          Start Your Georgian Journey
           <Plane className="inline-block ml-2 mb-1 w-6 h-6 text-gray-900 animate-none" />
         </a>
       </section>
