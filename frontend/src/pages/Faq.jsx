@@ -85,42 +85,76 @@ function Faq() {
     setExpandedId(expandedId === id ? null : id);
   };
   
-  // Handler to navigate to the ContactUs page
   const handleContactClick = () => {
     navigate('/ContactUs');
   };
   
   return (
     <div className="min-h-screen bg-gray-50 py-0">
-      {/* Hero Section with Navy Header like the image */}
-      <div className="bg-[#272e3f] text-white py-16 mb-8 relative overflow-hidden">
-        {/* Simpler background without pattern */}
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Everything you need to know about studying MBBS in Georgia
-            </p>
-          </div>
-          
-          <div className="flex justify-center mt-8">
-            {/* Enhanced Question Mark Icon */}
-            <div className="relative">
-              <div className="bg-white rounded-full p-4 w-36 h-36 flex items-center justify-center shadow-lg">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-400 to-red-600 opacity-20 animate-pulse"></div>
-                <div className="z-10 flex items-center justify-center">
-                  <i className="bx bx-question-mark text-7xl text-red-500 animate-bounce"></i>
+      {/* Redesigned Hero Section */}
+      <div className="bg-[#272e3f] text-white py-20 mb-8 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-red-500/10 to-transparent"></div>
+          <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/10 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="md:w-3/5 mb-8 md:mb-0 md:pr-8">
+              <h1 className="text-5xl font-bold mb-4">
+                <span className="text-white">Frequently Asked</span> <br />
+                <span className="text-[#ff5a5f]">Questions</span>
+              </h1>
+              <p className="text-xl text-gray-300 max-w-2xl">
+                Everything you need to know about studying MBBS in Georgia
+              </p>
+              
+              <div className="mt-8 flex space-x-4">
+                <button 
+                  className="bg-[#ff5a5f] hover:bg-[#ff4146] text-white py-3 px-6 rounded-md font-medium transition-colors duration-300 flex items-center"
+                  onClick={handleContactClick}
+                >
+                  <i className="bx bx-conversation mr-2"></i>
+                  Ask a Question
+                </button>
+                <button 
+                  className="bg-transparent border border-white hover:bg-white/10 text-white py-3 px-6 rounded-md font-medium transition-colors duration-300 flex items-center"
+                  onClick={() => document.querySelector('.faq-section').scrollIntoView({ behavior: 'smooth' })}
+                >
+                  <i className="bx bx-chevron-down mr-2"></i>
+                  Browse FAQs
+                </button>
+              </div>
+            </div>
+            
+            {/* Right side decorative elements */}
+            <div className="md:w-2/5">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
+                  <div className="flex items-center">
+                    <i className="bx bxs-certification text-[#ff5a5f] text-3xl mr-3"></i>
+                    <span className="font-medium text-lg">NMC Approved</span>
+                  </div>
                 </div>
-              </div>
-              {/* Small decorative elements */}
-              <div className="absolute -top-2 -right-2 bg-yellow-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md">
-                <i className="bx bx-bulb text-white text-lg"></i>
-              </div>
-              <div className="absolute -bottom-2 -left-2 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md">
-                <i className="bx bx-book-open text-white text-lg"></i>
-              </div>
-              <div className="absolute -top-2 -left-10 bg-green-500 rounded-full w-6 h-6 flex items-center justify-center shadow-md">
-                <i className="bx bx-check text-white text-sm"></i>
+                <div className="bg-white/10 rounded-xl p-5 backdrop-blur-sm mt-6">
+                  <div className="flex items-center">
+                    <i className="bx bx-money-withdraw text-[#ff5a5f] text-3xl mr-3"></i>
+                    <span className="font-medium text-lg">Affordable</span>
+                  </div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-5 backdrop-blur-sm">
+                  <div className="flex items-center">
+                    <i className="bx bx-globe text-[#ff5a5f] text-3xl mr-3"></i>
+                    <span className="font-medium text-lg">Global Recognition</span>
+                  </div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-5 backdrop-blur-sm mt-6">
+                  <div className="flex items-center">
+                    <i className="bx bx-shield-quarter text-[#ff5a5f] text-3xl mr-3"></i>
+                    <span className="font-medium text-lg">Safe Environment</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -128,10 +162,10 @@ function Faq() {
       </div>
 
       {/* FAQ Content */}
-      <div className="container mx-auto px-4">
+      <div className="faq-section container mx-auto px-4">
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8 mb-12">
           <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">Find Answers</h2>
-          <p className="text-red-500 font-semibold text-center mb-8">
+          <p className="text-[#ff5a5f] font-semibold text-center mb-8">
             Common questions about MBBS in Georgia
           </p>
           
@@ -148,17 +182,16 @@ function Faq() {
             ))}
           </div>
 
-          {/* Contact Section - Updated button with onClick handler */}
+          {/* Contact Section */}
           <div className="mt-12 text-center">
             <p className="mb-4">Still have query?</p>
            
             <button 
-              className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-md font-medium transition-colors duration-300"
+              className="bg-[#ff5a5f] hover:bg-[#ff4146] text-white py-2 px-6 rounded-md font-medium transition-colors duration-300"
               onClick={handleContactClick}
             >
               Contact Our Counselors
             </button>
-            
           </div>
         </div>
       </div>
