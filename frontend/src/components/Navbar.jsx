@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#232a36] w-full shadow fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-[#232a36] w-full shadow ">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo with hover effect */}
@@ -137,7 +137,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Items */}
         {menuOpen && (
-          <div className="lg:hidden flex flex-col gap-1 py-3 bg-[#232a36]">
+          <div className="lg:hidden flex flex-col gap-1 py-3 ">
             {navItems.map((item) => (
               <button
                 key={item.name}
