@@ -85,7 +85,7 @@ const universities = [
   },
   {
     image: university8Logo,
-    name: "International Black Sea University",
+    name: "International Black Sea University (IBSU)",
     location: "Tbilisi, Georgia",
     year: 1995,
     type: "Private",
@@ -94,7 +94,7 @@ const universities = [
   },
   {
     image: university9Logo,
-    name: "Georgian National University SEU",
+    name: "Akaki Tsereteli State University (ATSU)",
     location: "Tbilisi, Georgia",
     year: 2001,
     type: "Private",
@@ -103,11 +103,11 @@ const universities = [
   },
   {
     image: university10Logo,
-    name: "Petre Shotadze Tbilisi Medical Academy",
+    name: "Geomedi Medical University",
     location: "Tbilisi, Georgia",
     year: 1992,
     type: "Private",
-    path: "/universities/petre-shotadze-tbilisi-medical-academy",
+    path: "/universities/geomedi-medical-university",
     highlights: ["Medical Excellence", "Affordable Tuition", "Experienced Faculty", "Focus on Practical Training"],
   },
 ];

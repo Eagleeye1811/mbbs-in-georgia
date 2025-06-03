@@ -1,20 +1,74 @@
 [
     {
-      "image": "https://www.tsmu.edu/logo.png",
+      "image": "/src/assets/alte_image_1.webp",
       "name": "Tbilisi State Medical University",
       "location": "Tbilisi, Georgia",
-      "established_year": 1918,
+      "logo": "/src/assets/Tbilisi_logo.png",
+      "established_year": 1930,
       "type": "Public",
-      "overview": "The largest and most prestigious medical university in Georgia, renowned for its international MBBS program and modern research facilities.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG", "WFME", "FAIMER"],
-      "ranking": {"national": 1, "world": 4650},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Pharmacy", "Nursing", "Public Health"],
+      "overview": [
+        "Tbilisi State Medical University (TSMU), founded in 1918, is the oldest and largest medical university in Georgia and the Caucasus region. With over a century of history, TSMU is renowned for its academic excellence, advanced research, and comprehensive medical training. The university has produced more than 40,000 doctors and healthcare professionals, many of whom serve in leading positions worldwide. TSMU offers a wide range of undergraduate, graduate, and doctoral programs in medicine, dentistry, pharmacy, and allied health sciences. The university boasts modern infrastructure, including state-of-the-art laboratories, simulation centers, and partnerships with top hospitals for clinical training.",
+      "TSMU is highly regarded for its international outlook, attracting students from over 70 countries. Its degrees are recognized globally, enabling graduates to pursue medical careers or further studies in countries such as the US, UK, India, and throughout Europe. The university’s commitment to affordable education, multicultural environment, and strong academic support makes it a preferred destination for aspiring doctors."],
+        "whyChoose": [
+          "International Recognition: TSMU is recognized by the World Health Organization (WHO), National Medical Commission (NMC, India), Educational Commission for Foreign Medical Graduates (ECFMG, USA), World Federation for Medical Education (WFME), and FAIMER. Its degrees are globally accepted, allowing graduates to practice medicine worldwide after meeting local requirements.",
+          "Affordable Tuition and Living Costs: Compared to Western Europe and North America, TSMU offers high-quality education at a fraction of the cost, making it accessible to students from diverse backgrounds.",
+          "Modern Infrastructure: The university features recently renovated campuses, advanced laboratories, simulation centers, and digital libraries, providing students with the latest tools for medical education.",
+          "Experienced Faculty: TSMU’s faculty includes highly qualified professors and researchers, many with international experience, ensuring students receive world-class instruction.",
+          "Diverse Student Body: With 25–26% international students, TSMU offers a multicultural environment and support services, including language courses and cultural integration activities.",
+          "Comprehensive Clinical Training: Students gain hands-on experience in leading hospitals and clinics across Georgia, preparing them for real-world medical practice.",
+          "Strategic Location: Located in Tbilisi, Georgia’s vibrant and safe capital, students enjoy a welcoming atmosphere, affordable living, and rich cultural opportunities.",
+          "Strong Research Focus: TSMU is dedicated to medical research and innovation, offering students opportunities to participate in research projects and conferences."
+        ],
+      "recognition_accreditation": [
+    "World Health Organization (WHO)",
+    "National Medical Commission (NMC, India)",
+    "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+    "World Federation for Medical Education (WFME)",
+    "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+    "Ministry of Education and Science of Georgia"
+  ],
+      "ranking": {"national": 8, "world": 6397},
+      "programs_offered": [
+    "Medicine (MBBS/MD)",
+    "Dentistry",
+    "Pharmacy",
+    "Public Health",
+    "Physical Medicine and Rehabilitation",
+    "Nursing",
+    "Medical Devices Technician",
+    "Pharmacy Technician",
+    "Postgraduate and Doctoral Programs"
+  ],
       "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 6000, "gel": 18000},
-      "hostel_fee": {"usd": 3200},
-      "facilities": ["Modern labs", "University hospital", "Library", "Hostel", "Sports complex"],
-      "affiliated_hospitals": ["TSMU University Clinic", "Tbilisi Central Hospital"],
-      "admission_requirements": "High school diploma with science subjects; NEET (for Indian students); English proficiency.",
+      "annual_tuition_fee": {
+        "mbbs": "USD 8,000 per year"
+      },
+     "hostel_fee": "USD 3,200 per year (includes meals and facilities)",
+      "facilities": [
+    "Modern classrooms and lecture halls",
+    "State-of-the-art laboratories",
+    "Clinical Skills and Simulation Center",
+    "Research Center of Human Genome and Epigenome",
+    "Digital and traditional libraries",
+    "Student hostels with international cuisine",
+    "Sports and recreation facilities",
+    "Cafeteria and canteen",
+    "Student organizations and clubs"
+  ],
+  "affiliated_hospitals": [
+    "TSMU University Clinic",
+    "Tbilisi Central Hospital",
+    "Partner hospitals across Tbilisi for clinical rotations"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
+    "Application form and supporting documents",
+    "Interview or entrance exam (if required)"
+  ],
       "contact_info": {
         "website": "https://www.tsmu.edu",
         "email": "info@tsmu.edu",
@@ -25,18 +79,84 @@
       "image": "https://www.cu.edu.ge/logo.png",
       "name": "Caucasus University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/CU_logo.jpeg",
       "established_year": 2004,
       "type": "Private",
-      "overview": "A leading private university in Georgia, offering a modern MBBS program and a variety of health science courses with international standards.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
-      "ranking": {"national": 7, "world": 6500},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Pharmacy", "Business", "Law"],
+      "overview": ["Caucasus University (CU), established in 2004 in Tbilisi, Georgia, is one of the country’s leading private institutions of higher education. It is housed in a historic building with modern infrastructure, making it one of the largest and most advanced campuses in Georgia and the Southern Caucasus. Originally growing out of the Caucasus School of Business (founded in 1998 with Georgia State University, USA), CU has expanded into a multidisciplinary university offering undergraduate, graduate, and doctoral programs across a wide range of fields, including Medicine, Business, Law, Technology, Social Sciences, and more.CU is recognized for its high academic standards, innovative teaching methods, and strong international connections.",
+      " The university is committed to providing a multicultural environment, fostering research, critical thinking, and practical skills, and preparing students for global careers. With state-of-the-art facilities, a vibrant student life, and a faculty composed of highly qualified professionals (many with international experience), CU offers a dynamic and supportive learning environment."],
+      "whyChoose":[
+"Modern Campus & Facilities: CU boasts a recently renovated, historic campus with modern classrooms, laboratories, libraries, sports facilities, and on-campus housing.",
+
+"International Recognition: The university is officially recognized by the National Center for Educational Quality Enhancement of Georgia and offers globally recognized degrees.",
+
+"Diverse Programs: CU provides a broad spectrum of programs in Medicine, Business, Law, IT, Social Sciences, and more, including double-degree programs with prestigious international universities.",
+
+"Global Opportunities: Students benefit from international exchange programs, internships, and partnerships with universities in the USA, France, and Germany.",
+
+"Multicultural Environment: CU has a vibrant international student community and encourages participation in extracurricular activities, research, and student clubs.",
+
+"Career Support: The university maintains strong ties with the business community and offers career development services to support students’ transition into the workforce.",
+
+"Selective Admissions: CU maintains high academic standards with a selective admission process, ensuring a quality peer group.",
+
+"Affordable Tuition Competitive tuition and living costs make CU an attractive option for international students"],
+
+      "recognition_accreditation": [
+        "National Center for Educational Quality Enhancement (Georgia)",
+        "WHO (for medical programs)",
+        "NMC (for medical programs)",
+        "ECFMG (for medical programs)",
+        "TEDQUAL (World Tourism Organization, for tourism programs)"
+      ],
+      "ranking": {
+        "national": "Top 10",
+        "world": "UniRank: 1,000-1,999 students; small-sized institution"
+      },
+      "programs_offered": [
+    "Medicine (MD/MBBS)",
+    "Dentistry",
+    "Business Administration (BBA/MBA)",
+    "Law (LLB/LLM)",
+    "Economics",
+    "International Relations",
+    "Psychology",
+    "Architecture",
+    "Computer Science",
+    "Information Technology Management",
+    "Engineering",
+    "Marketing",
+    "Finance",
+    "Tourism and Hospitality Management",
+    "PhD programs in Economics, Management, Law, and more"
+  ],
       "medium_of_instruction": ["English", "Georgian"],
       "annual_tuition_fee": {"usd": 6500, "gel": 19500},
       "hostel_fee": {"usd": 2500},
-      "facilities": ["Labs", "Library", "Hostel", "Sports center"],
-      "affiliated_hospitals": ["Caucasus Medical Center"],
-      "admission_requirements": "High school diploma; English proficiency; NEET (for Indian students).",
+      "facilities": [
+        "Modern classrooms",
+        "State-of-the-art laboratories",
+        "Library",
+        "Computer labs",
+        "Sports facilities",
+        "Student lounges",
+        "On-campus residences",
+        "Cafeteria",
+        "Research centers",
+        "Conference and seminar rooms"
+      ],
+      "affiliated_hospitals":[
+        "CU Medical Center",
+        "Partner hospitals in Tbilisi for clinical training"
+      ],
+      "admission_requirements": [
+        "Valid passport",
+        "High school completion certificate (with Biology, Chemistry, Physics for Medicine/Dentistry)",
+        "English proficiency (IELTS 6.0+ or TOEFL 78+ for English programs)",
+        "NEET qualification (for Indian medical applicants)",
+        "Motivation letter",
+        "Interview and/or admission test",
+        "Minimum age: 17 years"
+      ],
       "contact_info": {
         "website": "https://www.cu.edu.ge",
         "email": "info@cu.edu.ge",
@@ -47,18 +167,71 @@
       "image": "https://www.tsmu.edu/logo.png",
       "name": "TSM University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/CU_logo.jpeg",
       "established_year": 1992,
       "type": "Private",
-      "overview": "TSM University is a private institution known for its MBBS and health sciences programs, focusing on practical medical education.",
+      "overview": ["Tbilisi State Medical University (TSMU), founded in 1918, is the oldest and largest medical university in Georgia and the Caucasus region. With a legacy of over a century, TSMU is renowned for its academic excellence, advanced research, and comprehensive medical training. The university has produced more than 40,000 doctors and healthcare professionals, many of whom serve in leading positions worldwide. TSMU offers a wide range of undergraduate, graduate, and doctoral programs in medicine, dentistry, pharmacy, and allied health sciences. The university boasts modern infrastructure, including state-of-the-art laboratories, simulation centers, and partnerships with top hospitals for clinical training.",
+
+"TSMU is highly regarded for its international outlook, attracting students from over 70 countries. Its degrees are recognized globally, enabling graduates to pursue medical careers or further studies in countries such as the US, UK, India, and throughout Europe. The university’s commitment to affordable education, multicultural environment, and strong academic support makes it a preferred destination for aspiring doctors"],
+  "whyChoose": [
+    "International Recognition: TSMU is recognized by the World Health Organization (WHO), National Medical Commission (NMC, India), Educational Commission for Foreign Medical Graduates (ECFMG, USA), World Federation for Medical Education (WFME), and FAIMER. Its degrees are globally accepted, allowing graduates to practice medicine worldwide after meeting local requirements.",
+    "Affordable Tuition and Living Costs: TSMU offers high-quality education at a fraction of the cost compared to Western Europe and North America, making it accessible to students from diverse backgrounds.",
+    "Modern Infrastructure: The university features recently renovated campuses, advanced laboratories, simulation centers, and digital libraries, providing students with the latest tools for medical education.",
+    "Experienced Faculty: TSMU’s faculty includes highly qualified professors and researchers, many with international experience, ensuring students receive world-class instruction.",
+    "Diverse Student Body: With over 26% international students, TSMU offers a multicultural environment and support services, including language courses and cultural integration activities.",
+    "Comprehensive Clinical Training: Students gain hands-on experience in leading hospitals and clinics across Georgia, preparing them for real-world medical practice.",
+    "Strategic Location: Located in Tbilisi, Georgia’s vibrant and safe capital, students enjoy a welcoming atmosphere, affordable living, and rich cultural opportunities.",
+    "Strong Research Focus: TSMU is dedicated to medical research and innovation, offering students opportunities to participate in research projects and conferences."
+  ],
+
+
       "recognition_accreditation": ["WHO", "NMC"],
-      "ranking": {"national": 15, "world": 9000},
-      "programs_offered": ["MBBS/MD", "Nursing", "Pharmacy"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5000, "gel": 15000},
-      "hostel_fee": {"usd": 2000},
-      "facilities": ["Labs", "Library", "Hostel"],
-      "affiliated_hospitals": ["TSM University Clinic"],
-      "admission_requirements": "High school diploma; English proficiency.",
+      "ranking": {"national": 6, "world": 6989},
+      "programs_offered": [
+        "Medicine (MBBS/MD, 6 years)",
+        "USMD (6 years)",
+        "Dentistry (5 years)",
+        "Pharmacy (4 years)",
+        "Physical Medicine and Rehabilitation (4 years)",
+        "Nursing",
+        "Medical Devices Technician",
+        "Pharmacy Technician",
+        "Postgraduate and Doctoral Programs"
+      ],
+      "medium_of_instruction": ["English", "Georgian", "Russian", "French"],
+      "annual_tuition_fee": {
+    "mbbs_md": "USD 8,000 per year",
+    "usmd": "USD 13,500 per year",
+    "dentistry": "USD 7,000 per year",
+    "pharmacy": "USD 3,500 per year",
+    "rehabilitation": "USD 3,000 per year"
+  },
+  "hostel_fee": "USD 3,200 per year (includes meals and facilities)",
+  "facilities": [
+    "Modern classrooms and lecture halls",
+    "State-of-the-art laboratories",
+    "Clinical Skills and Simulation Center",
+    "Research Center of Human Genome and Epigenome",
+    "Digital and traditional libraries",
+    "Student hostels with international cuisine",
+    "Sports and recreation facilities",
+    "Cafeteria and canteen",
+    "Student organizations and clubs"
+  ],
+  "affiliated_hospitals": [
+    "TSMU University Clinic",
+    "Tbilisi Central Hospital",
+    "6 university clinics and partner hospitals across Tbilisi for clinical rotations"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended for non-native speakers)",
+    "Application form and supporting documents",
+    "Interview or entrance exam (if required)"
+  ],
       "contact_info": {
         "website": "https://www.tsmu.edu",
         "email": "info@tsmu.edu",
@@ -69,18 +242,59 @@
       "image": "https://iliauni.edu.ge/logo.png",
       "name": "Ilia State University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/ISU_logo.jpeg",
       "established_year": 2006,
       "type": "Public",
-      "overview": "A top-ranked public research university offering innovative MBBS and science programs with a strong focus on research and internationalization.",
+      "overview": ["Ilia State University (ISU), established in 2006 in Tbilisi, is Georgia’s flagship public research university and the top-ranked higher education institution in the country according to Times Higher Education and SCImago Institutions Rankings. ISU emerged from the merger of six academic institutions, bringing together a rich legacy of research, innovation, and academic excellence. With over 16,000 students and 1,200+ staff, ISU is recognized for its integration of teaching and research, commitment to academic freedom, and the unity of liberal and specialized education.",
+
+"ISU’s School of Natural Sciences and Medicine offers a globally recognized 6-year Medicine (MD/MBBS) program, accredited by WHO, NMC, WFME, and ECFMG, ensuring that graduates are eligible for medical licensing and practice worldwide. The curriculum is comprehensive, blending theoretical knowledge with extensive practical and clinical training at more than nine partner hospitals and clinics in Tbilisi. ISU boasts state-of-the-art facilities, including advanced laboratories, simulation centers, and a technologically advanced library. The campus is vibrant, with extensive sports and recreational infrastructure, student clubs, and cultural activities fostering a well-rounded student experience.",
+
+"ISU is a leader in internationalization, with over 700 international students from 67 countries and partnerships with 125 universities across Europe and beyond. The university’s strong alumni network, affordable tuition, and living costs, as well as its supportive, multicultural environment, make it a preferred destination for international medical aspirants"],
+  "whyChoose": [
+    "Top-ranked in Georgia: ISU is ranked #1 nationally and is the leading research university in the South Caucasus.",
+    "Global Accreditation: MBBS/MD degree recognized by WHO, NMC, WFME, ECFMG, and more.",
+    "Modern Facilities: Advanced labs, simulation centers, and sports infrastructure.",
+    "Comprehensive Curriculum: Practice-based, research-focused program with strong clinical exposure.",
+    "International Opportunities: Over 125 partner universities for exchange and double degree programs.",
+    "Affordable & Accessible: Competitive tuition and living costs, with support for finding accommodation.",
+    "Multicultural Experience: Diverse student body from 67+ countries, vibrant campus life, and student clubs.",
+    "Supportive Environment: Student-centered teaching, approachable faculty, and strong student support services.",
+    "Strong Alumni Network: Graduates working worldwide, especially in India, with a supportive alumni network."
+  ],
+
       "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
       "ranking": {"national": 2, "world": 3200},
       "programs_offered": ["MBBS/MD", "Biology", "Psychology", "Engineering"],
       "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 6000, "gel": 18000},
-      "hostel_fee": {"usd": 2500},
-      "facilities": ["Modern labs", "Library", "Hostel", "Sports facilities"],
-      "affiliated_hospitals": ["Ilia State University Medical Center"],
-      "admission_requirements": "High school diploma; English proficiency.",
+     "annual_tuition_fee": {
+    "mbbs_md": "USD 6,200 per year"
+  },
+  "hostel_fee": "No university hostel; students typically rent apartments at $100–$150/month. Total living expenses (including rent, food, utilities): $600–$700/month.",
+  "facilities": [
+    "State-of-the-art medical school facilities",
+    "Advanced laboratories and simulation centers",
+    "Modern lecture auditoriums",
+    "Technologically advanced library with electronic resources",
+    "Sports complex (gym, football court, tennis court, Olympic-size swimming pool)",
+    "Student clubs (dance, art, folk song, chess, bowling, pool, table tennis)",
+    "Unifood cafeteria (including Indian food)",
+    "Reading rooms and collaborative spaces",
+    "Research institutes and centers",
+    "Cultural and recreational events"
+  ],
+  "affiliated_hospitals": [
+    "More than 9 partner hospitals and clinics in Tbilisi for clinical training and internships"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "English proficiency (IELTS/TOEFL not required but recommended)",
+    "Application form and supporting documents",
+    "Interview or entrance exam (if required)",
+    "Medical insurance ($50–$100/month)"
+  ],
       "contact_info": {
         "website": "https://iliauni.edu.ge",
         "email": "info@iliauni.edu.ge",
@@ -91,40 +305,157 @@
       "image": "https://ciu.edu.ge/logo.png",
       "name": "Caucasus International University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/CIU_logo.jpeg",
       "established_year": 1995,
       "type": "Private",
-      "overview": "A popular choice among international students for MBBS, CIU is known for its modern curriculum and international partnerships.",
+      "overview": ["Caucasus International University (CIU), established in 1995 in Tbilisi, is one of Georgia’s most reputable private universities, especially for international students pursuing MBBS/MD. CIU began as a medical institute and rapidly developed into a multi-faculty university, gaining national and international accreditations. The university is recognized by WHO, NMC (India), WFME, ECFMG, and FAIMER, ensuring global acceptance of its medical degrees.",
+
+"CIU offers a modern campus with advanced infrastructure, including state-of-the-art laboratories, simulation centers, and a university clinic. The medium of instruction for medical programs is English, making it highly accessible for international students. The university is known for its affordable tuition (USD 6,000/year for MBBS/MD), well-maintained hostels, and a vibrant, multicultural student community. With over 7,400 students (as of 2021) and more than 2,000 international students, CIU fosters a dynamic academic and social environment.",
+
+"CIU’s curriculum emphasizes practical training, with clinical exposure from the first year and rotations in affiliated hospitals. The university supports student development through research, international exchange programs, and active student government. CIU graduates are prepared for successful medical careers worldwide, with a strong alumni network and career support services."],
+  "whyChoose": [
+    "International Recognition: Degrees recognized by WHO, NMC, WFME, ECFMG, and FAIMER, enabling graduates to practice globally.",
+    "Affordable Education: Competitive tuition and reasonable living costs make CIU accessible to students from diverse backgrounds.",
+    "English-medium MBBS: The MBBS/MD program is taught in English, with a modern curriculum and early clinical exposure.",
+    "Modern Infrastructure: Advanced labs, simulation centers, and a university clinic provide excellent practical training.",
+    "Multicultural Environment: Over 2,000 international students and a supportive campus culture.",
+    "Strong Student Support: Comprehensive visa support, orientation, and student self-government ensure a smooth transition and vibrant student life.",
+    "Career Development: Dedicated services for internships, job placement, and alumni networking.",
+    "Safe and Friendly City: Located in Tbilisi, Georgia’s capital, offering a welcoming atmosphere and rich cultural experiences."
+  ],
+
       "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
       "ranking": {"national": 8, "world": 7000},
       "programs_offered": ["MBBS/MD", "Dentistry", "Pharmacy", "Law"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5500, "gel": 16500},
-      "hostel_fee": {"usd": 2000},
-      "facilities": ["Labs", "Library", "Hostel", "Sports"],
-      "affiliated_hospitals": ["CIU Medical Center"],
-      "admission_requirements": "High school diploma; NEET (for Indian students); English proficiency.",
+      "medium_of_instruction": ["English", "Georgian", "Russian"],
+      "annual_tuition_fee": {
+    "mbbs_md": "USD 6,000 per year"
+  },
+  "hostel_fee": "USD 2,500 per year (includes basic amenities, security, and utilities)",
+  "facilities": [
+    "Modern lecture halls and classrooms",
+    "Advanced laboratories and simulation center",
+    "University library",
+    "On-campus hostel with 24/7 security",
+    "Central heating and hot water",
+    "Cafeteria with international cuisine",
+    "Sports and fitness facilities",
+    "Student clubs and cultural activities",
+    "Research centers",
+    "Auditorium and conference halls",
+    "Wi-Fi enabled campus"
+  ],
+  "affiliated_hospitals": [
+    "CIU University Clinic",
+    "Partner hospitals in Tbilisi for clinical training and internships"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "Passport-size photographs",
+    "Application form and supporting documents",
+    "Recorded video interview",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
+    "Medical insurance and proof of funds for visa"
+  ],
       "contact_info": {
         "website": "https://ciu.edu.ge",
         "email": "info@ciu.edu.ge",
         "phone": "+995 32 2 39 14 14"
       }
-},
+    },
     {
       "image": "https://www.newvision.ge/logo.png",
       "name": "New Vision University",
       "location": "Tbilisi, Georgia",
+      "logo":"/src/assets/NewVision_logo.jpeg",
       "established_year": 2013,
       "type": "Private",
-      "overview": "A fast-growing university with a strong focus on international medical education and modern teaching methods.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
-      "ranking": {"national": 10, "world": 8000},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Pharmacy"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 7000, "gel": 21000},
-      "hostel_fee": {"usd": 2500},
-      "facilities": ["Labs", "Library", "Hostel", "Sports"],
-      "affiliated_hospitals": ["New Vision University Hospital"],
-      "admission_requirements": "High school diploma; NEET (for Indian students); English proficiency.",
+      "overview":[ "New Vision University (NVU), established in 2013 in Tbilisi, Georgia, is one of the fastest-growing private medical universities in the region. NVU stands out for its commitment to high-quality, internationally recognized medical education, modern infrastructure, and focus on research and innovation. The university offers an English-medium MBBS (MD) program designed to meet global standards, with a curriculum that blends theoretical knowledge with extensive practical and clinical training. Students benefit from early clinical exposure, advanced simulation labs, and hands-on experience at the NVU Teaching Hospital and affiliated clinics.",
+
+"NVU is home to a diverse student community, welcoming learners from over 25 countries and fostering a multicultural, inclusive environment. The university is recognized by major global medical authorities, including WHO, NMC (India), ECFMG (USA), and FAIMER, making its graduates eligible for licensing exams and medical practice worldwide. NVU’s faculty includes experienced professors and practicing clinicians, ensuring students receive up-to-date, practical medical training. The campus features modern amenities, including smart classrooms, advanced research centers, and comfortable hostels with Indian and continental food options."],
+  "whyChoose": [
+    "Global Recognition: Accredited by WHO, NMC (India), ECFMG (USA), FAIMER, and listed in the World Directory of Medical Schools, enabling graduates to pursue medical careers worldwide.",
+    "English-Medium MBBS: The entire MBBS (MD) program is taught in English, eliminating language barriers for international students.",
+    "Modern Infrastructure: State-of-the-art labs, simulation centers, and the Zeiss Microscopy Education and Research Center provide world-class learning resources.",
+    "Early Clinical Exposure: Students start practical training and clinical rotations from the third year, gaining hands-on experience at NVU’s own teaching hospital and partner clinics.",
+    "Affordable Fees: Tuition and hostel fees are lower than many private colleges in other countries, with no hidden donations or capitation fees.",
+    "Safe and Supportive Environment: Secure campus, 24/7 hostel security, and a student-friendly atmosphere with support for international students.",
+    "Multicultural Community: Students from over 25 countries and a faculty with international experience foster a global outlook and cultural exchange.",
+    "No Language Test Required: IELTS/TOEFL is not mandatory for admission, making the process straightforward for international applicants.",
+    "Career Opportunities: Graduates are eligible for USMLE, PLAB, FMGE, and can pursue residencies or further studies globally.",
+    "Student Life: Vibrant campus life with clubs, sports, cultural events, and leadership opportunities."
+  ],
+
+      "recognition_accreditation": [
+        "World Health Organization (WHO)",
+        "National Medical Commission (NMC, India)",
+        "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+        "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+        "World Federation for Medical Education (WFME)",
+        "Ministry of Education and Science of Georgia",
+        "World Directory of Medical Schools (WDMS)",
+        "General Medical Council (GMC, UK)",
+        "Professional and Linguistic Assessments Board (PLAB, UK)"
+      ],
+      "ranking": {
+    "national": 19,
+    "world": 9393
+  },
+  "programs_offered": [
+    "Medicine (MBBS/MD, 6 years, English-medium)",
+    "Dentistry",
+    "Pharmacy",
+    "Nursing",
+    "Healthcare Management",
+    "Business Administration",
+    "Law",
+    "Computer Science",
+    "Engineering",
+    "Public Health",
+    "Social Sciences",
+    "Postgraduate and Doctoral Programs"
+  ],
+  "medium_of_instruction": [
+    "English",
+    "Georgian"
+  ],
+  "annual_tuition_fee": {
+    "mbbs_md": "USD 7,000 per year"
+  },
+  "hostel_fee": "USD 1,200 per year (includes basic amenities, security, Wi-Fi, and utilities)",
+  "facilities": [
+    "Modern lecture halls and smart classrooms",
+    "Advanced laboratories and simulation centers",
+    "Zeiss Microscopy Education and Research Center",
+    "Biomedicine research laboratory and blood bank",
+    "DNA sequencing and PCR lab",
+    "University library",
+    "On-campus hostel with 24/7 security",
+    "Cafeteria with Indian and continental food",
+    "Sports and fitness facilities",
+    "Student clubs and multicultural events",
+    "Auditorium and conference halls",
+    "Wi-Fi enabled campus",
+    "NVU Teaching Hospital"
+  ],
+  "affiliated_hospitals": [
+    "New Vision University Teaching Hospital",
+    "Partner hospitals and clinics in Tbilisi for clinical rotations"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "Passport-size photographs",
+    "Application form and supporting documents",
+    "Video interview",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
+    "Medical insurance and proof of funds for visa"
+  ],
       "contact_info": {
         "website": "https://www.newvision.ge",
         "email": "info@newvision.ge",
@@ -135,18 +466,97 @@
       "image": "https://dtmu.ge/logo.png",
       "name": "David Tvildiani Medical University",
       "location": "Tbilisi, Georgia",
+      "logo":"/src/assets/DTMY.jpeg",
       "established_year": 1989,
       "type": "Private",
-      "overview": "Internationally recognized for its English-medium medical programs and high FMGE pass rates for Indian students.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG", "WFME"],
-      "ranking": {"national": 6, "world": 6000},
-      "programs_offered": ["MBBS/MD", "PhD in Medicine"],
-      "medium_of_instruction": ["English"],
-      "annual_tuition_fee": {"usd": 8000, "gel": 24000},
-      "hostel_fee": {"usd": 2500},
-      "facilities": ["Labs", "Library", "Hostel"],
-      "affiliated_hospitals": ["David Tvildiani University Hospital"],
-      "admission_requirements": "High school diploma; NEET (for Indian students); English proficiency.",
+      "overview": ["David Tvildiani Medical University (DTMU) is one of the most prestigious and internationally recognized private medical universities in Georgia, established in 1989. DTMU is renowned for its English-medium MD program, which strictly follows US and European medical education standards, making it especially popular among international students. The university’s AIETI Medical School is the only institution in Georgia to offer its entire medical curriculum in English, and its graduates consistently achieve high success rates in international licensing exams such as USMLE, PLAB, and NMC FMGE.",
+
+"DTMU’s curriculum is fully integrated, problem-based, and clinically oriented, with early exposure to patient care and extensive hands-on training in affiliated hospitals. The faculty comprises experienced professors and practicing clinicians, and the university maintains a low student-to-teacher ratio for personalized attention. The Rustavi campus, a recent addition, provides advanced research, learning, and recreation facilities, including secure, modern hostels with Indian food options and 24/7 surveillance.",
+
+"DTMU is globally accredited and recognized by WHO, NMC (India), WFME, ECFMG (USA), FAIMER, and more. The university’s strong international partnerships, affordable tuition, and supportive multicultural environment make it a top choice for aspiring doctors worldwide. Graduates are eligible to practice medicine or pursue postgraduate training in the US, UK, India, and many other countries."],
+  "whyChoose": [
+    "Globally Recognized Degree: Accredited by WHO, NMC (India), WFME, ECFMG, FAIMER, and listed in the World Directory of Medical Schools, enabling graduates to take licensing exams and practice worldwide.",
+    "English-Medium Education: The entire MD program is taught in English, eliminating language barriers for international students.",
+    "US/European-Style Curriculum: The curriculum is aligned with USMLE and other international standards, ensuring global competitiveness.",
+    "High Success Rate: DTMU graduates have an excellent record in international exams (USMLE, PLAB, NMC FMGE) and work in top hospitals worldwide.",
+    "Modern Infrastructure: State-of-the-art labs, simulation centers, e-library, and research facilities support advanced learning.",
+    "Safe, Comfortable Hostels: Secure, modern hostels at Rustavi campus with all amenities and Indian food options.",
+    "Affordable Fees: Tuition is USD 6,000–8,000/year, with competitive hostel and living costs.",
+    "Strong Clinical Training: Early and extensive clinical exposure in leading hospitals across Tbilisi.",
+    "Active Student Life: Clubs, research groups, and support for international students foster a vibrant campus environment.",
+    "No Language Test Required: IELTS/TOEFL not mandatory, making the admission process straightforward for international applicants."
+  ],
+
+      "recognition_accreditation": [
+    "World Health Organization (WHO)",
+    "National Medical Commission (NMC, India)",
+    "World Federation for Medical Education (WFME)",
+    "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+    "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+    "Association of Medical Schools in Europe (AMSE)",
+    "Association for Medical Education in Europe (AMEE)",
+    "Ministry of Education and Science of Georgia",
+    "National Center for Education Quality Enhancement (Georgia)",
+    "EURAS (Eurasian University Union)"
+  ],
+  "ranking": {
+    "national": 14,
+    "world": 8742
+  },
+  "programs_offered": [
+    "Medical Doctor (MD, 6 years, English-medium)",
+    "MD EPBL (English Problem-Based Learning) Program",
+    "Pre-Med Program",
+    "Nursing Program",
+    "Doctoral (PhD) Program"
+  ],
+  "medium_of_instruction": [
+    "English"
+  ],
+  "annual_tuition_fee": {
+    "md": "USD 6,000 - 8,000 per year"
+  },
+  "hostel_fee": "USD 3,000 per year (includes 3 meals/day and all amenities at Rustavi campus); Private/shared apartments in Tbilisi: USD 200–300/month (living cost in Tbilisi: USD 600–700/month)",
+  "facilities": [
+    "Modern lecture halls and classrooms",
+    "Advanced laboratories and simulation centers",
+    "E-library with e-catalogues and journals",
+    "Student hostels (Rustavi campus) with 24/7 security and meals",
+    "Cafeteria (including Indian food options)",
+    "Sports and recreation facilities",
+    "Laundry, mess, and internet",
+    "Research and conference centers",
+    "Student clubs (e.g., SYSSA, SIGA, GIGA, SIGN, ROSSMIG)",
+    "Campus-wide Wi-Fi"
+  ],
+  "affiliated_hospitals": [
+    "M. Jashvili Children’s Central Hospital",
+    "N. Kipshidze Central Clinical Hospital",
+    "O. Gudushauri National Medical Center",
+    "Joe Annes Medical Center",
+    "Isolation Hospital",
+    "Oncology Scientific Center",
+    "M. Asatiani Psychiatry Research Institute",
+    "Skin & Venereal Diseases Scientific Research Institute",
+    "G. Mukhadze Hematology & Blood Perfusions Scientific Research Institute",
+    "Central Railway Hospital",
+    "Clinical Hospital No.9",
+    "Phthisis-Pulmonology Clinical Hospital",
+    "Eye Microsurgery Center – OFTALMIJ",
+    "Hospital Polyclinic Amalgamation No.2",
+    "Pediatrics Scientific Research",
+    "Sachkhere Hospital"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "Application form and supporting documents",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
+    "Video interview or entrance test (if required)",
+    "Medical insurance and proof of funds for visa"
+  ],
       "contact_info": {
         "website": "https://dtmu.ge",
         "email": "info@dtmu.ge",
@@ -157,18 +567,85 @@
       "image": "https://alte.edu.ge/logo.png",
       "name": "ALTE University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/ALTE_logo.jpeg",
       "established_year": 2002,
       "type": "Private",
-      "overview": "A modern university with a growing reputation for its MBBS and health sciences programs, focused on practical training.",
-      "recognition_accreditation": ["WHO", "NMC"],
-      "ranking": {"national": 14, "world": 9500},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Business"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5000, "gel": 15000},
-      "hostel_fee": {"usd": 2000},
-      "facilities": ["Labs", "Library", "Hostel"],
-      "affiliated_hospitals": ["ALTE University Hospital"],
-      "admission_requirements": "High school diploma; English proficiency.",
+      "overview": ["Alte University, established in 2002 and located in the heart of Tbilisi, is a leading private institution in Georgia, renowned for its innovative educational approach and multicultural environment. With over 2,500 students from more than 45 countries, Alte University offers a vibrant academic community focused on global standards, practical learning, and personal development. The university comprises four main schools: International School of Medicine, Business, Law and Social Sciences, and Information Technology. Its International School of Medicine is particularly distinguished, offering a 6-year English-medium MD (MBBS) program recognized by WHO, NMC (India), WFME, ECFMG, and FAIMER.",
+
+"Alte University’s campus features state-of-the-art infrastructure, including modern classrooms, simulation labs, research centers, and a well-equipped library. The university’s teaching philosophy emphasizes not just theoretical knowledge but also hands-on experience, critical thinking, and innovation. Students participate in internships and projects with leading organizations, preparing them for successful careers in the global job market. The university fosters a supportive environment with numerous student clubs, cultural events, and sports programs, encouraging holistic growth and leadership."],
+  "whyChoose": [
+    "Global Recognition: Accredited by WHO, NMC (India), WFME, ECFMG, and FAIMER, making graduates eligible for licensing exams and medical practice worldwide.",
+    "English-Medium MD (MBBS) Program: The entire 6-year medicine program is taught in English, eliminating language barriers for international students.",
+    "Modern Infrastructure: The university boasts a newly constructed campus, advanced labs, simulation centers, and smart classrooms.",
+    "Strong Clinical Training: Strategic alliances with major hospitals, including Iv. Bokeria University Hospital, provide students with extensive hands-on clinical experience.",
+    "Affordable Fees: Tuition is USD 5,500/year for MBBS, with hostel fees of USD 1,500/year, making it cost-effective for international students.",
+    "Multicultural Environment: Students from over 45 countries, fostering diversity and cross-cultural understanding.",
+    "Career Support: Internship programs, employment assistance, and a robust network of partner organizations help students launch their careers while studying.",
+    "Student-Centric Approach: Emphasis on personal development, leadership, and innovation through clubs, startup incubators, and student government.",
+    "No Language Test Required: IELTS/TOEFL is not mandatory, simplifying the admission process for international students.",
+    "Safe and Supportive Campus: 24/7 hostel security, Indian food options, and a welcoming environment for international students."
+  ],
+
+      "recognition_accreditation": [
+    "World Health Organization (WHO)",
+    "National Medical Commission (NMC, India)",
+    "World Federation for Medical Education (WFME)",
+    "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+    "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+    "Ministry of Education and Science of Georgia"
+  ],
+  "ranking": {
+    "national": 32,
+    "world": 10958
+  },
+  "programs_offered": [
+    "Medicine (MD/MBBS, 6 years, English-medium)",
+    "Dentistry (One-cycle, English-medium)",
+    "Business Administration",
+    "Law",
+    "Psychology",
+    "Computer Science",
+    "Tourism",
+    "Other undergraduate and graduate programs"
+  ],
+  "medium_of_instruction": [
+    "English",
+    "Georgian"
+  ],
+  "annual_tuition_fee": {
+    "mbbs_md": "USD 5,500 per year"
+  },
+  "hostel_fee": "USD 1,500 per year (includes basic amenities, security, cafeteria with Indian food, Wi-Fi, and utilities)",
+  "facilities": [
+    "Modern classrooms and smart lecture halls",
+    "Advanced laboratories and simulation centers",
+    "University library and e-resources",
+    "On-campus hostel with 24/7 security",
+    "Cafeteria with Indian and international cuisine",
+    "Sports and fitness facilities",
+    "Student clubs (cultural, sports, debate, language, leadership, startup incubator)",
+    "Conference and seminar halls",
+    "Wi-Fi enabled campus",
+    "Career development and internship support"
+  ],
+  "affiliated_hospitals": [
+    "Iv. Bokeria University Hospital",
+    "Other leading hospitals and clinics in Tbilisi for clinical training and internships"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Class 10th and 12th marksheets",
+    "Valid passport",
+    "Passport-size photographs",
+    "Covid-19 vaccination certificate",
+    "Medical report (including HIV/AIDS test)",
+    "Application form and supporting documents",
+    "English proficiency (IELTS/TOEFL not required but recommended)",
+    "Video interview (if required)",
+    "Medical insurance and proof of funds for visa"
+  ],
       "contact_info": {
         "website": "https://alte.edu.ge",
         "email": "info@alte.edu.ge",
@@ -179,18 +656,83 @@
       "image": "https://ibsu.edu.ge/logo.png",
       "name": "International Black Sea University (IBSU)",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/IBSU_logo.jpeg",
       "established_year": 1995,
       "type": "Private",
-      "overview": "IBSU is known for its international environment and quality education in various fields, including health sciences.",
-      "recognition_accreditation": ["WHO", "NMC"],
-      "ranking": {"national": 12, "world": 9000},
-      "programs_offered": ["MBBS/MD", "Business", "Engineering"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5000, "gel": 15000},
-      "hostel_fee": {"usd": 1800},
-      "facilities": ["Labs", "Library", "Hostel", "Sports"],
-      "affiliated_hospitals": ["IBSU Medical Center"],
-      "admission_requirements": "High school diploma; English proficiency.",
+      "overview": ["International Black Sea University (IBSU), established in 1995 in Tbilisi, is the first English-language higher education institution in Georgia and is widely recognized for its international orientation and academic excellence. IBSU offers a diverse portfolio of undergraduate, graduate, and doctoral programs, with a particular reputation for its MBBS (MD) program, which is fully taught in English and meets the standards of the World Health Organization (WHO) and the National Medical Commission (NMC, India).",
+
+"The university has a student body of 2,000–2,999, with a strong international presence and a student-faculty ratio of 8:1, ensuring personalized attention. IBSU’s campus features modern classrooms, advanced laboratories, a digital library, on-campus dormitories, and sports facilities, creating a supportive and vibrant learning environment. The university is committed to fostering research, innovation, and global citizenship, maintaining partnerships with top universities across Europe, Asia, and America.",
+
+"IBSU’s MBBS program is six years long, including one year of clinical internship, and is designed to provide both strong theoretical foundations and practical clinical skills. The curriculum is delivered entirely in English, making it accessible for international students, especially from India and other countries where English is the medium of instruction. The university’s affordable tuition, global recognition, and comprehensive student support make it a top choice for medical aspirants seeking quality education abroad."],
+  "whyChoose": [
+    "First English-medium University in Georgia: All medical courses are taught in English, eliminating language barriers for international students.",
+    "Global Recognition: Accredited by WHO, NMC (India), NCEQE (Georgia), ECFMG (USA), and FAIMER, making graduates eligible for licensing exams and medical practice worldwide.",
+    "Affordable Tuition and Living Costs: Annual MBBS tuition is USD 4,900, with hostel fees between USD 1,500–2,000, making IBSU one of the most cost-effective options in Georgia.",
+    "Modern Infrastructure: The campus features advanced labs, simulation centers, a digital library, and comfortable student housing.",
+    "Personalized Attention: A low student-faculty ratio (8:1) ensures small class sizes and individualized academic support.",
+    "Diverse Student Community: Students from over 30 countries, with a multicultural campus environment and active student clubs.",
+    "Strong Career and Research Support: Partnerships with global universities, career services, and research centers help students build successful careers.",
+    "Simple Admission Process: No IELTS/TOEFL required (though recommended); admissions are based on academic merit, NEET (for Indian students), and a video interview.",
+    "Safe and Supportive Environment: On-campus dormitories, 24/7 security, and comprehensive support services for international students."
+  ],
+
+      "recognition_accreditation": [
+    "World Health Organization (WHO)",
+    "National Medical Commission (NMC, India)",
+    "National Center for Educational Quality Enhancement (NCEQE, Georgia)",
+    "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+    "Foundation for Advancement of International Medical Education and Research (FAIMER)"
+  ],
+  "ranking": {
+    "national": 8,
+    "world": 6646
+  },
+  "programs_offered": [
+    "Medicine (MBBS/MD, 6 years, English-medium)",
+    "Dentistry",
+    "Business Administration",
+    "Law",
+    "Computer Science",
+    "Architecture",
+    "Social Sciences and Humanities",
+    "Engineering",
+    "Postgraduate and Doctoral Programs"
+  ],
+  "medium_of_instruction": [
+    "English",
+    "Georgian"
+  ],
+  "annual_tuition_fee": {
+    "mbbs_md": "USD 4,900 per year"
+  },
+  "hostel_fee": "USD 1,500 - 2,000 per year (on-campus dormitory with basic amenities, security, and Wi-Fi)",
+  "facilities": [
+    "Modern classrooms and lecture halls",
+    "Advanced laboratories and simulation centers",
+    "University library with digital resources",
+    "On-campus hostel/dormitory",
+    "Cafeteria with international cuisine",
+    "Sports and fitness facilities",
+    "Student clubs and cultural activities",
+    "Wi-Fi enabled campus",
+    "Career services and internship support",
+    "Research and innovation centers"
+  ],
+  "affiliated_hospitals": [
+    "Partner hospitals and clinics in Tbilisi for clinical training and internships"
+  ],
+  "admission_requirements": [
+    "Completed secondary/high school education with Biology, Chemistry, and Physics",
+    "Minimum 50% aggregate in PCB (for Indian students)",
+    "NEET qualification (for Indian applicants)",
+    "Valid passport",
+    "Passport-size photographs",
+    "School Certificate (equivalent to A-level for UG applicants)",
+    "Application form and supporting documents",
+    "Recorded video interview",
+    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
+    "Medical insurance and proof of funds for visa"
+  ],
       "contact_info": {
         "website": "https://ibsu.edu.ge",
         "email": "info@ibsu.edu.ge",
@@ -201,18 +743,89 @@
       "image": "https://atsu.edu.ge/logo.png",
       "name": "Akaki Tsereteli State University (ATSU)",
       "location": "Kutaisi, Georgia",
+      "logo": "/src/assets/ATSU_logo.jpeg",
       "established_year": 1930,
       "type": "Public",
-      "overview": "One of Georgia's oldest universities, ATSU is respected for its medical faculty and strong clinical training.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
-      "ranking": {"national": 3, "world": 4000},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Pharmacy"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5000, "gel": 15000},
-      "hostel_fee": {"usd": 2000},
-      "facilities": ["Labs", "Library", "Hostel", "Sports"],
-      "affiliated_hospitals": ["ATSU University Clinic"],
-      "admission_requirements": "High school diploma; NEET (for Indian students); English proficiency.",
+      "overview": ["Akaki Tsereteli State University (ATSU), founded in 1930, is one of the oldest and most respected public universities in Georgia, located in the city of Kutaisi. With more than 10,000 students and over 5,000 academic staff, ATSU is a multidisciplinary institution that offers a broad spectrum of academic and professional programs at the bachelor, master, and doctoral levels. The university is internationally recognized for its high academic standards, innovative teaching, and strong research orientation, and it maintains active collaborations with leading universities and scientific centers in the EU, USA, and Eastern countries.",
+
+"ATSU’s Faculty of Medicine is especially popular among international students for its 6-year English-medium MBBS (MD) program, which is accredited and recognized by WHO, NMC (India), WFME, ECFMG, and FAIMER. The program combines five years of theoretical and practical education with a compulsory one-year clinical internship, ensuring graduates are well-prepared for global medical practice. The university’s modern infrastructure includes advanced laboratories, simulation centers, a large library with over one million volumes, and on-campus hostels with all necessary amenities.",
+
+"ATSU is known for its affordable tuition fees (USD 4,500/year for MBBS) and low living costs, making it a top destination for students seeking quality education on a budget. The university provides a vibrant international student environment, with support services, career counseling, and opportunities for extracurricular engagement. Over its long history, ATSU has produced more than 65,000 graduates who have gone on to successful careers worldwide."],
+"whyChoose": [
+  "Global Recognition: Accredited by WHO, NMC (India), WFME, ECFMG, and FAIMER, ensuring international validity of the medical degree.",
+  "Affordable Tuition and Living Costs: MBBS tuition is USD 4,500/year, with hostel fees at USD 1,000/year, making ATSU one of the most cost-effective options in Georgia.",
+  "English-Medium MBBS: The entire MBBS program is taught in English, with no requirement for IELTS/TOEFL.",
+  "Modern Infrastructure: State-of-the-art labs, simulation centers, and a well-stocked library support advanced learning.",
+  "Strong Clinical Training: Clinical rotations and internships are conducted at the university’s own clinic and partner hospitals in Kutaisi.",
+  "Experienced Faculty: Over 5,000 academic staff, including many doctorates and experienced clinicians.",
+  "Supportive International Environment: More than 10,000 students and a welcoming atmosphere for international students.",
+  "Excellent Track Record: Over 65,000 graduates and a strong reputation for producing skilled doctors and professionals.",
+  "No Language Barrier: English is the medium of instruction for MBBS, and there is no entrance exam for international students except NEET for Indian applicants.",
+  "Comprehensive Student Services: On-campus hostel, mess, sports, clubs, and career counseling."
+],
+      "recognition_accreditation": [
+        "World Health Organization (WHO)",
+        "National Medical Commission (NMC, India)",
+        "World Federation for Medical Education (WFME)",
+        "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+        "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+        "Ministry of Education and Science of Georgia"
+      ],
+      "ranking": {
+        "national": 10,
+        "world": 7803,
+        "QS_World_University_Rankings": "801-1000 (2023)",
+        "Europe_Western_Asia": 61
+      },
+      "programs_offered": [
+        "Medicine (MBBS/MD, 6 years, English-medium)",
+        "Dentistry",
+        "Pediatrics",
+        "Nursing",
+        "Pharmacy",
+        "Engineering",
+        "Business, Law and Social Sciences",
+        "Humanities",
+        "Natural Sciences",
+        "Agriculture",
+        "Maritime Transport",
+        "Postgraduate and Doctoral Programs"
+      ],
+      "medium_of_instruction": [
+        "English",
+        "Georgian"
+      ],
+      "annual_tuition_fee": {
+        "mbbs_md": "USD 4,500 per year"
+      },
+      "hostel_fee": "USD 1,000 per year (on-campus, shared rooms with 2-3 beds, basic amenities, Wi-Fi, mess)",
+      "facilities": [
+        "Modern classrooms and lecture halls",
+        "Advanced laboratories and simulation centers",
+        "University library (over 1 million volumes, digital resources)",
+        "On-campus hostel with 24/7 security",
+        "Cafeteria and mess (including Indian food options)",
+        "Sports and fitness facilities",
+        "Student clubs and cultural activities",
+        "Wi-Fi enabled campus",
+        "Research and innovation centers",
+        "Career counseling and student support services"
+      ],
+      "affiliated_hospitals": [
+        "ATSU University Clinic (one of the best clinics in Western Georgia)",
+        "Partner hospitals and clinics in Kutaisi for clinical training and internships"
+      ],
+      "admission_requirements": [
+        "Completed secondary/high school education with Biology, Chemistry, and Physics",
+        "Minimum 50% aggregate in PCB (for Indian students, 40% for reserved category)",
+        "NEET qualification (for Indian applicants, as per NMC guidelines)",
+        "Valid passport",
+        "Passport-size photographs",
+        "Application form and supporting documents",
+        "Medical certificate (including HIV test)",
+        "English proficiency (IELTS/TOEFL not required, but recommended)",
+        "Applicants should be at least 17 years old at the time of admission"
+      ],
       "contact_info": {
         "website": "https://atsu.edu.ge",
         "email": "info@atsu.edu.ge",
@@ -223,18 +836,82 @@
       "image": "https://geomedi.edu.ge/logo.png",
       "name": "Geomedi Medical University",
       "location": "Tbilisi, Georgia",
+      "logo": "/src/assets/Geomedi_logo.jpeg",
       "established_year": 1998,
       "type": "Private",
-      "overview": "A specialized medical university with a focus on practical skills and clinical exposure for MBBS students.",
-      "recognition_accreditation": ["WHO", "NMC", "ECFMG"],
-      "ranking": {"national": 11, "world": 8500},
-      "programs_offered": ["MBBS/MD", "Dentistry", "Physical Medicine", "Pharmacy"],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {"usd": 5000, "gel": 15000},
-      "hostel_fee": {"usd": 1800},
-      "facilities": ["Labs", "Library", "Hostel", "Sports"],
-      "affiliated_hospitals": ["Geomedi University Hospital"],
-      "admission_requirements": "High school diploma; NEET (for Indian students); English proficiency.",
+      "overview": ["Geomedi Medical University, established in 1998 in Tbilisi, is a top-ranked private medical university in Georgia, highly regarded for its quality education, modern infrastructure, and supportive environment for international students. Founded by Professor Marina Pirtskhalava, the university is recognized by WHO, NMC (India), WFME, ECFMG, FAIMER, and is listed in the World Directory of Medical Schools. Geomedi offers globally recognized degrees in Medicine (MBBS/MD), Dentistry, Physical Medicine and Rehabilitation, and Healthcare Economics and Management, with all programs taught in English.",
+
+"The university is known for its excellent facilities, including advanced laboratories, simulation centers, a well-equipped library, and a modern dental clinic. Students benefit from practical, hands-on training and a strong focus on clinical experience, with opportunities for internships in the university’s own hospital in Rustavi and partner hospitals in Tbilisi. Geomedi is also known for its high FMGE (MCI Screening Test) pass rates among Indian students, making it a preferred destination for medical aspirants from India and other countries.",
+
+"The campus provides a healthy and vibrant student life, with a range of sports, cultural activities, and student clubs. Hostel rooms are equipped with all basic amenities, and the university offers affordable tuition and living costs. The university also assists students with FMGE preparation and career placement, ensuring strong outcomes for graduates."],
+"whyChoose": [
+  "Global Recognition: Accredited by WHO, NMC (India), WFME, ECFMG, FAIMER, and listed in WDOMS, ensuring global acceptance of the medical degree.",
+  "English-Medium MBBS: All programs are taught in English, making it ideal for international students.",
+  "Affordable Fees: Tuition is USD 5,500/year for MBBS, with hostel fees of USD 2,000/year, making it cost-effective.",
+  "High FMGE Pass Rate: Geomedi has one of the highest FMGE (MCI Screening Test) pass percentages among Georgian universities.",
+  "Modern Infrastructure: Advanced labs, simulation centers, dental clinic, and e-library provide excellent learning resources.",
+  "Strong Clinical Training: Students gain practical experience in the university’s own hospital and partner clinics.",
+  "Supportive Campus Life: Vibrant student clubs, sports, cultural events, and a healthy, multicultural environment.",
+  "No Language Test Required: IELTS/TOEFL is not required for admission.",
+  "Career Support: Assistance for FMGE/MCI Screening Test preparation, internships, and job placement after graduation.",
+  "Safe and Comfortable Hostel: On-campus hostel with all amenities and 24/7 security."
+],
+      "recognition_accreditation": [
+        "World Health Organization (WHO)",
+        "National Medical Commission (NMC, India)",
+        "World Federation for Medical Education (WFME)",
+        "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
+        "Foundation for Advancement of International Medical Education and Research (FAIMER)",
+        "Ministry of Education and Science of Georgia",
+        "World Directory of Medical Schools (WDOMS)"
+      ],
+      "ranking": {
+        "national": 40,
+        "world": 11551
+      },
+      "programs_offered": [
+        "Medicine (MBBS/MD, 6 years, English-medium)",
+        "Dentistry",
+        "Physical Medicine and Rehabilitation",
+        "Healthcare Economics and Management",
+        "Postgraduate and Doctoral Programs"
+      ],
+      "medium_of_instruction": [
+        "English"
+      ],
+      "annual_tuition_fee": {
+        "mbbs_md": "USD 5,500 per year"
+      },
+      "hostel_fee": "USD 2,000 per year (includes basic amenities, security, Wi-Fi, and utilities)",
+      "facilities": [
+        "Modern classrooms and lecture halls",
+        "Advanced laboratories and simulation centers",
+        "University library (10,000+ printed materials, e-library access)",
+        "On-campus hostel with 24/7 security",
+        "Cafeteria with international cuisine",
+        "Sports and fitness facilities (basketball, football, tennis, volleyball)",
+        "Student clubs (dance, sports, scientific, cultural)",
+        "Conference and activity centers",
+        "Free access to scientific databases (EBSCO, SCOPUS)",
+        "Dental clinic with modern equipment",
+        "Wi-Fi enabled campus",
+        "Student service center"
+      ],
+      "affiliated_hospitals": [
+        "Geomedi University Hospital (Rustavi)",
+        "Partner hospitals and clinics in Tbilisi and Rustavi for clinical training and internships"
+      ],
+      "admission_requirements": [
+        "Completed secondary/high school education with Biology, Chemistry, and Physics",
+        "Minimum 50% aggregate in PCB (for Indian students)",
+        "NEET qualification (for Indian applicants)",
+        "Valid passport",
+        "Passport-size photographs",
+        "Application form and supporting documents",
+        "No IELTS/TOEFL required",
+        "Medical certificate (including HIV test)",
+        "Medical insurance and proof of funds for visa"
+      ],
       "contact_info": {
         "website": "https://geomedi.edu.ge",
         "email": "info@geomedi.edu.ge",
