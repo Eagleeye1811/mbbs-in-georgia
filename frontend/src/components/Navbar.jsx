@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Georgia", href: "/AboutGeorgia" },
-  { name: "How To Apply", href: "/HowToApply" },
+  { name: "About Georgia", href: "/about-georgia" },
+  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/FAQ" },
-  { name: "Student LifeStyle", href: "/StudentLifeStyle" },
-];
+  { name: "FAQs", href: "/faq" },
+  { name: "Student LifeStyle", href: "/students-lifestyle" },
+]; 
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,37 +21,6 @@ const Navbar = () => {
     navigate(href);
     setMenuOpen(false);
   };
-
-  useEffect(() => {
-    // Ensure that the Google Translate widget is initialized
-    if (window.google && window.google.translate) {
-      window.googleTranslateElementInit();
-    }
-  }, []);
-
-  const handleLanguageChange = (e) => {
-    const selectedLang = e.target.value;
-  
-    const interval = setInterval(() => {
-      const iframe = document.querySelector("iframe.goog-te-menu-frame");
-      if (!iframe) return;
-  
-      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      const options = innerDoc.querySelectorAll(".goog-te-menu2-item span.text");
-  
-      for (let option of options) {
-        if (option.innerText.toLowerCase() === selectedLang.toLowerCase()) {
-          option.click();
-          clearInterval(interval);
-          break;
-        }
-      }
-    }, 500);
-  
-    // Clear interval after 5 seconds in case of failure
-    setTimeout(() => clearInterval(interval), 5000);
-  };
-  
 
   return (
     <nav className="bg-[#232a36] w-full shadow ">
@@ -82,18 +51,8 @@ const Navbar = () => {
           </div>
 
           {/* Google Translate Button */}
-          <div className="lang">
-          <select id="languageSelect" onChange={handleLanguageChange}>
-            <option value="en">English</option>
-            <option value="hi">Hindi</option>
-            <option value="ta">Tamil</option>
-            <option value="bn">Bengali</option>
-            <option value="te">Telugu</option>
-            <option value="ml">Malayalam</option>
-            <option value="gu">Gujarati</option>
-            <option value="kn">Kannada</option>
-            <option value="mr">Marathi</option>
-          </select>
+          <div className="hidden lg:flex items-center">
+            <div id="google_translate_element"></div>
           </div>
 
           {/* Mobile Menu Button */}
