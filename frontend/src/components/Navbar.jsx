@@ -1,34 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Navbar.css"; // Create this CSS file for the animation
+import "./Navbar.css";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Georgia", href: "/AboutGeorgia" },
-  { name: "How To Apply", href: "/HowToApply" },
+  { name: "About Georgia", href: "/about-georgia" },
+  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/FAQ" },
-  { name: "Student LifeStyle", href: "/StudentLifeStyle" },
-];
-
-const languages = [
-  { code: "EN", label: "English" },
-  { code: "HI", label: "Hindi" },
-  { code: "RU", label: "Russian" },
-];
-
-const langMap = {
-  EN: "en",
-  HI: "hi",
-  RU: "ru",
-};
+  { name: "FAQs", href: "/faq" },
+  { name: "Student LifeStyle", href: "/students-lifestyle" },
+]; 
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [langDropdown, setLangDropdown] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("EN");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = (href) => {
@@ -36,49 +22,12 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-  const handleLangClick = () => setLangDropdown((prev) => !prev);
-
-  const handleLangSelect = (code) => {
-    setSelectedLang(code);
-    setLangDropdown(false);
-
-    const selected = langMap[code];
-
-    const tryTranslate = () => {
-      const iframe = document.querySelector("iframe.goog-te-menu-frame");
-
-      if (!iframe) {
-        console.log("Google Translate iframe not found. Retrying...");
-        setTimeout(tryTranslate, 100);
-        return;
-      }
-
-      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      const items = innerDoc.querySelectorAll(".goog-te-menu2-item span.text");
-
-      if (items.length === 0) {
-        console.log("Translation options not found in iframe.");
-        return;
-      }
-
-      items.forEach((item) => {
-        console.log(`Checking item: ${item.innerHTML}`);
-        if (item.innerHTML.toLowerCase().includes(selected)) {
-          console.log(`Clicking on language: ${selected}`);
-          item.click();
-        }
-      });
-    };
-
-    tryTranslate();
-  };
-
   return (
     <nav className="bg-[#232a36] w-full shadow ">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with hover effect */}
-          <div className="georgia-logo text-white text-2xl font-bold mr-16 transition-colors duration-300 ease-in-out hover:text-[#FF6B4E]">
+          {/* Logo */}
+          <div className="georgia-logo text-white text-2xl font-bold mr-16 hover:text-[#FF6B4E]">
             GEORGIA
           </div>
 
@@ -101,47 +50,9 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Language selector */}
-          <div className="relative hidden lg:flex items-center">
-            <button
-              className="flex items-center gap-1 text-white text-sm px-4 py-2 hover:bg-gray-700 rounded"
-              onClick={handleLangClick}
-            >
-              <span className="text-blue-300">🌐</span> {selectedLang}
-              <svg
-                className={`w-4 h-4 ml-1 transition-transform ${
-                  langDropdown ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-            {langDropdown && (
-              <ul className="absolute top-full right-0 mt-1 w-32 bg-white rounded-md shadow-lg z-10">
-                {languages.map((lang) => (
-                  <li key={lang.code}>
-                    <button
-                      className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-100 ${
-                        selectedLang === lang.code
-                          ? "font-bold text-red-600"
-                          : "text-gray-800"
-                      }`}
-                      onClick={() => handleLangSelect(lang.code)}
-                    >
-                      {lang.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
+          {/* Google Translate Button */}
+          <div className="hidden lg:flex items-center">
+            <div id="google_translate_element"></div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -164,10 +75,11 @@ const Navbar = () => {
                     menuOpen
                       ? "M6 18L18 6M6 6l12 12"
                       : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
-            </svg>
-          </button>
+                  }
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -188,17 +100,11 @@ const Navbar = () => {
             </button>
           ))}
           <div className="px-3 py-2">
-            <button
-              className="flex items-center text-white gap-2"
-              onClick={handleLangClick}
-            >
-              <span className="text-blue-300">🌐</span> {selectedLang}
-            </button>
+            <div id="google_translate_element"></div>
           </div>
         </div>
       )}
-    </div>
-  </nav>
+    </nav>
   );
 };
 
