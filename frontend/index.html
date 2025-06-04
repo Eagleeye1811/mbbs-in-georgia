@@ -7,39 +7,7 @@
     <title>MBBSInGeorgia</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <style>
-      /* Enhanced Styling for Google Translate Button */
-      #google_translate_element {
-        border: 2px solid #7e57c2;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 1rem auto;
-        max-width: 300px;
-        background-color: #f3f4f6;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        color: #333;
-      }
-
-      #google_translate_element:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        background-color: #e5e7eb;
-      }
-
-      /* Hide unwanted banners and default styles */
-      body > .skiptranslate > iframe.skiptranslate,
-      body > .goog-te-banner-frame {
-        display: none !important;
-      }
-
-      body {
-        top: 0px !important;
-      }
-    </style>
+   
   </head>
 
   <body>
@@ -47,7 +15,7 @@
     <div id="root"></div>
 
     <!-- Google Translate Widget -->
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element" style="display: none;"></div>
 
     <!-- Google Translate Script -->
     <script>
@@ -57,7 +25,7 @@
             pageLanguage: "en",
             includedLanguages: "en,hi,bn,mr,gu,ta,te,ml,kn,ur,ru,ar,ka,zh-CN,fr,es,tr,fa,ne",
             autoDisplay: false,
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
           },
           "google_translate_element"
         );
