@@ -22,8 +22,8 @@ import lab from "../assets/StudentLifestyle/lab.jpg";
 import campus2 from "../assets/StudentLifestyle/campus2.jpg";
 import clinic from "../assets/StudentLifestyle/clinic.jpg";
 import garden from "../assets/StudentLifestyle/garden.jpg";
-
 import campus1 from "../assets/StudentLifestyle/campus1.jpg";
+import rooms from "../assets/StudentLifestyle/rooms.jpeg";
 
 const StudentLifeStyle = () => {
   return (
@@ -185,7 +185,7 @@ const StudentLifeStyle = () => {
             <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
       <img 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpIEr6MsmsYq_MKsOt2NlhHYatuiX5mNxEQ&s" 
+        src={rooms} 
         alt="Room 1" 
         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
       />
