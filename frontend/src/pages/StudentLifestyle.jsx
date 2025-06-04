@@ -1,6 +1,6 @@
 import React from 'react';  
 import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
-import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
+// import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const StudentLifeStyle = () => {
                 <span className="text-red-400">in Georgia</span>
               </h1>
               <p className="text-xl text-white/100 leading-relaxed">
-               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
+               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
               </p>
               <div className="flex space-x-8 pt-4">
                 <div>
