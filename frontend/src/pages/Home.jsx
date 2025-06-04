@@ -18,8 +18,12 @@ import {
 import srLogo from "../assets/logo.png";
 // import { motion, useAnimation } from "framer-motion";
 
-// Data Constants (grouped at the top for easy reference and modification)
+/**
+ * Constants and data objects for the entire application
+ * Grouped for easy maintenance and modifications
+ */
 const DATA = {
+  // Content for feature cards in "Why Choose Us" section
   whyUsFeatures: [
     {
       icon: <FaUserGraduate size={32} />,
@@ -58,12 +62,16 @@ const DATA = {
       back: "Regular updates and dedicated parent communication channels.",
     },
   ],
+
+  // Statistics about SR Counselling
   srStats: [
     { label: "Years of Experience", value: "10+" },
     { label: "Visa Success Rate", value: "100%" },
     { label: "Students Guided", value: "5000+" },
     { label: "Top University Partners", value: "12+" },
   ],
+
+  // Content for hero section carousel slides
   carouselSlides: [
     {
       title: (
@@ -164,6 +172,8 @@ const DATA = {
       },
     },
   ],
+
+  // Content for challenges section cards
   challengeCards: [
     {
       number: 1,
@@ -184,7 +194,7 @@ const DATA = {
       number: 2,
       title: "Still Dreaming of Being a Doctor?",
       icon: (
-        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78l-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8l8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
       ),
       bgColor: "from-red-50 to-pink-100",
       description:
@@ -209,6 +219,8 @@ const DATA = {
         '"Georgia offered quality education at a price my family could afford."',
     },
   ],
+
+  // Content for comparison cards
   comparisonCards: [
     {
       title: "No Donation Required",
@@ -309,6 +321,8 @@ const DATA = {
       description: "Georgian medical degrees are recognized worldwide.",
     },
   ],
+
+  // Service journey steps
   services: [
     {
       title: "University Selection & Admission Guidance",
@@ -359,6 +373,8 @@ const DATA = {
         "Connect with successful alumni and receive mentorship from practicing doctors.",
     },
   ],
+
+  // Student testimonials
   testimonials: [
     {
       name: "Priya Sharma",
@@ -405,23 +421,58 @@ const DATA = {
       ],
     },
   ],
+
+  // Wall of fame image captions
   wallOfFameImages: [
-    { caption: "SR Counselling Office", emoji: "🏢" },
-    { caption: "Student Orientation", emoji: "👨‍🎓" },
-    { caption: "University Visit", emoji: "🏫" },
-    { caption: "Visa Assistance Workshop", emoji: "🛂" },
-    { caption: "Pre-departure Session", emoji: "✈" },
-    { caption: "Student Welcome Event", emoji: "🎉" },
-    { caption: "Academic Counselling", emoji: "📚" },
-    { caption: "Campus Tour", emoji: "🏛" },
-    { caption: "Student Housing Tour", emoji: "🏠" },
-    { caption: "Cultural Program", emoji: "🎭" },
-    { caption: "Medical Workshop", emoji: "👨‍⚕" },
-    { caption: "Career Guidance Session", emoji: "💼" },
+    { caption: "ISBU University Visit" },
+    { caption: "Student Meetup" },
+    { caption: "Alte University Campus Tour" },
+    { caption: "Tbilisi University Tour" },
+    { caption: "CIU University Visit" },
+    { caption: "New Vision University Visit" },
+    { caption: "Meetup" },
+    { caption: "Student Meetup" },
+    { caption: "Student Meetup" },
+    { caption: "Scenes from Georgia" },
+    { caption: "Tourist places" },
+    { caption: "Georgia Tour" },
+    { caption: "David Tvildiani University Visit" },
+    { caption: "Exploring Georgia" },
+    { caption: "Caucasus University Visit" },
+    { caption: "Student Meetup" },
+    { caption: "Campus tour" },
+    { caption: "Local Banking Setup Assistance" },
+    { caption: "Student Talk" },
+    { caption: "Getting Experiences" },
+    { caption: "Student Meetup" },
+    { caption: "Classroom tour" },
+    { caption: "Exploring the City" },
+    { caption: "Exploring the City" },
+    { caption: "Night life of Georgia" },
+    { caption: "Tbilisi City Tour for New Students" },
+    { caption: "Exploring the City" },
+    { caption: "Faculty Meetup" },
+    { caption: "Sight Meeting" },
+    { caption: "Medical Equipment Orientation" },
+    { caption: "Practical Training Session" },
+    { caption: "Campus Tour" },
+    { caption: "Graduation Ceremony Support" },
+    { caption: "Alumni Network Connection" },
+    { caption: "University Tour" },
+    { caption: "Georgian Technical University" },
+    { caption: "The University of Georgia" },
+    { caption: "University Tour" },
+    { caption: "Fun Meetup" },
   ],
 };
 
-// Reusable component definitions
+/**
+ * SectionHeader - Reusable component for section titles and descriptions
+ * @param {Object} props - Component props
+ * @param {ReactNode} props.title - Title content, can include JSX for styling
+ * @param {string} props.description - Description text for the section
+ * @returns {JSX.Element} - Rendered section header
+ */
 const SectionHeader = ({ title, description }) => (
   <div className="text-center mb-16">
     <h2 className="text-5xl font-bold text-[#232a36] mb-6">{title}</h2>
@@ -429,20 +480,30 @@ const SectionHeader = ({ title, description }) => (
   </div>
 );
 
+/**
+ * Home Component - Main landing page of the application
+ * Contains multiple sections showcasing different aspects of studying in Georgia
+ * @returns {JSX.Element} - Rendered Home page
+ */
 const Home = () => {
-  // State declarations
+  // State for carousel control
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = DATA.carouselSlides.length;
+
+  // State for flip cards
   const [flipped, setFlipped] = useState(
     Array(DATA.whyUsFeatures.length).fill(false)
   );
 
-  // ADDED: Fix navbar overlap by adding a ref for the hero section
+  // Ref for adjusting hero section position
   const heroSectionRef = useRef(null);
 
-  // ADDED: Adjust hero section top margin after render
+  /**
+   * Effect to adjust hero section position to account for navbar height
+   * Runs on component mount and window resize
+   */
   useEffect(() => {
-    // Function to adjust hero section position
+    // Function to calculate and set the padding
     const adjustHeroSection = () => {
       const navbar = document.querySelector("nav");
       if (navbar && heroSectionRef.current) {
@@ -454,29 +515,37 @@ const Home = () => {
     // Initial adjustment
     adjustHeroSection();
 
-    // Adjust on window resize
+    // Add resize listener for responsive adjustments
     window.addEventListener("resize", adjustHeroSection);
 
-    // Cleanup
+    // Cleanup - remove event listener on component unmount
     return () => {
       window.removeEventListener("resize", adjustHeroSection);
     };
   }, []);
 
-  // Carousel navigation functions
+  /**
+   * Navigate to a specific slide by index
+   * @param {number} slideIndex - Index of the target slide
+   */
   const goToSlide = (slideIndex) => setCurrentSlide(slideIndex);
+
+  /**
+   * Navigate to the previous slide with wraparound
+   */
   const goToPrevSlide = () =>
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+
+  /**
+   * Navigate to the next slide with wraparound
+   */
   const goToNextSlide = () =>
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
 
-  // Auto carousel effect
-  // useEffect(() => {
-  //   const interval = setInterval(goToNextSlide, 20000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // Component: Carousel Dots
+  /**
+   * CarouselDots - Navigation dots component for carousel
+   * @returns {JSX.Element} - Rendered navigation dots
+   */
   const CarouselDots = () => (
     <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-3 z-20">
       {[...Array(totalSlides)].map((_, i) => (
@@ -492,50 +561,123 @@ const Home = () => {
     </div>
   );
 
-  // Component: Challenge Card
-  const ChallengeCard = ({
-    number,
-    title,
-    icon,
-    bgColor,
-    description,
-    quote,
-  }) => (
-    <div
-      className={`bg-gradient-to-br ${bgColor} rounded-xl p-8 md:w-1/3 shadow-lg hover:shadow-2xl transition-all duration-300 relative z-10 hover:-translate-y-2 group`}
-    >
-      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-md group-hover:scale-110 transition-transform duration-300">
-        {number}
-      </div>
-      <h3 className="text-2xl font-bold text-[#232a36] mb-4 mt-4 text-center">
-        {title}
-      </h3>
-      <div className="flex items-center justify-center mb-6">
-        <div className="w-20 h-20 rounded-full bg-white shadow-inner flex items-center justify-center group-hover:bg-red-50 transition-colors duration-300">
+  /**
+   * ChallengeCard - Displays a challenge and its solution
+   * @param {Object} props - Card data
+   * @param {string} props.title - Card title
+   * @param {ReactNode} props.icon - Icon for the card
+   * @param {string} props.bgColor - Background gradient colors
+   * @param {string} props.description - Card description text
+   * @param {string} props.quote - Student quote to display
+   * @returns {JSX.Element} - Rendered challenge card
+   */
+  const ChallengeCard = ({ title, icon, bgColor, description, quote }) => {
+    // Get hover background class based on the card's primary color
+    const getHoverBgClass = () => {
+      if (bgColor.includes("blue")) return "group-hover:bg-[#e0f3ff]";
+      if (bgColor.includes("red") || bgColor.includes("pink"))
+        return "group-hover:bg-[#ffeaf2]";
+      if (bgColor.includes("green") || bgColor.includes("teal"))
+        return "group-hover:bg-[#e8fff1]";
+      return "group-hover:bg-gray-50"; // Default fallback
+    };
+
+    // Custom styles based on card color theme
+    const getPatternColor = () => {
+      if (bgColor.includes("blue")) return "text-blue-200";
+      if (bgColor.includes("red") || bgColor.includes("pink"))
+        return "text-pink-200";
+      if (bgColor.includes("green") || bgColor.includes("teal"))
+        return "text-green-200";
+      return "text-gray-200";
+    };
+
+    return (
+      <div
+        className={`bg-gradient-to-br ${bgColor} rounded-xl p-8 md:w-1/3 shadow-lg hover:shadow-2xl transition-all duration-300 relative z-10 hover:-translate-y-2 group overflow-hidden flex flex-col min-h-[470px]`}
+      >
+        {/* Decorative pattern overlay */}
+        <div
+          className={`absolute -right-8 -bottom-8 opacity-10 ${getPatternColor()}`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-10 h-10 text-red-500 group-hover:scale-110 transition-transform duration-300"
+            width="120"
+            height="120"
+            fill="currentColor"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
           >
-            {icon}
+            <path d="M12 2L1 9l11 6l9-4.91V17h2V9L12 2z" />
           </svg>
         </div>
-      </div>
-      <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300">
-        {description}
-      </p>
-      <div className="mt-6 bg-white/70 p-3 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300">
-        <p className="font-medium italic text-sm text-[#232a36]">{quote}</p>
-      </div>
-    </div>
-  );
 
-  // Component: Comparison Card - Updated with icons
+        {/* Card title */}
+        <h3 className="text-2xl font-bold text-[#232a36] mb-6 mt-2 text-center group-hover:text-red-800 transition-colors duration-300">
+          {title}
+        </h3>
+
+        {/* Icon with animated hover effects */}
+        <div className="flex items-center justify-center mb-7">
+          <div
+            className={`w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${getHoverBgClass()} group-hover:shadow-xl transform group-hover:rotate-3`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10 text-red-500 group-hover:scale-110 transition-all duration-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {icon}
+            </svg>
+          </div>
+        </div>
+
+        {/* Card description */}
+        <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300 leading-relaxed mb-6 flex-grow">
+          {description}
+        </p>
+
+        {/* Quote section with styled quotation mark */}
+        <div className="mt-auto">
+          <div className="bg-white/80 p-4 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300 relative">
+            <div className="absolute -top-3 -left-2 text-red-400 opacity-50 transform rotate-180">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 27"
+              >
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
+              </svg>
+            </div>
+            <p className="font-medium italic text-sm text-[#232a36] z-10 relative">
+              {quote}
+            </p>
+          </div>
+        </div>
+
+        {/* Rising gradient overlay animation on hover */}
+        <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:h-16 group-hover:opacity-100 transition-all duration-500"></div>
+      </div>
+    );
+  };
+
+  /**
+   * ComparisonCard - Shows before/after comparison with animated transition
+   * @param {Object} props - Component props
+   * @param {string} props.title - Card title
+   * @param {string} props.gradient - Background gradient colors
+   * @param {ReactNode} props.icon - Icon component
+   * @param {Object} props.before - "Before" state data
+   * @param {Object} props.after - "After" state data
+   * @param {string} props.description - Card description
+   * @returns {JSX.Element} - Rendered comparison card
+   */
   const ComparisonCard = ({
     title,
     gradient,
@@ -545,11 +687,11 @@ const Home = () => {
     description,
   }) => (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300 border border-gray-100">
-      {/* Card Header with Better Gradient and Icon Placement */}
+      {/* Card Header with gradient background */}
       <div
         className={`h-24 bg-gradient-to-r ${gradient} flex items-center justify-center relative px-4`}
       >
-        {/* Improved icon container with consistent sizing and positioning */}
+        {/* Floating icon container */}
         <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-white">
           <div className="text-red-500">{icon}</div>
         </div>
@@ -559,8 +701,9 @@ const Home = () => {
       </div>
 
       <div className="p-6 pt-12 space-y-4">
+        {/* Interactive comparison slider with hover effect */}
         <div className="relative overflow-hidden h-32 mt-2">
-          {/* Before */}
+          {/* Before state - shows by default */}
           <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg absolute inset-0 transition-transform duration-500 group-hover:translate-y-[-100%]">
             <div>
               <span className="block text-sm text-gray-500">
@@ -586,7 +729,7 @@ const Home = () => {
             </svg>
           </div>
 
-          {/* After - Slides up on hover */}
+          {/* After state - slides up on hover */}
           <div className="absolute inset-0 bg-green-50 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-lg flex items-center justify-between">
             <div>
               <span className="block text-sm text-gray-500">{after.label}</span>
@@ -611,6 +754,7 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Card description footer */}
         <div className="pt-4 border-t border-gray-100">
           <p className="text-[#4a5568] text-center">{description}</p>
         </div>
@@ -618,11 +762,16 @@ const Home = () => {
     </div>
   );
 
-  // Services Journey Section
+  /**
+   * OurServices - Step-by-step services journey with interactive navigation
+   * @returns {JSX.Element} - Rendered services section
+   */
   const OurServices = () => {
+    // State for active step
     const [activeStep, setActiveStep] = useState(0);
     const contentRef = useRef(null);
 
+    // Step navigation functions
     const nextStep = () => {
       if (activeStep < DATA.services.length - 1) {
         setActiveStep(activeStep + 1);
@@ -639,12 +788,17 @@ const Home = () => {
       setActiveStep(stepIndex);
     };
 
-    // Animation for content transitions
+    /**
+     * Effect for content transition animation
+     * Triggers fade-in effect when active step changes
+     */
     useEffect(() => {
       if (contentRef.current) {
+        // Apply initial "hidden" state
         contentRef.current.style.opacity = "0";
         contentRef.current.style.transform = "translateY(20px)";
 
+        // Reveal with animation after a brief delay
         setTimeout(() => {
           contentRef.current.style.opacity = "1";
           contentRef.current.style.transform = "translateY(0)";
@@ -652,7 +806,15 @@ const Home = () => {
       }
     }, [activeStep]);
 
-    // ServiceStep Component with enhanced visuals
+    /**
+     * ServiceStep - Individual step indicator in the stepper
+     * @param {Object} props - Component props
+     * @param {number} props.number - Step number
+     * @param {boolean} props.isActive - Whether this step is currently active
+     * @param {boolean} props.isCompleted - Whether this step has been completed
+     * @param {Function} props.onClick - Click handler function
+     * @returns {JSX.Element} - Rendered step indicator
+     */
     const ServiceStep = ({ number, isActive, isCompleted, onClick }) => (
       <button
         onClick={onClick}
@@ -682,7 +844,9 @@ const Home = () => {
         )}
         {isActive && (
           <>
+            {/* Active indicator line */}
             <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-0.5 h-5 bg-red-300"></span>
+            {/* Pulsating effect */}
             <span className="absolute -inset-1.5 animate-ping rounded-full bg-red-200 opacity-75 duration-1000"></span>
           </>
         )}
@@ -700,6 +864,7 @@ const Home = () => {
         ></div>
 
         <div className="max-w-7xl mx-auto px-8 relative">
+          {/* Section header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-[#232a36] mb-4 sm:mb-6">
               Our{" "}
@@ -715,7 +880,7 @@ const Home = () => {
           </div>
 
           {/* Stepper - Desktop (Horizontal) */}
-          <div className="hidden md:flex justify-center items-center mb-10 overflow-x-auto py-4">
+          <div className="hidden md:flex justify-center items-center mb-10 py-4">
             <div className="flex items-center">
               {DATA.services.map((_, index) => (
                 <React.Fragment key={index}>
@@ -892,14 +1057,15 @@ const Home = () => {
               ></button>
             ))}
           </div>
-
-          {/* Additional "quick jump" to popular services */}
         </div>
       </section>
     );
   };
 
-  // Student Testimonials Section
+  /**
+   * StudentTestimonials - Displays student feedback in card layout
+   * @returns {JSX.Element} - Rendered testimonials section
+   */
   const StudentTestimonials = () => {
     return (
       <section className="py-20 bg-gray-50">
@@ -911,17 +1077,20 @@ const Home = () => {
             </h2>
           </div>
 
+          {/* Testimonial cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {DATA.testimonials.map((student, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
               >
+                {/* Top decoration */}
                 <div className="relative">
                   <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-blue-100/50 to-transparent"></div>
                 </div>
 
                 <div className="p-6 flex flex-col h-full">
+                  {/* Student info and avatar */}
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-20 h-20 rounded-full mb-4 overflow-hidden border-4 border-blue-50 shadow-md">
                       <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
@@ -937,12 +1106,14 @@ const Home = () => {
                   </div>
 
                   <div className="flex-grow flex flex-col">
+                    {/* Student testimonial */}
                     <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-red-500 mb-4 flex-grow">
                       <p className="italic text-[#4a5568] line-clamp-4">
                         "{student.testimonial}"
                       </p>
                     </div>
 
+                    {/* Additional details */}
                     {student.details && (
                       <div className="w-full grid grid-cols-2 gap-2 mt-auto">
                         {student.details.map((detail, idx) => (
@@ -970,9 +1141,12 @@ const Home = () => {
     );
   };
 
-  // Wall of Fame Section with consistent image sizes and double-click zoom
+  /**
+   * WallOfFame - Image gallery with interactive lightbox viewer
+   * @returns {JSX.Element} - Rendered gallery section
+   */
   const WallOfFame = () => {
-    // State for the image popup
+    // State for the image popup/lightbox
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -982,39 +1156,39 @@ const Home = () => {
     const dragRef = useRef(null);
     const lastClickTime = useRef(0);
 
-    // Number of images per row (for perfect square matrix)
-    const imagesPerRow = 4; // Using 4 columns for better layout
-
-    // Calculate total number of items needed for complete rows
+    // Gallery configuration
+    const imagesPerRow = 4; // Using 4 columns for grid layout
     const totalImages = 40;
     const visibleImages = 15;
     const remainingCount = totalImages - visibleImages;
 
-    // Define which positions should have featured (larger) images
-    // const featuredPositions = []; // No featured images - all same size
-
-    // Generate array of all 40 image paths with fixed featured states
+    // Generate array of image data
     const srImages = Array.from({ length: totalImages }, (_, i) => ({
       id: i + 1,
       src: `/src/assets/SR images/${i + 1}.jpg`,
       alt: `SR Counselling moment ${i + 1}`,
-      featured: false, // No featured images - all same size
+      featured: false, // All images same size
       // Use the wallOfFameImages array for captions in a circular manner
       caption: DATA.wallOfFameImages[i % DATA.wallOfFameImages.length].caption,
       emoji: DATA.wallOfFameImages[i % DATA.wallOfFameImages.length].emoji,
     }));
 
-    // Function to handle image click to open popup
+    /**
+     * Opens the lightbox popup with the selected image
+     * @param {number} index - Index of the image to display
+     */
     const openImagePopup = (index) => {
       setSelectedImage(srImages[index]);
       setSelectedIndex(index);
       setIsPopupOpen(true);
       setDragPosition({ x: 0, y: 0 });
       setIsZoomed(false);
-      document.body.style.overflow = "hidden"; // Prevent scrolling when popup is open
+      document.body.style.overflow = "hidden"; // Prevent page scrolling
     };
 
-    // Function to close the popup
+    /**
+     * Closes the lightbox popup
+     */
     const closePopup = () => {
       setIsPopupOpen(false);
       setIsZoomed(false);
@@ -1022,7 +1196,10 @@ const Home = () => {
       document.body.style.overflow = "auto"; // Re-enable scrolling
     };
 
-    // Navigation functions
+    /**
+     * Navigate to next image in the lightbox
+     * @param {Event} e - Click event
+     */
     const goToNext = (e) => {
       e.stopPropagation();
       const nextIndex = (selectedIndex + 1) % srImages.length;
@@ -1032,6 +1209,10 @@ const Home = () => {
       setIsZoomed(false);
     };
 
+    /**
+     * Navigate to previous image in the lightbox
+     * @param {Event} e - Click event
+     */
     const goToPrev = (e) => {
       e.stopPropagation();
       const prevIndex = (selectedIndex - 1 + srImages.length) % srImages.length;
@@ -1041,8 +1222,11 @@ const Home = () => {
       setIsZoomed(false);
     };
 
-    // Double-click zoom handler
-    const handleImageClick = () => {
+    /**
+     * Handle image click events - detects double-clicks for zoom toggle
+     * @param {Event} e - Click event
+     */
+    const handleImageClick = (e) => {
       const currentTime = new Date().getTime();
       const clickTimeDiff = currentTime - lastClickTime.current;
 
@@ -1055,13 +1239,20 @@ const Home = () => {
       lastClickTime.current = currentTime;
     };
 
-    // Mouse/touch event handlers for dragging - improved to make dragging work
+    /**
+     * Mouse down event handler - initiates image dragging
+     * @param {MouseEvent} e - Mouse event
+     */
     const handleMouseDown = (e) => {
       if (!isZoomed) return;
       setIsDragging(true);
-      e.preventDefault(); // Prevent image drag behavior
+      e.preventDefault(); // Prevent default image drag
     };
 
+    /**
+     * Mouse move event handler - updates drag position
+     * @param {MouseEvent} e - Mouse event
+     */
     const handleMouseMove = (e) => {
       if (!isDragging || !isZoomed) return;
       const movementX = e.movementX;
@@ -1072,11 +1263,17 @@ const Home = () => {
       }));
     };
 
+    /**
+     * Mouse up event handler - ends dragging
+     */
     const handleMouseUp = () => {
       setIsDragging(false);
     };
 
-    // Touch event handlers - improved
+    /**
+     * Touch start event handler - for mobile devices
+     * @param {TouchEvent} e - Touch event
+     */
     const handleTouchStart = (e) => {
       if (!isZoomed) return;
       setIsDragging(true);
@@ -1087,9 +1284,13 @@ const Home = () => {
       e.preventDefault(); // Prevent default touch behavior
     };
 
+    /**
+     * Touch move event handler - for mobile drag
+     * @param {TouchEvent} e - Touch event
+     */
     const handleTouchMove = (e) => {
       if (!isDragging || !isZoomed || !dragRef.current) return;
-      e.preventDefault(); // This is critical for preventing scrolling during drag
+      e.preventDefault(); // Critical for preventing scrolling during drag
 
       const touchX = e.touches[0].clientX;
       const touchY = e.touches[0].clientY;
@@ -1108,12 +1309,18 @@ const Home = () => {
       };
     };
 
+    /**
+     * Touch end event handler - ends touch dragging
+     */
     const handleTouchEnd = () => {
       setIsDragging(false);
       dragRef.current = null;
     };
 
-    // Create grid items
+    /**
+     * Creates grid items for the image gallery
+     * @returns {Array} - Array of grid item objects
+     */
     const createGridItems = () => {
       // Calculate how many complete rows needed
       const totalRows = Math.ceil((visibleImages + 1) / imagesPerRow);
@@ -1165,15 +1372,16 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Photo gallery with consistent image sizes */}
+          {/* Photo gallery grid */}
           <div className="grid grid-cols-4 gap-3">
             {gridItems.map((item, index) => {
               if (item.type === "more") {
+                // "More photos" tile
                 return (
                   <div
                     key="more-photos"
                     className="group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer bg-gradient-to-br from-red-400 to-red-600"
-                    style={{ aspectRatio: "1/1" }} // Square aspect ratio for all images
+                    style={{ aspectRatio: "1/1" }} // Square aspect ratio
                     onClick={() => openImagePopup(visibleImages)}
                   >
                     <div className="h-full flex items-center justify-center">
@@ -1193,7 +1401,7 @@ const Home = () => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth={2}
+                              strokeWidth="2"
                               d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
                             />
                           </svg>
@@ -1204,12 +1412,12 @@ const Home = () => {
                 );
               }
 
-              // Regular image tile - all same size
+              // Regular image tile
               return (
                 <div
                   key={`image-${index}`}
                   className="group overflow-hidden rounded-lg shadow-md transition-all duration-300 cursor-pointer"
-                  style={{ aspectRatio: "1/1" }} // Square aspect ratio for all images
+                  style={{ aspectRatio: "1/1" }} // Square aspect ratio
                   onClick={() => openImagePopup(index % visibleImages)}
                 >
                   <div className="relative h-full bg-gray-100">
@@ -1224,6 +1432,7 @@ const Home = () => {
                           </div>`;
                       }}
                     />
+                    {/* Caption overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                       <div className="p-3 text-white w-full">
                         <p className="font-medium text-sm">
@@ -1240,7 +1449,7 @@ const Home = () => {
             })}
           </div>
 
-          {/* Image Popup with double-click zoom and fixed drag functionality */}
+          {/* Image Popup/Lightbox */}
           {isPopupOpen && selectedImage && (
             <div
               className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
@@ -1271,12 +1480,12 @@ const Home = () => {
                   </svg>
                 </button>
 
-                {/* Image container with double-click zoom and improved drag capability */}
+                {/* Image container with interactive features */}
                 <div
                   className={`h-full overflow-hidden rounded-lg transition-all duration-500 ${
                     isZoomed ? "cursor-grab" : "cursor-default"
                   } ${isDragging ? "cursor-grabbing" : ""}`}
-                  onClick={handleImageClick} // Using handleImageClick for double-click detection
+                  onClick={handleImageClick}
                   onMouseDown={handleMouseDown}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
@@ -1284,6 +1493,14 @@ const Home = () => {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
+                  style={{
+                    WebkitTouchCallout: "none",
+                    WebkitUserSelect: "none",
+                    MozUserSelect: "none",
+                    msUserSelect: "none",
+                    userSelect: "none",
+                    touchAction: "none", // Prevent browser touch actions
+                  }}
                 >
                   <div className="w-full h-full flex items-center justify-center">
                     <img
@@ -1293,15 +1510,22 @@ const Home = () => {
                         isZoomed
                           ? "max-h-none max-w-none scale-150"
                           : "max-h-[80vh] max-w-full"
-                      } object-contain`}
+                      } object-contain pointer-events-none`}
                       style={
                         isZoomed
                           ? {
                               transform: `scale(1.5) translate(${dragPosition.x}px, ${dragPosition.y}px)`,
-                              pointerEvents: "none", // Important: prevents image from capturing mouse events
+                              WebkitUserDrag: "none",
+                              WebkitTouchCallout: "none",
+                              WebkitTapHighlightColor: "transparent",
                             }
-                          : { pointerEvents: "none" }
+                          : {
+                              WebkitUserDrag: "none",
+                              WebkitTouchCallout: "none",
+                              WebkitTapHighlightColor: "transparent",
+                            }
                       }
+                      draggable="false"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src =
@@ -1311,7 +1535,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Left/Right Navigation arrows */}
+                {/* Navigation buttons */}
                 <button
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
                   onClick={goToPrev}
@@ -1352,25 +1576,24 @@ const Home = () => {
                   </svg>
                 </button>
 
-                {/* Caption and controls bar */}
+                {/* Caption and image counter */}
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 flex justify-between items-center">
                   <div>
                     <p className="font-medium">
                       {selectedImage.emoji} {selectedImage.caption}
                     </p>
                   </div>
-
                   <p className="text-sm text-gray-300">
                     {selectedIndex + 1} of {srImages.length}
                   </p>
                 </div>
 
-                {/* Double-click instruction overlay */}
+                {/* User instructions */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-xs opacity-80">
                   <p>Double-click to {isZoomed ? "zoom out" : "zoom in"}</p>
                 </div>
 
-                {/* Drag instruction overlay - shows only when zoomed */}
+                {/* Additional instruction for zoomed state */}
                 {isZoomed && (
                   <div
                     className="absolute top-12 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-xs opacity-80 transition-opacity duration-300"
@@ -1389,14 +1612,15 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section with optimized typography hierarchy */}
+      {/* Hero Section - Dynamic carousel with multiple content types */}
       <div
         ref={heroSectionRef}
         className="relative h-[450px] z-0"
         style={{
-          paddingTop: "0px", // Will be set dynamically by useEffect
+          paddingTop: "0px", // Dynamically adjusted by useEffect
         }}
       >
+        {/* Carousel slides */}
         {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
@@ -1406,15 +1630,15 @@ const Home = () => {
           >
             <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
               <div className="flex flex-col md:flex-row items-center justify-between h-full py-4">
-                {/* Content side - improved typography hierarchy */}
+                {/* Content side */}
                 <div className="md:w-5/12 lg:w-5/12 md:pr-4">
                   <div className="space-y-3">
-                    {/* Main heading - largest size */}
+                    {/* Main heading */}
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                       {slide.title}
                     </h1>
 
-                    {/* Subtitle - medium size */}
+                    {/* Subtitle with conditional rendering */}
                     <div className="py-2">
                       {index === 0 ? (
                         <>
@@ -1435,18 +1659,18 @@ const Home = () => {
                       )}
                     </div>
 
-                    {/* Description - smaller but still readable */}
+                    {/* Description */}
                     <p className="text-sm md:text-base text-[#4a5568] line-clamp-2 md:line-clamp-3 max-w-md">
                       {slide.description}
                     </p>
 
-                    {/* Stats layout - visually distinct */}
+                    {/* Optional statistics grid */}
                     {slide.stats && (
                       <div className="grid grid-cols-2 gap-3 py-2 max-w-md">
                         {slide.stats.map((stat, idx) => (
                           <div
                             key={idx}
-                            className="text-center p-2 bg-white rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
+                            className="text-center p-2 bg-red-50 rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
                           >
                             <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
                               {stat.value}
@@ -1459,7 +1683,7 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Testimonial - with reduced height and less padding */}
+                    {/* Optional testimonial quote */}
                     {slide.testimonial && (
                       <div className="bg-white p-2 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
                         <p className="text-[#4a5568] italic text-xs md:text-sm line-clamp-2">
@@ -1479,7 +1703,7 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Buttons - with reduced top padding */}
+                    {/* Action buttons */}
                     {slide.buttons && (
                       <div
                         className={`${
@@ -1510,7 +1734,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Image side - enhanced presentation */}
+                {/* Image side */}
                 <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-4 md:mt-0">
                   <div className="bg-white p-4 rounded-lg shadow-md w-full max-h-[320px] flex items-center justify-center overflow-hidden transition-transform hover:shadow-lg duration-300">
                     <div
@@ -1540,7 +1764,7 @@ const Home = () => {
           </div>
         ))}
 
-        {/* Enhanced navigation controls */}
+        {/* Navigation controls */}
         <button
           onClick={goToPrevSlide}
           className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
@@ -1557,7 +1781,7 @@ const Home = () => {
           <ChevronRight size={18} className="text-gray-800" />
         </button>
 
-        {/* More visible dots */}
+        {/* Pagination indicators */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
           {[...Array(totalSlides)].map((_, i) => (
             <button
@@ -1574,20 +1798,22 @@ const Home = () => {
         </div>
       </div>
 
-      {/* ADDED: Custom scrollbar style */}
-      <style jsx="true">{`
-        /* Custom scrollbar styles */
-        div::-webkit-scrollbar {
-          width: 4px;
-        }
-        div::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        div::-webkit-scrollbar-thumb {
-          background-color: rgba(203, 213, 225, 0.5);
-          border-radius: 20px;
-        }
-      `}</style>
+      {/* Custom scrollbar styling */}
+      <style jsx={true}>
+        {`
+          /* Custom scrollbar styles for better UX */
+          div::-webkit-scrollbar {
+            width: 4px;
+          }
+          div::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          div::-webkit-scrollbar-thumb {
+            background-color: rgba(203, 213, 225, 0.5);
+            border-radius: 20px;
+          }
+        `}
+      </style>
 
       {/* Challenges & Solutions Section */}
       <section className="py-20 bg-white">
@@ -1635,10 +1861,10 @@ const Home = () => {
           <div className="flex justify-center mt-16">
             <Link
               to="/Universities"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-medium text-base shadow-lg hover:scale-105 transition"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <span>Compare Universities</span>
+              <span>Explore Universities</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-2 flex-shrink-0"
@@ -1656,101 +1882,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Grid Section */}
-      <section className="py-20 bg-white flex flex-col items-center">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Why Choose <span className="text-red-500">SR Counselling</span> for
-          Your Georgian Journey?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {DATA.whyUsFeatures.map((feature, idx) => (
-            <div
-              key={idx}
-              className="relative w-72 h-44 mx-auto cursor-pointer perspective"
-              onMouseEnter={() =>
-                setFlipped(flipped.map((f, i) => (i === idx ? true : f)))
-              }
-              onMouseLeave={() =>
-                setFlipped(flipped.map((f, i) => (i === idx ? false : f)))
-              }
-            >
-              <div
-                className={`transition-transform duration-500 transform-style-preserve-3d w-full h-full ${
-                  flipped[idx] ? "rotate-y-180" : ""
-                }`}
-              >
-                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border border-gray-100 backface-hidden">
-                  <div className="bg-red-500 text-white rounded-full p-4 mb-4 shadow-lg">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-lg font-semibold text-[#232a36]">
-                    {feature.front}
-                  </h4>
-                </div>
-                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-red-500 text-white rounded-xl shadow-lg border border-red-200 rotate-y-180 backface-hidden px-6">
-                  <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
-                  <p className="text-sm">{feature.back}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Bar */}
-        <div className="w-full max-w-3xl bg-gray-50 rounded-lg shadow flex flex-wrap justify-center items-center gap-6 py-6 px-4 mb-12">
-          {DATA.srStats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-center mx-4">
-              <span className="text-2xl font-bold text-red-500">
-                {stat.value}
-              </span>
-              <span className="text-xs text-gray-600">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Logo, tagline, CTA - with larger logo and removed SR Counselling text */}
-        <div className="flex flex-col items-center">
-          <img src={srLogo} alt="SR Counselling" className="h-24 w-24 mb-6" />
-          {/* Text "SR Counselling" removed */}
-          <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
-            Let us guide you to your dream medical career in Georgia with
-            expertise, support, and trust.
-          </p>
-          <a
-            href="https://www.srcounselling.in/about.php"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
-          >
-            <span>Learn More About Us</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2 flex-shrink-0"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
-
-        {/* Flip card CSS */}
-        <style>
-          {`
-            .perspective { perspective: 1200px; }
-            .transform-style-preserve-3d { transform-style: preserve-3d; }
-            .backface-hidden { backface-visibility: hidden; }
-            .rotate-y-180 { transform: rotateY(180deg); }
-            .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
-          `}
-        </style>
-      </section>
-
-      {/* Additional Sections */}
+      {/* Flip card CSS */}
+      <style>
+        {`
+          .perspective { perspective: 1200px; }
+          .transform-style-preserve-3d { transform-style: preserve-3d; }
+          .backface-hidden { backface-visibility: hidden; }
+          .rotate-y-180 { transform: rotateY(180deg); }
+          .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
+        `}
+      </style>
       <OurServices />
       <StudentTestimonials />
       <WallOfFame />
