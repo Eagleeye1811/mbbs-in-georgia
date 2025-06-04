@@ -34,12 +34,12 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/about-georgia" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- About Georgia</Link></li>
             <li><Link to="/how-to-apply" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- How to Apply</Link></li>
-            <li><Link to="/fAQ" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
+            <li><Link to="/faq" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
             <li><Link to="/contact-us" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Contact Us</Link></li>
             <li><Link to="/testimonials" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Student Testimonials</Link></li>
             <li><Link to="/universities" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Universities</Link></li>
-            <li><Link to="/privacyPolicy" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Privacy Policy</Link></li>
-            <li><Link to="/termsAndConditions" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Terms & Conditions</Link></li>
+            <li><Link to="/privacy-policy" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Privacy Policy</Link></li>
+            <li><Link to="/terms-and-conditions" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Terms & Conditions</Link></li>
           </ul>
         </div>
 
