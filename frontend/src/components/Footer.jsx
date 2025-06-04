@@ -1,28 +1,25 @@
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const Footer = () => {
-  // Add navigate function to handle navigation and scrolling
   const navigate = useNavigate();
 
-  // Function to navigate to a page and scroll to top
   const navigateAndScrollToTop = (path) => {
     navigate(path);
-    // Scroll to top after navigation
     window.scrollTo(0, 0);
   };
 
   return (
     <footer className="bg-gray-700 text-white py-10 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        
         {/* About Us */}
         <div>
           <h2 className="text-xl font-bold mb-4">About Us</h2>
           <p className="text-sm leading-relaxed">
-          We are an leading independent educational consulting firm founded in 2008 that provides mentoring and admissions counseling to 
-           international students seeking admission to the full spectrum of North American, European & Australian universities and colleges.
+            We are a leading independent educational consulting firm founded in 2008 that provides mentoring and admissions counseling to 
+            international students seeking admission to the full spectrum of North American, European & Australian universities and colleges.
           </p>
           <a
             href="https://www.srcounselling.in/about.php"
@@ -34,35 +31,35 @@ const Footer = () => {
           </a>
         </div>
 
+        {/* Quick Links */}
         <div>
-        <h2 className="text-xl font-bold mb-4">Quick links</h2>
-        <ul className="space-y-2 text-sm">
-          <li><Link to="/AboutGeorgia" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- About Georgia</Link></li>
-          <li><Link to="/HowToApply" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- How to Apply</Link></li>
-          <li><Link to="/FAQ" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
-          <li><Link to="/ContactUs" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Contact Us</Link></li>
-          <li><Link to="/Testimonials" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Student Testimonials</Link></li>
-          <li><Link to="/Universities" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Universities</Link></li>
-          <li><Link to="/NMCReg" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- NMC Regulations</Link></li>
-          <li>
-            <button 
-              onClick={() => navigateAndScrollToTop("/privacyPolicy")} 
-              className='hover:text-red-400 text-left'
-            >
-              - Privacy Policy
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => navigateAndScrollToTop("/termsAndConditions")} 
-              className='hover:text-red-400 text-left'
-            >
-              - Terms & Conditions
-            </button>
-          </li>
-        </ul>
+          <h2 className="text-xl font-bold mb-4">Quick links</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/about-georgia" className='hover:text-red-400'>- About Georgia</Link></li>
+            <li><Link to="/how-to-apply" className='hover:text-red-400'>- How to Apply</Link></li>
+            <li><Link to="/faq" className='hover:text-red-400'>- FAQs</Link></li>
+            <li><Link to="/contact-us" className='hover:text-red-400'>- Contact Us</Link></li>
+            <li><Link to="/testimonials" className='hover:text-red-400'>- Student Testimonials</Link></li>
+            <li><Link to="/universities" className='hover:text-red-400'>- Universities</Link></li>
+            <li><Link to="/nmc-regulations" className='hover:text-red-400'>- NMC Regulations</Link></li>
+            <li>
+              <button 
+                onClick={() => navigateAndScrollToTop("/privacy-policy")} 
+                className='hover:text-red-400 text-left'
+              >
+                - Privacy Policy
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => navigateAndScrollToTop("/terms-and-conditions")} 
+                className='hover:text-red-400 text-left'
+              >
+                - Terms & Conditions
+              </button>
+            </li>
+          </ul>
         </div>
-
 
         {/* Contact Us */}
         <div>
