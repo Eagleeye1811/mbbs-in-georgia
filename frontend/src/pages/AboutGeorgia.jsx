@@ -118,7 +118,7 @@ const AboutGeorgia = () => {
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 h-full">
           <div className="text-left max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down">
-              Georgia <span className="text-white">–</span> More Than a <span className="text-red-500">Destination</span>
+              Georgia <span className="text-white">–</span> More Than a <span className="text-red-400">Destination</span>
             </h1>
             <p className="text-lg md:text-xl text-white font-semibold animate-fade-in-up">
               Discover the magic of Georgia: where ancient culture, breathtaking landscapes, and warm hospitality await you.
@@ -405,8 +405,8 @@ const AboutGeorgia = () => {
                   </div>
                 </div>
                 {/* Back Side */}
-                <div className="absolute w-full h-full backface-hidden bg-gray-500 rounded-2xl shadow-md transform rotate-y-180 p-6 flex items-center justify-center">
-                  <h3 className="text-base text-white text-justify">{place.desc}</h3>
+                <div className="absolute w-full h-full backface-hidden bg-gray-200 rounded-2xl shadow-md transform rotate-y-180 p-6 flex items-center justify-center">
+                  <h3 className="text-base text-black text-justify">{place.desc}</h3>
                 </div>
               </div>
             </div>
