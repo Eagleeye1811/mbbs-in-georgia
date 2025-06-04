@@ -159,12 +159,12 @@ const HowToApply = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         
         {/* Hero content */}
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+        <div className="container mx-auto px-4 relative z-10 text-left ml-5">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4 ">
             <span className="text-white">How to Apply for MBBS</span> <br />
             <span className="text-[#ff5a5f]">in Georgia</span>
           </h1>
-          <p className="text-xl text-white max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl  ">
             A step-by-step guide to your medical education journey in Georgia
           </p>
         </div>
@@ -178,9 +178,9 @@ const HowToApply = () => {
           </h2>
 
           {/* Airplane Animation Path */}
-          <div className="relative max-w-4xl mt-15 mx-auto mb-10 px-6">
+          <div className="relative max-w-4xl mt-15 mx-auto mb-4 px-6">
             {/* Curved Path with SVG - Increased height from h-24 to h-36 */}
-            <div className="relative h-36 mb-8 overflow-visible">
+            <div className="relative h-36 mb-0 overflow-visible">
               <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
                 <path 
                   d="M0,70 Q450,0 900,70" 
@@ -274,7 +274,7 @@ const HowToApply = () => {
             {/* Light blue background wrapper */}
             <div className="bg-blue-50 p-4 sm:p-6">
               {/* White content area - increased minimum height */}
-              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[300px] flex flex-col">
                 <div className="flex flex-col md:flex-row md:items-start">
                   {/* Left side with icon */}
                   <div className="md:w-1/4 text-center mb-6 md:mb-0 flex flex-col items-center mt-23">
