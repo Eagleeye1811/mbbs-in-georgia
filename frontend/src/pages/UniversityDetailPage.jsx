@@ -141,7 +141,7 @@ export default function UniversityDetailPage() {
         </h2>
         <div className="mt-4 flex flex-wrap gap-2 bg-gray-200 p-4 rounded-b-lg">
           {university.programs_offered.map((program) => (
-            <span key={program} className="px-4 py-2 bg-blue-500 text-white rounded-full">
+            <span key={program} className="px-4 py-2 bg-gray-400 text-white rounded-full">
               {program}
             </span>
           ))}
