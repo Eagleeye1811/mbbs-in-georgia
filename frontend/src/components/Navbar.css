@@ -11,17 +11,3 @@
   animation: colorFade 0.3s ease-in-out forwards;
 }
 
-/* Hide Google Translate branding and UI noise */
-.goog-te-banner-frame {
-  display: none !important;
-}
-body {
-  top: 0px !important;
-}
-.goog-logo-link {
-  display: none !important;
-}
-.goog-te-gadget {
-  font-size: 0px !important;
-  color: transparent !important;
-}
