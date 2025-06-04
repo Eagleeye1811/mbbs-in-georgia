@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import StudentLifeStyle from "./pages/StudentLifeStyle";
+import UniversityDetailPage from "./pages/UniversityDetailPage";
 
 const App = () => {
   return (

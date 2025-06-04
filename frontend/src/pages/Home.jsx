@@ -16,7 +16,7 @@ import {
   FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-import { motion, useAnimation } from "framer-motion";
+// import { motion, useAnimation } from "framer-motion";
 
 /**
  * Constants and data objects for the entire application
