@@ -28,6 +28,31 @@ import garden from "../assets/StudentLifestyle/garden.jpg";
 import campus1 from "../assets/StudentLifestyle/campus1.jpg";
 import rooms from "../assets/StudentLifestyle/rooms.jpeg";
 
+ 
+
+
+import convocation from "../assets/StudentLifestyle/convocation.webp"; 
+import bathroom from "../assets/StudentLifestyle/bathroom.avif";
+import fountain from "../assets/StudentLifestyle/fountain-uni.jpeg";
+import hospital1 from "../assets/StudentLifestyle/hospital1.jpg";
+import hospital2 from "../assets/StudentLifestyle/hospital2.png";
+import hospital3 from "../assets/StudentLifestyle/hospital3.jpeg";
+import hospital4 from "../assets/StudentLifestyle/hospital4.jpg";
+import hospital5 from "../assets/StudentLifestyle/hospital5.jpg";
+import hospital6 from "../assets/StudentLifestyle/hospital6.webp";
+import hospital7 from "../assets/StudentLifestyle/hospital7.jpeg";
+import hospital8 from "../assets/StudentLifestyle/hospital8.jpeg";
+import hospital9 from "../assets/StudentLifestyle/hospital9.jpeg";
+import hospital10 from "../assets/StudentLifestyle/hospital10.jpg";
+import hospital11 from "../assets/StudentLifestyle/hospital11.jpeg";
+import classes1 from "../assets/StudentLifestyle/class.avif";
+import lab from "../assets/StudentLifestyle/lab.jpg";
+import campus2 from "../assets/StudentLifestyle/campus2.jpg";
+import clinic from "../assets/StudentLifestyle/clinic.jpg";
+import garden from "../assets/StudentLifestyle/garden.jpg";
+import campus1 from "../assets/StudentLifestyle/campus1.jpg";
+import rooms from "../assets/StudentLifestyle/rooms.jpeg";
+
 const StudentLifeStyle = () => {
   return (
     <>
