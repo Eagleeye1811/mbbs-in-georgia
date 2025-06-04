@@ -41,11 +41,11 @@ const Testimonials = () => {
       <main className="flex-grow max-w-7xl mx-auto px-6 md:px-45 py-8">
         {/* Recent Blogs */}
         <section className="mb-12">
-          <h2 className="text-4xl font-bold mb-6 text-center">
-            <span className="text-gray-800">Recent </span>
-            <span className="text-red-500">Blogs</span>
-          </h2>
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 px-8 rounded-2xl shadow-lg">
+          <div className="bg-gradient-to-br from-gray-200 to-white py-10 px-8 rounded-2xl shadow-2xl border border-gray-200">
+            <h2 className="text-4xl font-bold mb-6 text-center">
+              <span className="text-gray-800">Recent </span>
+              <span className="text-red-500">Blogs</span>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
@@ -70,7 +70,9 @@ const Testimonials = () => {
                 <a 
                   key={index}
                   href={blog.link}
-                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
                     <img 
@@ -79,17 +81,17 @@ const Testimonials = () => {
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
                       {blog.title}
                     </h3>
                     <p className="text-gray-600 text-base mb-4 line-clamp-2 font-normal leading-relaxed">
                       {blog.excerpt}
                     </p>
-                    <div className="flex items-center text-red-500 font-medium">
-                      Read More 
+                    <div className="flex items-center text-red-500 font-medium mt-auto">
+                      <span className="align-middle">Read More</span>
                       <svg 
-                        className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
+                        className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform align-middle" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -110,6 +112,7 @@ const Testimonials = () => {
         </section>
         
         {/* Student Testimonials Section */}
+        <div className="bg-gradient-to-br from-gray-200 to-white py-10 px-8 rounded-2xl shadow-2xl border border-gray-200">
         <section className="mb-12">
           <h2 className="text-4xl font-bold mb-8 text-center">
             <span className="text-gray-800">Student </span>
@@ -142,13 +145,13 @@ const Testimonials = () => {
                 name: "Shivani Darekar",
                 image: "https://randomuser.me/api/portraits/women/4.jpg",
                 quote:
-                  "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential and making this entire process such a beautiful journey..",
+                  "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential.",
               },
               {
                 name: "Kesha Dalal",
                 image: "https://randomuser.me/api/portraits/men/5.jpg",
                 quote:
-                  "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa and applying into the best universities. ",
+                  "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa. ",
               },
               {
                 name: "Bhavesh Mhatre",
@@ -177,33 +180,34 @@ const Testimonials = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group bg-gray-300 p-6 rounded-xl shadow-lg hover:shadow-2xl 
+                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl 
                 transition-all duration-700 transform hover:-translate-y-2 
-                hover:bg-gradient-to-br from-gray-50 via-gray-100 to-purple-100 
-                animate-fade-in-up cursor-pointer"
+                hover:bg-gradient-to-br from-gray-200 via-gray-300 to-purple-100 
+                animate-fade-in-up cursor-pointer h-full flex flex-col min-h-[3px]"
                 style={{
                   animationDelay: `${index * 200}ms`,
                   animationFillMode: 'backwards'
                 }}
               >
-                <div className="flex items-center mb-4 relative overflow-hidden">
-                  <div className="relative">
+                <div className="flex items-center mb-4 relative overflow-visible">
+                  <div className="relative z-10">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-16 h-16 rounded-full border-2 border-indigo-500 object-cover 
                       transform group-hover:scale-110 transition-all duration-700 
-                      group-hover:rotate-6"
+                      group-hover:rotate-6 bg-white"
+                      style={{ boxShadow: '0 4px 16px 0 rgba(80,80,80,0.10)' }}
                     />
                     <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-gray-600 to-purple-600 rounded-full p-1.5 
-                      transform group-hover:scale-110 transition-all duration-500">
+                      transform group-hover:scale-110 transition-all duration-500 z-20">
                       <svg 
                         className="w-3.5 h-3.5 text-white"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
                         <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.084 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.166.865.25 1.336.25 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.437.695.21 1.04z"/>
-  </svg>
+                      </svg>
                     </div>
                   </div>
                   <div className="ml-4">
@@ -239,6 +243,7 @@ const Testimonials = () => {
             ))}
           </div>
         </section>
+        </div>
 
       </main>
     </div>
