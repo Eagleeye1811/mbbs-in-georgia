@@ -118,7 +118,6 @@ function Faq() {
 				{/* Background elements with hover effects */}
 				<div className="absolute inset-0">
 					<div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-red-500/10 to-transparent transition-all duration-500 hover:from-red-500/20"></div>
-					<div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/10 to-transparent transition-all duration-500 hover:from-blue-500/20"></div>
 				</div>
 
 				<div className="container mx-auto px-4 max-w-5xl relative z-10 h-full flex items-center">

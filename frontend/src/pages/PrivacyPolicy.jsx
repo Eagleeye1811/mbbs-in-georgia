@@ -41,7 +41,6 @@ const PrivacyPolicy = () => {
         <div className="absolute inset-0 z-0">
           {/* Simple gradient effect */}
           <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-red-500/10 to-transparent"></div>
-          <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/10 to-transparent"></div>
         </div>
         
         <div className="container mx-auto px-4 max-w-5xl relative z-10 h-full flex items-center">
@@ -125,9 +124,7 @@ const PrivacyPolicy = () => {
           <div className="p-8">
             <div className="prose max-w-none">
               <p className="text-gray-600 mb-8 text-lg leading-relaxed border-l-4 border-[#ff5a5f] pl-4 italic">
-                At MBBS in Georgia, accessible from our website, the privacy of our visitors is of utmost importance to us. 
-                This Privacy Policy outlines the types of information we collect, how we use it, how we safeguard it, 
-                and the rights you have regarding your data.
+              At SR Counselling, accessible through our official website, the privacy of our visitors is of utmost importance to us. This Privacy Policy outlines the types of information we collect, how we use it, how we protect it, and the rights you have concerning your personal data.
               </p>
 
               {/* Policy sections with enhanced styling */}
