@@ -1,6 +1,6 @@
 import React from 'react';  
 import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
-// import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
+// import studentLifeStyleImg from '../assets/studentlifestyle.jpg';
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
 
@@ -64,13 +64,13 @@ const StudentLifeStyle = () => {
         {
           icon: <Wifi className="w-10 h-10 text-red-500" />,
           title: "High-Speed Internet",
-          description: "Available 24×7 campus-wide WiFi connectivity",
+          description: "Available 24x7 campus-wide WiFi connectivity",
           color: "from-red-400 to-red-600"
         },
         {
           icon: <ShieldCheck className="w-10 h-10 text-green-500" />,
           title: "Campus Security",
-          description: "24×7 security with modern surveillance systems",
+          description: "24x7 security with modern surveillance systems",
           color: "from-green-400 to-green-600"
         },
         {
@@ -251,7 +251,7 @@ const StudentLifeStyle = () => {
         description: "Tbilisi, Georgia and was founded in 1946",
         image: "https://georgiatoday.ge/wp-content/uploads/2024/02/respublikuri.jpg",
         features: [
-         "24/7 medical care and research focus",
+         "24/7 medical care and research focus",
          "Multidisciplinary state hospital",
         "700-bed capacity (planned expansion)"
         ]
@@ -272,7 +272,7 @@ const StudentLifeStyle = () => {
         image: "https://vian.health/static/media/202403261204-iashvili-mothers-and-childrens-hospital-batumi-1920-axali.webp",
         features: [
           "Strong international training collaborations",
-          "Georgia’s only third-level pediatric referral center",
+          "Georgia's only third-level pediatric referral center",
           "260 beds with 24/7 emergency care"
         ]
       },
@@ -291,14 +291,14 @@ const StudentLifeStyle = () => {
         description: "Tbilisi, Georgia and was founded in 1997",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1B_BMZC7upiiBHcik97REuuxkzelAYXQKmvQiI5HaP2zCncJ2Se6lulu_gyGXX2MlpY&usqp=CAU",
         features: [
-          "Georgia’s first private maternity hospital",
+          "Georgia's first private maternity hospital",
          "100 beds, including NICU and operating theaters",
          "Specializes in obstetrics, IVF, pediatrics, and surgery"
         ]
       },
       {
         name: "AdventHealth Gordon",
-        description: "Calhoun, Georgia and was founded in 1935",
+        description: "Calhoun, Georgia and was founded in 1935",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSPJgtieWbrrNDmSnDkNJaFP7bha725LvwHx-THx7UcgCt7y1-NPkNPWyP743rSoHbm8M&usqp=CAU",
         features: [
           "69-bed acute-care hospital",
@@ -318,12 +318,12 @@ const StudentLifeStyle = () => {
       },
       {
         name: "East Georgia Regional Medical Center",
-        description: "Statesboro, Georgia and was founded in 2000",
+        description: "Statesboro, Georgia and was founded in 2000",
         image: "https://media.licdn.com/dms/image/v2/C4E1BAQFtycoojuggZA/company-background_1536_768/company-background_1536_768/0/1584107929877?e=2147483647&v=beta&t=CHu_m8Zu7KBcFDfurhY5FB5cvk6rGl5SH-YuVzo-84A",
         features: [
           "150-bed acute-care hospital",
           "24/7 emergency department",
-          "Specialties: cardiology, orthopedics, women’s health, neurology"
+          "Specialties: cardiology, orthopedics, women's health, neurology"
         ]
       }
     ].map((hospital, index) => (
@@ -441,12 +441,8 @@ const StudentLifeStyle = () => {
               </div>
             ))}
           </div>
-          
-          
         </div>
       </div>
-
-      
     </>
   );
 }
