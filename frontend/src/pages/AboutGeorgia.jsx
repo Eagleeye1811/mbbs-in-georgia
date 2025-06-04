@@ -18,35 +18,35 @@ import {
   Home
 } from "lucide-react";
 
-import tibilisi from "../assets/tibilisi.jpg"
-import tibilisi1 from "../assets/tibilisi1.jpeg"
-import tibilisi2 from "../assets/tibilisi2.jpeg"
-import tibilisi3 from "../assets/tibilisi3.jpeg"
-import tibilisi4 from "../assets/tibilisi4.jpeg"
-import tibilisi5 from "../assets/tibilisi5.jpeg"
-import tibilisi6 from "../assets/tibilisi6.jpg"
-import tibilisi7 from "../assets/tibilisi7.jpg"
+import tibilisi from "../assets/About Georgia/tibilisi.jpg"
+import tibilisi1 from "../assets/About Georgia/tibilisi1.jpeg"
+import tibilisi2 from "../assets/About Georgia/tibilisi2.jpeg"
+import tibilisi3 from "../assets/About Georgia/tibilisi3.jpeg"
+import tibilisi4 from "../assets/About Georgia/tibilisi4.jpeg"
+import tibilisi5 from "../assets/About Georgia/tibilisi5.jpeg"
+import tibilisi6 from "../assets/About Georgia/tibilisi6.jpg"
+import tibilisi7 from "../assets/About Georgia/tibilisi7.jpg"
 
 const tbilisiImages = [tibilisi, tibilisi1, tibilisi2, tibilisi3, tibilisi4, tibilisi5, tibilisi6, tibilisi7];
 
-import georgia from "../assets/georgia.jpg"
-import khinkali from "../assets/khinkali.jpg"
-import khachapuri from "../assets/khachapuri.webp";
-import lobio from "../assets/lobio.webp";
-import churchkhela from "../assets/churchkhela.jpg";
-import chicken from "../assets/chicken.jpg"
-import pkhali from "../assets/pkhali.jpeg"
+import georgia from "../assets/About Georgia/georgia.jpg";
+import khinkali from "../assets/About Georgia/khinkali.jpg";
+import khachapuri from "../assets/About Georgia/khachapuri.webp";
+import lobio from "../assets/About Georgia/lobio.webp";
+import churchkhela from "../assets/About Georgia/churchkhela.jpg";
+import chicken from "../assets/About Georgia/chicken.jpg"
+import pkhali from "../assets/About Georgia/pkhali.jpeg"
 
-import mountain from "../assets/kazbeki_mountain.jpeg"
-import cave from "../assets/cave.jpg"
-import beach from "../assets/beach.webp"
-import mtskheta from "../assets/mtskheta.jpg"
-import borjomi from "../assets/borjomi.jpg"
-import caucasus from "../assets/caucasus.jpg"
-import cave2 from "../assets/cave2.jpg"
-import cave3 from "../assets//cave3.jpeg"
-import ananuri from "../assets/ananuri.jpg"
-
+import mountain from "../assets/About Georgia/kazbeki_mountain.jpeg"
+import cave from "../assets/About Georgia/cave.jpg"
+import beach from "../assets/About Georgia/beach.webp"
+import mtskheta from "../assets/About Georgia/mtskheta.jpg"
+import borjomi from "../assets/About Georgia/borjomi.jpg"
+import caucasus from "../assets/About Georgia/caucasus.jpg"
+import cave2 from "../assets/About Georgia/cave2.jpg"
+import cave3 from "../assets/About Georgia/cave3.jpeg"
+import ananuri from "../assets/About Georgia/ananuri.jpg"
+ 
 
 
 const AboutGeorgia = () => {
