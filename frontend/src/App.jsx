@@ -8,6 +8,7 @@ import HowToApply from "./pages/HowToApply";
 import NMCReg from "./pages/NMCReg";
 import Testimonials from "./pages/Testimonials";
 import University from "./pages/University";
+import StudentLifestyle from "./pages/StudentLifestyle";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/NMCReg" element={<NMCReg />} />
         <Route path="/Universities" element={<University />} />
         <Route path="/Testimonials" element={<Testimonials />} />
+        <Route path="/StudentLifestyle" element={<StudentLifestyle />} />
       </Routes>
     </BrowserRouter>
   );
