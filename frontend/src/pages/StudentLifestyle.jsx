@@ -1,8 +1,9 @@
 import React from 'react';  
-import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
-// import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
+import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
+ 
+
 
 const StudentLifeStyle = () => {
   return (
