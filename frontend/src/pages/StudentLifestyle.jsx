@@ -1,30 +1,8 @@
 import React from 'react';  
 import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
+import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
-// import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
-
-import convocation from "../assets/StudentLifeStyle/convocation.webp"; 
-import bathroom from "../assets/StudentLifestyle/bathroom.avif";
-import fountain from "../assets/StudentLifestyle/fountain-uni.jpeg";
-import hospital1 from "../assets/StudentLifestyle/hospital1.jpg";
-import hospital2 from "../assets/StudentLifestyle/hospital2.png";
-import hospital3 from "../assets/StudentLifestyle/hospital3.jpeg";
-import hospital4 from "../assets/StudentLifestyle/hospital4.jpg";
-import hospital5 from "../assets/StudentLifestyle/hospital5.jpg";
-import hospital6 from "../assets/StudentLifestyle/hospital6.webp";
-import hospital7 from "../assets/StudentLifestyle/hospital7.jpeg";
-import hospital8 from "../assets/StudentLifestyle/hospital8.jpeg";
-import hospital9 from "../assets/StudentLifestyle/hospital9.jpeg";
-import hospital10 from "../assets/StudentLifestyle/hospital10.jpg";
-import hospital11 from "../assets/StudentLifestyle/hospital11.jpeg";
-import classes1 from "../assets/StudentLifestyle/class.avif";
-import lab from "../assets/StudentLifestyle/lab.jpg";
-import campus2 from "../assets/StudentLifestyle/campus2.jpg";
-import clinic from "../assets/StudentLifestyle/clinic.jpg";
-import garden from "../assets/StudentLifestyle/garden.jpg";
-import campus1 from "../assets/StudentLifestyle/campus1.jpg";
-import rooms from "../assets/StudentLifestyle/rooms.jpeg";
 
 const StudentLifeStyle = () => {
   return (
@@ -32,7 +10,7 @@ const StudentLifeStyle = () => {
       {/* Header Section */}
       <div className="relative h-[450px] mb-8">
         <img
-          src={convocation}
+          src="https://i.iheart.com/v3/re/assets.getty/60623a3aec85858a41dcf005?ops=contain(1480,0)"
           alt="Student's Life in Georgia"
           className="w-full h-full object-cover object-center brightness-50"
         />
@@ -45,8 +23,7 @@ const StudentLifeStyle = () => {
                 <span className="text-red-400">in Georgia</span>
               </h1>
               <p className="text-xl text-white/100 leading-relaxed">
-               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
-               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
+               Studying in Georgia isn't just about earning a degree; it's about discovering who you are in a world far from home
               </p>
               <div className="flex space-x-8 pt-4">
                 <div>
@@ -187,7 +164,7 @@ const StudentLifeStyle = () => {
             <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
       <img 
-        src={rooms} 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpIEr6MsmsYq_MKsOt2NlhHYatuiX5mNxEQ&s" 
         alt="Room 1" 
         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
       />
@@ -200,7 +177,7 @@ const StudentLifeStyle = () => {
     <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
       <img 
-        src= {bathroom} 
+        src="https://www.ajc.com/resizer/v2/TEXTDI6N3PUBJ7JO47QOHQZUGM.jpg?auth=980e2763e21f71ebc6192739fc2c6e90cb12a37a7a6d2f21b0aef8805bb26c14&height=1000&smart=true" 
         alt="Room 2" 
         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
       />
@@ -228,7 +205,7 @@ const StudentLifeStyle = () => {
       {
         name: "N.Kipshidze Central Clinical Hospital",
         description: "Tbilisi, Georgia and was founded in 1930",
-        image: fountain,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWUMUX8-0LWxRbzs0oMeRVe7B67-UxKKCVp0eldzGDkIjCWeJgjRuWgmzAsdet-95xsdM&usqp=CAU",
         features: [
           "Leading hospital under Tbilisi State Medical University",
           "Offers multi-specialty medical services with modern equipment",
@@ -238,7 +215,7 @@ const StudentLifeStyle = () => {
       {
         name: "Clinical Medicine Research Institute",
         description: "Tbilisi, Georgia and was founded in 1991",
-        image: hospital1,
+        image: "https://toduaclinic.ge/storage/photos/3/64e86adea8b2e.jpg",
         features: [
           "Top medical and research center in Georgia",
 
@@ -251,7 +228,7 @@ const StudentLifeStyle = () => {
       {
         name: "Tbilisi Central Hospital",
         description: "Tbilisi, Georgia and was founded in 1955",
-        image: hospital2,
+        image: "https://geoassistance.ge/wp-content/uploads/2023/06/1561638664_providers-4.png",
         features: [
           "Founded in 1975, Tbilisi, Georgia",
 
@@ -264,7 +241,7 @@ const StudentLifeStyle = () => {
       {
         name: "National Center of surgery",
         description: "Tbilisi, Georgia and was founded in 1946",
-        image: hospital3,
+        image: "https://avatars.mds.yandex.net/get-altay/11004775/2a0000018c7c71eb3eecf4e79f1820c28e88/orig",
         features: [
          
          "Established in 1946, Tbilisi, Georgia",
@@ -278,7 +255,7 @@ const StudentLifeStyle = () => {
       {
         name: "Republican Hospital",
         description: "Tbilisi, Georgia",
-        image: hospital4,
+        image: "https://georgiatoday.ge/wp-content/uploads/2024/02/respublikuri.jpg",
         features: [
          "Established in 1946, Tbilisi",
 
@@ -292,7 +269,7 @@ const StudentLifeStyle = () => {
       {
         name: "New Hospital",
         description: "Tbilisi, Georgia and was founded in 2011",
-        image: hospital5,
+        image: "https://www.newhospitals.ge/res/upload/about/1258b7ff9ffb5c95cfb4185a4f07e9c9.jpg",
         features: [
           "Founded in 2011, Tbilisi",
 
@@ -306,7 +283,7 @@ const StudentLifeStyle = () => {
       {
         name: "Iashvili Children's Hospital",
         description: "Tbilisi, Georgia and was founded in 1965",
-        image: hospital6,
+        image: "https://vian.health/static/media/202403261204-iashvili-mothers-and-childrens-hospital-batumi-1920-axali.webp",
         features: [
           "Founded in 1977, Tbilisi",
 
@@ -319,7 +296,7 @@ const StudentLifeStyle = () => {
       {
         name: "Evex Clinics georgia",
         description: "Tbilisi, Georgia and was founded in 2012",
-        image: hospital7,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50dpJe1AbWxKTbmj-TNQ42UuBJW7LCJQttrjmjv_3oWd7fKEFff7w8B8LWw00PdvNrJg&usqp=CAU",
         features: [
           "Largest healthcare network in Georgia with 78 clinics",
 
@@ -332,7 +309,7 @@ const StudentLifeStyle = () => {
       {
         name: "Gagua Clinic",
         description: "Tbilisi, Georgia and was founded in 1997",
-        image: hospital8,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1B_BMZC7upiiBHcik97REuuxkzelAYXQKmvQiI5HaP2zCncJ2Se6lulu_gyGXX2MlpY&usqp=CAU",
         features: [
           "Georgia’s first private maternity hospital",
 
@@ -345,7 +322,7 @@ const StudentLifeStyle = () => {
       {
         name: "AdventHealth Gordon",
         description: "Calhoun, Georgia and was founded in 1935",
-        image: hospital9,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSPJgtieWbrrNDmSnDkNJaFP7bha725LvwHx-THx7UcgCt7y1-NPkNPWyP743rSoHbm8M&usqp=CAU",
         features: [
           "69-bed acute-care hospital",
 
@@ -359,7 +336,7 @@ const StudentLifeStyle = () => {
       {
         name: "Chatuge Regional Hospital",
         description: "Hiawassee, Georgia and was founded in 1951",
-        image: hospital10,
+        image: "https://uniongeneralhealthsystem.com/wp-content/uploads/2023/06/nav-chatuge.jpg",
         features: [
           "25-bed Critical Access Hospital",
 
@@ -373,7 +350,7 @@ const StudentLifeStyle = () => {
       {
         name: "East Georgia Regional Medical Center",
         description: "Statesboro, Georgia and was founded in 2000",
-        image: hospital11,
+        image: "https://media.licdn.com/dms/image/v2/C4E1BAQFtycoojuggZA/company-background_1536_768/company-background_1536_768/0/1584107929877?e=2147483647&v=beta&t=CHu_m8Zu7KBcFDfurhY5FB5cvk6rGl5SH-YuVzo-84A",
         features: [
           "150-bed acute-care hospital",
 
@@ -447,32 +424,32 @@ const StudentLifeStyle = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                src: campus1,
+                src: "https://doingmoretoday.com/app/uploads/2021/12/UGA-3-edit.jpg",
                 alt: "Campus Life",
                 title: "Campus life"
               },
               {
-                src: classes1,
+                src: "https://www.ajc.com/resizer/v2/SXVE5S7YJK5GXRR2ETHO3VJNCY.jpg?auth=9f5959b0cf82b75205094e3b11c45c1e3c9e9a248446dc106d1949dda69edc04&width=790&height=440&smart=true",
                 alt: "Student Events",
                 title: "Advanced classes"
               },
               {
-                src: lab,
+                src: "https://admissionoffice.ge/wp-content/uploads/2020/05/Caucasus-University-Medicine-Student.jpg",
                 alt: "Academic Life",
                 title: "Academic Excellence"
               },
               {
-                src: campus2,
+                src: "https://lcuniversity.edu/wp-content/uploads/2025/02/Wed11.jpg",
                 alt: "Campus Activities",
                 title: "Cultural Integration"
               },
               {
-                src: clinic,
+                src: "https://outreach.uga.edu/wp-content/uploads/2025/04/Wight-Internship_Pulaski_Taylor-Regional-Hosp.jpg",
                 alt: "Cultural Events",
                 title: "Internship opportunities"
               },
               {
-                src: garden,
+                src: "https://www.ticketleap.au/wp-content/uploads/2024/01/62a8e9a50f19b73012512a91_college-students-hanging-out-on-campus.jpg",
                 alt: "Student Life",
                 title: "Campus Community"
               }
