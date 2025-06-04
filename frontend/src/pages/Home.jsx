@@ -16,7 +16,7 @@ import {
   FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-import { motion, useAnimation } from "framer-motion";
+// import { motion, useAnimation } from "framer-motion";
 
 // Data Constants (grouped at the top for easy reference and modification)
 const DATA = {
@@ -991,7 +991,7 @@ const Home = () => {
     const remainingCount = totalImages - visibleImages;
 
     // Define which positions should have featured (larger) images
-    const featuredPositions = []; // No featured images - all same size
+    // const featuredPositions = []; // No featured images - all same size
 
     // Generate array of all 40 image paths with fixed featured states
     const srImages = Array.from({ length: totalImages }, (_, i) => ({
@@ -1042,7 +1042,7 @@ const Home = () => {
     };
 
     // Double-click zoom handler
-    const handleImageClick = (e) => {
+    const handleImageClick = () => {
       const currentTime = new Date().getTime();
       const clickTimeDiff = currentTime - lastClickTime.current;
 
