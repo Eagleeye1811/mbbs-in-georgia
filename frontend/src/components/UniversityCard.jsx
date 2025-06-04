@@ -1,14 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
+const UniversityCard = ({ image, name, location, year, type, highlights }) => {
+  const navigate = useNavigate();
 
-const UniversityCard = ({ image, name, location, year, type, highlights, onClick }) => {
+  const handleExploreClick = () => {
+    navigate(`/university-detail?name=${encodeURIComponent(name)}`);
+  };
+
   return (
     <div
       className="relative bg-white rounded-xl shadow-lg overflow-hidden group transform transition-transform duration-300 hover:scale-105 hover:rotate-1 border-animation"
       style={{
         boxShadow: "0 8px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1)", // Creative shadow spread
       }}
-      onClick={onClick}
     >
       {/* Badge */}
       {type && (
@@ -49,7 +54,10 @@ const UniversityCard = ({ image, name, location, year, type, highlights, onClick
             ))}
           </div>
         )}
-        <button className="bg-red-500 hover:bg-[#ff4146] text-white py-3 px-6 rounded-full font-medium transition-colors duration-300 mt-4 cursor-pointer">
+        <button
+          onClick={handleExploreClick}
+          className="bg-red-500 hover:bg-[#ff4146] text-white py-3 px-6 rounded-full font-medium transition-colors duration-300 mt-4 cursor-pointer"
+        >
           Explore
         </button>
       </div>
