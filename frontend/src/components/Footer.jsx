@@ -32,7 +32,6 @@ const Footer = () => {
           <li><Link to="/ContactUs" className='hover:text-red-400'>- Contact Us</Link></li>
           <li><Link to="/Testimonials" className='hover:text-red-400'>- Student Testimonials</Link></li>
           <li><Link to="/Universities" className='hover:text-red-400'>- Universities</Link></li>
-          <li><Link to="/NMCReg" className='hover:text-red-400'>- NMC Regulations</Link></li>
           <li><Link to="/privacyPolicy" className='hover:text-red-400'>- Privacy Policy</Link></li>
           <li><Link to="/termsAndConditions" className='hover:text-red-400'>- Terms & Conditions</Link></li>
         </ul>

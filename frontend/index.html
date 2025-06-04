@@ -4,75 +4,66 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- Google Translate Root Element -->
-    <div id="google_translate_element" style="display: none;"></div>
+    <title>MBBSInGeorgia</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <script type="text/javascript">
+    <style>
+      /* Enhanced Styling for Google Translate Button */
+      #google_translate_element {
+        border: 2px solid #7e57c2;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 1rem auto;
+        max-width: 300px;
+        background-color: #f3f4f6;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #google_translate_element:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        background-color: #e5e7eb;
+      }
+
+      /* Hide unwanted banners and default styles */
+      body > .skiptranslate > iframe.skiptranslate,
+      body > .goog-te-banner-frame {
+        display: none !important;
+      }
+
+      body {
+        top: 0px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- React Root -->
+    <div id="root"></div>
+
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+    <!-- Google Translate Script -->
+    <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
             pageLanguage: "en",
-            includedLanguages: "en,hi,ru",
+            includedLanguages: "en,hi,bn,mr,gu,ta,te,ml,kn,ur,ru,ar,ka,zh-CN,fr,es,tr,fa,ne",
             autoDisplay: false,
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
           },
           "google_translate_element"
         );
       }
-
-      const handleLangSelect = (code) => {
-        setSelectedLang(code);
-        setLangDropdown(false);
-
-        const langMap = {
-          EN: "en",
-          HI: "hi",
-          RU: "ru",
-        };
-
-        const selected = langMap[code];
-
-        const tryTranslate = () => {
-          const iframe = document.querySelector("iframe.goog-te-menu-frame");
-
-          if (!iframe) {
-            console.log("Google Translate iframe not found. Retrying...");
-            setTimeout(tryTranslate, 100);
-            return;
-          }
-
-          console.log("Google Translate iframe found!");
-          const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-          const items = innerDoc.querySelectorAll(".goog-te-menu2-item span.text");
-
-          if (items.length === 0) {
-            console.log("Translation options not found in iframe.");
-            return;
-          }
-
-          items.forEach((item) => {
-            console.log(`Checking item: ${item.innerHTML}`);
-            if (item.innerHTML.toLowerCase().includes(selected)) {
-              console.log(`Clicking on language: ${selected}`);
-              item.click();
-            }
-          });
-        };
-
-        tryTranslate();
-      };
     </script>
-
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
