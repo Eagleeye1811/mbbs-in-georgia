@@ -32,13 +32,12 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-bold mb-4">Quick links</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/AboutGeorgia" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- About Georgia</Link></li>
-            <li><Link to="/HowToApply" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- How to Apply</Link></li>
-            <li><Link to="/FAQ" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
-            <li><Link to="/ContactUs" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Contact Us</Link></li>
-            <li><Link to="/Testimonials" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Student Testimonials</Link></li>
-            <li><Link to="/Universities" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Universities</Link></li>
-            <li><Link to="/NMCReg" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- NMC Regulations</Link></li>
+            <li><Link to="/about-georgia" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- About Georgia</Link></li>
+            <li><Link to="/how-to-apply" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- How to Apply</Link></li>
+            <li><Link to="/fAQ" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
+            <li><Link to="/contact-us" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Contact Us</Link></li>
+            <li><Link to="/testimonials" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Student Testimonials</Link></li>
+            <li><Link to="/universities" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Universities</Link></li>
             <li><Link to="/privacyPolicy" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Privacy Policy</Link></li>
             <li><Link to="/termsAndConditions" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Terms & Conditions</Link></li>
           </ul>
