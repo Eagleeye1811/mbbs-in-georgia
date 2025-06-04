@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube} from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Adjust the path if needed
@@ -34,12 +34,12 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/about-georgia" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- About Georgia</Link></li>
             <li><Link to="/how-to-apply" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- How to Apply</Link></li>
-            <li><Link to="/fAQ" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
+            <li><Link to="/faq" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- FAQs</Link></li>
             <li><Link to="/contact-us" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Contact Us</Link></li>
             <li><Link to="/testimonials" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Student Testimonials</Link></li>
             <li><Link to="/universities" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Universities</Link></li>
-            <li><Link to="/privacyPolicy" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Privacy Policy</Link></li>
-            <li><Link to="/termsAndConditions" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Terms & Conditions</Link></li>
+            <li><Link to="/privacy-policy" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Privacy Policy</Link></li>
+            <li><Link to="/terms-and-conditions" className='hover:text-red-400' onClick={() => window.scrollTo(0, 0)}>- Terms & Conditions</Link></li>
           </ul>
         </div>
 
@@ -72,11 +72,9 @@ const Footer = () => {
               </a>
               <a href="https://www.linkedin.com/school/sr-counselling-india/" target="_blank" rel="noreferrer">
                 <FaLinkedin className="text-2xl hover:text-blue-500" />
-
               </a>
               <a href="https://www.youtube.com/channel/UC8Hw_c3otFPdFntDV8nhRtw" target="_blank" rel="noreferrer">
                 <FaYoutube className="text-2xl hover:text-red-500" />
-
               </a>
             </div>
           </div>
