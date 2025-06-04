@@ -4,13 +4,13 @@ import "./Navbar.css";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Georgia", href: "/AboutGeorgia" },
-  { name: "How To Apply", href: "/HowToApply" },
+  { name: "About Georgia", href: "/about-georgia" },
+  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/FAQ" },
-  { name: "Student LifeStyle", href: "/StudentLifeStyle" },
-];
+  { name: "FAQs", href: "/faq" },
+  { name: "Student LifeStyle", href: "/students-lifestyle" },
+]; 
 
 const Navbar = () => {
   const navigate = useNavigate();
