@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import StudentLifeStyle from "./pages/StudentLifeStyle";
+import UniversityDetailPage from "./pages/UniversityDetailPage";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/termsAndConditions" element={<TermsConditions />} />
+            <Route path="/university-detail" element={<UniversityDetailPage />} />
           </Routes>
         </div>
         <Footer />

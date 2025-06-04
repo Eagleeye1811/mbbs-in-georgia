@@ -44,10 +44,10 @@ const StudentLifeStyle = () => {
         </div>
       </div>
 
-      {/* Main Content Section (With Padding and Centered) */}
-      <div className="w-full max-w-5xl mx-auto p-5 space-y-24"> {/* Changed space-y-8 to space-y-24 for more uniform spacing */}
+      {/* Main Content Section - Update spacing */}
+      <div className="w-full max-w-5xl mx-auto p-5 space-y-16"> {/* Changed space-y-24 to space-y-16 for more uniform spacing */}
         {/* Campus Features Section - Update the wrapper div */}
-        <div className="py-20 px-4 bg-gradient-to-br from-white via-gray-100 to-white rounded-3xl">
+        <div className="py-20 px-4 bg-gradient-to-br from-white via-gray-200 to-white rounded-3xl">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4">
               <span className="text-gray-800">Campus </span>
@@ -121,13 +121,12 @@ const StudentLifeStyle = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {/* Facility Items */}
-            <div className="group bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
       <div className="flex items-center p-6 space-x-4">
         <div className="relative">
-          <div className="absolute inset-0 bg-blue-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-          <BedDouble className="w-10 h-10 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
+          <div className="absolute inset-0 bg-red-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
+          <BedDouble className="w-12 h-12 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
         </div>
         <p className="text-lg font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
           Fully furnished rooms (On sharing basis)
@@ -135,11 +134,11 @@ const StudentLifeStyle = () => {
       </div>
     </div>
 
-    <div className="group bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+    <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
       <div className="flex items-center p-6 space-x-4">
         <div className="relative">
-          <div className="absolute inset-0 bg-blue-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-          <WashingMachine className="w-10 h-10 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
+          <div className="absolute inset-0 bg-red-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
+          <WashingMachine className="w-12 h-12 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
         </div>
         <p className="text-lg font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
           Laundry Facilities Available
@@ -147,11 +146,11 @@ const StudentLifeStyle = () => {
       </div>
     </div>
 
-    <div className="group bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+    <div className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
       <div className="flex items-center p-6 space-x-4">
         <div className="relative">
-          <div className="absolute inset-0 bg-blue-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-          <Utensils className="w-10 h-10 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
+          <div className="absolute inset-0 bg-red-100 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
+          <Utensils className="w-12 h-12 text-red-500 relative z-10 transform group-hover:rotate-6 transition-transform duration-500" />
         </div>
         <p className="text-lg font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
           Indian Food Options Available
@@ -199,36 +198,221 @@ const StudentLifeStyle = () => {
             </h2>
           </div>
           
-          <section className="bg-gray-100 rounded-xl p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="aspect-video">
-                    <img 
-                      src={`https://source.unsplash.com/800x600/?hospital,medical/${index}`}
-                      alt={`Hospital ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Hospital Name {index + 1}
-                    </h3>
-                    <p className="text-gray-600 text-base mb-4">
-                      Modern facilities with state-of-the-art medical equipment
-                    </p>
-                    <button className="text-red-600 font-medium hover:text-blue-800 transition-colors">
-                      Learn More →
-                    </button>
-                  </div>
-                </div>
-              ))}
+          {/* Replace the existing hospital card section with this new animated version */}
+<section className="bg-gray-100 rounded-xl p-8">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {[
+      {
+        name: "N.Kipshidze Central Clinical Hospital",
+        description: "Tbilisi, Georgia and was founded in 1930",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWUMUX8-0LWxRbzs0oMeRVe7B67-UxKKCVp0eldzGDkIjCWeJgjRuWgmzAsdet-95xsdM&usqp=CAU",
+        features: [
+          "Leading hospital under Tbilisi State Medical University",
+          "Offers multi-specialty medical services with modern equipment",
+          "Serves as a major clinical training center for medical students"
+        ]
+      },
+      {
+        name: "Clinical Medicine Research Institute",
+        description: "Tbilisi, Georgia and was founded in 1991",
+        image: "https://toduaclinic.ge/storage/photos/3/64e86adea8b2e.jpg",
+        features: [
+          "Top medical and research center in Georgia",
+
+           "Founded by Prof. Gia Todua",
+
+           "Advanced diagnostics and imaging"
+
+        ]
+      },
+      {
+        name: "Tbilisi Central Hospital",
+        description: "Tbilisi, Georgia and was founded in 1955",
+        image: "https://geoassistance.ge/wp-content/uploads/2023/06/1561638664_providers-4.png",
+        features: [
+          "Founded in 1975, Tbilisi, Georgia",
+
+          "Modern, multidisciplinary hospital",
+
+          "140 beds, emergency & inpatient care"
+
+        ]
+      },
+      {
+        name: "National Center of surgery",
+        description: "Tbilisi, Georgia and was founded in 1946",
+        image: "https://avatars.mds.yandex.net/get-altay/11004775/2a0000018c7c71eb3eecf4e79f1820c28e88/orig",
+        features: [
+         
+         "Established in 1946, Tbilisi, Georgia",
+
+        "Multidisciplinary medical center",
+
+        "Advanced diagnostics (MRI, CT, etc.)"
+
+        ]
+      },
+      {
+        name: "Republican Hospital",
+        description: "Tbilisi, Georgia",
+        image: "https://georgiatoday.ge/wp-content/uploads/2024/02/respublikuri.jpg",
+        features: [
+         "Established in 1946, Tbilisi",
+
+         "Multidisciplinary state hospital",
+
+        "700-bed capacity (planned expansion)"
+
+
+        ]
+      },
+      {
+        name: "New Hospital",
+        description: "Tbilisi, Georgia and was founded in 2011",
+        image: "https://www.newhospitals.ge/res/upload/about/1258b7ff9ffb5c95cfb4185a4f07e9c9.jpg",
+        features: [
+          "Founded in 2011, Tbilisi",
+
+         "285 beds, European standards",
+
+         "KTQ accredited"
+
+
+        ]
+      },
+      {
+        name: "Iashvili Children's Hospital",
+        description: "Tbilisi, Georgia and was founded in 1965",
+        image: "https://vian.health/static/media/202403261204-iashvili-mothers-and-childrens-hospital-batumi-1920-axali.webp",
+        features: [
+          "Founded in 1977, Tbilisi",
+
+          "Georgia’s only third-level pediatric referral center",
+
+          "260 beds with 24/7 emergency care"
+
+        ]
+      },
+      {
+        name: "Evex Clinics georgia",
+        description: "Tbilisi, Georgia and was founded in 2012",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR50dpJe1AbWxKTbmj-TNQ42UuBJW7LCJQttrjmjv_3oWd7fKEFff7w8B8LWw00PdvNrJg&usqp=CAU",
+        features: [
+          "Largest healthcare network in Georgia with 78 clinics",
+
+         "Offers cardiology, oncology, surgery, pediatrics, and more",
+
+         "Modern technology and skilled staff"
+
+        ]
+      },
+      {
+        name: "Gagua Clinic",
+        description: "Tbilisi, Georgia and was founded in 1997",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1B_BMZC7upiiBHcik97REuuxkzelAYXQKmvQiI5HaP2zCncJ2Se6lulu_gyGXX2MlpY&usqp=CAU",
+        features: [
+          "Georgia’s first private maternity hospital",
+
+         "100 beds, including NICU and operating theaters",
+
+         "Specializes in obstetrics, IVF, pediatrics, and surgery"
+
+        ]
+      },
+      {
+        name: "AdventHealth Gordon",
+        description: "Calhoun, Georgia and was founded in 1935",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSPJgtieWbrrNDmSnDkNJaFP7bha725LvwHx-THx7UcgCt7y1-NPkNPWyP743rSoHbm8M&usqp=CAU",
+        features: [
+          "69-bed acute-care hospital",
+
+         "Part of AdventHealth system",
+
+        "24/7 emergency services"
+
+
+        ]
+      },
+      {
+        name: "Chatuge Regional Hospital",
+        description: "Hiawassee, Georgia and was founded in 1951",
+        image: "https://uniongeneralhealthsystem.com/wp-content/uploads/2023/06/nav-chatuge.jpg",
+        features: [
+          "25-bed Critical Access Hospital",
+
+          "Part of Union General Health System",
+
+          "24/7 emergency care with helicopter transport"
+
+
+        ]
+      },
+      {
+        name: "East Georgia Regional Medical Center",
+        description: "Statesboro, Georgia and was founded in 2000",
+        image: "https://media.licdn.com/dms/image/v2/C4E1BAQFtycoojuggZA/company-background_1536_768/company-background_1536_768/0/1584107929877?e=2147483647&v=beta&t=CHu_m8Zu7KBcFDfurhY5FB5cvk6rGl5SH-YuVzo-84A",
+        features: [
+          "150-bed acute-care hospital",
+
+          "24/7 emergency department",
+
+          "Specialties: cardiology, orthopedics, women’s health, neurology"
+
+        ]
+      }
+    ].map((hospital, index) => (
+      <div key={index} className="group h-[350px] perspective-1000">
+        <div className="relative h-full w-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+          {/* Front of Card */}
+          <div className="absolute inset-0 backface-hidden">
+            <div className="h-full bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="aspect-video">
+                <img 
+                  src={hospital.image}
+                  alt={hospital.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {hospital.name}
+                </h3>
+                <p className="text-gray-600 text-base">
+                  {hospital.description}
+                </p>
+              </div>
             </div>
-          </section>
+          </div>
+
+          {/* Back of Card */}
+          <div className="absolute inset-0 backface-hidden rotate-y-180">
+            <div className="h-full bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-lg p-6 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">{hospital.name}</h3>
+                <ul className="space-y-3">
+                  {hospital.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center">
+                      <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 pt-4 border-t border-white/20">  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
         </div>
 
         {/* Student's Lifestyle Section - Update the wrapper div */}
-        <div className="space-y-12 py-8"> {/* Changed space-y-8 to space-y-12 */}
+        <div className="space-y-12 py-8">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">
               <span className="text-gray-800">Student's </span>
@@ -236,27 +420,38 @@ const StudentLifeStyle = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Update grid columns here */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 src: "https://doingmoretoday.com/app/uploads/2021/12/UGA-3-edit.jpg",
                 alt: "Campus Life",
-                title: "Campus Activities"
+                title: "Campus life"
               },
               {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkQK8VkfQclD8YZQ4l1R7iKZwCOXKzhwRzMw&s",
+                src: "https://www.ajc.com/resizer/v2/SXVE5S7YJK5GXRR2ETHO3VJNCY.jpg?auth=9f5959b0cf82b75205094e3b11c45c1e3c9e9a248446dc106d1949dda69edc04&width=790&height=440&smart=true",
                 alt: "Student Events",
-                title: "Social Events"
+                title: "Advanced classes"
               },
               {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDIj9GC5fHjPtTfOA8PX0mDEfWEzi5fkht2Q&s",
+                src: "https://admissionoffice.ge/wp-content/uploads/2020/05/Caucasus-University-Medicine-Student.jpg",
                 alt: "Academic Life",
                 title: "Academic Excellence"
               },
               {
-                src: "https://res.cloudinary.com/dv0jqjrc3/image/fetch/ar_1.48,c_fill,f_auto,q_auto,w_768/https://www.pulte.com/-/media/static-picturepark-assets/uncategorized/2024/09/30/13/15/422410-1--gacollege-lifestylewebjpg.jpg",
-                alt: "Student Housing",
-                title: "Modern Living"
+                src: "https://lcuniversity.edu/wp-content/uploads/2025/02/Wed11.jpg",
+                alt: "Campus Activities",
+                title: "Cultural Integration"
+              },
+              {
+                src: "https://outreach.uga.edu/wp-content/uploads/2025/04/Wight-Internship_Pulaski_Taylor-Regional-Hosp.jpg",
+                alt: "Cultural Events",
+                title: "Internship opportunities"
+              },
+              {
+                src: "https://www.ticketleap.au/wp-content/uploads/2024/01/62a8e9a50f19b73012512a91_college-students-hanging-out-on-campus.jpg",
+                alt: "Student Life",
+                title: "Campus Community"
               }
             ].map((item, index) => (
               <div 
@@ -285,86 +480,12 @@ const StudentLifeStyle = () => {
             Experience a vibrant student life in Georgia with modern facilities, cultural activities, and a supportive international community.
           </p>
         </div>
+        
 
-        {/* Related Blogs Section - Update the wrapper div */}
-        <div className="space-y-12 py-8"> {/* Changed space-y-6 to space-y-12 */}
-          {/* Section Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-gray-800">Related </span>
-              <span className="text-red-600">Blogs</span>
-            </h2>
-          </div>
-
-          {/* Blog Cards */}
-          <section className="bg-gray-100 rounded-xl p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {[
-                {
-                  imageSrc: "https://assets.studies-overseas.com/Banner1_404x262_65ffa3bfeb.png",
-                  title: "Study Abroad Guide",
-                  excerpt: "Essential tips for international students pursuing medical education",
-                  link: "https://www.timeshighereducation.com/student/advice/transferring-my-study-abroad-university"
-                },
-                {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7Hr_mICfvtFkc2o_fnFpi5gR9DhWiq1GGA&s",
-                  title: "Life in Georgia",
-                  excerpt: "Exploring the cultural experience and student community",
-                  link: "https://example.com/blog2"
-                },
-                {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLy48XpuUVUBXi-SsKLC8ldreJYdG-Yl8Wg&s",
-                  title: "Medical Programs",
-                  excerpt: "Comprehensive guide to medical courses and specializations",
-                  link: "https://example.com/blog3"
-                }
-              ].map((blog, index) => (
-                <a 
-                  key={index}
-                  href={blog.link}
-                  className="block group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img 
-                      src={blog.imageSrc}
-                      alt={blog.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-red-600 transition-colors">
-                      {blog.title}
-                    </h3>
-                    <p className="text-gray-600 text-base mb-4 line-clamp-2">
-                      {blog.excerpt}
-                    </p>
-                    <div className="flex items-center text-red-600 font-medium">
-                      Read More 
-                      <svg 
-                        className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        {/* CTA Button - Add padding */}
-        <div className= "flex justify-center py-8">
+        {/* CTA Button - Reduce padding */}
+        <div className="flex justify-center "> {/* Changed from py-8 */}
           <Link to="/testimonials">
-            <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <button className="cursor-pointer group flex items-center space-x-2 bg-red-500 hover:bg-red-500 text-white px-6 py-3 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <span className="text-lg font-medium">Read More</span>
               <svg 
                 className="w-6 h-6 transform rotate-90 group-hover:translate-x-1 transition-transform" 
@@ -384,22 +505,7 @@ const StudentLifeStyle = () => {
         </div>
       </div>
 
-      {/* New Hero Image Section */}
-      <div 
-        className="w-full bg-cover bg-center relative" 
-        style={{
-          backgroundImage: "url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-          height: "450px" // Fixed height of 450px
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-          {/* Content remains unchanged */}
-        </div>
-      </div>
+      
     </>
   );
 }

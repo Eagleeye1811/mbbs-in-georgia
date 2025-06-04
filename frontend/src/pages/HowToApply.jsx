@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import skyimg from '../assets/sky_img.jpg';
 import aeroplaneImg from '../assets/aeroplane_f.png';
 // Import the new background image
 import heroSectionImg from '../assets/georgia-how to apply.webp';
-import documentList from '../assets/Document_checklist.pdf';
+import documentList from '../assets/Document_Checklist.pdf';
 import nmcRegulations from '../assets/nmc-regulations.pdf'; // You'll need to add this PDF to your assets
 
 // Update the applicationSteps array with the more detailed descriptions

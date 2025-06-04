@@ -11,29 +11,28 @@ const Testimonials = () => {
         <img
           src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Georgia_Weather_in_April_01dbeac399.webp"
           alt="Education Globe"
-          className="w-full h-full object-cover brightness-60" // Changed from brightness-90 to brightness-50
+          className="w-full h-full object-cover brightness-60"
         />
-        {/* Overlay with darker gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center justify-end text-right px-20">
+        {/* Overlay with darker gradient - Updated flex alignment */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center px-20">
           <div className="max-w-2xl space-y-6">
             <h1 className="text-white text-6xl font-bold font-serif mb-4 drop-shadow-lg">
               Real Stories <br /> 
-              <span className="text-red-500">from Georgia</span>
+              <span className="text-red-400">from Georgia</span>
             </h1>
             <p className="text-white text-xl font-semibold leading-relaxed drop-shadow-md">
               Join thousands of Indian students transforming their dreams into global success stories — start your journey in Georgia today.
             </p>
-            <div className="flex justify-end space-x-4 mt-8">
-              <div className="text-right">
+            <div className="flex space-x-4 mt-8">
+              <div>
                 <p className="text-white text-4xl font-bold">500+</p>
-                <p className="text-red-600 font-medium">Success Stories</p>
+                <p className="text-red-400 font-medium">Success Stories</p>
               </div>
-              <div className="text-right">
+              <div>
                 <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-600 font-medium">Student Satisfaction</p>
+                <p className="text-red-400 font-medium">Student Satisfaction</p>
               </div>
             </div>
-            
           </div>
         </div>
       </header>
@@ -50,22 +49,22 @@ const Testimonials = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
-                  imageSrc: "https://assets.studies-overseas.com/Banner1_404x262_65ffa3bfeb.png",
-                  title: "Study Abroad Guide",
-                  excerpt: "Essential tips for international students pursuing medical education",
-                  link: "https://www.timeshighereducation.com/student/advice/transferring-my-study-abroad-university"
+                  imageSrc: "https://media.globaladmissions.com/media/asset/2025/5/24601175ab7346caa31c33d21d74bffa.png",
+                  title: "MBBS in GEORGIA",
+                  excerpt: "Georgia is a top choice for Indian medical students...." ,    
+                   link: "https://www.kg2pgeduhub.com/blogs/mbbs-in-georgia/"
                 },
                 {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7Hr_mICfvtFkc2o_fnFpi5gR9DhWiq1GGA&s",
-                  title: "Life in Georgia",
-                  excerpt: "Experience the vibrant culture and education system",
-                  link: "https://example.com/blog2"
+                  imageSrc: "https://blog.rmgoe.org/wp-content/uploads/2022/06/High-Medical-School-Ayeti-Georgia-1.jpg",
+                  title: "The Ultimate Guide to Study MBBS in Georgia",
+                  excerpt: "Are you dreaming of becoming a doctor and exploring the world?...",
+                  link: "https://www.globaladmissions.com/blog/the-ultimate-guide-to-study-mbbs-in-georgia"
                 },
                 {
-                  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLy48XpuUVUBXi-SsKLC8ldreJYdG-Yl8Wg&s",
-                  title: "Medical Education",
-                  excerpt: "Comprehensive guide to medical programs",
-                  link: "https://example.com/blog3"
+                  imageSrc: "https://www.shutterstock.com/shutterstock/videos/1085761430/thumb/1.jpg?ip=x480",
+                  title: "Indian Students in Georgia: Experiences & Advice",
+                  excerpt: "Studying abroad is a thrilling experience, but it also...",
+                  link: "https://www.acadfly.com/blogs/indian-students-in-georgia-experience"
                 }
               ].map((blog, index) => (
                 <a 
@@ -120,65 +119,67 @@ const Testimonials = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Rahul Sharma",
-                batch: "2023 Batch",
+                name: "Ritu Panjwani",
                 image: "https://randomuser.me/api/portraits/men/1.jpg",
                 quote:
-                  "Studying MBBS in Georgia was the best decision of my life. The quality of education and practical exposure is exceptional.",
-                rating: 5,
-                location: "New Delhi",
+                  "Sr counseling is the best, Hardik Sir will give you the best guidance possible based on your GRE, toefl and finances, the preparation for visa interviews is great as well.",
+              
               },
               {
-                name: "Priya Patel",
-                batch: "2022 Batch",
+                name: "Pruthvi Mulik",
                 image: "https://randomuser.me/api/portraits/women/2.jpg",
                 quote:
-                  "The faculty support and modern facilities have made my medical education journey amazing. Highly recommend!",
-                rating: 5,
-                location: "Mumbai",
+                  "It was very pleasant and smooth experience with SR counseling in this Covid situation. I highly recommend to join them for your bright future",
+                
               },
               {
-                name: "Amit Kumar",
-                batch: "2023 Batch",
+                name: "Ameeta",
                 image: "https://randomuser.me/api/portraits/men/3.jpg",
                 quote:
-                  "Great learning environment with perfect blend of theoretical and practical knowledge.",
-                rating: 5,
-                location: "Bangalore",
+                  "Excellent counseling by Hardik sir. The staff is good in assistance and quick response..",
               },
               {
-                name: "Sneha Gupta",
-                batch: "2022 Batch",
+                name: "Shivani Darekar",
                 image: "https://randomuser.me/api/portraits/women/4.jpg",
                 quote:
-                  "The international exposure and quality of medical education here is outstanding.",
-                rating: 5,
-                location: "Pune",
+                  "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential and making this entire process such a beautiful journey..",
               },
               {
-                name: "Vikram Singh",
-                batch: "2023 Batch",
+                name: "Kesha Dalal",
                 image: "https://randomuser.me/api/portraits/men/5.jpg",
                 quote:
-                  "Excellent infrastructure and supportive faculty. The clinical training is incredible.",
-                rating: 5,
-                location: "Chandigarh",
+                  "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa and applying into the best universities. ",
               },
               {
-                name: "Neha Sharma",
-                batch: "2022 Batch",
+                name: "Bhavesh Mhatre",
                 image: "https://randomuser.me/api/portraits/women/6.jpg",
                 quote:
-                  "The multicultural environment helped me grow both personally and professionally.",
-                rating: 5,
-                location: "Hyderabad",
+                  "The SR counselling service played a crucial role in simplifying the complex US university admission process for me. ",
               },
+              {
+                name: "Tanisha Luhadia",
+                image: "https://randomuser.me/api/portraits/men/7.jpg",
+                quote:
+                  "I had an amazing experience with SR Counselling. Nirav Sir and Sangini Ma'am provided me with invaluable assistance throughout my counselling journey.",
+              },
+              {
+                name: "Nitya Patel",
+                image: "https://randomuser.me/api/portraits/women/8.jpg",
+                quote:
+                  "My experience with SR COUNSELLING has been amazing. The journey between LOR and last mock interview was fabulous and all the staff over their were so helpful.",
+              },
+              {
+                name: "Jeel Patel",
+                image: "https://randomuser.me/api/portraits/men/9.jpg",
+                quote:
+                  "Sr counselling helps me through my entire going to us journey. Specially sangini mam and ravi sir helps me the most for my university admission to visa proration seamlessly.",
+              }
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl 
+                className="group bg-gray-300 p-6 rounded-xl shadow-lg hover:shadow-2xl 
                 transition-all duration-700 transform hover:-translate-y-2 
-                hover:bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 
+                hover:bg-gradient-to-br from-gray-50 via-gray-100 to-purple-100 
                 animate-fade-in-up cursor-pointer"
                 style={{
                   animationDelay: `${index * 200}ms`,
@@ -194,7 +195,7 @@ const Testimonials = () => {
                       transform group-hover:scale-110 transition-all duration-700 
                       group-hover:rotate-6"
                     />
-                    <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-1.5 
+                    <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-gray-600 to-purple-600 rounded-full p-1.5 
                       transform group-hover:scale-110 transition-all duration-500">
                       <svg 
                         className="w-3.5 h-3.5 text-white"
@@ -219,9 +220,9 @@ const Testimonials = () => {
                 <blockquote className="relative mt-6 transform transition-all duration-500 
                   group-hover:translate-x-2">
                   <svg
-                    className="absolute -top-2 -left-2 h-8 w-8 text-indigo-200 
+                    className="absolute -top-2 -left-2 h-8 w-8 text-gray-300 
                     transform -translate-x-2 -translate-y-2 
-                    group-hover:text-purple-300 transition-colors duration-500 
+                    group-hover:text-purple-200 transition-colors duration-500 
                     group-hover:rotate-12"
                     fill="currentColor"
                     viewBox="0 0 32 32"

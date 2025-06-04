@@ -8,11 +8,17 @@ import {
   FaHandsHelping,
   FaUniversity,
   FaUserShield,
+  FaDollarSign,
+  FaCheckCircle,
+  FaLanguage,
+  FaGraduationCap,
+  FaShieldVirus,
+  FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-import { motion, useAnimation } from "framer-motion";
+// import { motion, useAnimation } from "framer-motion";
 
-// Data Constants (same as before)
+// Data Constants (grouped at the top for easy reference and modification)
 const DATA = {
   whyUsFeatures: [
     {
@@ -62,17 +68,19 @@ const DATA = {
     {
       title: (
         <>
-          <span className="text-[#232a36]">Missed </span>
-          <span className="text-red-500">NEET?</span>
+          <h2 className="text-5xl">
+            <span className="text-[#232a36]">Missed </span>
+            <span className="text-red-400 ">NEET?</span>
+          </h2>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-5xl font-semibold text-[#232a36]">
+          <h2 className="text-lg  font-semibold text-[#232a36]">
             Don't Miss Your Dream
           </h2>
           <h3 className="text-3xl">
-            Study <span className="text-[#e44e50]">MBBS in Georgia</span>
+            Study <span className="text-red-400">MBBS in Georgia</span>
           </h3>
         </>
       ),
@@ -94,8 +102,8 @@ const DATA = {
     {
       title: (
         <>
-          <span className="text-red-500">Explore</span>
-          <span className="text-[#232a36]"> Universities</span>
+          <span className="text-[#232a36]">Explore</span>
+          <span className="text-red-400"> Universities</span>
         </>
       ),
       subtitle: (
@@ -104,18 +112,11 @@ const DATA = {
             Find the Perfect Medical University
           </h2>
           <h3 className="text-3xl">
-            <span className="text-[#e44e50]">12+ NMC</span> Approved Options
+            <span className="text-red-400">12+ NMC</span> Approved Options
           </h3>
         </>
       ),
-      description:
-        "Compare top Georgian medical universities with state-of-the-art facilities, experienced faculty, and international recognition at affordable fees.",
-      stats: [
-        { value: "12+", label: "NMC Approved Universities" },
-        { value: "6+", label: "Years of Excellence" },
-        { value: "10k+", label: "Indian Students" },
-        { value: "100%", label: "Visa Success" },
-      ],
+
       buttons: [
         { to: "/Universities", text: "View All Universities", primary: true },
       ],
@@ -129,27 +130,25 @@ const DATA = {
     },
     {
       title: (
-        <h1 className="whitespace-nowrap">
-          <span className="text-red-500">Student</span>
-          <span className="text-[#232a36]"> Success Stories</span>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <span className="text-[#232a36]">Student Success</span>
+          <span className="text-red-400"> Stories</span>
         </h1>
       ),
       subtitle: (
         <>
-          <h2 className="text-5xl font-semibold text-[#232a36]">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36]">
             Hear from our Alumni
           </h2>
-          <h3 className="text-3xl">
-            Real <span className="text-[#e44e50]">Experiences</span>, Real
-            Success
+          <h3 className="text-lg md:text-xl lg:text-2xl">
+            Real <span className="text-red-400">Experiences</span>, Real Success
           </h3>
         </>
       ),
-      description:
-        "Learn from students who have successfully completed their MBBS in Georgia and are now practicing medicine around the world.",
+
       testimonial: {
         quote:
-          "Studying MBBS in Georgia was one of the best decisions of my life. The education quality, international exposure, and practical clinical experience prepared me well for my medical career.",
+          "Studying MBBS in Georgia was the best decision of my life — excellent education and global exposure shaped my career.",
         name: "Dr. Priya Sharma",
         designation: "Batch of 2020",
       },
@@ -177,9 +176,9 @@ const DATA = {
       ),
       bgColor: "from-blue-50 to-cyan-100",
       description:
-        "Every year, thousands of deserving students don't clear NEET due to high competition and limited seats. But your medical dream doesn't have to end here.",
+        "Every year, thousands miss NEET due to limited seats. Your medical dream doesn't have to end here.",
       quote:
-        '"I missed NEET by just 15 marks. I thought my dream was over until I found this path."',
+        '"I missed NEET by just 15 marks. Georgia opened new doors for me."',
     },
     {
       number: 2,
@@ -189,9 +188,9 @@ const DATA = {
       ),
       bgColor: "from-red-50 to-pink-100",
       description:
-        "Your passion for medicine shouldn't be limited by entrance exam results. There are alternative pathways to achieve your dream of becoming a doctor.",
+        "Your passion for medicine shouldn't be limited by entrance exam results. Alternative pathways await.",
       quote:
-        '"I refused to give up on my dream. Now I\'m studying in a top medical university in Georgia."',
+        '"I refused to give up on my dream. Now I\'m studying in Georgia."',
     },
     {
       number: 3,
@@ -205,15 +204,16 @@ const DATA = {
       ),
       bgColor: "from-green-50 to-teal-100",
       description:
-        "Private medical colleges in India charge 50 lakhs to 1 crore for MBBS. International options can be more affordable with better facilities and global exposure.",
+        "Private colleges in India charge 50L-1Cr for MBBS. Georgia offers quality at 1/3rd the cost.",
       quote:
-        '"My family couldn\'t afford Indian private colleges. Georgia offered quality education at 1/3rd the cost."',
+        '"Georgia offered quality education at a price my family could afford."',
     },
   ],
   comparisonCards: [
     {
       title: "No Donation Required",
-      gradient: "from-amber-400 to-red-500",
+      gradient: "from-orange-400 to-red-600",
+      icon: <FaDollarSign size={32} className="text-orange-500" />, // Smaller icon with matching color
       before: {
         label: "In India",
         value: "₹50L - 1Cr",
@@ -224,12 +224,12 @@ const DATA = {
         value: "₹15-25L",
         desc: "Complete MBBS",
       },
-      description:
-        "Study MBBS in Georgia at a fraction of the cost compared to private colleges in India, with no donations or hidden fees.",
+      description: "Study MBBS at a fraction of the cost with no hidden fees.",
     },
     {
       title: "WHO/NMC Recognition",
-      gradient: "from-red-400 to-pink-500",
+      gradient: "from-pink-400 to-rose-600",
+      icon: <FaCheckCircle size={32} className="text-pink-500" />,
       before: {
         label: "Some Foreign Universities",
         value: "Non-Recognized",
@@ -241,11 +241,12 @@ const DATA = {
         desc: "NMC & WHO approved",
       },
       description:
-        "All Georgian medical universities are recognized by WHO, NMC, and other international regulatory bodies.",
+        "All Georgian medical universities are recognized by WHO and NMC.",
     },
     {
       title: "English Medium",
-      gradient: "from-blue-400 to-cyan-500",
+      gradient: "from-blue-400 to-indigo-600",
+      icon: <FaLanguage size={32} className="text-blue-500" />,
       before: {
         label: "Some Countries",
         value: "Language Barrier",
@@ -257,11 +258,12 @@ const DATA = {
         desc: "Curriculum & Teaching",
       },
       description:
-        "Complete MBBS program taught in English, making it accessible for international students with no language barrier.",
+        "Complete MBBS program taught in English with no language barrier.",
     },
     {
       title: "Quality Education",
-      gradient: "from-purple-400 to-indigo-500",
+      gradient: "from-violet-400 to-purple-600",
+      icon: <FaGraduationCap size={32} className="text-violet-500" />,
       before: {
         label: "Many Foreign Options",
         value: "Compromised Quality",
@@ -270,42 +272,41 @@ const DATA = {
       after: {
         label: "In Georgia",
         value: "European Standards",
-        desc: "Modern facilities & experienced faculty",
+        desc: "Modern facilities & faculty",
       },
-      description:
-        "European standard education with modern infrastructure, advanced labs and experienced faculty members.",
+      description: "European standard education with modern infrastructure.",
     },
     {
       title: "Safety First",
-      gradient: "from-green-400 to-emerald-500",
+      gradient: "from-emerald-400 to-green-600",
+      icon: <FaShieldVirus size={32} className="text-emerald-500" />,
       before: {
         label: "Some Countries",
         value: "Safety Concerns",
-        desc: "Parents worry about student safety",
+        desc: "Parents worry about safety",
       },
       after: {
         label: "Georgia",
         value: "One of Safest",
         desc: "Countries in Europe",
       },
-      description:
-        "Georgia is one of the safest countries in Europe with a very low crime rate and friendly people welcoming to international students.",
+      description: "One of the safest countries in Europe with low crime rate.",
     },
     {
       title: "Global Recognition",
-      gradient: "from-teal-400 to-green-500",
+      gradient: "from-cyan-400 to-teal-600",
+      icon: <FaPassport size={32} className="text-cyan-500" />,
       before: {
         label: "Some Foreign Degrees",
         value: "Limited Recognition",
-        desc: "Restricted employment options",
+        desc: "Restricted options",
       },
       after: {
         label: "Georgian Degree",
         value: "Global Acceptance",
         desc: "Practice in 40+ countries",
       },
-      description:
-        "Georgian medical degrees are recognized worldwide, allowing graduates to practice medicine or pursue higher studies in many countries.",
+      description: "Georgian medical degrees are recognized worldwide.",
     },
   ],
   services: [
@@ -335,7 +336,7 @@ const DATA = {
     },
     {
       title: "Airport Pickup & University Registration",
-      icon: "✈️",
+      icon: "✈",
       description:
         "Smooth arrival with pickup service and assistance with university registration process.",
     },
@@ -361,7 +362,7 @@ const DATA = {
   testimonials: [
     {
       name: "Priya Sharma",
-      emoji: "👩‍⚕️",
+      emoji: "👩‍⚕",
       university: "Tbilisi State Medical University",
       testimonial:
         "The guidance I received was exceptional. From admission to settling in Georgia, every step was smoothly handled. Now I'm confidently pursuing my MBBS dreams.",
@@ -372,7 +373,7 @@ const DATA = {
     },
     {
       name: "Rahul Patel",
-      emoji: "👨‍⚕️",
+      emoji: "👨‍⚕",
       university: "Batumi Shota Rustaveli University",
       testimonial:
         "I was worried about studying abroad, but the support system here is amazing. The education quality is world-class and the fees are very reasonable.",
@@ -409,13 +410,13 @@ const DATA = {
     { caption: "Student Orientation", emoji: "👨‍🎓" },
     { caption: "University Visit", emoji: "🏫" },
     { caption: "Visa Assistance Workshop", emoji: "🛂" },
-    { caption: "Pre-departure Session", emoji: "✈️" },
+    { caption: "Pre-departure Session", emoji: "✈" },
     { caption: "Student Welcome Event", emoji: "🎉" },
     { caption: "Academic Counselling", emoji: "📚" },
-    { caption: "Campus Tour", emoji: "🏛️" },
+    { caption: "Campus Tour", emoji: "🏛" },
     { caption: "Student Housing Tour", emoji: "🏠" },
     { caption: "Cultural Program", emoji: "🎭" },
-    { caption: "Medical Workshop", emoji: "👨‍⚕️" },
+    { caption: "Medical Workshop", emoji: "👨‍⚕" },
     { caption: "Career Guidance Session", emoji: "💼" },
   ],
 };
@@ -427,294 +428,6 @@ const SectionHeader = ({ title, description }) => (
     <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">{description}</p>
   </div>
 );
-
-// 3D Globe Component with Countries and Water
-const Globe3D = ({ activeSlide }) => {
-  const globeRef = useRef(null);
-  const [isRotating, setIsRotating] = useState(true);
-
-  // Handle animation for the globe
-  useEffect(() => {
-    if (!globeRef.current) return;
-
-    // Reset animation when slide changes
-    const globe = globeRef.current;
-    globe.style.animation = "none";
-    setTimeout(() => {
-      globe.style.animation = isRotating ? "spin 20s linear infinite" : "none";
-    }, 10);
-
-    return () => {
-      if (globe) globe.style.animation = "none";
-    };
-  }, [activeSlide, isRotating]);
-
-  return (
-    <div
-      className="relative w-full h-full flex items-center justify-center"
-      onClick={() => setIsRotating(!isRotating)}
-    >
-      {/* Ambient glow effect */}
-      <div className="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-blue-500/10 animate-pulse"></div>
-
-      {/* Globe container */}
-      <div className="relative w-52 h-52 md:w-64 md:h-64">
-        {/* Earth sphere - Ocean base */}
-        <div
-          ref={globeRef}
-          className="absolute inset-0 rounded-full shadow-2xl earth-globe"
-        >
-          {/* Ocean layer */}
-          <div className="absolute inset-0 rounded-full ocean-layer"></div>
-
-          {/* Continents */}
-          <div className="absolute inset-0 rounded-full continents-layer">
-            {/* North America */}
-            <div className="continent north-america"></div>
-
-            {/* South America */}
-            <div className="continent south-america"></div>
-
-            {/* Europe */}
-            <div className="continent europe"></div>
-
-            {/* Africa */}
-            <div className="continent africa"></div>
-
-            {/* Asia */}
-            <div className="continent asia"></div>
-
-            {/* Australia */}
-            <div className="continent australia"></div>
-
-            {/* Antarctica */}
-            <div className="continent antarctica"></div>
-          </div>
-
-          {/* Cloud layer - subtle cloud patterns */}
-          <div className="absolute inset-0 rounded-full clouds-layer"></div>
-
-          {/* Grid lines */}
-          <div className="absolute inset-0 rounded-full grid-lines">
-            {/* Longitude lines */}
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={`long-${i}`}
-                className="absolute inset-0 rounded-full longitude-line"
-                style={{ transform: `rotateY(${i * 15}deg)` }}
-              ></div>
-            ))}
-
-            {/* Latitude lines */}
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={`lat-${i}`}
-                className="absolute inset-0 rounded-full latitude-line"
-                style={{ transform: `rotateX(${i * 30}deg)` }}
-              ></div>
-            ))}
-          </div>
-
-          {/* Highlight for Georgia */}
-          <div
-            className="absolute w-2 h-2 bg-red-500 rounded-full georgia-marker"
-            style={{ animationDelay: "0.5s" }}
-          ></div>
-
-          {/* Atmosphere glow */}
-          <div className="absolute inset-0 rounded-full atmosphere-glow"></div>
-        </div>
-
-        {/* Active point indicator */}
-        <div className="absolute flex items-center pointer-events-none georgia-pointer">
-          <div className="bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-medium text-red-500 shadow-lg">
-            Georgia
-          </div>
-          <div className="w-8 h-px bg-red-500"></div>
-        </div>
-      </div>
-
-      {/* Click to interact hint */}
-      <div className="absolute bottom-1 left-0 right-0 text-center">
-        <p className="text-xs text-gray-400">
-          Click globe to {isRotating ? "pause" : "resume"}
-        </p>
-      </div>
-
-      {/* CSS for the realistic globe */}
-      <style jsx="true">{`
-        @keyframes spin {
-          0% {
-            transform: rotateY(0) rotateX(23deg);
-          }
-          100% {
-            transform: rotateY(360deg) rotateX(23deg);
-          }
-        }
-
-        .earth-globe {
-          transform-style: preserve-3d;
-          transform: rotateX(23deg);
-          animation: spin 20s linear infinite;
-          box-shadow: 0 0 50px 5px rgba(59, 130, 246, 0.2);
-        }
-
-        .ocean-layer {
-          background: radial-gradient(circle at 30% 30%, 
-            rgba(32, 156, 255, 1) 0%, 
-            rgba(17, 106, 204, 1) 70%, 
-            rgba(6, 57, 114, 1) 100%);
-        }
-
-        .continents-layer {
-          transform-style: preserve-3d;
-        }
-
-        .continent {
-          position: absolute;
-          background-color: rgba(62, 142, 65, 0.8);
-          box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
-          border-radius: 40%;
-        }
-
-        .north-america {
-          width: 28%;
-          height: 28%;
-          top: 15%;
-          left: 12%;
-          clip-path: polygon(
-            30% 0%, 70% 10%, 100% 40%, 90% 70%, 60% 100%, 
-            30% 90%, 10% 50%, 0% 30%, 10% 10%
-          );
-        }
-
-        .south-america {
-          width: 14%;
-          height: 24%;
-          top: 48%;
-          left: 26%;
-          clip-path: polygon(
-            30% 0%, 70% 0%, 100% 30%, 90% 70%, 50% 100%, 
-            20% 85%, 0% 50%, 10% 20%
-          );
-        }
-
-        .europe {
-          width: 15%;
-          height: 15%;
-          top: 20%;
-          left: 48%;
-          clip-path: polygon(
-            0% 30%, 30% 0%, 70% 10%, 100% 30%, 90% 70%,
-            65% 85%, 40% 100%, 10% 90%, 0% 60%
-          );
-        }
-
-        .africa {
-          width: 22%;
-          height: 28%;
-          top: 37%;
-          left: 46%;
-          clip-path: polygon(
-            30% 0%, 70% 0%, 95% 25%, 100% 60%, 75% 90%,
-            50% 100%, 25% 85%, 0% 50%, 10% 20%
-          );
-        }
-
-        .asia {
-          width: 36%;
-          height: 32%;
-          top: 15%;
-          left: 58%;
-          clip-path: polygon(
-            10% 30%, 30% 10%, 60% 0%, 90% 20%, 100% 50%,
-            85% 80%, 60% 100%, 30% 85%, 0% 60%
-          );
-        }
-
-        .australia {
-          width: 16%;
-          height: 14%;
-          top: 60%;
-          left: 78%;
-          clip-path: polygon(
-            20% 0%, 80% 10%, 100% 40%, 90% 80%, 60% 100%,
-            20% 90%, 0% 60%, 10% 20%
-          );
-        }
-
-        .antarctica {
-          width: 24%;
-          height: 10%;
-          bottom: 5%;
-          left: 38%;
-          clip-path: polygon(
-            10% 0%, 90% 0%, 100% 60%, 75% 100%, 25% 100%, 0% 60%
-          );
-          background-color: rgba(240, 240, 250, 0.9);
-        }
-
-        .clouds-layer {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffffff' fill-opacity='0.15' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0z'%3E%3C/path%3E%3C/svg%3E");
-          opacity: 0.3;
-        }
-
-        .grid-lines {
-          transform-style: preserve-3d;
-        }
-
-        .longitude-line,
-        .latitude-line {
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          transform-style: preserve-3d;
-        }
-
-        .georgia-marker {
-          top: 32%;
-          left: 54%;
-          animation: pulse 2s infinite;
-        }
-
-        .georgia-pointer {
-          top: 22%;
-          right: 10%;
-        }
-
-        .atmosphere-glow {
-          box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.3);
-          opacity: 0.5;
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          70% {
-            transform: scale(2.5);
-            opacity: 0;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 0;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .north-america,
-          .south-america,
-          .europe,
-          .africa,
-          .asia,
-          .australia,
-          .antarctica {
-            transform: scale(0.85);
-          }
-        }
-      `}</style>
-    </div>
-  );
-};
 
 const Home = () => {
   // State declarations
@@ -756,6 +469,12 @@ const Home = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   const goToNextSlide = () =>
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+
+  // Auto carousel effect
+  // useEffect(() => {
+  //   const interval = setInterval(goToNextSlide, 20000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // Component: Carousel Dots
   const CarouselDots = () => (
@@ -816,17 +535,31 @@ const Home = () => {
     </div>
   );
 
-  // Component: Comparison Card
-  const ComparisonCard = ({ title, gradient, before, after, description }) => (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+  // Component: Comparison Card - Updated with icons
+  const ComparisonCard = ({
+    title,
+    gradient,
+    icon,
+    before,
+    after,
+    description,
+  }) => (
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300 border border-gray-100">
+      {/* Card Header with Better Gradient and Icon Placement */}
       <div
-        className={`h-20 bg-gradient-to-r ${gradient} flex items-center justify-center`}
+        className={`h-24 bg-gradient-to-r ${gradient} flex items-center justify-center relative px-4`}
       >
-        <h3 className="text-xl text-white font-bold">{title}</h3>
+        {/* Improved icon container with consistent sizing and positioning */}
+        <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-white">
+          <div className="text-red-500">{icon}</div>
+        </div>
+        <h3 className="text-xl text-white font-bold text-center mb-8">
+          {title}
+        </h3>
       </div>
 
-      <div className="p-6 space-y-4">
-        <div className="relative overflow-hidden h-32">
+      <div className="p-6 pt-12 space-y-4">
+        <div className="relative overflow-hidden h-32 mt-2">
           {/* Before */}
           <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg absolute inset-0 transition-transform duration-500 group-hover:translate-y-[-100%]">
             <div>
@@ -839,7 +572,7 @@ const Home = () => {
               <span className="block text-sm mt-1">{before.desc}</span>
             </div>
             <svg
-              className="w-12 h-12 text-red-500"
+              className="w-10 h-10 text-red-500 opacity-80"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -863,7 +596,7 @@ const Home = () => {
               <span className="block text-sm mt-1">{after.desc}</span>
             </div>
             <svg
-              className="w-12 h-12 text-green-500"
+              className="w-10 h-10 text-green-500 opacity-80"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -879,65 +612,101 @@ const Home = () => {
         </div>
 
         <div className="pt-4 border-t border-gray-100">
-          <p className="text-[#4a5568]">{description}</p>
+          <p className="text-[#4a5568] text-center">{description}</p>
         </div>
       </div>
     </div>
   );
 
   // Services Journey Section
-  const OurServicesJourney = () => {
+  const OurServices = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const controls = useAnimation();
-    const pathRef = useRef(null);
-    const [pathPoints, setPathPoints] = useState([]);
+    const contentRef = useRef(null);
 
-    // Calculate path points once
-    useEffect(() => {
-      if (!pathRef.current) return;
-      const path = pathRef.current;
-      const pathLength = path.getTotalLength();
-      const calculatedPoints = [];
-
-      for (let i = 0; i < DATA.services.length; i++) {
-        const percent = i / (DATA.services.length - 1);
-        const position = percent * pathLength;
-        const point = path.getPointAtLength(position);
-        calculatedPoints.push({ x: point.x, y: point.y });
+    const nextStep = () => {
+      if (activeStep < DATA.services.length - 1) {
+        setActiveStep(activeStep + 1);
       }
-      setPathPoints(calculatedPoints);
-    }, []);
+    };
 
-    // Move airplane when step changes
+    const prevStep = () => {
+      if (activeStep > 0) {
+        setActiveStep(activeStep - 1);
+      }
+    };
+
+    const goToStep = (stepIndex) => {
+      setActiveStep(stepIndex);
+    };
+
+    // Animation for content transitions
     useEffect(() => {
-      if (pathPoints.length === 0 || activeStep >= pathPoints.length) return;
-      const point = pathPoints[activeStep];
-      controls.start({
-        x: point.x - 32,
-        y: point.y - 32,
-        transition: {
-          duration: 0.5,
-          type: "spring",
-          stiffness: 300,
-          damping: 25,
-        },
-      });
-    }, [activeStep, pathPoints, controls]);
+      if (contentRef.current) {
+        contentRef.current.style.opacity = "0";
+        contentRef.current.style.transform = "translateY(20px)";
 
-    const nextStep = () =>
-      setActiveStep((prev) => (prev + 1) % DATA.services.length);
-    const prevStep = () =>
-      setActiveStep((prev) =>
-        prev === 0 ? DATA.services.length - 1 : prev - 1
-      );
-    const goToStep = (index) => setActiveStep(index);
+        setTimeout(() => {
+          contentRef.current.style.opacity = "1";
+          contentRef.current.style.transform = "translateY(0)";
+        }, 50);
+      }
+    }, [activeStep]);
+
+    // ServiceStep Component with enhanced visuals
+    const ServiceStep = ({ number, isActive, isCompleted, onClick }) => (
+      <button
+        onClick={onClick}
+        className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-medium text-sm md:text-base relative transition-all duration-300 ${
+          isActive
+            ? "bg-red-500 text-white border-2 border-red-200 shadow-lg scale-110"
+            : isCompleted
+            ? "bg-red-100 text-red-600 border border-red-300"
+            : "bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200"
+        }`}
+        aria-label={`Go to step ${number}`}
+      >
+        {isCompleted ? (
+          <svg
+            className="w-4 h-4 md:w-5 md:h-5 transition-all duration-300"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        ) : (
+          number
+        )}
+        {isActive && (
+          <>
+            <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-0.5 h-5 bg-red-300"></span>
+            <span className="absolute -inset-1.5 animate-ping rounded-full bg-red-200 opacity-75 duration-1000"></span>
+          </>
+        )}
+      </button>
+    );
 
     return (
-      <section className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-20 bg-gray-100 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-40 h-40 bg-red-50 rounded-full blur-3xl opacity-30 -mr-20 -mt-20"></div>
+        <div className="absolute bottom-0 left-0 w-60 h-60 bg-red-50 rounded-full blur-3xl opacity-30 -ml-20 -mb-20"></div>
+        <div
+          className="absolute top-2/3 right-1/4 w-3 h-3 bg-red-300 rounded-full opacity-30 animate-ping"
+          style={{ animationDuration: "3s", animationDelay: "1s" }}
+        ></div>
+
+        <div className="max-w-7xl mx-auto px-8 relative">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-[#232a36] mb-4 sm:mb-6">
-              Our <span className="text-red-500">Services</span>
+              Our{" "}
+              <span className="text-red-500 relative">
+                Services
+                <span className="absolute bottom-0 left-0 h-0.5 w-full bg-red-500 transform scale-x-0 transition-transform origin-left group-hover:scale-x-100"></span>
+              </span>
             </h2>
             <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
               From admission to graduation, we provide comprehensive support
@@ -945,158 +714,126 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="relative h-[400px] mb-12">
-            <svg
-              className="w-full h-full absolute top-0 left-0"
-              viewBox="0 0 1000 300"
-            >
-              <defs>
-                <linearGradient
-                  id="pathGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="0%"
-                >
-                  <stop offset="0%" stopColor="#f87171" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#ef4444" stopOpacity="0.9" />
-                </linearGradient>
-                <filter
-                  id="shadow"
-                  x="-20%"
-                  y="-20%"
-                  width="140%"
-                  height="140%"
-                >
-                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-                  <feOffset dx="2" dy="2" result="offsetblur" />
-                  <feComponentTransfer>
-                    <feFuncA type="linear" slope="0.3" />
-                  </feComponentTransfer>
-                  <feMerge>
-                    <feMergeNode />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              {/* Background dots */}
-              {Array(8)
-                .fill()
-                .map((_, i) => (
-                  <circle
-                    key={`bg-dot-${i}`}
-                    cx={150 + i * 100}
-                    cy={50 + Math.random() * 200}
-                    r={3 + Math.random() * 3}
-                    fill="#f87171"
-                    opacity={0.3 + Math.random() * 0.4}
-                    className="animate-pulse"
-                    style={{ animationDuration: `${3 + Math.random() * 4}s` }}
+          {/* Stepper - Desktop (Horizontal) */}
+          <div className="hidden md:flex justify-center items-center mb-10 overflow-x-auto py-4">
+            <div className="flex items-center">
+              {DATA.services.map((_, index) => (
+                <React.Fragment key={index}>
+                  {/* Step indicator */}
+                  <ServiceStep
+                    number={index + 1}
+                    isActive={activeStep === index}
+                    isCompleted={index < activeStep}
+                    onClick={() => goToStep(index)}
                   />
-                ))}
 
-              <path
-                ref={pathRef}
-                d="M100,150 C200,50 300,250 400,150 C500,50 600,250 700,150 C800,50 900,150 900,150"
-                fill="none"
-                stroke="url(#pathGradient)"
-                strokeWidth="8"
-                strokeLinecap="round"
-                filter="url(#shadow)"
-              />
-
-              {/* Service step dots */}
-              {pathPoints.map((point, index) => (
-                <g
-                  key={index}
-                  className="cursor-pointer"
-                  onClick={() => goToStep(index)}
-                >
-                  {activeStep === index && (
-                    <circle
-                      cx={point.x}
-                      cy={point.y}
-                      r={18}
-                      fill="#fff2f2"
-                      className="animate-ping"
-                      style={{
-                        animationDuration: "2s",
-                        animationIterationCount: 1,
-                      }}
-                    />
+                  {/* Connector line between steps */}
+                  {index < DATA.services.length - 1 && (
+                    <div className="relative h-0.5 w-8 lg:w-12">
+                      <div
+                        className={`absolute inset-0 bg-gray-200 transition-all duration-500`}
+                      ></div>
+                      <div
+                        className={`absolute inset-0 bg-red-400 transition-all duration-1000 ${
+                          index < activeStep ? "w-full" : "w-0"
+                        }`}
+                      ></div>
+                    </div>
                   )}
-                  <circle
-                    cx={point.x}
-                    cy={point.y}
-                    r={activeStep === index ? 12 : 8}
-                    fill={activeStep === index ? "#ef4444" : "#f87171"}
-                    stroke="#fff"
-                    strokeWidth="2"
-                    style={{ transition: "all 0.3s ease" }}
-                  />
-                  <text
-                    x={point.x}
-                    y={point.y}
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                    fill="#fff"
-                    fontSize="10"
-                    fontWeight="bold"
-                    pointerEvents="none"
-                  >
-                    {index + 1}
-                  </text>
-                </g>
+                </React.Fragment>
               ))}
-            </svg>
-
-            {/* Airplane Icon */}
-            {pathPoints.length > 0 && (
-              <motion.div
-                initial={{ x: pathPoints[0].x - 32, y: pathPoints[0].y - 32 }}
-                animate={controls}
-                className="absolute z-30 pointer-events-none"
-              >
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-red-500">
-                  <span className="text-3xl">✈️</span>
-                </div>
-              </motion.div>
-            )}
+            </div>
           </div>
 
-          <div className="flex justify-center">
-            <motion.div
-              key={activeStep}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white rounded-xl shadow-lg w-full max-w-2xl p-8 border-t-4 border-red-500"
-            >
-              <div className="flex items-start mb-6">
-                <div className="bg-red-100 p-4 rounded-full text-3xl mr-4 shadow-md">
-                  {DATA.services[activeStep].icon}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#232a36]">
-                    {DATA.services[activeStep].title}
-                  </h3>
-                  <span className="text-sm text-red-500 font-medium">
-                    Step {activeStep + 1} of {DATA.services.length}
+          {/* Stepper - Mobile (Shows only current step and adjacent ones) */}
+          <div className="md:hidden flex justify-center items-center mb-8">
+            <div className="flex items-center">
+              {/* Previous step (if not at first step) */}
+              {activeStep > 0 && (
+                <>
+                  <ServiceStep
+                    number={activeStep}
+                    isActive={false}
+                    isCompleted={true}
+                    onClick={() => prevStep()}
+                  />
+                  <div className="h-0.5 w-6 bg-red-400"></div>
+                </>
+              )}
+
+              {/* Current step */}
+              <ServiceStep
+                number={activeStep + 1}
+                isActive={true}
+                isCompleted={false}
+                onClick={() => {}}
+              />
+
+              {/* Next step (if not at last step) */}
+              {activeStep < DATA.services.length - 1 && (
+                <>
+                  <div className="h-0.5 w-6 bg-gray-200"></div>
+                  <ServiceStep
+                    number={activeStep + 2}
+                    isActive={false}
+                    isCompleted={false}
+                    onClick={() => nextStep()}
+                  />
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Step indicator text (Mobile only) */}
+          <div className="md:hidden text-center text-sm text-gray-500 mb-6 font-medium">
+            Step {activeStep + 1} of {DATA.services.length}
+          </div>
+
+          {/* Content Card with animation */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-3xl mx-auto border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
+            <div className="px-6 py-8">
+              {/* Card Header */}
+              <div className="mb-6 flex items-center gap-4">
+                <div className="bg-red-100 p-4 rounded-full text-3xl shadow-md transition-all duration-300 hover:shadow-lg hover:bg-red-50 group">
+                  <span className="inline-block transition-transform duration-700 group-hover:rotate-12">
+                    {DATA.services[activeStep].icon}
                   </span>
                 </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
+                    {DATA.services[activeStep].title}
+                  </h3>
+                  <div className="hidden md:block text-sm text-red-500 font-medium">
+                    Step {activeStep + 1} of {DATA.services.length}
+                  </div>
+                </div>
               </div>
-              <p className="text-[#4a5568] text-lg mb-6">
-                {DATA.services[activeStep].description}
-              </p>
-              <div className="flex justify-between space-x-4">
+
+              {/* Card Content with fade effect */}
+              <div
+                ref={contentRef}
+                className="mb-8 transition-all duration-300"
+                style={{ opacity: 1, transform: "translateY(0)" }}
+              >
+                <p className="text-gray-700 leading-relaxed">
+                  {DATA.services[activeStep].description}
+                </p>
+              </div>
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-between">
                 <button
                   onClick={prevStep}
-                  className="px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition flex items-center"
+                  className={`px-4 py-2 rounded-md flex items-center gap-2 transition-all duration-300 ${
+                    activeStep === 0
+                      ? "text-gray-400 cursor-not-allowed bg-gray-50"
+                      : "text-red-500 hover:bg-red-50 border border-red-500 hover:shadow-md"
+                  }`}
+                  disabled={activeStep === 0}
                 >
                   <svg
-                    className="w-4 h-4 mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -1110,13 +847,20 @@ const Home = () => {
                   </svg>
                   Previous
                 </button>
+
                 <button
                   onClick={nextStep}
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition flex items-center"
+                  className={`px-4 py-2 rounded-md flex items-center gap-2 transition-all duration-300 group ${
+                    activeStep === DATA.services.length - 1
+                      ? "text-gray-400 cursor-not-allowed bg-gray-50"
+                      : "bg-red-500 text-white hover:bg-red-600 hover:shadow-md"
+                  }`}
+                  disabled={activeStep === DATA.services.length - 1}
                 >
                   Next
                   <svg
-                    className="w-4 h-4 ml-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -1130,23 +874,26 @@ const Home = () => {
                   </svg>
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
 
-        <div className="flex justify-center mt-8 gap-2">
-          {DATA.services.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToStep(index)}
-              className={`transition-all duration-300 rounded-full ${
-                activeStep === index
-                  ? "bg-red-500 w-8 h-2"
-                  : "bg-red-300 w-2 h-2 hover:bg-red-400"
-              }`}
-              aria-label={`Go to step ${index + 1}`}
-            />
-          ))}
+          {/* Step Dots - Mobile and Tablet (Alternative navigation) */}
+          <div className="flex justify-center mt-8 gap-1.5 md:hidden">
+            {DATA.services.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToStep(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  activeStep === index
+                    ? "bg-red-500 transform scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to step ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+
+          {/* Additional "quick jump" to popular services */}
         </div>
       </section>
     );
@@ -1159,9 +906,9 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-[#232a36] mb-6">
-              What <span className="text-red-500">Students</span> Say about Us?
+              What Student Say about{" "}
+              <span className="text-red-500">SR Counselling</span>?
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mb-6 rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1223,43 +970,418 @@ const Home = () => {
     );
   };
 
-  // Wall of Fame Section
+  // Wall of Fame Section with consistent image sizes and double-click zoom
   const WallOfFame = () => {
+    // State for the image popup
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isZoomed, setIsZoomed] = useState(false);
+    const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const dragRef = useRef(null);
+    const lastClickTime = useRef(0);
+
+    // Number of images per row (for perfect square matrix)
+    const imagesPerRow = 4; // Using 4 columns for better layout
+
+    // Calculate total number of items needed for complete rows
+    const totalImages = 40;
+    const visibleImages = 15;
+    const remainingCount = totalImages - visibleImages;
+
+    // Define which positions should have featured (larger) images
+    // const featuredPositions = []; // No featured images - all same size
+
+    // Generate array of all 40 image paths with fixed featured states
+    const srImages = Array.from({ length: totalImages }, (_, i) => ({
+      id: i + 1,
+      src: `/src/assets/SR images/${i + 1}.jpg`,
+      alt: `SR Counselling moment ${i + 1}`,
+      featured: false, // No featured images - all same size
+      // Use the wallOfFameImages array for captions in a circular manner
+      caption: DATA.wallOfFameImages[i % DATA.wallOfFameImages.length].caption,
+      emoji: DATA.wallOfFameImages[i % DATA.wallOfFameImages.length].emoji,
+    }));
+
+    // Function to handle image click to open popup
+    const openImagePopup = (index) => {
+      setSelectedImage(srImages[index]);
+      setSelectedIndex(index);
+      setIsPopupOpen(true);
+      setDragPosition({ x: 0, y: 0 });
+      setIsZoomed(false);
+      document.body.style.overflow = "hidden"; // Prevent scrolling when popup is open
+    };
+
+    // Function to close the popup
+    const closePopup = () => {
+      setIsPopupOpen(false);
+      setIsZoomed(false);
+      setDragPosition({ x: 0, y: 0 });
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    };
+
+    // Navigation functions
+    const goToNext = (e) => {
+      e.stopPropagation();
+      const nextIndex = (selectedIndex + 1) % srImages.length;
+      setSelectedImage(srImages[nextIndex]);
+      setSelectedIndex(nextIndex);
+      setDragPosition({ x: 0, y: 0 });
+      setIsZoomed(false);
+    };
+
+    const goToPrev = (e) => {
+      e.stopPropagation();
+      const prevIndex = (selectedIndex - 1 + srImages.length) % srImages.length;
+      setSelectedImage(srImages[prevIndex]);
+      setSelectedIndex(prevIndex);
+      setDragPosition({ x: 0, y: 0 });
+      setIsZoomed(false);
+    };
+
+    // Double-click zoom handler
+    const handleImageClick = () => {
+      const currentTime = new Date().getTime();
+      const clickTimeDiff = currentTime - lastClickTime.current;
+
+      // If double click (within 300ms)
+      if (clickTimeDiff < 300) {
+        setIsZoomed(!isZoomed);
+        setDragPosition({ x: 0, y: 0 });
+      }
+
+      lastClickTime.current = currentTime;
+    };
+
+    // Mouse/touch event handlers for dragging - improved to make dragging work
+    const handleMouseDown = (e) => {
+      if (!isZoomed) return;
+      setIsDragging(true);
+      e.preventDefault(); // Prevent image drag behavior
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDragging || !isZoomed) return;
+      const movementX = e.movementX;
+      const movementY = e.movementY;
+      setDragPosition((prev) => ({
+        x: prev.x + movementX,
+        y: prev.y + movementY,
+      }));
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    // Touch event handlers - improved
+    const handleTouchStart = (e) => {
+      if (!isZoomed) return;
+      setIsDragging(true);
+      dragRef.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+      };
+      e.preventDefault(); // Prevent default touch behavior
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging || !isZoomed || !dragRef.current) return;
+      e.preventDefault(); // This is critical for preventing scrolling during drag
+
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+
+      const deltaX = touchX - dragRef.current.x;
+      const deltaY = touchY - dragRef.current.y;
+
+      setDragPosition((prev) => ({
+        x: prev.x + deltaX,
+        y: prev.y + deltaY,
+      }));
+
+      dragRef.current = {
+        x: touchX,
+        y: touchY,
+      };
+    };
+
+    const handleTouchEnd = () => {
+      setIsDragging(false);
+      dragRef.current = null;
+    };
+
+    // Create grid items
+    const createGridItems = () => {
+      // Calculate how many complete rows needed
+      const totalRows = Math.ceil((visibleImages + 1) / imagesPerRow);
+      const totalCells = totalRows * imagesPerRow;
+
+      // Create grid items
+      const gridItems = [];
+
+      // Add visible images
+      for (let i = 0; i < visibleImages; i++) {
+        gridItems.push({
+          type: "image",
+          image: srImages[i],
+        });
+      }
+
+      // Add "+25 more" item - always place in bottom-right position
+      const morePhotoPosition = totalCells - 1;
+
+      // Ensure we have enough items to reach the bottom-right position
+      while (gridItems.length < morePhotoPosition) {
+        gridItems.push({
+          type: "image",
+          image: srImages[gridItems.length % visibleImages],
+        });
+      }
+
+      // Add the "more photos" tile at the bottom-right
+      gridItems.push({
+        type: "more",
+        count: remainingCount,
+      });
+
+      return gridItems;
+    };
+
+    const gridItems = createGridItems();
+
     return (
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-[#232a36] mb-4">
+            <h2 className="text-4xl font-bold text-[#232a36] mb-4">
               Wall of <span className="text-red-500">Fame</span>
             </h2>
             <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
               Moments and memories from our journey helping students achieve
-              their dreams
+              their dreams in Georgia
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-red-400 mx-auto mt-6 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {DATA.wallOfFameImages.map((image, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square relative overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center">
-                    <span className="text-4xl transform transition-transform duration-300 hover:scale-110">
-                      {image.emoji}
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                      <p className="text-white font-medium text-sm text-center">
-                        {image.caption}
-                      </p>
+          {/* Photo gallery with consistent image sizes */}
+          <div className="grid grid-cols-4 gap-3">
+            {gridItems.map((item, index) => {
+              if (item.type === "more") {
+                return (
+                  <div
+                    key="more-photos"
+                    className="group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer bg-gradient-to-br from-red-400 to-red-600"
+                    style={{ aspectRatio: "1/1" }} // Square aspect ratio for all images
+                    onClick={() => openImagePopup(visibleImages)}
+                  >
+                    <div className="h-full flex items-center justify-center">
+                      <div className="text-center text-white p-4">
+                        <div className="text-4xl font-bold mb-2">
+                          +{item.count}
+                        </div>
+                        <div className="text-lg font-medium">More Photos</div>
+                        <div className="mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 mx-auto animate-bounce"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Regular image tile - all same size
+              return (
+                <div
+                  key={`image-${index}`}
+                  className="group overflow-hidden rounded-lg shadow-md transition-all duration-300 cursor-pointer"
+                  style={{ aspectRatio: "1/1" }} // Square aspect ratio for all images
+                  onClick={() => openImagePopup(index % visibleImages)}
+                >
+                  <div className="relative h-full bg-gray-100">
+                    <img
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.parentElement.innerHTML = `<div class="absolute inset-0 bg-gradient-to-br from-red-100 to-red-300 flex items-center justify-center h-full">
+                            <div class="text-red-500 font-medium">SR Counselling</div>
+                          </div>`;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                      <div className="p-3 text-white w-full">
+                        <p className="font-medium text-sm">
+                          {item.image.caption}
+                        </p>
+                        <p className="text-xs text-gray-300 mt-1">
+                          {item.image.emoji}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
+          {/* Image Popup with double-click zoom and fixed drag functionality */}
+          {isPopupOpen && selectedImage && (
+            <div
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
+              onClick={closePopup}
+            >
+              <div
+                className="relative w-full max-w-6xl max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close button */}
+                <button
+                  className="absolute top-4 right-4 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all duration-300"
+                  onClick={closePopup}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+
+                {/* Image container with double-click zoom and improved drag capability */}
+                <div
+                  className={`h-full overflow-hidden rounded-lg transition-all duration-500 ${
+                    isZoomed ? "cursor-grab" : "cursor-default"
+                  } ${isDragging ? "cursor-grabbing" : ""}`}
+                  onClick={handleImageClick} // Using handleImageClick for double-click detection
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                  onMouseLeave={handleMouseUp}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+                      src={selectedImage.src}
+                      alt={selectedImage.alt}
+                      className={`transition-all duration-500 ${
+                        isZoomed
+                          ? "max-h-none max-w-none scale-150"
+                          : "max-h-[80vh] max-w-full"
+                      } object-contain`}
+                      style={
+                        isZoomed
+                          ? {
+                              transform: `scale(1.5) translate(${dragPosition.x}px, ${dragPosition.y}px)`,
+                              pointerEvents: "none", // Important: prevents image from capturing mouse events
+                            }
+                          : { pointerEvents: "none" }
+                      }
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 24 24'%3E%3Cpath fill='%23e53e3e' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z'/%3E%3C/svg%3E";
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Left/Right Navigation arrows */}
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  onClick={goToPrev}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  onClick={goToNext}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+
+                {/* Caption and controls bar */}
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium">
+                      {selectedImage.emoji} {selectedImage.caption}
+                    </p>
+                  </div>
+
+                  <p className="text-sm text-gray-300">
+                    {selectedIndex + 1} of {srImages.length}
+                  </p>
+                </div>
+
+                {/* Double-click instruction overlay */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-xs opacity-80">
+                  <p>Double-click to {isZoomed ? "zoom out" : "zoom in"}</p>
+                </div>
+
+                {/* Drag instruction overlay - shows only when zoomed */}
+                {isZoomed && (
+                  <div
+                    className="absolute top-12 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-xs opacity-80 transition-opacity duration-300"
+                    style={{ opacity: isDragging ? 0 : 0.8 }}
+                  >
+                    <p>Drag to move around zoomed image</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </section>
     );
@@ -1267,12 +1389,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section with Carousel */}
+      {/* Hero Section with optimized typography hierarchy */}
       <div
         ref={heroSectionRef}
-        className="relative z-0"
+        className="relative h-[450px] z-0"
         style={{
-          height: "450px", // Fixed height of 450px
           paddingTop: "0px", // Will be set dynamically by useEffect
         }}
       >
@@ -1284,22 +1405,23 @@ const Home = () => {
             }`}
           >
             <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
-              <div className="flex flex-col md:flex-row items-center justify-between h-full">
-                {/* Content side - more space to the left */}
+              <div className="flex flex-col md:flex-row items-center justify-between h-full py-4">
+                {/* Content side - improved typography hierarchy */}
                 <div className="md:w-5/12 lg:w-5/12 md:pr-4">
                   <div className="space-y-3">
+                    {/* Main heading - largest size */}
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                       {slide.title}
                     </h1>
 
-                    {/* Adjusted subtitle sizing */}
-                    <div className="py-1">
+                    {/* Subtitle - medium size */}
+                    <div className="py-2">
                       {index === 0 ? (
                         <>
-                          <h2 className="text-2xl md:text-3xl font-semibold text-[#232a36] leading-tight">
+                          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36] leading-tight">
                             Don't Miss Your Dream
                           </h2>
-                          <h3 className="text-xl md:text-2xl">
+                          <h3 className="text-lg md:text-xl lg:text-2xl">
                             Study{" "}
                             <span className="text-[#e44e50]">
                               MBBS in Georgia
@@ -1307,29 +1429,29 @@ const Home = () => {
                           </h3>
                         </>
                       ) : (
-                        <div className="text-lg md:text-xl">
+                        <div className="text-base md:text-lg lg:text-xl">
                           {slide.subtitle}
                         </div>
                       )}
                     </div>
 
-                    {/* Description */}
-                    <p className="text-sm md:text-base text-[#4a5568] line-clamp-3 md:line-clamp-4 max-w-md">
+                    {/* Description - smaller but still readable */}
+                    <p className="text-sm md:text-base text-[#4a5568] line-clamp-2 md:line-clamp-3 max-w-md">
                       {slide.description}
                     </p>
 
-                    {/* Stats in a more compact layout */}
+                    {/* Stats layout - visually distinct */}
                     {slide.stats && (
                       <div className="grid grid-cols-2 gap-3 py-2 max-w-md">
                         {slide.stats.map((stat, idx) => (
                           <div
                             key={idx}
-                            className="text-center p-2 bg-white rounded-lg shadow-sm"
+                            className="text-center p-2 bg-white rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
                           >
                             <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
                               {stat.value}
                             </h3>
-                            <p className="text-xs text-[#4a5568]">
+                            <p className="text-xs md:text-sm text-[#4a5568]">
                               {stat.label}
                             </p>
                           </div>
@@ -1337,16 +1459,16 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Testimonial */}
+                    {/* Testimonial - with reduced height and less padding */}
                     {slide.testimonial && (
-                      <div className="bg-white p-3 rounded-lg shadow-md max-w-md">
+                      <div className="bg-white p-2 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
                         <p className="text-[#4a5568] italic text-xs md:text-sm line-clamp-2">
                           "{slide.testimonial.quote}"
                         </p>
                         <div className="mt-1 flex items-center">
-                          <div className="h-6 w-6 md:h-8 md:w-8 rounded-full bg-gray-300"></div>
+                          <div className="h-5 w-5 rounded-full bg-gray-300"></div>
                           <div className="ml-2">
-                            <p className="font-medium text-xs md:text-sm">
+                            <p className="font-medium text-xs">
                               {slide.testimonial.name}
                             </p>
                             <p className="text-xs text-gray-500">
@@ -1357,7 +1479,7 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Buttons with consistent spacing */}
+                    {/* Buttons - with reduced top padding */}
                     {slide.buttons && (
                       <div
                         className={`${
@@ -1372,11 +1494,11 @@ const Home = () => {
                                 ? "/AboutGeorgia"
                                 : button.to
                             }
-                            className={`inline-block px-4 py-2 md:px-5 md:py-3 ${
+                            className={`inline-block px-4 py-2 md:px-5 md:py-2 ${
                               button.primary
-                                ? "bg-red-500 text-white hover:bg-red-600"
+                                ? "bg-red-500 text-white hover:bg-red-600 shadow-sm"
                                 : "border border-red-500 text-red-500 hover:bg-red-50"
-                            } font-medium rounded transition text-sm md:text-base ${
+                            } font-medium rounded-lg transition text-xs md:text-sm ${
                               button.className || ""
                             }`}
                           >
@@ -1388,43 +1510,29 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* 3D Globe Side - Replaced previous image section */}
-                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-6 md:mt-0">
-                  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg shadow-lg max-w-md w-full aspect-square flex items-center justify-center overflow-hidden">
-                    {/* Interactive 3D Globe */}
-                    <Globe3D activeSlide={currentSlide} />
-
-                    {/* Additional decorative elements */}
-                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-blue-400/10 rounded-full blur-xl"></div>
-                      <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-red-400/10 rounded-full blur-xl"></div>
+                {/* Image side - enhanced presentation */}
+                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-4 md:mt-0">
+                  <div className="bg-white p-4 rounded-lg shadow-md w-full max-h-[320px] flex items-center justify-center overflow-hidden transition-transform hover:shadow-lg duration-300">
+                    <div
+                      className={
+                        slide.image.containerClass ||
+                        "h-full w-full flex items-center justify-center"
+                      }
+                    >
+                      <img
+                        src={slide.image.src}
+                        alt={slide.image.alt}
+                        className={`${
+                          index === 0
+                            ? "w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48"
+                            : "max-h-[300px] w-auto object-contain rounded-lg"
+                        } transition-all duration-500 hover:scale-105 shadow-sm`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = slide.image.fallbackSrc;
+                        }}
+                      />
                     </div>
-
-                    {/* Slide-specific labels */}
-                    {index === 0 && (
-                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
-                        <span className="flex items-center">
-                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
-                          Your Future Awaits in Georgia
-                        </span>
-                      </div>
-                    )}
-                    {index === 1 && (
-                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
-                        <span className="flex items-center">
-                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
-                          12+ NMC Approved Universities
-                        </span>
-                      </div>
-                    )}
-                    {index === 2 && (
-                      <div className="absolute bottom-3 right-3 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-medium">
-                        <span className="flex items-center">
-                          <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
-                          Global Recognition
-                        </span>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -1432,24 +1540,38 @@ const Home = () => {
           </div>
         ))}
 
-        {/* Navigation Controls */}
+        {/* Enhanced navigation controls */}
         <button
           onClick={goToPrevSlide}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={20} className="text-gray-800" />
+          <ChevronLeft size={18} className="text-gray-800" />
         </button>
 
         <button
           onClick={goToNextSlide}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight size={20} className="text-gray-800" />
+          <ChevronRight size={18} className="text-gray-800" />
         </button>
 
-        <CarouselDots />
+        {/* More visible dots */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+          {[...Array(totalSlides)].map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goToSlide(i)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === i
+                  ? "bg-red-500 scale-125"
+                  : "bg-gray-400 hover:bg-gray-600 hover:scale-110"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            ></button>
+          ))}
+        </div>
       </div>
 
       {/* ADDED: Custom scrollbar style */}
@@ -1490,8 +1612,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Georgia Section */}
-      <section className="py-20 bg-gray-100">
+      {/* Why Choose Georgia Section - With improved layout and spacing */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
           <SectionHeader
             title={
@@ -1503,22 +1625,23 @@ const Home = () => {
             description="Georgia offers world-class medical education at affordable prices with international recognition and safety for Indian students."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {/* Improved grid layout with better spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-16">
             {DATA.comparisonCards.map((card, index) => (
               <ComparisonCard key={index} {...card} />
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-16">
             <Link
               to="/Universities"
-              className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition shadow-lg"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
               onClick={() => window.scrollTo(0, 0)}
             >
-              Compare Universities
+              <span>Compare Universities</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
+                className="h-5 w-5 ml-2 flex-shrink-0"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -1536,8 +1659,8 @@ const Home = () => {
       {/* Why Choose Us - Grid Section */}
       <section className="py-20 bg-white flex flex-col items-center">
         <h2 className="text-4xl font-bold text-center mb-12">
-          Why Choose <span className="text-red-500">Us</span> for Your Georgian
-          Journey?
+          Why Choose <span className="text-red-500">SR Counselling</span> for
+          Your Georgian Journey?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {DATA.whyUsFeatures.map((feature, idx) => (
@@ -1597,12 +1720,12 @@ const Home = () => {
             href="https://www.srcounselling.in/about.php"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition shadow-lg"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
           >
-            Learn More About Us
+            <span>Learn More About Us</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-5 w-5 ml-2 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -1628,7 +1751,7 @@ const Home = () => {
       </section>
 
       {/* Additional Sections */}
-      <OurServicesJourney />
+      <OurServices />
       <StudentTestimonials />
       <WallOfFame />
     </div>
