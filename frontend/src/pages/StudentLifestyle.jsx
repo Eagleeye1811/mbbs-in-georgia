@@ -1,6 +1,6 @@
 import React from 'react';  
 import { Wifi, ShieldCheck, Tv, BedDouble, Utensils, WashingMachine } from "lucide-react";
-import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
+ import studentLifeStyleImg from '../assets/studentlifestyle.jpg'; 
 import CardItem from "../components/cardItem";
 import { Link } from 'react-router-dom';
 
@@ -440,13 +440,9 @@ const StudentLifeStyle = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          
+          </div> 
         </div>
       </div>
-
-      
     </>
   );
 }

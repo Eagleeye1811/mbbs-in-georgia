@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
@@ -61,14 +61,18 @@ const Footer = () => {
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/srcounselling_india_official?igsh=MWo2MWR4Z2x6MHNlNg==" target="_blank" rel="noreferrer">
                 <FaInstagram className="text-2xl hover:text-pink-500" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <a href="https://www.facebook.com/share/1ATP2jvnx1/" target="_blank" rel="noreferrer">
                 <FaFacebook className="text-2xl hover:text-blue-500" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                <FaTwitter className="text-2xl hover:text-green-500" />
+              <a href="https://www.linkedin.com/school/sr-counselling-india/" target="_blank" rel="noreferrer">
+                <FaLinkedin className="text-2xl hover:text-blue-500" />
+
+              </a>
+              <a href="https://www.youtube.com/channel/UC8Hw_c3otFPdFntDV8nhRtw" target="_blank" rel="noreferrer">
+                <FaYoutube className="text-2xl hover:text-red-500" />
 
               </a>
             </div>
