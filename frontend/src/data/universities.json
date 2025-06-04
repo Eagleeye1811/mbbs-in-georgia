@@ -89,9 +89,9 @@
     },
     {
       "images": ["../assets/TSM_University.jpeg","../assets/Uni-photos/TSMU/TSMU_image_1.jpg","../assets/Uni-photos/TSMU/TSMU_image_2.jpg","../assets/Uni-photos/TSMU/TSMU_image_3.webp","../assets/Uni-photos/TSMU/TSMU_image_4.jpg"],
-      "name": "TSM University",
+      "name": "Tbilisi State Medical University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/CU_logo.jpeg",
+      "logo": "/src/assets/Tbilisi_logo.png",
       "established_year": 1992,
       "type": "Private",
       "overview": ["Tbilisi State Medical University (TSMU), founded in 1918, is the oldest and largest medical university in Georgia and the Caucasus region. With a legacy of over a century, TSMU is renowned for its academic excellence, advanced research, and comprehensive medical training. The university has produced more than 40,000 doctors and healthcare professionals, many of whom serve in leading positions worldwide. TSMU offers a wide range of undergraduate, graduate, and doctoral programs in medicine, dentistry, pharmacy, and allied health sciences. The university boasts modern infrastructure, including state-of-the-art laboratories, simulation centers, and partnerships with top hospitals for clinical training.",
