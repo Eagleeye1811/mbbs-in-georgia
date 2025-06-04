@@ -10,13 +10,19 @@ const navItems = [
   { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/FAQ" },
   { name: "Student LifeStyle", href: "/StudentLifeStyle" },
-]; 
+];
 
 const languages = [
   { code: "EN", label: "English" },
   { code: "HI", label: "Hindi" },
   { code: "RU", label: "Russian" },
 ];
+
+const langMap = {
+  EN: "en",
+  HI: "hi",
+  RU: "ru",
+};
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -35,10 +41,40 @@ const Navbar = () => {
   const handleLangSelect = (code) => {
     setSelectedLang(code);
     setLangDropdown(false);
+
+    const selected = langMap[code];
+
+    const tryTranslate = () => {
+      const iframe = document.querySelector("iframe.goog-te-menu-frame");
+
+      if (!iframe) {
+        console.log("Google Translate iframe not found. Retrying...");
+        setTimeout(tryTranslate, 100);
+        return;
+      }
+
+      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+      const items = innerDoc.querySelectorAll(".goog-te-menu2-item span.text");
+
+      if (items.length === 0) {
+        console.log("Translation options not found in iframe.");
+        return;
+      }
+
+      items.forEach((item) => {
+        console.log(`Checking item: ${item.innerHTML}`);
+        if (item.innerHTML.toLowerCase().includes(selected)) {
+          console.log(`Clicking on language: ${selected}`);
+          item.click();
+        }
+      });
+    };
+
+    tryTranslate();
   };
 
   return (
-    <nav className="bg-[#232a36] w-full shadow fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-[#232a36] w-full shadow ">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo with hover effect */}
@@ -128,41 +164,41 @@ const Navbar = () => {
                     menuOpen
                       ? "M6 18L18 6M6 6l12 12"
                       : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
+                }
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Items */}
+      {menuOpen && (
+        <div className="lg:hidden flex flex-col gap-1 py-3 ">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleNavClick(item.href)}
+              className={`px-3 py-2 text-left text-sm font-medium transition ${
+                location.pathname === item.href
+                  ? "bg-red-500 text-white"
+                  : "text-white hover:bg-gray-700"
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
+          <div className="px-3 py-2">
+            <button
+              className="flex items-center text-white gap-2"
+              onClick={handleLangClick}
+            >
+              <span className="text-blue-300">🌐</span> {selectedLang}
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu Items */}
-        {menuOpen && (
-          <div className="lg:hidden flex flex-col gap-1 py-3 bg-[#232a36]">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className={`px-3 py-2 text-left text-sm font-medium transition ${
-                  location.pathname === item.href
-                    ? "bg-red-500 text-white"
-                    : "text-white hover:bg-gray-700"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-            <div className="px-3 py-2">
-              <button
-                className="flex items-center text-white gap-2"
-                onClick={handleLangClick}
-              >
-                <span className="text-blue-300">🌐</span> {selectedLang}
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      )}
+    </div>
+  </nav>
   );
 };
 

@@ -170,28 +170,19 @@ const ContactUs = () => {
         </form>
       </div>
 
-      {/* Map */}
-      <div
-        className="relative bg-gray-900 text-white overflow-hidden"
-        style={{ height: "450px" }}
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1470&auto=format&fit=crop')",
-          }}
-        ></div>
-
-        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Get In <span className="text-red-500">Touch</span>
-            </h1>
-            {/* Content remains unchanged */}
-          </div>
+       {/* Map */}
+       <div className="max-w-6xl w-full mt-10 rounded-xl overflow-hidden shadow-2xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2263.7126418557023!2d72.9040255587115!3d19.082826953964478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62bf6094613%3A0x60e836efbf0fe409!2sSR%20Counselling%20India!5e0!3m2!1sen!2sin!4v1748687547792!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+     
         </div>
-      </div>
     </div>
   );
 };
