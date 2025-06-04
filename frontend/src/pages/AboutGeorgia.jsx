@@ -490,10 +490,10 @@ const AboutGeorgia = () => {
         </div>
         <a
           href="/HowToApply"
-          className="inline-block mt-4 px-10 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+          className="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
         >
           Start Your Georgian Journey
-          <Plane className="inline-block ml-2 mb-1 w-6 h-6 text-gray-900 animate-none" />
+          <Plane className="inline-block ml-2 mb-1 w-6 h-6 text-white animate-none" />
         </a>
       </section>
     </div>

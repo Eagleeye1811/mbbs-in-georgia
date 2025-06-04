@@ -406,18 +406,45 @@ const DATA = {
     },
   ],
   wallOfFameImages: [
-    { caption: "SR Counselling Office", emoji: "🏢" },
-    { caption: "Student Orientation", emoji: "👨‍🎓" },
-    { caption: "University Visit", emoji: "🏫" },
-    { caption: "Visa Assistance Workshop", emoji: "🛂" },
-    { caption: "Pre-departure Session", emoji: "✈" },
-    { caption: "Student Welcome Event", emoji: "🎉" },
-    { caption: "Academic Counselling", emoji: "📚" },
-    { caption: "Campus Tour", emoji: "🏛" },
-    { caption: "Student Housing Tour", emoji: "🏠" },
-    { caption: "Cultural Program", emoji: "🎭" },
-    { caption: "Medical Workshop", emoji: "👨‍⚕" },
-    { caption: "Career Guidance Session", emoji: "💼" },
+    { caption: "ISBU University Visit" },
+    { caption: "Student Meetup" },
+    { caption: "Alte University Campus Tour" },
+    { caption: "Tbilisi University Tour" },
+    { caption: "CIU University Visit" },
+    { caption: "New Vision University Visit" },
+    { caption: "Meetup" },
+    { caption: "Student Meetup" },
+    { caption: "Student Meetup" },
+    { caption: "Scenes from Georgia" },
+    { caption: "Tourist places" },
+    { caption: "Georgia Tour" },
+    { caption: "David Tvildiani University Visit" },
+    { caption: "Exploring Georgia" },
+    { caption: "Caucasus University Visit" },
+    { caption: "Student Meetup" },
+    { caption: "Campus tour" },
+    { caption: "Local Banking Setup Assistance" },
+    { caption: "Student Talk" },
+    { caption: "Getting Experiences" },
+    { caption: "Student Meetup" },
+    { caption: "Classroom tour" },
+    { caption: "Exploring the City" },
+    { caption: "Exploring the City" },
+    { caption: "Night life of Georgia" },
+    { caption: "Tbilisi City Tour for New Students" },
+    { caption: "Exploring the City" },
+    { caption: "Faculty Meetup" },
+    { caption: "Sight Meeting" },
+    { caption: "Medical Equipment Orientation" },
+    { caption: "Practical Training Session" },
+    { caption: "Campus Tour" },
+    { caption: "Graduation Ceremony Support" },
+    { caption: "Alumni Network Connection" },
+    { caption: "University Tour" },
+    { caption: "Georgian Technical University" },
+    { caption: "The University of Georgia" },
+    { caption: "University Tour" },
+    { caption: "Fun Meetup" },
   ],
 };
 
@@ -492,48 +519,111 @@ const Home = () => {
     </div>
   );
 
-  // Component: Challenge Card
-  const ChallengeCard = ({
-    number,
-    title,
-    icon,
-    bgColor,
-    description,
-    quote,
-  }) => (
-    <div
-      className={`bg-gradient-to-br ${bgColor} rounded-xl p-8 md:w-1/3 shadow-lg hover:shadow-2xl transition-all duration-300 relative z-10 hover:-translate-y-2 group`}
-    >
-      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-md group-hover:scale-110 transition-transform duration-300">
-        {number}
-      </div>
-      <h3 className="text-2xl font-bold text-[#232a36] mb-4 mt-4 text-center">
-        {title}
-      </h3>
-      <div className="flex items-center justify-center mb-6">
-        <div className="w-20 h-20 rounded-full bg-white shadow-inner flex items-center justify-center group-hover:bg-red-50 transition-colors duration-300">
+  // Component: Challenge Card without number badges
+  const ChallengeCard = ({ title, icon, bgColor, description, quote }) => {
+    // Get hover background class based on the card's primary color
+    const getHoverBgClass = () => {
+      if (bgColor.includes("blue")) return "group-hover:bg-[#e0f3ff]";
+      if (bgColor.includes("red") || bgColor.includes("pink"))
+        return "group-hover:bg-[#ffeaf2]";
+      if (bgColor.includes("green") || bgColor.includes("teal"))
+        return "group-hover:bg-[#e8fff1]";
+      return "group-hover:bg-gray-50"; // Default fallback
+    };
+
+    // Custom styles based on card color theme
+    const getAccentColor = () => {
+      if (bgColor.includes("blue")) return "from-blue-400 to-blue-600";
+      if (bgColor.includes("red") || bgColor.includes("pink"))
+        return "from-pink-400 to-pink-600";
+      if (bgColor.includes("green") || bgColor.includes("teal"))
+        return "from-green-400 to-green-600";
+      return "from-gray-400 to-gray-600";
+    };
+
+    const getPatternColor = () => {
+      if (bgColor.includes("blue")) return "text-blue-200";
+      if (bgColor.includes("red") || bgColor.includes("pink"))
+        return "text-pink-200";
+      if (bgColor.includes("green") || bgColor.includes("teal"))
+        return "text-green-200";
+      return "text-gray-200";
+    };
+
+    return (
+      <div
+        className={`bg-gradient-to-br ${bgColor} rounded-xl p-8 md:w-1/3 shadow-lg hover:shadow-2xl transition-all duration-300 relative z-10 hover:-translate-y-2 group overflow-hidden flex flex-col min-h-[470px]`}
+      >
+        {/* Decorative pattern overlay */}
+        <div
+          className={`absolute -right-8 -bottom-8 opacity-10 ${getPatternColor()}`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-10 h-10 text-red-500 group-hover:scale-110 transition-transform duration-300"
+            width="120"
+            height="120"
+            fill="currentColor"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
           >
-            {icon}
+            <path d="M12 2L1 9l11 6l9-4.91V17h2V9L12 2z" />
           </svg>
         </div>
+
+        {/* Title with subtle animation - moved up since badge is removed */}
+        <h3 className="text-2xl font-bold text-[#232a36] mb-6 mt-2 text-center group-hover:text-red-800 transition-colors duration-300">
+          {title}
+        </h3>
+
+        {/* Icon with enhanced styling */}
+        <div className="flex items-center justify-center mb-7">
+          <div
+            className={`w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${getHoverBgClass()} group-hover:shadow-xl transform group-hover:rotate-3`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10 text-red-500 group-hover:scale-110 transition-all duration-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {icon}
+            </svg>
+          </div>
+        </div>
+
+        {/* Description with better legibility */}
+        <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300 leading-relaxed mb-6 flex-grow">
+          {description}
+        </p>
+
+        {/* Quote with enhanced styling */}
+        <div className="mt-auto">
+          <div className="bg-white/80 p-4 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300 relative">
+            <div className="absolute -top-3 -left-2 text-red-400 opacity-50 transform rotate-180">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 27"
+              >
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
+              </svg>
+            </div>
+            <p className="font-medium italic text-sm text-[#232a36] z-10 relative">
+              {quote}
+            </p>
+          </div>
+        </div>
+
+        {/* Rising gradient overlay when hovered */}
+        <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:h-16 group-hover:opacity-100 transition-all duration-500"></div>
       </div>
-      <p className="text-[#4a5568] group-hover:text-[#232a36] transition-colors duration-300">
-        {description}
-      </p>
-      <div className="mt-6 bg-white/70 p-3 rounded-lg border-l-4 border-red-500 group-hover:bg-white group-hover:shadow-md transition-all duration-300">
-        <p className="font-medium italic text-sm text-[#232a36]">{quote}</p>
-      </div>
-    </div>
-  );
+    );
+  };
 
   // Component: Comparison Card - Updated with icons
   const ComparisonCard = ({
@@ -715,7 +805,7 @@ const Home = () => {
           </div>
 
           {/* Stepper - Desktop (Horizontal) */}
-          <div className="hidden md:flex justify-center items-center mb-10 overflow-x-auto py-4">
+          <div className="hidden md:flex justify-center items-center mb-10 py-4">
             <div className="flex items-center">
               {DATA.services.map((_, index) => (
                 <React.Fragment key={index}>
@@ -777,7 +867,8 @@ const Home = () => {
                     number={activeStep + 2}
                     isActive={false}
                     isCompleted={false}
-                    onClick={() => nextStep()}
+                    onClick={() => nextStep()
+                    }
                   />
                 </>
               )}
@@ -1193,7 +1284,7 @@ const Home = () => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth={2}
+                              strokeWidth="2"
                               d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
                             />
                           </svg>
@@ -1276,7 +1367,7 @@ const Home = () => {
                   className={`h-full overflow-hidden rounded-lg transition-all duration-500 ${
                     isZoomed ? "cursor-grab" : "cursor-default"
                   } ${isDragging ? "cursor-grabbing" : ""}`}
-                  onClick={handleImageClick} // Using handleImageClick for double-click detection
+                  onClick={handleImageClick}
                   onMouseDown={handleMouseDown}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
@@ -1284,6 +1375,14 @@ const Home = () => {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
+                  style={{ 
+                    WebkitTouchCallout: "none",
+                    WebkitUserSelect: "none",
+                    MozUserSelect: "none",
+                    msUserSelect: "none",
+                    userSelect: "none",
+                    touchAction: "none" // Critical for preventing browser touch actions
+                  }}
                 >
                   <div className="w-full h-full flex items-center justify-center">
                     <img
@@ -1293,15 +1392,22 @@ const Home = () => {
                         isZoomed
                           ? "max-h-none max-w-none scale-150"
                           : "max-h-[80vh] max-w-full"
-                      } object-contain`}
+                      } object-contain pointer-events-none`} // pointer-events-none prevents direct interaction
                       style={
                         isZoomed
                           ? {
                               transform: `scale(1.5) translate(${dragPosition.x}px, ${dragPosition.y}px)`,
-                              pointerEvents: "none", // Important: prevents image from capturing mouse events
+                              WebkitUserDrag: "none",
+                              WebkitTouchCallout: "none",
+                              WebkitTapHighlightColor: "transparent"
                             }
-                          : { pointerEvents: "none" }
+                          : { 
+                              WebkitUserDrag: "none",
+                              WebkitTouchCallout: "none",
+                              WebkitTapHighlightColor: "transparent"
+                            }
                       }
+                      draggable="false"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src =
@@ -1446,7 +1552,7 @@ const Home = () => {
                         {slide.stats.map((stat, idx) => (
                           <div
                             key={idx}
-                            className="text-center p-2 bg-white rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
+                            className="text-center p-2 bg-red-50 rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
                           >
                             <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
                               {stat.value}
@@ -1540,54 +1646,57 @@ const Home = () => {
           </div>
         ))}
 
-        {/* Enhanced navigation controls */}
-        <button
-          onClick={goToPrevSlide}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={18} className="text-gray-800" />
-        </button>
+          {/* Enhanced navigation controls */}
+          <button
+            onClick={goToPrevSlide}
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={18} className="text-gray-800" />
+          </button>
 
-        <button
-          onClick={goToNextSlide}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={18} className="text-gray-800" />
-        </button>
+          <button
+            onClick={goToNextSlide}
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={18} className="text-gray-800" />
+          </button>
 
-        {/* More visible dots */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
-          {[...Array(totalSlides)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goToSlide(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === i
-                  ? "bg-red-500 scale-125"
-                  : "bg-gray-400 hover:bg-gray-600 hover:scale-110"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            ></button>
-          ))}
+          {/* More visible dots */}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+            {[...Array(totalSlides)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === i
+                    ? "bg-red-500 scale-125"
+                    : "bg-gray-400 hover:bg-gray-600 hover:scale-110"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              ></button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* ADDED: Custom scrollbar style */}
-      <style jsx="true">{`
-        /* Custom scrollbar styles */
-        div::-webkit-scrollbar {
-          width: 4px;
-        }
-        div::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        div::-webkit-scrollbar-thumb {
-          background-color: rgba(203, 213, 225, 0.5);
-          border-radius: 20px;
-        }
-      `}</style>
+        {/* ADDED: Custom scrollbar style */}
+        <style jsx={true}>
+          {`
+            /* Custom scrollbar styles */
+            div::-webkit-scrollbar {
+              width: 4px;
+            }
+            div::-webkit-scrollbar-track {
+              background: transparent;
+            }
+            div::-webkit-scrollbar-thumb {
+              background-color: rgba(203, 213, 225, 0.5);
+              border-radius: 20px;
+            }
+          `}
+        </style>
+        
 
       {/* Challenges & Solutions Section */}
       <section className="py-20 bg-white">
@@ -1635,10 +1744,10 @@ const Home = () => {
           <div className="flex justify-center mt-16">
             <Link
               to="/Universities"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-medium text-base shadow-lg hover:scale-105 transition"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <span>Compare Universities</span>
+              <span>Explore Universities</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-2 flex-shrink-0"
@@ -1656,104 +1765,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Grid Section */}
-      <section className="py-20 bg-white flex flex-col items-center">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Why Choose <span className="text-red-500">SR Counselling</span> for
-          Your Georgian Journey?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {DATA.whyUsFeatures.map((feature, idx) => (
-            <div
-              key={idx}
-              className="relative w-72 h-44 mx-auto cursor-pointer perspective"
-              onMouseEnter={() =>
-                setFlipped(flipped.map((f, i) => (i === idx ? true : f)))
-              }
-              onMouseLeave={() =>
-                setFlipped(flipped.map((f, i) => (i === idx ? false : f)))
-              }
-            >
-              <div
-                className={`transition-transform duration-500 transform-style-preserve-3d w-full h-full ${
-                  flipped[idx] ? "rotate-y-180" : ""
-                }`}
-              >
-                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border border-gray-100 backface-hidden">
-                  <div className="bg-red-500 text-white rounded-full p-4 mb-4 shadow-lg">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-lg font-semibold text-[#232a36]">
-                    {feature.front}
-                  </h4>
-                </div>
-                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-red-500 text-white rounded-xl shadow-lg border border-red-200 rotate-y-180 backface-hidden px-6">
-                  <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
-                  <p className="text-sm">{feature.back}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Bar */}
-        <div className="w-full max-w-3xl bg-gray-50 rounded-lg shadow flex flex-wrap justify-center items-center gap-6 py-6 px-4 mb-12">
-          {DATA.srStats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-center mx-4">
-              <span className="text-2xl font-bold text-red-500">
-                {stat.value}
-              </span>
-              <span className="text-xs text-gray-600">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Logo, tagline, CTA - with larger logo and removed SR Counselling text */}
-        <div className="flex flex-col items-center">
-          <img src={srLogo} alt="SR Counselling" className="h-24 w-24 mb-6" />
-          {/* Text "SR Counselling" removed */}
-          <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
-            Let us guide you to your dream medical career in Georgia with
-            expertise, support, and trust.
-          </p>
-          <a
-            href="https://www.srcounselling.in/about.php"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
-          >
-            <span>Learn More About Us</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2 flex-shrink-0"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
-
-        {/* Flip card CSS */}
-        <style>
-          {`
-            .perspective { perspective: 1200px; }
-            .transform-style-preserve-3d { transform-style: preserve-3d; }
-            .backface-hidden { backface-visibility: hidden; }
-            .rotate-y-180 { transform: rotateY(180deg); }
-            .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
-          `}
-        </style>
-      </section>
-
-      {/* Additional Sections */}
+      {/* Flip card CSS */}
+      <style>
+        {`
+          .perspective { perspective: 1200px; }
+          .transform-style-preserve-3d { transform-style: preserve-3d; }
+          .backface-hidden { backface-visibility: hidden; }
+          .rotate-y-180 { transform: rotateY(180deg); }
+          .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
+        `}
+      </style>
+      {/* Student Testimonials Section */}    
       <OurServices />
       <StudentTestimonials />
+
+      {/* Wall of Fame Section */}    
       <WallOfFame />
+      
+    
     </div>
   );
 };
