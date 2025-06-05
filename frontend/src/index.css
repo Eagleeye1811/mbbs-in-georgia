@@ -1,20 +1,130 @@
 @import "tailwindcss";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
-.standard-hero-height {
-  height: 450px;
+/* ===== HERO SECTION STANDARDIZATION ===== */
+
+/* Standard hero container */
+.hero-section {
+  @apply relative isolate overflow-hidden bg-gray-900;
+  height: 450px !important; /* Force exact height */
+  min-height: 450px !important;
+  padding-top: var(--navbar-height, 64px); /* Account for navbar */
+  z-index: 0;
 }
 
-.standard-hero-height {
-  @apply bg-gray-900;
+/* Hero background overlay */
+.hero-overlay {
+  @apply absolute inset-0 -z-10 bg-gray-900/80 bg-blend-multiply;
 }
 
-/* Shared Hero Section Styles */
+/* Hero content container */
+.hero-content {
+  @apply flex flex-col items-center justify-center h-full text-center;
+  height: calc(100% - var(--navbar-height, 64px)) !important;
+}
+
+/* Hero content wrapper */
+.hero-content-wrapper {
+  @apply max-w-2xl px-4;
+}
+
+/* Hero title styling */
 .hero-title {
-  @apply text-5xl sm:text-7xl font-serif tracking-tight text-white;
+  @apply text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight text-white font-bold;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
+/* Hero subtitle styling */
 .hero-subtitle {
-  @apply text-xl md:text-2xl font-medium text-gray-200 mb-8 drop-shadow-md;
+  @apply text-xl md:text-2xl font-medium text-gray-200 mt-4 mb-8 max-w-3xl mx-auto;
+  line-height: 1.4;
 }
 
+/* Hero description styling */
+.hero-description {
+  @apply text-base md:text-lg text-gray-300 mt-4 mb-6 max-w-2xl mx-auto;
+}
+
+/* Hero accent text (typically colored) */
+.hero-accent {
+  @apply text-red-400;
+}
+
+/* Hero CTA button styling */
+.hero-button {
+  @apply px-6 py-3 rounded-full font-medium transition-colors mt-6;
+}
+
+.hero-button-primary {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+.hero-button-secondary {
+  @apply bg-gray-600 text-white border border-gray-500 hover:bg-gray-700;
+}
+
+/* Hero buttons container */
+.hero-buttons {
+  @apply flex flex-wrap justify-center gap-4 mt-6;
+}
+
+/* Hero image styling */
+.hero-image {
+  @apply absolute inset-0 -z-10 w-full h-full object-cover object-center;
+}
+
+/* Ensure consistent hero section heights for all variations */
+.relative.isolate.overflow-hidden.bg-gray-900.h-\[450px\],
+.bg-\[#272e3f\].text-white.relative.overflow-hidden,
+.standard-hero-height,
+[style*="height: 450px"],
+.hero-section {
+  height: 450px !important;
+  min-height: 450px !important;
+  max-height: 450px !important;
+}
+
+/* Handle content positioning */
+.relative.isolate.overflow-hidden.bg-gray-900.h-\[450px\]
+  .flex.flex-col.items-center.justify-center.h-full.text-center,
+.bg-\[#272e3f\].text-white.relative.overflow-hidden
+  .flex.flex-col.items-center.justify-center.h-full.text-center,
+.hero-content {
+  padding-top: 0 !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix for translated pages */
+body.translated-rtl .hero-section,
+body.translated-ltr .hero-section,
+body.translated-rtl .relative.isolate.overflow-hidden.bg-gray-900,
+body.translated-ltr .relative.isolate.overflow-hidden.bg-gray-900 {
+  margin-top: 0 !important;
+  top: 0 !important;
+}
+
+/* Remove Google Translate top margin */
+.goog-te-banner-frame + div {
+  margin-top: 0 !important;
+}
+
+/* More specific overrides for translated pages */
+body.translated-rtl [class*="hero"],
+body.translated-ltr [class*="hero"] {
+  margin-top: 0 !important;
+}
+
+/* Fix for navbar spacer */
+#navbar-spacer {
+  display: block !important;
+  width: 100% !important;
+  height: var(--navbar-height, 64px) !important;
+  min-height: var(--navbar-height, 64px) !important;
+}
+
+/* Ensure navbar stays on top */
+nav.fixed {
+  z-index: 50 !important;
+}
