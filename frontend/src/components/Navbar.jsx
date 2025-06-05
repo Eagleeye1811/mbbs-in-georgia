@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
@@ -20,6 +20,33 @@ const Navbar = () => {
   const handleNavClick = (href) => {
     navigate(href);
     setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    // Ensure that the Google Translate widget is initialized
+    if (window.google && window.google.translate) {
+      window.googleTranslateElementInit();
+    }
+  }, []);
+
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+
+    try {
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        const translateSelect = document.querySelector(".goog-te-combo");
+        if (translateSelect) {
+          translateSelect.value = selectedLanguage;
+          translateSelect.dispatchEvent(new Event("change"));
+        } else {
+          console.error("Google Translate dropdown not found.");
+        }
+      } else {
+        console.error("Google Translate library is not loaded.");
+      }
+    } catch (error) {
+      console.error("Error changing language: ", error);
+    }
   };
 
   return (
@@ -51,9 +78,19 @@ const Navbar = () => {
           </div>
 
           {/* Google Translate Button */}
-          <div className="hidden lg:flex items-center">
-            <div id="google_translate_element"></div>
-          </div>
+          <div className="lang">
+      <select id="languageSelect" onChange={handleLanguageChange}>
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="ml">Malayalam</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="mr">Marathi</option>
+      </select>
+      </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
