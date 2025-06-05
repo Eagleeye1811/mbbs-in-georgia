@@ -94,7 +94,7 @@ const universities = [
     image: university6Logo,
     name: "David Tvildiani Medical University",
     location: "Tbilisi, Georgia",
-    year: 1991,
+    year: 1989,
     type: "Private",
     path: "/universities/david-tvildiani-medical-university",
     highlights: [
@@ -108,7 +108,7 @@ const universities = [
     image: university7Logo,
     name: "ALTE University",
     location: "Tbilisi, Georgia",
-    year: 2012,
+    year: 2002,
     type: "Private",
     path: "/universities/alte-university",
     highlights: [
@@ -136,7 +136,7 @@ const universities = [
     image: university9Logo,
     name: "Akaki Tsereteli State University (ATSU)",
     location: "Tbilisi, Georgia",
-    year: 2001,
+    year: 1930,
     type: "Private",
     path: "/universities/georgian-national-university-seu",
     highlights: [
@@ -150,7 +150,7 @@ const universities = [
     image: university10Logo,
     name: "Geomedi Medical University",
     location: "Tbilisi, Georgia",
-    year: 1992,
+    year: 1998,
     type: "Private",
     path: "/universities/geomedi-medical-university",
     highlights: [
