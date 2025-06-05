@@ -17,9 +17,6 @@ import {
   FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
-// import { motion, useAnimation } from "framer-motion";
 import mbbsimage1 from "../assets/mbbsimage1.jpg";
 import mbbsimage3 from "../assets/mbbsimage3.jpg";
 /**
