@@ -70,17 +70,17 @@ const DATA = {
         <>
           <h2 className="text-5xl">
             <span className="text-[#232a36]">Missed </span>
-            <span className="text-red-400 ">NEET?</span>
+            <span className="text-red-500">NEET?</span>
           </h2>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-lg  font-semibold text-[#232a36]">
+          <h2 className="text-lg font-semibold text-[#232a36]">
             Don't Miss Your Dream
           </h2>
           <h3 className="text-3xl">
-            Study <span className="text-red-400">MBBS in Georgia</span>
+            Study <span className="text-red-500">MBBS in Georgia</span>
           </h3>
         </>
       ),
@@ -91,10 +91,10 @@ const DATA = {
         { to: "/AboutGeorgia", text: "Learn More", primary: false },
       ],
       image: {
-        src: "/src/assets/graduation-cap.png",
-        alt: "Graduation Cap",
-        className: "w-40 h-40 mx-auto",
-        containerClass: "p-6",
+        src: "/src/assets/home_Img_1.png",
+        alt: "Medical Student",
+        className: "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l11 6l9-4.91V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
       },
@@ -103,27 +103,27 @@ const DATA = {
       title: (
         <>
           <span className="text-[#232a36]">Explore</span>
-          <span className="text-red-400"> Universities</span>
+          <span className="text-red-500"> Universities</span>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-5xl font-semibold text-[#232a36]">
+          <h2 className="text-2xl font-semibold text-[#232a36]">
             Find the Perfect Medical University
           </h2>
-          <h3 className="text-3xl">
-            <span className="text-red-400">12+ NMC</span> Approved Options
+          <h3 className="text-xl">
+            <span className="text-red-500">12+ NMC</span> Approved Options
           </h3>
         </>
       ),
-
       buttons: [
         { to: "/Universities", text: "View All Universities", primary: true },
       ],
       image: {
-        src: "/src/assets/university.jpg",
+        src: "/src/assets/home_Img_2.png",
         alt: "Georgian University",
-        className: "rounded-lg max-h-full object-cover",
+        className: "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
       },
@@ -132,7 +132,7 @@ const DATA = {
       title: (
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           <span className="text-[#232a36]">Student Success</span>
-          <span className="text-red-400"> Stories</span>
+          <span className="text-red-500"> Stories</span>
         </h1>
       ),
       subtitle: (
@@ -141,7 +141,7 @@ const DATA = {
             Hear from our Alumni
           </h2>
           <h3 className="text-lg md:text-xl lg:text-2xl">
-            Real <span className="text-red-400">Experiences</span>, Real Success
+            Real <span className="text-red-500">Experiences</span>, Real Success
           </h3>
         </>
       ),
@@ -156,9 +156,10 @@ const DATA = {
         { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
       image: {
-        src: "/src/assets/students.jpg",
+        src: "/src/assets/home_Img_3.png",
         alt: "Student Success",
-        className: "rounded-lg max-h-full object-cover",
+        className: "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass: "flex items-center justify-center h-full w-full overflow-hidden",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z'/%3E%3C/svg%3E",
       },
@@ -1193,7 +1194,7 @@ const Home = () => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth={2}
+                              strokeWidth="2"
                               d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
                             />
                           </svg>
@@ -1389,10 +1390,10 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section with optimized typography hierarchy */}
+      {/* Hero Section with images as backgrounds */}
       <div
         ref={heroSectionRef}
-        className="relative h-[450px] z-0"
+        className="relative h-[550px] z-0"
         style={{
           paddingTop: "0px", // Will be set dynamically by useEffect
         }}
@@ -1400,15 +1401,23 @@ const Home = () => {
         {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out bg-cover bg-center ${
               currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
+            style={{
+              backgroundImage: `url(${slide.image.src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
           >
-            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+            
+            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full relative z-10">
               <div className="flex flex-col md:flex-row items-center justify-between h-full py-4">
                 {/* Content side - improved typography hierarchy */}
-                <div className="md:w-5/12 lg:w-5/12 md:pr-4">
-                  <div className="space-y-3">
+                <div className="md:w-7/12 lg:w-6/12 md:pr-4">
+                  <div className="space-y-3 backdrop-blur-sm bg-white/30 p-6 rounded-lg shadow-md">
                     {/* Main heading - largest size */}
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                       {slide.title}
@@ -1436,7 +1445,7 @@ const Home = () => {
                     </div>
 
                     {/* Description - smaller but still readable */}
-                    <p className="text-sm md:text-base text-[#4a5568] line-clamp-2 md:line-clamp-3 max-w-md">
+                    <p className="text-sm md:text-base text-[#4a5568] max-w-md">
                       {slide.description}
                     </p>
 
@@ -1461,14 +1470,16 @@ const Home = () => {
 
                     {/* Testimonial - with reduced height and less padding */}
                     {slide.testimonial && (
-                      <div className="bg-white p-2 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
-                        <p className="text-[#4a5568] italic text-xs md:text-sm line-clamp-2">
+                      <div className="bg-white p-4 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
+                        <p className="text-[#4a5568] italic text-xs md:text-sm">
                           "{slide.testimonial.quote}"
                         </p>
-                        <div className="mt-1 flex items-center">
-                          <div className="h-5 w-5 rounded-full bg-gray-300"></div>
+                        <div className="mt-2 flex items-center">
+                          <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center">
+                            <span className="text-red-500 text-xs">👩‍⚕️</span>
+                          </div>
                           <div className="ml-2">
-                            <p className="font-medium text-xs">
+                            <p className="font-medium text-sm">
                               {slide.testimonial.name}
                             </p>
                             <p className="text-xs text-gray-500">
@@ -1479,12 +1490,12 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Buttons - with reduced top padding */}
+                    {/* Buttons - with enhanced styling */}
                     {slide.buttons && (
                       <div
                         className={`${
                           slide.buttons.length > 1 ? "flex gap-3" : ""
-                        } pt-2`}
+                        } pt-4`}
                       >
                         {slide.buttons.map((button, idx) => (
                           <Link
@@ -1494,11 +1505,11 @@ const Home = () => {
                                 ? "/AboutGeorgia"
                                 : button.to
                             }
-                            className={`inline-block px-4 py-2 md:px-5 md:py-2 ${
+                            className={`inline-block px-5 py-3 ${
                               button.primary
-                                ? "bg-red-500 text-white hover:bg-red-600 shadow-sm"
+                                ? "bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg"
                                 : "border border-red-500 text-red-500 hover:bg-red-50"
-                            } font-medium rounded-lg transition text-xs md:text-sm ${
+                            } font-medium rounded-lg transition-all duration-300 hover:-translate-y-1 text-sm md:text-base ${
                               button.className || ""
                             }`}
                           >
@@ -1510,9 +1521,9 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Image side - enhanced presentation */}
+                {/* Image side - enhanced presentation with larger images */}
                 <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-4 md:mt-0">
-                  <div className="bg-white p-4 rounded-lg shadow-md w-full max-h-[320px] flex items-center justify-center overflow-hidden transition-transform hover:shadow-lg duration-300">
+                  <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-lg w-full h-[370px] flex items-center justify-center overflow-hidden transition-all duration-300 hover:shadow-xl">
                     <div
                       className={
                         slide.image.containerClass ||
@@ -1522,11 +1533,10 @@ const Home = () => {
                       <img
                         src={slide.image.src}
                         alt={slide.image.alt}
-                        className={`${
-                          index === 0
-                            ? "w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48"
-                            : "max-h-[300px] w-auto object-contain rounded-lg"
-                        } transition-all duration-500 hover:scale-105 shadow-sm`}
+                        className={
+                          slide.image.className ||
+                          "max-h-[350px] w-auto object-contain transition-all duration-500 hover:scale-105"
+                        }
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = slide.image.fallbackSrc;
@@ -1731,7 +1741,7 @@ const Home = () => {
             >
               <path
                 fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                 clipRule="evenodd"
               />
             </svg>

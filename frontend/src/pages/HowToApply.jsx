@@ -159,12 +159,12 @@ const HowToApply = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         
         {/* Hero content */}
-        <div className="container mx-auto px-4 relative z-10 text-left ml-5">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4 ">
+        <div className="text-left max-w-2xl ml-5">
+          <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down ">
             <span className="text-white">How to Apply for MBBS</span> <br />
-            <span className="text-[#ff5a5f]">in Georgia</span>
+            <span className="text-red-500">in Georgia</span>
           </h1>
-          <p className="text-xl text-white max-w-2xl  ">
+          <p className="text-lg md:text-xl text-white font-semibold">
             A step-by-step guide to your medical education journey in Georgia
           </p>
         </div>
@@ -274,7 +274,7 @@ const HowToApply = () => {
             {/* Light blue background wrapper */}
             <div className="bg-blue-50 p-4 sm:p-6">
               {/* White content area - increased minimum height */}
-              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[300px] flex flex-col">
+              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[350px] flex flex-col">
                 <div className="flex flex-col md:flex-row md:items-start">
                   {/* Left side with icon */}
                   <div className="md:w-1/4 text-center mb-6 md:mb-0 flex flex-col items-center mt-23">
