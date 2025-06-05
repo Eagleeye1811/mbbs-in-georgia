@@ -7,45 +7,32 @@ import {
   Utensils,
   WashingMachine,
 } from "lucide-react";
-// import studentLifeStyleImg from '../assets/studentlifestyle.jpg';
 import CardItem from "../components/cardItem";
 import { Link } from "react-router-dom";
 
 const StudentLife = () => {
   return (
     <>
-      {/* Header Section */}
-      <div className="relative h-[450px] mb-8 overflow-hidden mt-15">
+      {/* Header Section - Updated to use standardized hero classes */}
+      <div className="hero-section">
         <img
           src="/StudentLifestyle/convocation.webp"
           alt="Student's Life in Georgia"
-          className="w-full h-full object-cover object-center brightness-50"
+          className="hero-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center justify-center px-4">
-          <div className="flex flex-col items-center justify-center h-full text-center w-full">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-bold mb-4 font-sans text-white drop-shadow-lg">
-                Student's Life in<span className="text-red-400"> Georgia</span>
-              </h2>
-              <p className="text-xl md:text-2xl font-medium text-gray-100 mb-8 drop-shadow-md">
-                Studying in Georgia isn't just about earning a degree; it's
-                about discovering who you are in a world far from home
-              </p>
-            </div>
-            <div className="flex space-x-8 mt-4">
-              <div>
-                <p className="text-white text-4xl font-bold">20+</p>
-                <p className="text-red-400 font-medium">Universities</p>
-              </div>
-              <div>
-                <p className="text-white text-4xl font-bold">50K+</p>
-                <p className="text-red-400 font-medium">Int'l Students</p>
-              </div>
-              <div>
-                <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-400 font-medium">Satisfaction Rate</p>
-              </div>
-            </div>
+        <div className="hero-overlay"></div>
+
+        <div className="hero-content">
+          <div className="hero-content-wrapper">
+            <h2 className="hero-title">
+              Student's Life in<span className="hero-accent"> Georgia</span>
+            </h2>
+            <p className="hero-subtitle">
+              Studying in Georgia isn't just about earning a degree; it's about
+              discovering who you are in a world far from home
+            </p>
+
+
           </div>
         </div>
       </div>
@@ -414,7 +401,7 @@ const StudentLife = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold text-[#232a36] mb-4">
-              Student's <span className="text-red-500">Lifestyle</span>
+              Campus Life <span className="text-red-500">Uncovered</span>
             </h2>
             <p className="text-lg text-[#4a5568] max-w-3xl mx-auto">
               Experience the vibrant student life and cultural diversity in
