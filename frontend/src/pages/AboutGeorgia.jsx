@@ -104,28 +104,24 @@ const AboutGeorgia = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header
-        className="relative overflow-hidden mb-6 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${georgia})`,
-          height: "450px" // Fixed height of 450px
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-0" />
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 h-full">
-          <div className="text-left max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down">
+      <div className="relative isolate overflow-hidden bg-gray-900 h-[450px]">
+        <img
+          src={georgia}
+          alt="About Georgia"
+          className="absolute inset-0 -z-10 w-full h-full object-cover object-center brightness-50"
+        />
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          {/* Title Section */}
+          <div className="max-w-2xl">
+            <h1 className="hero-title">
               Georgia <span className="text-white">–</span> More Than a <span className="text-red-400">Destination</span>
             </h1>
-            <p className="text-lg md:text-xl text-white font-semibold animate-fade-in-up">
+            <p className="hero-subtitle">
               Discover the magic of Georgia: where ancient culture, breathtaking landscapes, and warm hospitality await you.
             </p>
           </div>
         </div>
-      </header>
+      </div>
       {/* Introduction */}
       <section className="p-6 text-center max-w-4xl mx-auto">
         <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">Introduction</h2>
@@ -313,7 +309,7 @@ const AboutGeorgia = () => {
               tabIndex={0}
               style={{ flex: "0 0 270px" }}
             >
-              <div className="w-full h-48 rounded-t-2xl overflow-hidden">
+              <div className="w-full h-48 mt-5 rounded-t-2xl overflow-hidden">
                 <img
                   src={item.img}
                   alt={item.dish}
@@ -355,7 +351,7 @@ const AboutGeorgia = () => {
             },
             {
               title: "Mtskheta",
-              desc: "Just 20 km from Tbilisi, Mtskheta is one of the oldest and most sacred cities in Georgia and a UNESCO World Heritage Site. It was the capital of the early Georgian Kingdom of Iberia and the place where Christianity was proclaimed the state religion in the 4th century. Its centerpiece is the Svetitskhoveli Cathedral, a masterpiece of Georgian medieval architecture believed to house the robe of Christ. Jvari Monastery, standing on a hilltop overlooking the confluence of the Aragvi and Mtkvari rivers, offers a spiritual and scenic experience. Visiting Mtskheta is like stepping back into Georgia’s ancient spiritual and cultural roots.",
+              desc: "Mtskheta is one of the oldest and most sacred cities in Georgia and a UNESCO World Heritage Site. It was the capital of the early Georgian Kingdom of Iberia and the place where Christianity was proclaimed the state religion in the 4th century. Its centerpiece is the Svetitskhoveli Cathedral, a masterpiece of Georgian medieval architecture believed to house the robe of Christ. Jvari Monastery, standing on a hilltop overlooking the confluence of the Aragvi and Mtkvari rivers, offers a spiritual and scenic experience. Visiting Mtskheta is like stepping back into Georgia’s ancient spiritual and cultural roots.",
               image: mtskheta,
               color: "text-gray-800"
             },

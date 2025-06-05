@@ -1,5 +1,4 @@
 import React from 'react'
-import globeImage from '../assets/photo.jpg'; 
 import CardItem from "../components/cardItem";
 
 const Testimonials = () => {
