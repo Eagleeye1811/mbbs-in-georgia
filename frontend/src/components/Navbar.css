@@ -1,17 +1,3 @@
-@keyframes colorFade {
-  0% {
-    color: white;
-  }
-  100% {
-    color: #ff6b4e;
-  }
-}
-
-.georgia-logo:hover {
-  animation: colorFade 0.3s ease-in-out forwards;
-}
-
-
 .lang{
   border:2px solid  #7e57c2;
   border-radius: 5px;
@@ -38,11 +24,23 @@
 #google_translate_element{
   border: 2px solid #7e57c2;
   border-radius: 5px;
-  
+  display: none;
 
 }
 
 body > .skiptranslate > iframe.skiptranslate,
 body > .goog-te-banner-frame {
   display: none !important;
+}
+@keyframes colorFade {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #ff6b4e;
+  }
+}
+
+.georgia-logo:hover {
+  animation: colorFade 0.3s ease-in-out forwards;
 }
