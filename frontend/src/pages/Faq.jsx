@@ -105,11 +105,11 @@ function Faq() {
 	};
 
 	const handleContactClick = () => {
-		navigate('/ContactUs');
+		navigate('/contact-us');
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-50 py-0">
+		<div className="min-h-screen bg-gray-50 mt-15 py-0">
 			{/* Hero Section with hover effects */}
 			<div
 				className="bg-[#272e3f] text-white relative overflow-hidden"

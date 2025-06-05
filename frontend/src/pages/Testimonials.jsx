@@ -3,7 +3,7 @@ import CardItem from "../components/cardItem";
 
 const Testimonials = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mt-15">
       {/* Header */}
       <header className="relative w-full h-[450px]">
         <img
