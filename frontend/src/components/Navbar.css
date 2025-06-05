@@ -21,16 +21,32 @@
 .lang:hover {
   transform: scale(1.05);
 }
+
 #google_translate_element {
   border: 2px solid #7e57c2;
   border-radius: 5px;
   display: none;
 }
 
+/* Hide Google Translate's additional UI components */
 body > .skiptranslate > iframe.skiptranslate,
 body > .goog-te-banner-frame {
   display: none !important;
 }
+
+/* Handle the Google Translate top banner */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-simple img,
+img.goog-te-gadget-icon,
+.goog-te-menu-value span {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Animation for logo */
 @keyframes colorFade {
   0% {
     color: white;
@@ -44,7 +60,7 @@ body > .goog-te-banner-frame {
   animation: colorFade 0.3s ease-in-out forwards;
 }
 
-/* Add this to your existing Navbar.css */
+/* Navbar height management */
 :root {
   --navbar-height: 64px;
 }
@@ -54,17 +70,19 @@ body > .goog-te-banner-frame {
   display: block;
   width: 100%;
   height: var(--navbar-height);
+  min-height: var(--navbar-height);
+  content: "";
 }
 
-/* Ensure hero content doesn't get hidden */
-.hero-section,
-.relative.isolate.overflow-hidden.bg-gray-900,
-.landing-hero,
-section:first-of-type:not(nav) {
-  margin-top: var(--navbar-height);
+/* Fix for Google Translate causing spacing issues */
+body.translated-rtl #navbar-spacer,
+body.translated-ltr #navbar-spacer {
+  margin-top: 0 !important;
+  height: var(--navbar-height) !important;
 }
 
-/* Maintain proper sizing after adjustment */
-.h-450 {
-  min-height: 450px;
+/* Fix for Google Translate banner */
+body.translated-rtl,
+body.translated-ltr {
+  top: 0 !important;
 }

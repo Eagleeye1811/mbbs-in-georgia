@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -15,6 +15,47 @@ import StudentLife from "./pages/StudentLife";
 import UniversityDetailPage from "./pages/UniversityDetailPage";
 
 const App = () => {
+  // Add this effect to handle translation events
+  useEffect(() => {
+    // Function to fix spacing after Google Translate renders
+    const fixTranslateSpacing = () => {
+      const navbar = document.querySelector("nav");
+      if (navbar) {
+        const height = navbar.offsetHeight;
+        document.documentElement.style.setProperty(
+          "--navbar-height",
+          `${height}px`
+        );
+      }
+    };
+
+    // Add mutation observer to detect Google Translate changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(() => {
+        if (
+          document.body.classList.contains("translated-rtl") ||
+          document.body.classList.contains("translated-ltr")
+        ) {
+          fixTranslateSpacing();
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+
+    // Also check periodically for Google Translate changes that might be missed
+    const interval = setInterval(fixTranslateSpacing, 2000);
+
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
@@ -31,7 +72,10 @@ const App = () => {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsConditions />} />
-            <Route path="/university-detail" element={<UniversityDetailPage />} />
+            <Route
+              path="/university-detail"
+              element={<UniversityDetailPage />}
+            />
           </Routes>
         </div>
         <Footer />

@@ -1,7 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { ChevronLeft, ChevronRight,University,FileCheck,House,Send,LibraryBig,TicketsPlane,Briefcase,Users } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  University,
+  FileCheck,
+  House,
+  Send,
+  LibraryBig,
+  TicketsPlane,
+  Briefcase,
+  Users,
+} from "lucide-react";
 import {
   FaUserGraduate,
   FaShieldAlt,
@@ -17,7 +28,6 @@ import {
   FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-// import { motion, useAnimation } from "framer-motion";
 import mbbsimage1 from "../assets/mbbsimage1.jpg";
 import mbbsimage3 from "../assets/mbbsimage3.jpg";
 /**
@@ -77,26 +87,24 @@ const DATA = {
   carouselSlides: [
     {
       title: (
-        <>
-          <h2 className="hero-title">
-            <span >Missed </span>
-            <span className="text-red-400">NEET?</span>
-          </h2>
-        </>
+        <h2 className="hero-title mt-10">
+          <span>Missed </span>
+          <span className="hero-accent">NEET?</span>
+        </h2>
       ),
-      subtitle: (
+
+      description: (
         <>
           <h2 className="hero-subtitle">
-            Don't Miss Your Dream
-            <br/>
-            Study <span className="text-red-400">MBBS in Georgia</span>
+            Don't Miss Your Dream,
+            <br />
+            Study <span className="hero-accent">MBBS in Georgia!</span>
           </h2>
+          <p className="hero-subtitle ">
+            "Every year, thousands of deserving students lose hope. But their
+            dreams don't end there and neither should yours."
+          </p>
         </>
-      ),
-      description:(
-      <>
-        <p className="hero-subtitle">"Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours."</p>
-      </>
       ),
       buttons: [
         { to: "/how-to-apply", text: "Apply Now", primary: true },
@@ -105,7 +113,8 @@ const DATA = {
       image: {
         src: mbbsimage1,
         alt: "Medical Student",
-        className: "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        className:
+          "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
         containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l11 6l9-4.91V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
@@ -114,9 +123,9 @@ const DATA = {
     {
       title: (
         <>
-           <h2 className="hero-title">
-          <span className="">Explore</span>
-          <span className="text-red-400"> Universities</span>
+          <h2 className="hero-title">
+            <span className="">Explore</span>
+            <span className="text-red-400"> Universities</span>
           </h2>
         </>
       ),
@@ -124,7 +133,7 @@ const DATA = {
         <>
           <h2 className="hero-subtitle">
             Find the Perfect Medical University
-            <br/>
+            <br />
             <span className="text-red-400">12+ NMC</span> Approved Options
           </h2>
         </>
@@ -135,7 +144,8 @@ const DATA = {
       image: {
         src: "/src/assets/home_Img_2.png",
         alt: "Georgian University",
-        className: "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        className:
+          "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
         containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
@@ -152,8 +162,8 @@ const DATA = {
         <>
           <h2 className="hero-subtitle">
             Hear from our Alumni
-          <br/>
-         Real <span className="text-red-400">Experiences</span>, Real Success
+            <br />
+            Real <span className="text-red-400">Experiences</span>, Real Success
           </h2>
         </>
       ),
@@ -164,8 +174,10 @@ const DATA = {
       image: {
         src: mbbsimage3,
         alt: "Student Success",
-        className: "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
-        containerClass: "flex items-center justify-center h-full w-full overflow-hidden",
+        className:
+          "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass:
+          "flex items-center justify-center h-full w-full overflow-hidden",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z'/%3E%3C/svg%3E",
       },
@@ -328,18 +340,18 @@ const DATA = {
       icon: <University size={32} className="text-black" />,
       description:
         "Personalized university selection based on your academic profile, budget, and career goals.",
-      },
-      {
-        title: "Document Preparation & Verification",
-        icon: <FileCheck size={32} className="text-black" />,
-        description:
-          "Complete assistance with application forms, document verification, and translation services.",
-      },
+    },
+    {
+      title: "Document Preparation & Verification",
+      icon: <FileCheck size={32} className="text-black" />,
+      description:
+        "Complete assistance with application forms, document verification, and translation services.",
+    },
     {
       title: "Visa Application & Interview Preparation",
       icon: <TicketsPlane size={32} className="text-black" />,
       description:
-      "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
+        "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
     },
     {
       title: "Accommodation & Pre-Departure Assistance",
@@ -1059,7 +1071,7 @@ const Home = () => {
         </div>
       </section>
     );
-  }
+  };
 
   /**
    * StudentTestimonials - Displays student feedback in card layout
@@ -1609,76 +1621,85 @@ const Home = () => {
     );
   };
 
+  // Auto-slide effect for carousel
+  useEffect(() => {
+    // Set up auto-slide timer
+    const autoSlideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    }, 5000); // 5 seconds interval
+
+    // Cleanup timer on component unmount
+    return () => {
+      clearInterval(autoSlideTimer);
+    };
+  }, [totalSlides]);
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section with exact styling matching University page's header */}
-      <div
-        ref={heroSectionRef}
-        className="relative isolate overflow-hidden bg-gray-900 h-[450px] z-0"
-        style={{
-          paddingTop: "0px", // Will be set dynamically by useEffect
-        }}
-      >
+      <div ref={heroSectionRef} className="hero-section">
         {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out`}
+            style={{
+              opacity: currentSlide === index ? 1 : 0,
+              visibility: currentSlide === index ? "visible" : "hidden",
+              zIndex: currentSlide === index ? 10 : 0,
+            }}
           >
             {/* Background Image */}
             <img
               src={slide.image.src}
               alt={slide.image.alt}
-              className="absolute inset-0 -z-10 w-full h-full object-cover object-right md:object-center"
+              className="hero-image"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = slide.image.fallbackSrc;
               }}
             />
-            
-            {/* Dark Overlay - exactly like University page */}
-            <div className="absolute inset-0 -z-10 bg-gray-900/80 bg-blend-multiply"></div>
-            
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              {/* Content container - exactly matching University page */}
-              <div className="max-w-2xl px-4">
-                {/* Using the hero-title class directly from slide.title */}
-                {slide.title}
-                
-                {/* Using the hero-subtitle class, same structure as University page */}
-                <div className="mt-2">
-                  {slide.subtitle}
+
+            {/* Dark Overlay */}
+            <div className="hero-overlay"></div>
+
+            <div className="hero-content">
+              <div className="hero-content-wrapper">
+                {/* Content with subtle entrance animation */}
+                <div
+                  className={currentSlide === index ? "animate-fade-in" : ""}
+                >
+                  {slide.title}
+
+                  <div className="mt-2">{slide.subtitle}</div>
+
+                  {slide.description && (
+                    <p className="hero-description">{slide.description}</p>
+                  )}
+
+                  {/* Call to action buttons */}
+                  {slide.buttons && (
+                    <div className="hero-buttons">
+                      {slide.buttons.map((button, idx) => (
+                        <Link
+                          key={idx}
+                          to={
+                            button.text === "Learn More"
+                              ? "/AboutGeorgia"
+                              : button.to
+                          }
+                          className={`hero-button ${
+                            button.primary
+                              ? "hero-button-primary"
+                              : "hero-button-secondary"
+                          }`}
+                        >
+                          {button.text}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                
-                {/* Description - same styling as University page */}
-                {slide.description && (
-                  <p className="hero-subtitle mt-4 mb-6">
-                    {slide.description}
-                  </p>
-                )}
-                
-                {/* Call to action buttons */}
-                {slide.buttons && (
-                  <div className={`flex ${slide.buttons.length > 1 ? "justify-center gap-4" : "justify-center"} mt-6`}>
-                    {slide.buttons.map((button, idx) => (
-                      <Link
-                        key={idx}
-                        to={button.text === "Learn More" ? "/AboutGeorgia" : button.to}
-                        className={`px-4 py-2 rounded-full ${
-                          button.primary
-                            ? "bg-red-500 text-white hover:bg-red-600"
-                            : "bg-gray-600 text-white border border-gray-500 hover:bg-gray-700"
-                        } transition-colors font-medium`}
-                      >
-                        {button.text}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
-              
-              
             </div>
           </div>
         ))}
@@ -1700,7 +1721,6 @@ const Home = () => {
           <ChevronRight size={20} className="text-white" />
         </button>
 
-        {/* Pagination indicators */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
           {[...Array(totalSlides)].map((_, i) => (
             <button
@@ -1718,7 +1738,7 @@ const Home = () => {
       </div>
 
       {/* Custom scrollbar styling */}
-           <style jsx={true}>
+      <style jsx={true}>
         {`
           /* Custom scrollbar styles for better UX */
           div::-webkit-scrollbar {
@@ -1730,6 +1750,22 @@ const Home = () => {
           div::-webkit-scrollbar-thumb {
             background-color: rgba(203, 213, 225, 0.5);
             border-radius: 20px;
+          }
+
+          /* Content fade-in animation */
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
           }
         `}
       </style>
@@ -1865,7 +1901,7 @@ const Home = () => {
             href="https://www.srcounselling.in/about.php"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
           >
             <span>Learn More About Us</span>
             <svg

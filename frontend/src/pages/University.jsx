@@ -13,11 +13,11 @@ import university9Logo from "/ATSU_University.jpg";
 import university10Logo from "/Geomedi_Medical_University.jpeg";
 
 const stats = [
-  { name: 'Universities', value: '12+' },
-  { name: 'Years Experience', value: '10+' },
-  { name: 'Students Placed', value: '5000+' },
-  { name: 'Visa Success Rate', value: '100%' },
-]
+  { name: "Universities", value: "12+" },
+  { name: "Years Experience", value: "10+" },
+  { name: "Students Placed", value: "5000+" },
+  { name: "Visa Success Rate", value: "100%" },
+];
 
 const universities = [
   {
@@ -27,7 +27,12 @@ const universities = [
     year: 2004,
     type: "Private",
     path: "/universities/caucasus-university",
-    highlights: ["Affordable Fees", "Modern Campus", "International Recognition", "Scholarship Opportunities"],
+    highlights: [
+      "Affordable Fees",
+      "Modern Campus",
+      "International Recognition",
+      "Scholarship Opportunities",
+    ],
   },
   {
     image: university2Logo,
@@ -36,7 +41,12 @@ const universities = [
     year: 1918,
     type: "Public",
     path: "/universities/tbilisi-state-medical-university",
-    highlights: ["Top-Ranked Programs", "Experienced Faculty", "Global Partnerships", "Advanced Research Facilities"],
+    highlights: [
+      "Top-Ranked Programs",
+      "Experienced Faculty",
+      "Global Partnerships",
+      "Advanced Research Facilities",
+    ],
   },
   {
     image: university3Logo,
@@ -45,7 +55,12 @@ const universities = [
     year: 2006,
     type: "Public",
     path: "/universities/ilia-state-university",
-    highlights: ["Innovative Research", "Affordable Tuition", "Diverse Community", "Student Exchange Programs"],
+    highlights: [
+      "Innovative Research",
+      "Affordable Tuition",
+      "Diverse Community",
+      "Student Exchange Programs",
+    ],
   },
   {
     image: university4Logo,
@@ -54,7 +69,12 @@ const universities = [
     year: 1995,
     type: "Private",
     path: "/universities/caucasus-international-university",
-    highlights: ["Student-Centered Learning", "Affordable Fees", "Global Recognition", "Modern Laboratories"],
+    highlights: [
+      "Student-Centered Learning",
+      "Affordable Fees",
+      "Global Recognition",
+      "Modern Laboratories",
+    ],
   },
   {
     image: university5Logo,
@@ -63,7 +83,12 @@ const universities = [
     year: 2013,
     type: "Private",
     path: "/universities/new-vision-university",
-    highlights: ["Modern Facilities", "Affordable Fees", "International Accreditation", "Flexible Learning Options"],
+    highlights: [
+      "Modern Facilities",
+      "Affordable Fees",
+      "International Accreditation",
+      "Flexible Learning Options",
+    ],
   },
   {
     image: university6Logo,
@@ -72,7 +97,12 @@ const universities = [
     year: 1989,
     type: "Private",
     path: "/universities/david-tvildiani-medical-university",
-    highlights: ["Medical Excellence", "Affordable Tuition", "Global Recognition", "High Graduate Success Rate"],
+    highlights: [
+      "Medical Excellence",
+      "Affordable Tuition",
+      "Global Recognition",
+      "High Graduate Success Rate",
+    ],
   },
   {
     image: university7Logo,
@@ -81,7 +111,12 @@ const universities = [
     year: 2002,
     type: "Private",
     path: "/universities/alte-university",
-    highlights: ["Innovative Programs", "Affordable Fees", "International Partnerships", "Career-Oriented Curriculum"],
+    highlights: [
+      "Innovative Programs",
+      "Affordable Fees",
+      "International Partnerships",
+      "Career-Oriented Curriculum",
+    ],
   },
   {
     image: university8Logo,
@@ -90,7 +125,12 @@ const universities = [
     year: 1995,
     type: "Private",
     path: "/universities/ibsu-university",
-    highlights: ["Diverse Community", "Affordable Tuition", "Global Recognition", "Cultural Exchange Programs"],
+    highlights: [
+      "Diverse Community",
+      "Affordable Tuition",
+      "Global Recognition",
+      "Cultural Exchange Programs",
+    ],
   },
   {
     image: university9Logo,
@@ -99,7 +139,12 @@ const universities = [
     year: 1930,
     type: "Private",
     path: "/universities/georgian-national-university-seu",
-    highlights: ["Student-Centered Learning", "Affordable Fees", "Modern Facilities", "Industry Collaboration"],
+    highlights: [
+      "Student-Centered Learning",
+      "Affordable Fees",
+      "Modern Facilities",
+      "Industry Collaboration",
+    ],
   },
   {
     image: university10Logo,
@@ -108,14 +153,20 @@ const universities = [
     year: 1998,
     type: "Private",
     path: "/universities/geomedi-medical-university",
-    highlights: ["Medical Excellence", "Affordable Tuition", "Experienced Faculty", "Focus on Practical Training"],
+    highlights: [
+      "Medical Excellence",
+      "Affordable Tuition",
+      "Experienced Faculty",
+      "Focus on Practical Training",
+    ],
   },
 ];
 
 export default function University() {
   const [active, setActive] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredUniversities, setFilteredUniversities] = useState(universities);
+  const [filteredUniversities, setFilteredUniversities] =
+    useState(universities);
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSearch = () => {
@@ -163,35 +214,42 @@ export default function University() {
 
   return (
     <>
-      <div className="relative isolate overflow-hidden bg-gray-900 h-[450px]">
+      <div className="hero-section">
         <img
-          alt=""
+          alt="University campus"
           src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
           className="absolute inset-0 -z-10 w-full h-full object-cover object-right md:object-center"
         />
-        <div className="flex flex-col items-center justify-center h-full text-center">
-          {/* Title Section */}
-          <div className="max-w-2xl">
+        <div className="absolute inset-0 -z-10 bg-gray-900/60 bg-blend-multiply"></div>
+
+        <div className="hero-content">
+          <div className="hero-content-wrapper">
             <h2 className="hero-title">
-              MCI/NMC Approved <span className="text-red-400">Universities</span>
+              MCI/NMC Approved{" "}
+              <span className="hero-accent">Universities</span>
             </h2>
             <p className="hero-subtitle">
-              Explore top-ranked medical universities in Georgia offering world-class education with international recognition and affordable fees.
+              Explore top-ranked medical universities in Georgia offering
+              world-class education with international recognition and
+              affordable fees.
             </p>
-          </div>
 
-          {/* Stats Section */}
-          <div className="mt-10 max-w-2xl lg:max-w-none">
-            <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-4 lg:gap-6">
-              {stats.map((stat) => (
-                <div key={stat.name} className="flex flex-col gap-1 text-center">
-                  <dd className="text-4xl font-semibold tracking-tight text-white">
-                    {stat.value}
-                  </dd>
-                  <dt className="text-base text-gray-300">{stat.name}</dt>
-                </div>
-              ))}
-            </dl>
+            {/* Stats Section */}
+            <div className="mt-10 max-w-2xl lg:max-w-none">
+              <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-4 lg:gap-6">
+                {stats.map((stat) => (
+                  <div
+                    key={stat.name}
+                    className="flex flex-col gap-1 text-center"
+                  >
+                    <dd className="text-4xl font-semibold tracking-tight text-white">
+                      {stat.value}
+                    </dd>
+                    <dt className="text-base text-gray-300">{stat.name}</dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </div>
@@ -236,8 +294,8 @@ export default function University() {
         </div>
       </section>
 
-      <div className="min-h-screen bg-gray-300 py-10">
-        <div className="container mx-auto px-4">
+      <div className="min-h-screen bg-gray-300 py-10 px-50">
+        <div className="container mx-auto px-8">
           {filteredUniversities.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {filteredUniversities.map((university, index) => (
