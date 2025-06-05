@@ -20,7 +20,8 @@ import srLogo from "../assets/logo.png";
 import img1 from "../assets/img1.jpg";
 import img2 from "../assets/img2.jpg";
 // import { motion, useAnimation } from "framer-motion";
-
+import mbbsimage1 from "../assets/mbbsimage1.jpg";
+import mbbsimage3 from "../assets/mbbsimage3.jpg";
 /**
  * Constants and data objects for the entire application
  * Grouped for easy maintenance and modifications
@@ -104,7 +105,7 @@ const DATA = {
         { to: "/about-georgia", text: "Learn More", primary: false },
       ],
       image: {
-        src: img1,
+        src: mbbsimage1,
         alt: "Medical Student",
         className: "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
         containerClass: "flex items-center justify-center h-full w-full",
@@ -163,7 +164,7 @@ const DATA = {
         { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
       image: {
-        src: img2,
+        src: mbbsimage3,
         alt: "Student Success",
         className: "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
         containerClass: "flex items-center justify-center h-full w-full overflow-hidden",

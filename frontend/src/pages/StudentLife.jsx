@@ -15,7 +15,7 @@ const StudentLife = () => {
   return (
     <>
       {/* Header Section */}
-      <div className="relative h-[450px] mb-8 overflow-hidden">
+      <div className="relative h-[450px] mb-8 overflow-hidden mt-15">
         <img
           src="/StudentLifestyle/convocation.webp"
           alt="Student's Life in Georgia"

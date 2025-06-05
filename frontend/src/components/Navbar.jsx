@@ -37,56 +37,14 @@ const Navbar = () => {
   };
 
   /**
-   * Initializes Google Translate widget and sets up navbar height management
-   * Creates a spacer element to prevent content from being hidden under navbar
+   * Initializes Google Translate widget
    */
   useEffect(() => {
     // Initialize Google Translate widget if available
     if (window.google && window.google.translate) {
       window.googleTranslateElementInit();
     }
-
-    // Function to measure navbar height and create/update spacer element
-    const setupNavbarSpacer = () => {
-      const navElement = document.querySelector("nav");
-      if (!navElement) return;
-
-      const height = navElement.offsetHeight;
-      setNavHeight(height);
-
-      // Create or update the spacer element
-      let spacer = document.getElementById("navbar-spacer");
-      if (!spacer) {
-        spacer = document.createElement("div");
-        spacer.id = "navbar-spacer";
-        document.body.insertBefore(spacer, document.body.firstChild);
-      }
-
-      // Style the spacer to match navbar height
-      spacer.style.height = `${height}px`;
-      spacer.style.width = "100%";
-      spacer.style.display = "block";
-
-      // Also set CSS variable for components that might use it
-      document.documentElement.style.setProperty(
-        "--navbar-height",
-        `${height}px`
-      );
-    };
-
-    // Initial setup and window resize handler
-    setupNavbarSpacer();
-    window.addEventListener("resize", setupNavbarSpacer);
-
-    return () => {
-      window.removeEventListener("resize", setupNavbarSpacer);
-      // Clean up spacer when component unmounts
-      const spacer = document.getElementById("navbar-spacer");
-      if (spacer) {
-        spacer.remove();
-      }
-    };
-  }, [menuOpen]); // Re-measure when menu opens/closes
+  }, [menuOpen]);
 
   /**
    * Handles language selection change

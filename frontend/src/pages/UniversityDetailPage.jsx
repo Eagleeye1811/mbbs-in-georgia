@@ -21,7 +21,7 @@ export default function UniversityDetailPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto px-4 py-10 mt-10">
       {/* Photo Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         {/* Main Image */}
