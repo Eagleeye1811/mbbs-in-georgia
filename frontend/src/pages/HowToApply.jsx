@@ -145,28 +145,31 @@ const HowToApply = () => {
 
   return (
     <>
+      {/* Updated hero section to match University page styling */}
       <div 
-        className="duration-200 flex items-center relative"
+        className="relative isolate overflow-hidden bg-gray-900 h-[450px]"
         style={{
           backgroundImage: `url(${heroSectionImg})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          height: "450px" // Fixed height of 450px
+          backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 -z-10 bg-black/60 bg-blend-multiply"></div>
         
-        {/* Hero content */}
-        <div className="text-left max-w-2xl ml-5">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down ">
-            <span className="text-white">How to Apply for MBBS</span> <br />
-            <span className="text-red-500">in Georgia</span>
-          </h1>
-          <p className="text-lg md:text-xl text-white font-semibold">
-            A step-by-step guide to your medical education journey in Georgia
-          </p>
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          {/* Title Section */}
+          <div className="max-w-2xl px-4">
+            <h1 className="hero-title">
+              <span className="text-white">How to Apply for MBBS</span> <br />
+              <span className="text-red-400">in Georgia</span>
+            </h1>
+            
+            <p className="hero-subtitle">
+              A step-by-step guide to your medical education journey in Georgia
+            </p>
+          </div>
         </div>
       </div>
       
@@ -274,7 +277,7 @@ const HowToApply = () => {
             {/* Light blue background wrapper */}
             <div className="bg-blue-50 p-4 sm:p-6">
               {/* White content area - increased minimum height */}
-              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[350px] flex flex-col">
+              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[360px] flex flex-col">
                 <div className="flex flex-col md:flex-row md:items-start">
                   {/* Left side with icon */}
                   <div className="md:w-1/4 text-center mb-6 md:mb-0 flex flex-col items-center mt-23">

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import { ChevronLeft, ChevronRight,University,FileCheck,House,Send,LibraryBig,TicketsPlane,Briefcase,Users } from "lucide-react";
 import {
   FaUserGraduate,
   FaShieldAlt,
@@ -76,27 +77,29 @@ const DATA = {
     {
       title: (
         <>
-          <h2 className="text-5xl">
-            <span className="text-[#232a36]">Missed </span>
-            <span className="text-red-500">NEET?</span>
+          <h2 className="hero-title">
+            <span >Missed </span>
+            <span className="text-red-400">NEET?</span>
           </h2>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-lg font-semibold text-[#232a36]">
+          <h2 className="hero-subtitle">
             Don't Miss Your Dream
+            <br/>
+            Study <span className="text-red-400">MBBS in Georgia</span>
           </h2>
-          <h3 className="text-3xl">
-            Study <span className="text-red-500">MBBS in Georgia</span>
-          </h3>
         </>
       ),
-      description:
-        "Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours.",
+      description:(
+      <>
+        <p className="hero-subtitle">"Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours."</p>
+      </>
+      ),
       buttons: [
-        { to: "/HowToApply", text: "Apply Now", primary: true },
-        { to: "/AboutGeorgia", text: "Learn More", primary: false },
+        { to: "/how-to-apply", text: "Apply Now", primary: true },
+        { to: "/about-georgia", text: "Learn More", primary: false },
       ],
       image: {
         src: "/src/assets/home_Img_1.png",
@@ -110,18 +113,19 @@ const DATA = {
     {
       title: (
         <>
-          <span className="text-[#232a36]">Explore</span>
-          <span className="text-red-500"> Universities</span>
+           <h2 className="hero-title">
+          <span className="">Explore</span>
+          <span className="text-red-400"> Universities</span>
+          </h2>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-2xl font-semibold text-[#232a36]">
+          <h2 className="hero-subtitle">
             Find the Perfect Medical University
+            <br/>
+            <span className="text-red-400">12+ NMC</span> Approved Options
           </h2>
-          <h3 className="text-xl">
-            <span className="text-red-500">12+ NMC</span> Approved Options
-          </h3>
         </>
       ),
       buttons: [
@@ -138,28 +142,21 @@ const DATA = {
     },
     {
       title: (
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          <span className="text-[#232a36]">Student Success</span>
-          <span className="text-red-500"> Stories</span>
+        <h1 className="hero-title">
+          <span className="">Student Success</span>
+          <span className="text-red-400"> Stories</span>
         </h1>
       ),
       subtitle: (
         <>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36]">
+          <h2 className="hero-subtitle">
             Hear from our Alumni
+          <br/>
+         Real <span className="text-red-400">Experiences</span>, Real Success
           </h2>
-          <h3 className="text-lg md:text-xl lg:text-2xl">
-            Real <span className="text-red-500">Experiences</span>, Real Success
-          </h3>
         </>
       ),
 
-      testimonial: {
-        quote:
-          "Studying MBBS in Georgia was the best decision of my life — excellent education and global exposure shaped my career.",
-        name: "Dr. Priya Sharma",
-        designation: "Batch of 2020",
-      },
       buttons: [
         { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
@@ -327,49 +324,49 @@ const DATA = {
   services: [
     {
       title: "University Selection & Admission Guidance",
-      icon: "🏫",
+      icon: <University size={32} className="text-black" />,
       description:
         "Personalized university selection based on your academic profile, budget, and career goals.",
-    },
-    {
-      title: "Document Preparation & Verification",
-      icon: "📋",
-      description:
-        "Complete assistance with application forms, document verification, and translation services.",
-    },
+      },
+      {
+        title: "Document Preparation & Verification",
+        icon: <FileCheck size={32} className="text-black" />,
+        description:
+          "Complete assistance with application forms, document verification, and translation services.",
+      },
     {
       title: "Visa Application & Interview Preparation",
-      icon: "🛂",
+      icon: <TicketsPlane size={32} className="text-black" />,
       description:
-        "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
+      "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
     },
     {
       title: "Accommodation & Pre-Departure Assistance",
-      icon: "🏠",
+      icon: <House size={32} className="text-black" />,
       description:
         "Securing comfortable and affordable accommodation before you arrive in Georgia.",
     },
     {
       title: "Airport Pickup & University Registration",
-      icon: "✈",
+      icon: <Send size={32} className="text-black" />,
       description:
         "Smooth arrival with pickup service and assistance with university registration process.",
     },
     {
       title: "Ongoing Academic & Personal Support",
-      icon: "📚",
+      icon: <LibraryBig size={32} className="text-black" />,
       description:
         "Regular check-ins and assistance with academic challenges throughout your program.",
     },
     {
       title: "Career Guidance & Placement Assistance",
-      icon: "💼",
+      icon: <Briefcase size={32} className="text-black" />,
       description:
         "Career counseling, internship opportunities, and job placement support after graduation.",
     },
     {
       title: "Alumni Network & Mentorship",
-      icon: "👥",
+      icon: <Users size={32} className="text-black" />,
       description:
         "Connect with successful alumni and receive mentorship from practicing doctors.",
     },
@@ -1061,7 +1058,7 @@ const Home = () => {
         </div>
       </section>
     );
-  };
+  }
 
   /**
    * StudentTestimonials - Displays student feedback in card layout
@@ -1613,163 +1610,74 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section - Dynamic carousel with multiple content types */}
+      {/* Hero Section with exact styling matching University page's header */}
       <div
         ref={heroSectionRef}
-        className="relative h-[550px] z-0"
+        className="relative isolate overflow-hidden bg-gray-900 h-[450px] z-0"
         style={{
-          paddingTop: "0px", // Dynamically adjusted by useEffect
+          paddingTop: "0px", // Will be set dynamically by useEffect
         }}
       >
-        {/* Carousel slides */}
         {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out bg-cover bg-center ${
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
               currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
-            style={{
-              backgroundImage: `url(${slide.image.src})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
           >
-            {/* Overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
+            {/* Background Image */}
+            <img
+              src={slide.image.src}
+              alt={slide.image.alt}
+              className="absolute inset-0 -z-10 w-full h-full object-cover object-right md:object-center"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = slide.image.fallbackSrc;
+              }}
+            />
             
-            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full relative z-10">
-              <div className="flex flex-col md:flex-row items-center justify-between h-full py-4">
-                {/* Content side - improved typography hierarchy */}
-                <div className="md:w-7/12 lg:w-6/12 md:pr-4">
-                  <div className="space-y-3 backdrop-blur-sm bg-white/30 p-6 rounded-lg shadow-md">
-                    {/* Main heading - largest size */}
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                      {slide.title}
-                    </h1>
-
-                    {/* Subtitle with conditional rendering */}
-                    <div className="py-2">
-                      {index === 0 ? (
-                        <>
-                          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36] leading-tight">
-                            Don't Miss Your Dream
-                          </h2>
-                          <h3 className="text-lg md:text-xl lg:text-2xl">
-                            Study{" "}
-                            <span className="text-[#e44e50]">
-                              MBBS in Georgia
-                            </span>
-                          </h3>
-                        </>
-                      ) : (
-                        <div className="text-base md:text-lg lg:text-xl">
-                          {slide.subtitle}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Description - smaller but still readable */}
-                    <p className="text-sm md:text-base text-[#4a5568] max-w-md">
-                      {slide.description}
-                    </p>
-
-                    {/* Optional statistics grid */}
-                    {slide.stats && (
-                      <div className="grid grid-cols-2 gap-3 py-2 max-w-md">
-                        {slide.stats.map((stat, idx) => (
-                          <div
-                            key={idx}
-                            className="text-center p-2 bg-red-50 rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
-                          >
-                            <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
-                              {stat.value}
-                            </h3>
-                            <p className="text-xs md:text-sm text-[#4a5568]">
-                              {stat.label}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Optional testimonial quote */}
-                    {slide.testimonial && (
-                      <div className="bg-white p-4 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
-                        <p className="text-[#4a5568] italic text-xs md:text-sm">
-                          "{slide.testimonial.quote}"
-                        </p>
-                        <div className="mt-2 flex items-center">
-                          <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center">
-                            <span className="text-red-500 text-xs">👩‍⚕️</span>
-                          </div>
-                          <div className="ml-2">
-                            <p className="font-medium text-sm">
-                              {slide.testimonial.name}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              {slide.testimonial.designation}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Buttons - with enhanced styling */}
-                    {slide.buttons && (
-                      <div
-                        className={`${
-                          slide.buttons.length > 1 ? "flex gap-3" : ""
-                        } pt-4`}
+            {/* Dark Overlay - exactly like University page */}
+            <div className="absolute inset-0 -z-10 bg-gray-900/80 bg-blend-multiply"></div>
+            
+            <div className="flex flex-col items-center justify-center h-full text-center">
+              {/* Content container - exactly matching University page */}
+              <div className="max-w-2xl px-4">
+                {/* Using the hero-title class directly from slide.title */}
+                {slide.title}
+                
+                {/* Using the hero-subtitle class, same structure as University page */}
+                <div className="mt-2">
+                  {slide.subtitle}
+                </div>
+                
+                {/* Description - same styling as University page */}
+                {slide.description && (
+                  <p className="hero-subtitle mt-4 mb-6">
+                    {slide.description}
+                  </p>
+                )}
+                
+                {/* Call to action buttons */}
+                {slide.buttons && (
+                  <div className={`flex ${slide.buttons.length > 1 ? "justify-center gap-4" : "justify-center"} mt-6`}>
+                    {slide.buttons.map((button, idx) => (
+                      <Link
+                        key={idx}
+                        to={button.text === "Learn More" ? "/AboutGeorgia" : button.to}
+                        className={`px-4 py-2 rounded-full ${
+                          button.primary
+                            ? "bg-red-500 text-white hover:bg-red-600"
+                            : "bg-gray-600 text-white border border-gray-500 hover:bg-gray-700"
+                        } transition-colors font-medium`}
                       >
-                        {slide.buttons.map((button, idx) => (
-                          <Link
-                            key={idx}
-                            to={
-                              button.text === "Learn More"
-                                ? "/AboutGeorgia"
-                                : button.to
-                            }
-                            className={`inline-block px-5 py-3 ${
-                              button.primary
-                                ? "bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg"
-                                : "border border-red-500 text-red-500 hover:bg-red-50"
-                            } font-medium rounded-lg transition-all duration-300 hover:-translate-y-1 text-sm md:text-base ${
-                              button.className || ""
-                            }`}
-                          >
-                            {button.text}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                        {button.text}
+                      </Link>
+                    ))}
                   </div>
-                </div>
-
-                {/* Image side - enhanced presentation with larger images */}
-                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-4 md:mt-0">
-                  <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-lg w-full h-[370px] flex items-center justify-center overflow-hidden transition-all duration-300 hover:shadow-xl">
-                    <div
-                      className={
-                        slide.image.containerClass ||
-                        "h-full w-full flex items-center justify-center"
-                      }
-                    >
-                      <img
-                        src={slide.image.src}
-                        alt={slide.image.alt}
-                        className={
-                          slide.image.className ||
-                          "max-h-[350px] w-auto object-contain transition-all duration-500 hover:scale-105"
-                        }
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = slide.image.fallbackSrc;
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
+                )}
               </div>
+              
+              
             </div>
           </div>
         ))}
@@ -1777,18 +1685,18 @@ const Home = () => {
         {/* Navigation controls */}
         <button
           onClick={goToPrevSlide}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 rounded-full z-20 transition-all duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={18} className="text-gray-800" />
+          <ChevronLeft size={20} className="text-white" />
         </button>
 
         <button
           onClick={goToNextSlide}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 rounded-full z-20 transition-all duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight size={18} className="text-gray-800" />
+          <ChevronRight size={20} className="text-white" />
         </button>
 
         {/* Pagination indicators */}
@@ -1797,10 +1705,10 @@ const Home = () => {
             <button
               key={i}
               onClick={() => goToSlide(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 currentSlide === i
                   ? "bg-red-500 scale-125"
-                  : "bg-gray-400 hover:bg-gray-600 hover:scale-110"
+                  : "bg-gray-400 hover:bg-gray-300"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             ></button>
@@ -1809,7 +1717,7 @@ const Home = () => {
       </div>
 
       {/* Custom scrollbar styling */}
-      <style jsx={true}>
+           <style jsx={true}>
         {`
           /* Custom scrollbar styles for better UX */
           div::-webkit-scrollbar {
@@ -1967,7 +1875,7 @@ const Home = () => {
             >
               <path
                 fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                 clipRule="evenodd"
               />
             </svg>
