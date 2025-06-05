@@ -1224,7 +1224,7 @@ const Home = () => {
      * Handle image click events - detects double-clicks for zoom toggle
      * @param {Event} e - Click event
      */
-    const handleImageClick = (e) => {
+    const handleImageClick = () => {
       const currentTime = new Date().getTime();
       const clickTimeDiff = currentTime - lastClickTime.current;
 
