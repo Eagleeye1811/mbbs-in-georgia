@@ -9,7 +9,7 @@ const navItems = [
   { name: "Universities", href: "/universities" },
   { name: "Student Testimonials", href: "/testimonials" },
   { name: "FAQs", href: "/faq" },
-  { name: "Student LifeStyle", href: "/students-lifestyle" },
+  { name: "Student LifeStyle", href: "/students-life" },
 ]; 
 
 const Navbar = () => {

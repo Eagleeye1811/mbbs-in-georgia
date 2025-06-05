@@ -11,17 +11,38 @@
   animation: colorFade 0.3s ease-in-out forwards;
 }
 
-/* Hide Google Translate branding and UI noise */
-.goog-te-banner-frame {
+
+.lang{
+  border:2px solid  #7e57c2;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  background-color: #ede4fe;
+  
+}
+
+#languageSelect{
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #7e57c2;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  background-color: #ede4fe;
+}
+
+#languageSelect:hover, .lang:hover{
+  transform: scale(1.05); 
+}
+#google_translate_element{
+  border: 2px solid #7e57c2;
+  border-radius: 5px;
+  
+
+}
+
+body > .skiptranslate > iframe.skiptranslate,
+body > .goog-te-banner-frame {
   display: none !important;
-}
-body {
-  top: 0px !important;
-}
-.goog-logo-link {
-  display: none !important;
-}
-.goog-te-gadget {
-  font-size: 0px !important;
-  color: transparent !important;
 }

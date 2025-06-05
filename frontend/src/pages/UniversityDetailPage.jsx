@@ -24,34 +24,25 @@ export default function UniversityDetailPage() {
     <div className="container mx-auto px-4 py-10">
       {/* Photo Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        {/* Main Image */}
         <div className="flex justify-center items-center">
           <img
-            src="/src/assets/Caucasus_University.jpg"
-            alt="University Main Image"
-            className="w-full h-auto rounded-lg shadow-lg"
+            src={university.images[0]} // Main image
+            alt={`${university.name} Main`}
+            className="w-full h-105 object-cover rounded-lg shadow-lg"
           />
         </div>
+
+        {/* Additional Images */}
         <div className="grid grid-cols-2 gap-4 p-2.5">
-          <img
-            src="/src/assets/Ilia_State_University.jpg"
-            alt="Gallery Image 1"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/TSM_University.jpeg"
-            alt="Gallery Image 2"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/IBSU_University.webp"
-            alt="Gallery Image 3"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/ATSU_University.jpg"
-            alt="Gallery Image 4"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
+          {university.images.slice(1, 5).map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`${university.name} Gallery ${index + 1}`}
+              className="w-full h-50 object-cover rounded-lg shadow-md"
+            />
+          ))}
         </div>
       </div>
 
@@ -60,7 +51,7 @@ export default function UniversityDetailPage() {
         <img
           src={university.logo}
           alt={`${university.name} Logo`}
-          className="w-16 h-16 mr-4"
+          className="w-16 h-16 object-contain mr-4"
         />
         {university.name}
       </h1>

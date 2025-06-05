@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import StudentLifestyle from "./pages/StudentLifestyle";
+import StudentLife from "./pages/StudentLife";
 import UniversityDetailPage from "./pages/UniversityDetailPage";
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
             <Route path="/how-to-apply" element={<HowToApply />} />
             <Route path="/universities" element={<University />} />
             <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/students-lifestyle" element={<StudentLifestyle />} />
+            <Route path="/students-life" element={<StudentLife />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsConditions />} />
