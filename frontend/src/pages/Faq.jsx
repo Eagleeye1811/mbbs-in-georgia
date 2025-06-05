@@ -105,7 +105,7 @@ function Faq() {
 	};
 
 	const handleContactClick = () => {
-		navigate('/ContactUs');
+		navigate('/contact-us');
 	};
 
 	return (

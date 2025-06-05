@@ -1,31 +1,30 @@
-.lang{
-  border:2px solid  #7e57c2;
+.lang {
+  border: 2px solid #7e57c2;
   border-radius: 5px;
   outline: none;
   padding: 5px;
   transition: color 0.3s ease, transform 0.3s ease;
   background-color: #ede4fe;
-  
 }
 
-#languageSelect{
+#languageSelect {
   outline: none;
   border: none;
   border-radius: 5px;
-  color: #7e57c2;
+  color: #c25757;
   transition: color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   background-color: #ede4fe;
 }
 
-#languageSelect:hover, .lang:hover{
-  transform: scale(1.05); 
+#languageSelect:hover,
+.lang:hover {
+  transform: scale(1.05);
 }
-#google_translate_element{
+#google_translate_element {
   border: 2px solid #7e57c2;
   border-radius: 5px;
   display: none;
-
 }
 
 body > .skiptranslate > iframe.skiptranslate,
@@ -43,4 +42,29 @@ body > .goog-te-banner-frame {
 
 .georgia-logo:hover {
   animation: colorFade 0.3s ease-in-out forwards;
+}
+
+/* Add this to your existing Navbar.css */
+:root {
+  --navbar-height: 64px;
+}
+
+/* The navbar spacer ensures content starts below the fixed navbar */
+#navbar-spacer {
+  display: block;
+  width: 100%;
+  height: var(--navbar-height);
+}
+
+/* Ensure hero content doesn't get hidden */
+.hero-section,
+.relative.isolate.overflow-hidden.bg-gray-900,
+.landing-hero,
+section:first-of-type:not(nav) {
+  margin-top: var(--navbar-height);
+}
+
+/* Maintain proper sizing after adjustment */
+.h-450 {
+  min-height: 450px;
 }
