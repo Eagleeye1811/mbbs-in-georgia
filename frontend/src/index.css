@@ -15,6 +15,6 @@
 }
 
 .hero-subtitle {
-  @apply mt-8 text-lg font-medium text-gray-300 sm:text-xl;
+  @apply text-xl md:text-2xl font-medium text-gray-200 mb-8 drop-shadow-md;
 }
 
