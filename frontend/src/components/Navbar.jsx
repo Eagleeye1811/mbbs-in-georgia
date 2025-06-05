@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/about-georgia" },
-  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
-  { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/faq" },
   { name: "Student LifeStyle", href: "/students-life" },
+  { name: "Student Testimonials", href: "/testimonials" },
+  { name: "How To Apply", href: "/how-to-apply" },
+  { name: "FAQs", href: "/faq" },
 ]; 
 
 const Navbar = () => {
@@ -22,8 +22,35 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  useEffect(() => {
+    // Ensure that the Google Translate widget is initialized
+    if (window.google && window.google.translate) {
+      window.googleTranslateElementInit();
+    }
+  }, []);
+
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+
+    try {
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        const translateSelect = document.querySelector(".goog-te-combo");
+        if (translateSelect) {
+          translateSelect.value = selectedLanguage;
+          translateSelect.dispatchEvent(new Event("change"));
+        } else {
+          console.error("Google Translate dropdown not found.");
+        }
+      } else {
+        console.error("Google Translate library is not loaded.");
+      }
+    } catch (error) {
+      console.error("Error changing language: ", error);
+    }
+  };
+
   return (
-    <nav className="bg-[#232a36] w-full shadow ">
+    <nav className="bg-[#232a36] w-full shadow fixed top-0 left-0 z-50">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -51,9 +78,19 @@ const Navbar = () => {
           </div>
 
           {/* Google Translate Button */}
-          <div className="hidden lg:flex items-center">
-            <div id="google_translate_element"></div>
-          </div>
+          <div className="lang">
+      <select id="languageSelect" onChange={handleLanguageChange}>
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="ml">Malayalam</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="mr">Marathi</option>
+      </select>
+      </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
