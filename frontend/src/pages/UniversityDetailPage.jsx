@@ -23,35 +23,26 @@ export default function UniversityDetailPage() {
   return (
     <div className="container mx-auto px-4 py-10">
       {/* Photo Gallery */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        {/* Main Image */}
         <div className="flex justify-center items-center">
           <img
-            src="/src/assets/Caucasus_University.jpg"
-            alt="University Main Image"
-            className="w-full h-auto rounded-lg shadow-lg"
+            src={university.images[0]} // Main image
+            alt={`${university.name} Main`}
+            className="w-full h-105 object-cover rounded-lg shadow-lg"
           />
         </div>
+
+        {/* Additional Images */}
         <div className="grid grid-cols-2 gap-4 p-2.5">
-          <img
-            src="/src/assets/Ilia_State_University.jpg"
-            alt="Gallery Image 1"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/TSM_University.jpeg"
-            alt="Gallery Image 2"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/IBSU_University.webp"
-            alt="Gallery Image 3"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src="/src/assets/ATSU_University.jpg"
-            alt="Gallery Image 4"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
+          {university.images.slice(1, 5).map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`${university.name} Gallery ${index + 1}`}
+              className="w-full h-50 object-cover rounded-lg shadow-md"
+            />
+          ))}
         </div>
       </div>
 
@@ -60,7 +51,7 @@ export default function UniversityDetailPage() {
         <img
           src={university.logo}
           alt={`${university.name} Logo`}
-          className="w-16 h-16 mr-4"
+          className="w-16 h-16 object-contain mr-4"
         />
         {university.name}
       </h1>
@@ -139,28 +130,35 @@ export default function UniversityDetailPage() {
         <h2 className="text-3xl font-semibold text-white bg-red-500 p-4 rounded-t-lg flex items-center">
           <i className="fas fa-book text-white mr-2"></i> Programs Offered
         </h2>
-        <div className="mt-4 flex flex-wrap gap-2 bg-gray-200 p-4 rounded-b-lg">
-          {university.programs_offered.map((program) => (
-            <span key={program} className="px-4 py-2 bg-gray-400 text-white rounded-full">
-              {program}
-            </span>
+        <ul className="mt-4 list-none text-gray-600 bg-gray-200 p-4 rounded-b-lg">
+          {university.programs_offered.map((program, index) => (
+            <li key={index} className="flex items-center mb-2">
+              {/* Display icons for each program */}
+              <i className="fas fa-graduation-cap text-green-500 mr-2"></i> {program}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       {/* Fees */}
       <div className="mt-8 bg-gray-100 p-6 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-white bg-red-500 p-4 rounded-t-lg flex items-center">
-          <i className="fas fa-money-bill-wave text-white mr-2"></i> Fees
+          <i className="fas fa-wallet text-white mr-2"></i> Fees
         </h2>
         <div className="bg-gray-200 p-4 rounded-b-lg">
-          <p className="text-lg text-gray-600">
-            <strong>Annual Tuition Fee:</strong> ${university.annual_tuition_fee.usd} (USD) /{" "}
-            {university.annual_tuition_fee.gel} (GEL)
-          </p>
-          <p className="mt-2 text-lg text-gray-600">
-            <strong>Hostel Fee:</strong> ${university.hostel_fee.usd} (USD)
-          </p>
+          <div className="flex items-center mb-2">
+            <i className="fas fa-coins text-blue-500 mr-2"></i>
+            <p className="text-lg text-gray-600">
+              <strong>Annual Tuition Fee:</strong> ${university.annual_tuition_fee.usd} (USD) /{" "}
+              {university.annual_tuition_fee.gel} (GEL)
+            </p>
+          </div>
+          <div className="flex items-center">
+            <i className="fas fa-coins text-blue-500 mr-2"></i>
+            <p className="text-lg text-gray-600">
+              <strong>Hostel Fee:</strong> ${university.hostel_fee.usd} (USD)
+            </p>
+          </div>
         </div>
       </div>
 
@@ -172,7 +170,7 @@ export default function UniversityDetailPage() {
         <ul className="mt-4 list-none text-gray-600 bg-gray-200 p-4 rounded-b-lg">
           {university.facilities.map((facility, index) => (
             <li key={index} className="flex items-center mb-2">
-              <i className="fas fa-toolbox text-blue-500 mr-2"></i> {facility}
+              <i className="fas fa-toolbox text-yellow-400 mr-2"></i> {facility}
             </li>
           ))}
         </ul>
@@ -186,7 +184,7 @@ export default function UniversityDetailPage() {
         <ul className="mt-4 list-none text-gray-600 bg-gray-200 p-4 rounded-b-lg">
           {university.affiliated_hospitals.map((hospital, index) => (
             <li key={index} className="flex items-center mb-2">
-              <i className="fas fa-hospital text-blue-500 mr-2"></i> {hospital}
+              <i className="fas fa-hospital text-green-500 mr-2"></i> {hospital}
             </li>
           ))}
         </ul>

@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import StudentLifeStyle from "./pages/StudentLifeStyle";
+import StudentLife from "./pages/StudentLife";
 import UniversityDetailPage from "./pages/UniversityDetailPage";
 
 const App = () => {
@@ -22,15 +22,15 @@ const App = () => {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/AboutGeorgia" element={<AboutGeorgia />} />
-            <Route path="/FAQ" element={<Faq />} />
-            <Route path="/HowToApply" element={<HowToApply />} />
-            <Route path="/Universities" element={<University />} />
-            <Route path="/Testimonials" element={<Testimonials />} />
-             <Route path="/StudentLifeStyle" element={<StudentLifeStyle />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-            <Route path="/termsAndConditions" element={<TermsConditions />} />
+            <Route path="/about-georgia" element={<AboutGeorgia />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/how-to-apply" element={<HowToApply />} />
+            <Route path="/universities" element={<University />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/students-life" element={<StudentLife />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsConditions />} />
             <Route path="/university-detail" element={<UniversityDetailPage />} />
           </Routes>
         </div>

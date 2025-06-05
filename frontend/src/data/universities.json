@@ -1,85 +1,9 @@
 [
     {
-      "image": "/src/assets/alte_image_1.webp",
-      "name": "Tbilisi State Medical University",
-      "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/Tbilisi_logo.png",
-      "established_year": 1930,
-      "type": "Public",
-      "overview": [
-        "Tbilisi State Medical University (TSMU), founded in 1918, is the oldest and largest medical university in Georgia and the Caucasus region. With over a century of history, TSMU is renowned for its academic excellence, advanced research, and comprehensive medical training. The university has produced more than 40,000 doctors and healthcare professionals, many of whom serve in leading positions worldwide. TSMU offers a wide range of undergraduate, graduate, and doctoral programs in medicine, dentistry, pharmacy, and allied health sciences. The university boasts modern infrastructure, including state-of-the-art laboratories, simulation centers, and partnerships with top hospitals for clinical training.",
-      "TSMU is highly regarded for its international outlook, attracting students from over 70 countries. Its degrees are recognized globally, enabling graduates to pursue medical careers or further studies in countries such as the US, UK, India, and throughout Europe. The university’s commitment to affordable education, multicultural environment, and strong academic support makes it a preferred destination for aspiring doctors."],
-        "whyChoose": [
-          "International Recognition: TSMU is recognized by the World Health Organization (WHO), National Medical Commission (NMC, India), Educational Commission for Foreign Medical Graduates (ECFMG, USA), World Federation for Medical Education (WFME), and FAIMER. Its degrees are globally accepted, allowing graduates to practice medicine worldwide after meeting local requirements.",
-          "Affordable Tuition and Living Costs: Compared to Western Europe and North America, TSMU offers high-quality education at a fraction of the cost, making it accessible to students from diverse backgrounds.",
-          "Modern Infrastructure: The university features recently renovated campuses, advanced laboratories, simulation centers, and digital libraries, providing students with the latest tools for medical education.",
-          "Experienced Faculty: TSMU’s faculty includes highly qualified professors and researchers, many with international experience, ensuring students receive world-class instruction.",
-          "Diverse Student Body: With 25–26% international students, TSMU offers a multicultural environment and support services, including language courses and cultural integration activities.",
-          "Comprehensive Clinical Training: Students gain hands-on experience in leading hospitals and clinics across Georgia, preparing them for real-world medical practice.",
-          "Strategic Location: Located in Tbilisi, Georgia’s vibrant and safe capital, students enjoy a welcoming atmosphere, affordable living, and rich cultural opportunities.",
-          "Strong Research Focus: TSMU is dedicated to medical research and innovation, offering students opportunities to participate in research projects and conferences."
-        ],
-      "recognition_accreditation": [
-    "World Health Organization (WHO)",
-    "National Medical Commission (NMC, India)",
-    "Educational Commission for Foreign Medical Graduates (ECFMG, USA)",
-    "World Federation for Medical Education (WFME)",
-    "Foundation for Advancement of International Medical Education and Research (FAIMER)",
-    "Ministry of Education and Science of Georgia"
-  ],
-      "ranking": {"national": 8, "world": 6397},
-      "programs_offered": [
-    "Medicine (MBBS/MD)",
-    "Dentistry",
-    "Pharmacy",
-    "Public Health",
-    "Physical Medicine and Rehabilitation",
-    "Nursing",
-    "Medical Devices Technician",
-    "Pharmacy Technician",
-    "Postgraduate and Doctoral Programs"
-  ],
-      "medium_of_instruction": ["English", "Georgian"],
-      "annual_tuition_fee": {
-        "mbbs": "USD 8,000 per year"
-      },
-     "hostel_fee": "USD 3,200 per year (includes meals and facilities)",
-      "facilities": [
-    "Modern classrooms and lecture halls",
-    "State-of-the-art laboratories",
-    "Clinical Skills and Simulation Center",
-    "Research Center of Human Genome and Epigenome",
-    "Digital and traditional libraries",
-    "Student hostels with international cuisine",
-    "Sports and recreation facilities",
-    "Cafeteria and canteen",
-    "Student organizations and clubs"
-  ],
-  "affiliated_hospitals": [
-    "TSMU University Clinic",
-    "Tbilisi Central Hospital",
-    "Partner hospitals across Tbilisi for clinical rotations"
-  ],
-  "admission_requirements": [
-    "Completed secondary/high school education with Biology, Chemistry, and Physics",
-    "Minimum 50% aggregate in PCB (for Indian students)",
-    "NEET qualification (for Indian applicants)",
-    "Valid passport",
-    "English proficiency (IELTS/TOEFL not mandatory but recommended)",
-    "Application form and supporting documents",
-    "Interview or entrance exam (if required)"
-  ],
-      "contact_info": {
-        "website": "https://www.tsmu.edu",
-        "email": "info@tsmu.edu",
-        "phone": "+995 32 254 24 48"
-      }
-    },
-    {
-      "image": "https://www.cu.edu.ge/logo.png",
+      "images": ["/Caucasus_University.jpg","/Uni-photos/Caucasus-uni/cu_image_1.jpg","/Uni-photos/Caucasus-uni/cu_image_2.jpg","/Uni-photos/Caucasus-uni/cu_image_3.jpeg","/Uni-photos/Caucasus-uni/cu_image_4.jpeg"],
       "name": "Caucasus University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/CU_logo.jpeg",
+      "logo": "/CU_logo.jpeg",
       "established_year": 2004,
       "type": "Private",
       "overview": ["Caucasus University (CU), established in 2004 in Tbilisi, Georgia, is one of the country’s leading private institutions of higher education. It is housed in a historic building with modern infrastructure, making it one of the largest and most advanced campuses in Georgia and the Southern Caucasus. Originally growing out of the Caucasus School of Business (founded in 1998 with Georgia State University, USA), CU has expanded into a multidisciplinary university offering undergraduate, graduate, and doctoral programs across a wide range of fields, including Medicine, Business, Law, Technology, Social Sciences, and more.CU is recognized for its high academic standards, innovative teaching methods, and strong international connections.",
@@ -164,10 +88,10 @@
       }
     },
     {
-      "image": "https://www.tsmu.edu/logo.png",
-      "name": "TSM University",
+      "images": ["/TSM_University.jpeg","/Uni-photos/TSMU/TSMU_image_1.jpg","/Uni-photos/TSMU/TSMU_image_2.jpg","/Uni-photos/TSMU/TSMU_image_3.webp","/Uni-photos/TSMU/TSMU_image_4.jpg"],
+      "name": "Tbilisi State Medical University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/CU_logo.jpeg",
+      "logo": "/Tbilisi_logo.png",
       "established_year": 1992,
       "type": "Private",
       "overview": ["Tbilisi State Medical University (TSMU), founded in 1918, is the oldest and largest medical university in Georgia and the Caucasus region. With a legacy of over a century, TSMU is renowned for its academic excellence, advanced research, and comprehensive medical training. The university has produced more than 40,000 doctors and healthcare professionals, many of whom serve in leading positions worldwide. TSMU offers a wide range of undergraduate, graduate, and doctoral programs in medicine, dentistry, pharmacy, and allied health sciences. The university boasts modern infrastructure, including state-of-the-art laboratories, simulation centers, and partnerships with top hospitals for clinical training.",
@@ -239,10 +163,10 @@
       }
     },
     {
-      "image": "https://iliauni.edu.ge/logo.png",
+      "images": ["/Ilia_State_University.jpg","/Uni-photos/Llia-state-uni/llia_image_1.jpg","/Uni-photos/Llia-state-uni/llia_image_2.jpg","/Uni-photos/Llia-state-uni/llia_image_3.webp","/Uni-photos/Llia-state-uni/llia_image_4.jpg"],
       "name": "Ilia State University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/ISU_logo.jpeg",
+      "logo": "/ISU_logo.jpeg",
       "established_year": 2006,
       "type": "Public",
       "overview": ["Ilia State University (ISU), established in 2006 in Tbilisi, is Georgia’s flagship public research university and the top-ranked higher education institution in the country according to Times Higher Education and SCImago Institutions Rankings. ISU emerged from the merger of six academic institutions, bringing together a rich legacy of research, innovation, and academic excellence. With over 16,000 students and 1,200+ staff, ISU is recognized for its integration of teaching and research, commitment to academic freedom, and the unity of liberal and specialized education.",
@@ -302,10 +226,10 @@
       }
     },
     {
-      "image": "https://ciu.edu.ge/logo.png",
+      "images": ["/Caucasus_International_University.jpg","/Uni-photos/Caucasus-international-uni/ciu_image_1.jpg","/Uni-photos/Caucasus-international-uni/ciu_image_2.jpg","/Uni-photos/Caucasus-international-uni/ciu_image_4.jpg","/Uni-photos/Caucasus-international-uni/ciu_image_3.webp"],
       "name": "Caucasus International University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/CIU_logo.jpeg",
+      "logo": "/CIU_logo.jpeg",
       "established_year": 1995,
       "type": "Private",
       "overview": ["Caucasus International University (CIU), established in 1995 in Tbilisi, is one of Georgia’s most reputable private universities, especially for international students pursuing MBBS/MD. CIU began as a medical institute and rapidly developed into a multi-faculty university, gaining national and international accreditations. The university is recognized by WHO, NMC (India), WFME, ECFMG, and FAIMER, ensuring global acceptance of its medical degrees.",
@@ -367,10 +291,10 @@
       }
     },
     {
-      "image": "https://www.newvision.ge/logo.png",
+      "images": ["/New_Vision_University.webp","/Uni-photos/New-state-uni/NSU_image_1.jpg","/Uni-photos/New-state-uni/NSU_image_2.jpg","/Uni-photos/New-state-uni/NSU_image_3.jpg","/Uni-photos/New-state-uni/NSU_image_4.jpg"],
       "name": "New Vision University",
       "location": "Tbilisi, Georgia",
-      "logo":"/src/assets/NewVision_logo.jpeg",
+      "logo":"/NewVision_logo.jpeg",
       "established_year": 2013,
       "type": "Private",
       "overview":[ "New Vision University (NVU), established in 2013 in Tbilisi, Georgia, is one of the fastest-growing private medical universities in the region. NVU stands out for its commitment to high-quality, internationally recognized medical education, modern infrastructure, and focus on research and innovation. The university offers an English-medium MBBS (MD) program designed to meet global standards, with a curriculum that blends theoretical knowledge with extensive practical and clinical training. Students benefit from early clinical exposure, advanced simulation labs, and hands-on experience at the NVU Teaching Hospital and affiliated clinics.",
@@ -463,10 +387,10 @@
       }
     },
     {
-      "image": "https://dtmu.ge/logo.png",
+      "images": ["/David_Tvildiani_Medical_University.webp","/Uni-photos/DTMU-uni/dtmu_image_1.jpg","/Uni-photos/DTMU-uni/dtmu_image_2.webp","/Uni-photos/DTMU-uni/dtmu_image_3.jpg","/Uni-photos/DTMU-uni/dtmu_image_4.jpeg"],
       "name": "David Tvildiani Medical University",
       "location": "Tbilisi, Georgia",
-      "logo":"/src/assets/DTMY.jpeg",
+      "logo":"/DTMY.jpeg",
       "established_year": 1989,
       "type": "Private",
       "overview": ["David Tvildiani Medical University (DTMU) is one of the most prestigious and internationally recognized private medical universities in Georgia, established in 1989. DTMU is renowned for its English-medium MD program, which strictly follows US and European medical education standards, making it especially popular among international students. The university’s AIETI Medical School is the only institution in Georgia to offer its entire medical curriculum in English, and its graduates consistently achieve high success rates in international licensing exams such as USMLE, PLAB, and NMC FMGE.",
@@ -564,10 +488,10 @@
       }
     },
     {
-      "image": "https://alte.edu.ge/logo.png",
+      "images": ["/ALTE_University.png","/Uni-photos/ALTE-Uni/alte_image_1.png","/Uni-photos/ALTE-Uni/alte_image_2.png","/Uni-photos/ALTE-Uni/alte_image_3.png","/Uni-photos/ALTE-Uni/alte_image_4.png"],
       "name": "ALTE University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/ALTE_logo.jpeg",
+      "logo": "/ALTE_logo.jpeg",
       "established_year": 2002,
       "type": "Private",
       "overview": ["Alte University, established in 2002 and located in the heart of Tbilisi, is a leading private institution in Georgia, renowned for its innovative educational approach and multicultural environment. With over 2,500 students from more than 45 countries, Alte University offers a vibrant academic community focused on global standards, practical learning, and personal development. The university comprises four main schools: International School of Medicine, Business, Law and Social Sciences, and Information Technology. Its International School of Medicine is particularly distinguished, offering a 6-year English-medium MD (MBBS) program recognized by WHO, NMC (India), WFME, ECFMG, and FAIMER.",
@@ -653,10 +577,10 @@
       }
     },
     {
-      "image": "https://ibsu.edu.ge/logo.png",
+      "images": ["/IBSU_University.webp","/Uni-photos/IBSU-Uni/ISBU_image_1.jpg","/Uni-photos/IBSU-Uni/ISBU_image_2.webp","/Uni-photos/IBSU-Uni/ISBU_image_3.webp","/Uni-photos/IBSU-Uni/ISBU_image_4.webp"],
       "name": "International Black Sea University (IBSU)",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/IBSU_logo.jpeg",
+      "logo": "/IBSU_logo.jpeg",
       "established_year": 1995,
       "type": "Private",
       "overview": ["International Black Sea University (IBSU), established in 1995 in Tbilisi, is the first English-language higher education institution in Georgia and is widely recognized for its international orientation and academic excellence. IBSU offers a diverse portfolio of undergraduate, graduate, and doctoral programs, with a particular reputation for its MBBS (MD) program, which is fully taught in English and meets the standards of the World Health Organization (WHO) and the National Medical Commission (NMC, India).",
@@ -740,10 +664,10 @@
       }
     },
     {
-      "image": "https://atsu.edu.ge/logo.png",
+      "images": ["/ATSU_University.jpg", "/Uni-photos/ATSU-Uni/atsu_image_1.jpg","/Uni-photos/ATSU-Uni/atsu_image_2.jpg","/Uni-photos/ATSU-Uni/atsu_image_3.jpeg","/Uni-photos/ATSU-Uni/atsu_image_4.png"],
       "name": "Akaki Tsereteli State University (ATSU)",
       "location": "Kutaisi, Georgia",
-      "logo": "/src/assets/ATSU_logo.jpeg",
+      "logo": "/ATSU_logo.jpeg",
       "established_year": 1930,
       "type": "Public",
       "overview": ["Akaki Tsereteli State University (ATSU), founded in 1930, is one of the oldest and most respected public universities in Georgia, located in the city of Kutaisi. With more than 10,000 students and over 5,000 academic staff, ATSU is a multidisciplinary institution that offers a broad spectrum of academic and professional programs at the bachelor, master, and doctoral levels. The university is internationally recognized for its high academic standards, innovative teaching, and strong research orientation, and it maintains active collaborations with leading universities and scientific centers in the EU, USA, and Eastern countries.",
@@ -833,10 +757,10 @@
       }
     },
     {
-      "image": "https://geomedi.edu.ge/logo.png",
+      "images": ["/Geomedi_Medical_University.jpeg","/Uni-photos/geomedi-uni/geomedi_image_1.webp","/Uni-photos/geomedi-uni/geomedi_image_2.jpg","/Uni-photos/geomedi-uni/geomedi_image_3.jpg","/Uni-photos/geomedi-uni/geomedi_image_4.webp"],
       "name": "Geomedi Medical University",
       "location": "Tbilisi, Georgia",
-      "logo": "/src/assets/Geomedi_logo.jpeg",
+      "logo": "/Geomedi_logo.jpeg",
       "established_year": 1998,
       "type": "Private",
       "overview": ["Geomedi Medical University, established in 1998 in Tbilisi, is a top-ranked private medical university in Georgia, highly regarded for its quality education, modern infrastructure, and supportive environment for international students. Founded by Professor Marina Pirtskhalava, the university is recognized by WHO, NMC (India), WFME, ECFMG, FAIMER, and is listed in the World Directory of Medical Schools. Geomedi offers globally recognized degrees in Medicine (MBBS/MD), Dentistry, Physical Medicine and Rehabilitation, and Healthcare Economics and Management, with all programs taught in English.",

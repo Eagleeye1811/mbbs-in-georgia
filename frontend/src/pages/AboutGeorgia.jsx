@@ -18,35 +18,35 @@ import {
   Home
 } from "lucide-react";
 
-import tibilisi from "../assets/tibilisi.jpg"
-import tibilisi1 from "../assets/tibilisi1.jpeg"
-import tibilisi2 from "../assets/tibilisi2.jpeg"
-import tibilisi3 from "../assets/tibilisi3.jpeg"
-import tibilisi4 from "../assets/tibilisi4.jpeg"
-import tibilisi5 from "../assets/tibilisi5.jpeg"
-import tibilisi6 from "../assets/tibilisi6.jpg"
-import tibilisi7 from "../assets/tibilisi7.jpg"
+import tibilisi from "../assets/About Georgia/tibilisi.jpg"
+import tibilisi1 from "../assets/About Georgia/tibilisi1.jpeg"
+import tibilisi2 from "../assets/About Georgia/tibilisi2.jpeg"
+import tibilisi3 from "../assets/About Georgia/tibilisi3.jpeg"
+import tibilisi4 from "../assets/About Georgia/tibilisi4.jpeg"
+import tibilisi5 from "../assets/About Georgia/tibilisi5.jpeg"
+import tibilisi6 from "../assets/About Georgia/tibilisi6.jpg"
+import tibilisi7 from "../assets/About Georgia/tibilisi7.jpg"
 
 const tbilisiImages = [tibilisi, tibilisi1, tibilisi2, tibilisi3, tibilisi4, tibilisi5, tibilisi6, tibilisi7];
 
-import georgia from "../assets/georgia.jpg"
-import khinkali from "../assets/khinkali.jpg"
-import khachapuri from "../assets/khachapuri.webp";
-import lobio from "../assets/lobio.webp";
-import churchkhela from "../assets/churchkhela.jpg";
-import chicken from "../assets/chicken.jpg"
-import pkhali from "../assets/pkhali.jpeg"
+import georgia from "../assets/About Georgia/georgia.jpg";
+import khinkali from "../assets/About Georgia/khinkali.jpg";
+import khachapuri from "../assets/About Georgia/khachapuri.webp";
+import lobio from "../assets/About Georgia/lobio.webp";
+import churchkhela from "../assets/About Georgia/churchkhela.jpg";
+import chicken from "../assets/About Georgia/chicken.jpg"
+import pkhali from "../assets/About Georgia/pkhali.jpeg"
 
-import mountain from "../assets/kazbeki_mountain.jpeg"
-import cave from "../assets/cave.jpg"
-import beach from "../assets/beach.webp"
-import mtskheta from "../assets/mtskheta.jpg"
-import borjomi from "../assets/borjomi.jpg"
-import caucasus from "../assets/caucasus.jpg"
-import cave2 from "../assets/cave2.jpg"
-import cave3 from "../assets//cave3.jpeg"
-import ananuri from "../assets/ananuri.jpg"
-
+import mountain from "../assets/About Georgia/kazbeki_mountain.jpeg"
+import cave from "../assets/About Georgia/cave.jpg"
+import beach from "../assets/About Georgia/beach.webp"
+import mtskheta from "../assets/About Georgia/mtskheta.jpg"
+import borjomi from "../assets/About Georgia/borjomi.jpg"
+import caucasus from "../assets/About Georgia/caucasus.jpg"
+import cave2 from "../assets/About Georgia/cave2.jpg"
+import cave3 from "../assets/About Georgia/cave3.jpeg"
+import ananuri from "../assets/About Georgia/ananuri.jpg"
+ 
 
 
 const AboutGeorgia = () => {
@@ -104,28 +104,24 @@ const AboutGeorgia = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header
-        className="relative overflow-hidden mb-6 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${georgia})`,
-          height: "450px" // Fixed height of 450px
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-0" />
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-8 h-full">
-          <div className="text-left max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-white drop-shadow-2xl mb-4 animate-fade-in-down">
-              Georgia <span className="text-white">–</span> More Than a <span className="text-red-500">Destination</span>
+      <div className="relative isolate overflow-hidden bg-gray-900 h-[450px]">
+        <img
+          src={georgia}
+          alt="About Georgia"
+          className="absolute inset-0 -z-10 w-full h-full object-cover object-center brightness-50"
+        />
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          {/* Title Section */}
+          <div className="max-w-2xl">
+            <h1 className="hero-title">
+              Georgia <span className="text-white">–</span> More Than a <span className="text-red-400">Destination</span>
             </h1>
-            <p className="text-lg md:text-xl text-white font-semibold animate-fade-in-up">
+            <p className="hero-subtitle">
               Discover the magic of Georgia: where ancient culture, breathtaking landscapes, and warm hospitality await you.
             </p>
           </div>
         </div>
-      </header>
+      </div>
       {/* Introduction */}
       <section className="p-6 text-center max-w-4xl mx-auto">
         <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">Introduction</h2>
@@ -313,7 +309,7 @@ const AboutGeorgia = () => {
               tabIndex={0}
               style={{ flex: "0 0 270px" }}
             >
-              <div className="w-full h-48 rounded-t-2xl overflow-hidden">
+              <div className="w-full h-48 mt-5 rounded-t-2xl overflow-hidden">
                 <img
                   src={item.img}
                   alt={item.dish}
@@ -355,7 +351,7 @@ const AboutGeorgia = () => {
             },
             {
               title: "Mtskheta",
-              desc: "Just 20 km from Tbilisi, Mtskheta is one of the oldest and most sacred cities in Georgia and a UNESCO World Heritage Site. It was the capital of the early Georgian Kingdom of Iberia and the place where Christianity was proclaimed the state religion in the 4th century. Its centerpiece is the Svetitskhoveli Cathedral, a masterpiece of Georgian medieval architecture believed to house the robe of Christ. Jvari Monastery, standing on a hilltop overlooking the confluence of the Aragvi and Mtkvari rivers, offers a spiritual and scenic experience. Visiting Mtskheta is like stepping back into Georgia’s ancient spiritual and cultural roots.",
+              desc: "Mtskheta is one of the oldest and most sacred cities in Georgia and a UNESCO World Heritage Site. It was the capital of the early Georgian Kingdom of Iberia and the place where Christianity was proclaimed the state religion in the 4th century. Its centerpiece is the Svetitskhoveli Cathedral, a masterpiece of Georgian medieval architecture believed to house the robe of Christ. Jvari Monastery, standing on a hilltop overlooking the confluence of the Aragvi and Mtkvari rivers, offers a spiritual and scenic experience. Visiting Mtskheta is like stepping back into Georgia’s ancient spiritual and cultural roots.",
               image: mtskheta,
               color: "text-gray-800"
             },
@@ -405,8 +401,8 @@ const AboutGeorgia = () => {
                   </div>
                 </div>
                 {/* Back Side */}
-                <div className="absolute w-full h-full backface-hidden bg-gray-500 rounded-2xl shadow-md transform rotate-y-180 p-6 flex items-center justify-center">
-                  <h3 className="text-base text-white text-justify">{place.desc}</h3>
+                <div className="absolute w-full h-full backface-hidden bg-gray-200 rounded-2xl shadow-md transform rotate-y-180 p-6 flex items-center justify-center">
+                  <h3 className="text-base text-black text-justify">{place.desc}</h3>
                 </div>
               </div>
             </div>
@@ -490,10 +486,10 @@ const AboutGeorgia = () => {
         </div>
         <a
           href="/HowToApply"
-          className="inline-block mt-4 px-10 py-4 bg-gradient-to-r from-red-400 to-red-400 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+          className="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
         >
           Start Your Georgian Journey
-          <Plane className="inline-block ml-2 mb-1 w-6 h-6 text-gray-900 animate-none" />
+          <Plane className="inline-block ml-2 mb-1 w-6 h-6 text-white animate-none" />
         </a>
       </section>
     </div>
