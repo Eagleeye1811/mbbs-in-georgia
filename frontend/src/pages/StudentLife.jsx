@@ -46,7 +46,7 @@ const StudentLife = () => {
     
           {/* Main Content Section */}
     <div className="w-full max-w-5xl mx-auto p-5 space-y-16">
-    Hello
+    
       {/* Full-width Campus Features Section */}
       <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-gray-100 py-20">
       <div className="max-w-7xl mx-auto px-4 rounded-3xl">
