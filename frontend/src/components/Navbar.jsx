@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
+/**
+ * Navigation items configuration
+ * Defines the main navigation structure for the application
+ */
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/about-georgia" },
@@ -10,30 +14,93 @@ const navItems = [
   { name: "Student Testimonials", href: "/testimonials" },
   { name: "How To Apply", href: "/how-to-apply" },
   { name: "FAQs", href: "/faq" },
-]; 
+];
 
+/**
+ * Navbar component - Fixed top navigation with responsive design
+ * Includes language selection and mobile responsive menu
+ * @returns {JSX.Element} The rendered navbar
+ */
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navHeight, setNavHeight] = useState(64); // Default height (h-16 is 64px)
 
+  /**
+   * Handles navigation and closes mobile menu
+   * @param {string} href - Target path to navigate to
+   */
   const handleNavClick = (href) => {
     navigate(href);
     setMenuOpen(false);
   };
 
+  /**
+   * Initializes Google Translate widget and sets up navbar height management
+   * Creates a spacer element to prevent content from being hidden under navbar
+   */
   useEffect(() => {
-    // Ensure that the Google Translate widget is initialized
+    // Initialize Google Translate widget if available
     if (window.google && window.google.translate) {
       window.googleTranslateElementInit();
     }
-  }, []);
 
+    // Function to measure navbar height and create/update spacer element
+    const setupNavbarSpacer = () => {
+      const navElement = document.querySelector("nav");
+      if (!navElement) return;
+
+      const height = navElement.offsetHeight;
+      setNavHeight(height);
+
+      // Create or update the spacer element
+      let spacer = document.getElementById("navbar-spacer");
+      if (!spacer) {
+        spacer = document.createElement("div");
+        spacer.id = "navbar-spacer";
+        document.body.insertBefore(spacer, document.body.firstChild);
+      }
+
+      // Style the spacer to match navbar height
+      spacer.style.height = `${height}px`;
+      spacer.style.width = "100%";
+      spacer.style.display = "block";
+
+      // Also set CSS variable for components that might use it
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${height}px`
+      );
+    };
+
+    // Initial setup and window resize handler
+    setupNavbarSpacer();
+    window.addEventListener("resize", setupNavbarSpacer);
+
+    return () => {
+      window.removeEventListener("resize", setupNavbarSpacer);
+      // Clean up spacer when component unmounts
+      const spacer = document.getElementById("navbar-spacer");
+      if (spacer) {
+        spacer.remove();
+      }
+    };
+  }, [menuOpen]); // Re-measure when menu opens/closes
+
+  /**
+   * Handles language selection change
+   * @param {Event} event - The change event from select element
+   */
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
 
     try {
-      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+      if (
+        window.google &&
+        window.google.translate &&
+        window.google.translate.TranslateElement
+      ) {
         const translateSelect = document.querySelector(".goog-te-combo");
         if (translateSelect) {
           translateSelect.value = selectedLanguage;
@@ -58,7 +125,7 @@ const Navbar = () => {
             GEORGIA
           </div>
 
-          {/* Center nav items */}
+          {/* Desktop navigation items */}
           <div className="hidden lg:flex flex-grow justify-center">
             <div className="flex space-x-6">
               {navItems.map((item) => (
@@ -77,26 +144,27 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Google Translate Button */}
+          {/* Language selector */}
           <div className="lang">
-      <select id="languageSelect" onChange={handleLanguageChange}>
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="ta">Tamil</option>
-        <option value="bn">Bengali</option>
-        <option value="te">Telugu</option>
-        <option value="ml">Malayalam</option>
-        <option value="gu">Gujarati</option>
-        <option value="kn">Kannada</option>
-        <option value="mr">Marathi</option>
-      </select>
-      </div>
+            <select id="languageSelect" onChange={handleLanguageChange}>
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+              <option value="ta">Tamil</option>
+              <option value="bn">Bengali</option>
+              <option value="te">Telugu</option>
+              <option value="ml">Malayalam</option>
+              <option value="gu">Gujarati</option>
+              <option value="kn">Kannada</option>
+              <option value="mr">Marathi</option>
+            </select>
+          </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu toggle button */}
           <div className="lg:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-white p-2"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               <svg
                 className="w-6 h-6"
@@ -120,9 +188,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Items */}
+      {/* Mobile menu items */}
       {menuOpen && (
-        <div className="lg:hidden flex flex-col gap-1 py-3 ">
+        <div className="lg:hidden flex flex-col gap-1 py-3 bg-[#232a36]">
           {navItems.map((item) => (
             <button
               key={item.name}
