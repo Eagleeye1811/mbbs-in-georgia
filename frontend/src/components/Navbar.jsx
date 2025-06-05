@@ -5,11 +5,11 @@ import "./Navbar.css";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/about-georgia" },
-  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
-  { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/faq" },
   { name: "Student LifeStyle", href: "/students-life" },
+  { name: "Student Testimonials", href: "/testimonials" },
+  { name: "How To Apply", href: "/how-to-apply" },
+  { name: "FAQs", href: "/faq" },
 ]; 
 
 const Navbar = () => {
