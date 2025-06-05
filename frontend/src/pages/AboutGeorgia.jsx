@@ -3,12 +3,7 @@ import "./AboutGeorgia.css"
 import { useState } from "react";
 
 import {
-  Mountain,
-  Landmark,
-  Wine,
-  Building2,
   Trees,
-  Flame,
   BookOpen,      // For education
   Banknote,      // For economy/money
   School,        // For universities
@@ -22,18 +17,19 @@ import {
   BriefcaseBusiness
 } from "lucide-react";
 
-import tibilisi from "../assets/About Georgia/tibilisi.jpg"
-import tibilisi1 from "../assets/About Georgia/tibilisi1.jpeg"
-import tibilisi2 from "../assets/About Georgia/tibilisi2.jpeg"
-import tibilisi3 from "../assets/About Georgia/tibilisi3.jpeg"
-import tibilisi4 from "../assets/About Georgia/tibilisi4.jpeg"
-import tibilisi5 from "../assets/About Georgia/tibilisi5.jpeg"
-import tibilisi6 from "../assets/About Georgia/tibilisi6.jpg"
-import tibilisi7 from "../assets/About Georgia/tibilisi7.jpg"
+
+import georgia from "../assets/About Georgia/georgia.jpg";
+import tibilisi from "../assets/About Georgia/tibilisi.jpg";
+import tibilisi1 from "../assets/About Georgia/tibilisi1.jpeg";
+import tibilisi2 from "../assets/About Georgia/tibilisi2.jpeg";
+import tibilisi3 from "../assets/About Georgia/tibilisi3.jpeg";
+import tibilisi4 from "../assets/About Georgia/tibilisi4.jpeg";
+import tibilisi5 from "../assets/About Georgia/tibilisi5.jpeg";
+import tibilisi6 from "../assets/About Georgia/tibilisi6.jpg";
+import tibilisi7 from "../assets/About Georgia/tibilisi7.jpg";
 
 const tbilisiImages = [tibilisi3, tibilisi1, tibilisi2, tibilisi, tibilisi4, tibilisi5, tibilisi6, tibilisi7];
 
-import georgia from "../assets/About Georgia/georgia.jpg";
 import khinkali from "../assets/About Georgia/khinkali.jpg";
 import khachapuri from "../assets/About Georgia/khachapuri.webp";
 import lobio from "../assets/About Georgia/lobio.webp";
@@ -110,13 +106,13 @@ const AboutGeorgia = () => {
       {/* Header */}
       <div className="relative isolate overflow-hidden bg-gray-900 h-[450px]">
         <img
-          src={georgia}
+          src= {georgia}
           alt="About Georgia"
           className="absolute inset-0 -z-10 w-full h-full object-cover object-center brightness-50"
         />
         <div className="flex flex-col items-center justify-center h-full text-center">
           {/* Title Section */}
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <h1 className="hero-title">
               Georgia <span className="text-white">–</span> More Than a <span className="text-red-400">Destination</span>
             </h1>
@@ -127,7 +123,7 @@ const AboutGeorgia = () => {
         </div>
       </div>
       {/* Introduction */}
-      <section className="p-6 text-center max-w-4xl mx-auto">
+      <section className="p-6 text-center max-w-6xl mx-auto">
         <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">Introduction</h2>
         <p className="text-justify">
           <span className="font-bold text-red-500">Georgia</span> is a country at the crossroads of Eastern Europe and Western Asia, bordered by Russia, Turkey, Armenia, Azerbaijan, and the Black Sea. Known for its rich history, diverse culture, and strategic location, Georgia has emerged as a fast-growing economy in the Caucasus region. With a GDP of around <span className="font-bold text-red-500">$25.6 billion</span> and a focus on tourism, agriculture, and services, the country ranks high in ease of doing business and governance reforms. Tbilisi, the capital, is a cultural and economic hub. Georgia is a unitary parliamentary republic, currently led by President <span className="font-bold text-red-500">Salome Zourabichvili</span>, the nation's first female president, and Prime Minister Irakli Kobakhidze. Additionally, Georgia is recognized as one of the world's safest countries, ranking <span className="font-bold text-red-500">5th</span> globally in safety.
@@ -135,39 +131,39 @@ const AboutGeorgia = () => {
       </section>
 
       {/* Highlights */}
-      <section className="p-6 max-w-6xl mx-auto">
+      <section className="p-6 bg-gray-100 w-full justify-items-center mx-auto">
         <h2 className="text-3xl font-extrabold mb-6 text-center text-red-500 tracking-wide">Highlights</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 font-bold">
-          <div className="bg-red-100 text-gray-900 shadow-[0_8px_15px_rgba(220,38,38,0.3)] p-8 rounded-3xl flex flex-col items-center text-center hover:scale-105 hover:shadow-[0_15px_25px_rgba(220,38,38,0.5)] transition-transform duration-300 ease-in-out cursor-pointer">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pb-5 font-bold max-w-6xl p-5">
+          <div className="bg-red-200 text-gray-900 shadow-[0_8px_15px_rgba(220,38,38,0.3)] p-8 rounded-3xl flex flex-col items-center text-center hover:scale-105 hover:shadow-[0_15px_25px_rgba(220,38,38,0.5)] transition-transform duration-300 ease-in-out cursor-pointer">
             <BadgeCheck className="w-12 h-12 text-red-600 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">2nd Best Country Of European Standard Specifications</p>
           </div>
 
           <div className="bg-gray-200 text-gray-900 shadow-[0_8px_15px_rgba(107,114,128,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
                           hover:scale-105 hover:shadow-[0_15px_25px_rgba(107,114,128,0.5)] transition-transform duration-300 ease-in-out cursor-pointer">
-            <Landmark className="w-12 h-12 text-red-700 mb-4 drop-shadow-md" />
+            <ShieldCheck className="w-12 h-12 text-red-700 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">5th Safest Country In The World</p>
           </div>
 
-          <div className="bg-red-300 text-gray-900 shadow-[0_8px_15px_rgba(185,28,28,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
+          <div className="bg-red-200 text-gray-900 shadow-[0_8px_15px_rgba(185,28,28,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
                           hover:scale-105 hover:shadow-[0_15px_25px_rgba(185,28,28,0.6)] transition-transform duration-300 ease-in-out cursor-pointer">
             <BriefcaseBusiness className="w-12 h-12 text-red-800 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">6th Best Century Business Friendly Economy</p>
           </div>
 
-          <div className="bg-gray-300 text-gray-900 shadow-[0_8px_15px_rgba(75,85,99,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
+          <div className="bg-gray-200 text-gray-900 shadow-[0_8px_15px_rgba(75,85,99,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
                           hover:scale-105 hover:shadow-[0_15px_25px_rgba(75,85,99,0.5)] transition-transform duration-300 ease-in-out cursor-pointer">
             <Coins className="w-12 h-12 text-red-500 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">1 GEL = 32 INR</p>
           </div>
 
-          <div className="bg-red-100 text-gray-900 shadow-[0_8px_15px_rgba(244,63,94,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
+          <div className="bg-red-200 text-gray-900 shadow-[0_8px_15px_rgba(244,63,94,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
                           hover:scale-105 hover:shadow-[0_15px_25px_rgba(244,63,94,0.5)] transition-transform duration-300 ease-in-out cursor-pointer">
             <Trees className="w-12 h-12 text-red-400 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">Nature Reserves, Scenic Mountains, Modern Cities</p>
           </div>
 
-          <div className="bg-gray-100 text-gray-900 shadow-[0_8px_15px_rgba(156,163,175,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
+          <div className="bg-gray-200 text-gray-900 shadow-[0_8px_15px_rgba(156,163,175,0.3)] p-8 rounded-3xl flex flex-col items-center text-center 
                           hover:scale-105 hover:shadow-[0_15px_25px_rgba(156,163,175,0.6)] transition-transform duration-300 ease-in-out cursor-pointer">
             <Globe className="w-12 h-12 text-red-600 mb-4 drop-shadow-md" />
             <p className="font-semibold text-xl">7th Non Corrupted Country In The World </p>
@@ -234,13 +230,13 @@ const AboutGeorgia = () => {
               {/* Next Button - Red Gradient */}
               <button
                 onClick={() => setCurrentIndex((prev) => (prev === tbilisiImages.length - 1 ? 0 : prev + 1))}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-to-br from-red-200 via-red-400 to-red-500 bg-opacity-90 hover:bg-opacity-100 rounded-full p-2.5 shadow-xl z-50 border-2 border-white transition-transform duration-300"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-to-br from-gray-500 via-gray-200 to-gray-400 bg-opacity-90 hover:bg-opacity-100 rounded-full p-2.5 shadow-xl z-50 border-2 border-white transition-transform duration-300"
                 aria-label="Next"
                 style={{ backdropFilter: "blur(2px)" }}
               >
-                <svg width="28" height="28" fill="none" stroke="#991b1b" strokeWidth="3" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="11" stroke="#991b1b" strokeWidth="2" fill="#fff"/>
-      <path d="M9.5 8l4 4-4 4" stroke="#991b1b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="28" height="28" fill="none" stroke="#374151" strokeWidth="3" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" stroke="#374151" strokeWidth="2" fill="#fff"/>
+      <path d="M9.5 8l4 4-4 4" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
               </button>
               {/* Dots */}
@@ -267,11 +263,11 @@ const AboutGeorgia = () => {
 
 
       {/* Famous Cuisine */}
-      <section className="p-6 max-w-6xl mx-auto" ref={cuisineSectionRef}>
+      <section className="p-6 mx-auto bg-gray-100 w-full justify-items-center" ref={cuisineSectionRef}>
         <h2 className="text-3xl font-extrabold mb-6 text-left text-gray-800 tracking-wide">
           Famous <span className="text-red-500">Cuisine</span>
         </h2>
-        <div className="flex gap-6 overflow-x-auto pb-4 px-1 snap-x">
+        <div className="flex gap-6 max-w-6xl overflow-x-auto pb-4 px-1 snap-x">
           {[
             {
               dish: "Khinkali",
@@ -307,7 +303,7 @@ const AboutGeorgia = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="famous-cuisine-tilt min-w-[270px] max-w-xs bg-gradient-to-b from-gray-50 to-gray-300 rounded-2xl shadow-lg p-0 flex flex-col items-center snap-center cursor-pointer transition-transform duration-300"
+              className="famous-cuisine-tilt min-w-[270px] max-w-xs bg-gradient-to-b from-gray-50 to-gray-300 rounded-2xl shadow-lg p-0 flex flex-col items-center snap-center focus:outline-none"
               tabIndex={0}
               style={{ flex: "0 0 270px" }}
             >
@@ -329,8 +325,8 @@ const AboutGeorgia = () => {
       </section>
 
       {/* Tourist Attractions */}
-      <section className="p-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-extrabold mb-6 text-left text-gray-800 tracking-wide">Tourism <span className="text-red-500">Attractions</span></h2>
+      <section className="p-6 max-w-6xl mx-auto mt-5">
+        <h2 className="text-3xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">Tourist <span className="text-red-500">Attractions</span></h2>
         <div className="grid md:grid-cols-3 gap-8 font-semibold">
           {[
             {
@@ -413,7 +409,7 @@ const AboutGeorgia = () => {
       </section>
 
       {/* Why Visit Georgia */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-red-50 py-16 mt-10 text-center relative overflow-hidden">
+      <section className="bg-gray-100 py-16 mt-10 text-center relative overflow-hidden">
         <h2 className="text-5xl font-extrabold mb-10 text-gray-800 ">
           Why <span className="text-red-500">Georgia?</span>
         </h2>
