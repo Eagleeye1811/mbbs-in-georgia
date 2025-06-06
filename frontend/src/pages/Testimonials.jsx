@@ -1,43 +1,34 @@
-import React from 'react'
+import React from "react";
 import CardItem from "../components/cardItem";
 
 const Testimonials = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="relative w-full h-[450px]">
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section - Fixed to remove white gap */}
+      <div className="hero-section">
         <img
           src="/Testimonial/georgia.webp"
-          alt="Education Globe"
-          className="w-full h-full object-cover brightness-60"
+          alt="Student Testimonials"
+          className="hero-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center justify-center px-4">
-          <div className="flex flex-col items-center justify-center h-full text-center w-full">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-bold mb-4 font-sans text-white drop-shadow-lg">
-                Real Stories from <span className="text-red-400">Georgia</span>
-              </h2>
-              <p className="text-xl md:text-2xl font-medium text-gray-100 mb-8 drop-shadow-md">
-                Join thousands of Indian students transforming their dreams into
-                global success stories — start your journey in Georgia today.
-              </p>
-            </div>
-            <div className="flex space-x-8 mt-4">
-              <div>
-                <p className="text-white text-4xl font-bold">500+</p>
-                <p className="text-red-400 font-medium">Success Stories</p>
-              </div>
-              <div>
-                <p className="text-white text-4xl font-bold">95%</p>
-                <p className="text-red-400 font-medium">Student Satisfaction</p>
-              </div>
-            </div>
+        {/* Keep the existing gradient overlay */}
+        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent"></div>
+
+        <div className="hero-content">
+          <div className="hero-content-wrapper">
+            <h1 className="hero-title">
+              Student <span className="hero-accent">Testimonials</span>
+            </h1>
+            <p className="hero-subtitle">
+              Hear directly from our students about their experiences studying
+              MBBS in Georgia
+            </p>
           </div>
         </div>
-      </header>
+      </div>
 
-      {/* Main Content */}
-      <main className="flex-grow max-w-7xl mx-auto px-6 md:px-45 py-8">
+      {/* Rest of the testimonials content */}
+      <div className="container mx-auto px-4 py-12">
         {/* Recent Blogs */}
         <section className="mb-12">
           <div className="bg-gray-100  py-10 px-8 rounded-2xl shadow-xl border border-gray-200">
@@ -254,13 +245,9 @@ const Testimonials = () => {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </div>
   );
-}
+};
 
-export default Testimonials
-
-
-
-
+export default Testimonials;

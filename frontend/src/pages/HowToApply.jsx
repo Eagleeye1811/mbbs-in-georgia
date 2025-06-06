@@ -1,74 +1,82 @@
-import React, { useState } from 'react';
-import aeroplaneImg from '../assets/aeroplane_f.png';
+import React, { useState } from "react";
+import aeroplaneImg from "../assets/aeroplane_f.png";
 // Import the new background image
-import heroSectionImg from '../assets/georgia-how to apply.webp';
-import documentList from '../assets/Document_Checklist.pdf';
-import nmcRegulations from '../assets/nmc-regulations.pdf'; // You'll need to add this PDF to your assets
+import heroSectionImg from "../assets/georgia-how to apply.webp";
+import documentList from "../assets/Document_Checklist.pdf";
+import nmcRegulations from "../assets/nmc-regulations.pdf"; // You'll need to add this PDF to your assets
 
 // Update the applicationSteps array with the more detailed descriptions
 const applicationSteps = [
   {
     id: 1,
     title: "Document Collection",
-    description: "Start by understanding which documents are required for the entire admission process. Instead of collecting everything at once, we guide you through a step-by-step checklist tailored to each stage—ensuring nothing is missed. ",
-    icon: "bx bx-folder-open"
+    description:
+      "Start by understanding which documents are required for the entire admission process. Instead of collecting everything at once, we guide you through a step-by-step checklist tailored to each stage—ensuring nothing is missed. ",
+    icon: "bx bx-folder-open",
   },
   {
     id: 2,
     title: "University Selection",
-    description: "Research and shortlist accredited medical universities in Georgia based on curriculum, tuition fees, language of instruction, location, and global recognition. Get personalized counseling to match your goals and ensure the university meets MCI/NMC/WHO standards for future licensing and recognition.",
-    icon: "bx bx-buildings"
+    description:
+      "Research and shortlist accredited medical universities in Georgia based on curriculum, tuition fees, language of instruction, location, and global recognition. Get personalized counseling to match your goals and ensure the university meets MCI/NMC/WHO standards for future licensing and recognition.",
+    icon: "bx bx-buildings",
   },
   {
     id: 3,
     title: "Application Submission",
-    description: "Fill out application forms for the selected universities with accurate academic and personal information. Submit your collected documents through the proper channels, and ensure deadlines are met. We assist with proper documentation formatting and application tracking.",
-    icon: "bx bx-send"
+    description:
+      "Fill out application forms for the selected universities with accurate academic and personal information. Submit your collected documents through the proper channels, and ensure deadlines are met. We assist with proper documentation formatting and application tracking.",
+    icon: "bx bx-send",
   },
   {
     id: 4,
     title: "Admission Letter",
-    description: "Once your application is reviewed and accepted, you will receive a conditional or unconditional offer/admission letter from the university. This confirms your acceptance and is a key document for the next steps like visa processing.",
-    icon: "bx bx-envelope-open"
+    description:
+      "Once your application is reviewed and accepted, you will receive a conditional or unconditional offer/admission letter from the university. This confirms your acceptance and is a key document for the next steps like visa processing.",
+    icon: "bx bx-envelope-open",
   },
   {
-    id: 5, 
+    id: 5,
     title: "Visa Process",
-    description: "Begin your visa application with our expert assistance. This includes preparing your visa file with the admission letter, financial proof, passport, visa forms, and other supporting documents. We guide you through the embassy appointment, interview preparation, and submission procedures.",
-    icon: "bx bx-id-card"
+    description:
+      "Begin your visa application with our expert assistance. This includes preparing your visa file with the admission letter, financial proof, passport, visa forms, and other supporting documents. We guide you through the embassy appointment, interview preparation, and submission procedures.",
+    icon: "bx bx-id-card",
   },
   {
     id: 6,
     title: "Fee Payment",
-    description: "Pay the required university fees as mentioned in the admission letter. This may include tuition fees, visa processing charges, insurance, and hostel fees. We assist with secure international payment methods and confirmation procedures from the university.",
-    icon: "bx bx-credit-card"
+    description:
+      "Pay the required university fees as mentioned in the admission letter. This may include tuition fees, visa processing charges, insurance, and hostel fees. We assist with secure international payment methods and confirmation procedures from the university.",
+    icon: "bx bx-credit-card",
   },
   {
     id: 7,
     title: "Travel Arrangements",
-    description: "Once your visa is approved, we help you book your flight to Georgia and plan your travel. Get assistance with choosing suitable dates, booking affordable tickets, packing checklists, and pre-departure orientation. You'll also receive airport pickup and local contact information.",
-    icon: "bx bx-briefcase-alt"
+    description:
+      "Once your visa is approved, we help you book your flight to Georgia and plan your travel. Get assistance with choosing suitable dates, booking affordable tickets, packing checklists, and pre-departure orientation. You'll also receive airport pickup and local contact information.",
+    icon: "bx bx-briefcase-alt",
   },
   {
     id: 8,
     title: "Arrival & Orientation",
-    description: "Arrive in Georgia and settle into your new environment. We provide airport reception, help with hostel/accommodation check-in, local SIM registration, opening a bank account, and city orientation. Attend the university's official orientation program to get started.",
-    icon: "bx bx-map-pin"
-  }
+    description:
+      "Arrive in Georgia and settle into your new environment. We provide airport reception, help with hostel/accommodation check-in, local SIM registration, opening a bank account, and city orientation. Attend the university's official orientation program to get started.",
+    icon: "bx bx-map-pin",
+  },
 ];
 
 const HowToApply = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [showPdfModal, setShowPdfModal] = useState(false);
-  
+
   const handleStepChange = (index) => {
     // Prevent rapid clicking during animation
     if (animating) return;
-    
+
     setAnimating(true);
     setCurrentStep(index);
-    
+
     // Reset animation state after transition completes
     setTimeout(() => {
       setAnimating(false);
@@ -90,14 +98,14 @@ const HowToApply = () => {
   // Calculate the position of the plane along the curved path
   const calculatePlanePosition = () => {
     const progress = currentStep / (applicationSteps.length - 1);
-    
+
     // X position (horizontal) - linear from 0% to 100%
     const xPosition = `${progress * 100}%`;
-    
+
     // Y position (vertical) - parabolic curve to create arc
     // Goes down and then up in an arc shape (-20px at the middle)
     const yOffset = -20 * Math.sin(Math.PI * progress);
-    
+
     return {
       left: xPosition,
       top: `calc(50% + ${yOffset}px)`,
@@ -107,13 +115,13 @@ const HowToApply = () => {
   // Calculate rotation based on position in the curve
   const calculatePlaneRotation = () => {
     const progress = currentStep / (applicationSteps.length - 1);
-    
+
     // At start: slight upward angle (negative degrees)
     // Middle: level (0 degrees)
     // End: slight downward angle (positive degrees)
     // Creates a smooth rotation that follows the arc
     const rotation = 10 * Math.sin((progress - 0.5) * Math.PI);
-    
+
     return `rotate(${rotation}deg)`;
   };
 
@@ -123,9 +131,9 @@ const HowToApply = () => {
   // Handle PDF download
   const handleDownloadPdf = () => {
     // Create a link element
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = nmcRegulations;
-    link.download = 'NMC-Regulations.pdf';
+    link.download = "NMC-Regulations.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -135,9 +143,9 @@ const HowToApply = () => {
   // Handle document checklist download
   const handleDownloadDocumentChecklist = () => {
     // Create a link element
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = documentList;
-    link.download = 'Document_Checklist.pdf';
+    link.download = "Document_Checklist.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -145,31 +153,30 @@ const HowToApply = () => {
 
   return (
     <>
+      {/* Updated hero section to match University page styling */}
       <div
-        className="duration-200 flex items-center relative"
+        className="hero-section"
         style={{
           backgroundImage: `url(${heroSectionImg})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          height: "450px", // Fixed height of 450px
         }}
       >
-        {/* Hero content overlay */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        {/* Dark overlay for text readability */}
+        <div className="hero-overlay"></div>
 
-        {/* Hero content */}
-        <div className="container mx-auto px-4 relative z-10 text-left ml-5">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4 ">
-            <span className="text-white playfair-display">
-              How to Apply for MBBS
-            </span>{" "}
-            <br />
-            <span className="text-[#ff5a5f] playfair-display">in Georgia</span>
-          </h1>
-          <p className="text-xl text-white max-w-2xl  ">
-            A step-by-step guide to your medical education journey in Georgia
-          </p>
+        <div className="hero-content">
+          <div className="hero-content-wrapper">
+            <h1 className="hero-title">
+              <span>How to Apply for MBBS </span>
+              <span className="hero-accent">in Georgia</span>
+            </h1>
+
+            <p className="hero-subtitle">
+              A step-by-step guide to your medical education journey in Georgia
+            </p>
+          </div>
         </div>
       </div>
 
@@ -289,7 +296,7 @@ const HowToApply = () => {
             {/* Light blue background wrapper */}
             <div className="bg-blue-50 p-4 sm:p-6">
               {/* White content area - increased minimum height */}
-              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[300px] flex flex-col">
+              <div className="bg-white rounded-xl p-6 sm:p-8 min-h-[360px] flex flex-col">
                 <div className="flex flex-col md:flex-row md:items-start">
                   {/* Left side with icon */}
                   <div className="md:w-1/4 text-center mb-6 md:mb-0 flex flex-col items-center mt-23">

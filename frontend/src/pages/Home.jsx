@@ -1,6 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import {
+  ChevronLeft,
+  ChevronRight,
+  University,
+  FileCheck,
+  House,
+  Send,
+  LibraryBig,
+  TicketsPlane,
+  Briefcase,
+  Users,
+} from "lucide-react";
 import {
   FaUserGraduate,
   FaShieldAlt,
@@ -16,8 +28,8 @@ import {
   FaPassport,
 } from "react-icons/fa";
 import srLogo from "../assets/logo.png";
-// import { motion, useAnimation } from "framer-motion";
-
+import mbbsimage1 from "../assets/mbbsimage1.jpg";
+import mbbsimage3 from "../assets/mbbsimage3.jpg";
 /**
  * Constants and data objects for the entire application
  * Grouped for easy maintenance and modifications
@@ -75,34 +87,35 @@ const DATA = {
   carouselSlides: [
     {
       title: (
+        <h2 className="hero-title mt-10">
+          <span>Missed </span>
+          <span className="hero-accent">NEET?</span>
+        </h2>
+      ),
+
+      description: (
         <>
-          <h2 className="text-5xl playfair-display">
-            <span className="text-[#232a36]">Missed </span>
-            <span className="text-red-400 ">NEET?</span>
+          <h2 className="hero-subtitle">
+            Don't Miss Your Dream,
+            <br />
+            Study <span className="hero-accent">MBBS in Georgia!</span>
           </h2>
+          <p className="hero-subtitle ">
+            "Every year, thousands of deserving students lose hope. But their
+            dreams don't end there and neither should yours."
+          </p>
         </>
       ),
-      subtitle: (
-        <>
-          <h2 className="text-lg  font-semibold  text-[#232a36]">
-            Don't Miss Your Dream
-          </h2>
-          <h3 className="text-3xl">
-            Study <span className="text-red-400">MBBS in Georgia</span>
-          </h3>
-        </>
-      ),
-      description:
-        "Every year, thousands of deserving students lose hope. But their dreams don't end there and neither should yours.",
       buttons: [
-        { to: "/HowToApply", text: "Apply Now", primary: true },
-        { to: "/AboutGeorgia", text: "Learn More", primary: false },
+        { to: "/how-to-apply", text: "Apply Now", primary: true },
+        { to: "/about-georgia", text: "Learn More", primary: false },
       ],
       image: {
-        src: "/src/assets/graduation-cap.png",
-        alt: "Graduation Cap",
-        className: "w-40 h-40 mx-auto",
-        containerClass: "p-6",
+        src: mbbsimage1,
+        alt: "Medical Student",
+        className:
+          "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l11 6l9-4.91V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
       },
@@ -110,65 +123,61 @@ const DATA = {
     {
       title: (
         <>
-          <span className="text-[#232a36] playfair-display">Explore</span>
-          <span className="text-red-400 playfair-display"> Universities</span>
+          <h2 className="hero-title">
+            <span className="">Explore</span>
+            <span className="text-red-400"> Universities</span>
+          </h2>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-5xl playfair-display text-[#232a36]">
+          <h2 className="hero-subtitle">
             Find the Perfect Medical University
-          </h2>
-          <h3 className="text-3xl">
+            <br />
             <span className="text-red-400">12+ NMC</span> Approved Options
-          </h3>
+          </h2>
         </>
       ),
-
       buttons: [
         { to: "/Universities", text: "View All Universities", primary: true },
       ],
       image: {
-        src: "/src/assets/university.jpg",
+        src: "/src/assets/home_Img_2.png",
         alt: "Georgian University",
-        className: "rounded-lg max-h-full object-cover",
+        className:
+          "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass: "flex items-center justify-center h-full w-full",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3m4.82 14L12 19.5L7.18 17v-4.77L12 14.5l4.82-2.27v4.77Z'/%3E%3C/svg%3E",
       },
     },
     {
       title: (
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          <span className="text-[#232a36] playfair-display">
-            Student Success
-          </span>
-          <span className="text-red-400 playfair-display"> Stories</span>
+        <h1 className="hero-title">
+          <span className="">Student Success</span>
+          <span className="text-red-400"> Stories</span>
         </h1>
       ),
       subtitle: (
         <>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36]">
+          <h2 className="hero-subtitle">
             Hear from our Alumni
-          </h2>
-          <h3 className="text-lg md:text-xl lg:text-2xl">
+            <br />
             Real <span className="text-red-400">Experiences</span>, Real Success
-          </h3>
+          </h2>
         </>
       ),
 
-      testimonial: {
-        quote:
-          "Studying MBBS in Georgia was the best decision of my life — excellent education and global exposure shaped my career.",
-        name: "Dr. Priya Sharma",
-        designation: "Batch of 2020",
-      },
       buttons: [
         { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
       image: {
-        src: "/src/assets/students.jpg",
+        src: mbbsimage3,
         alt: "Student Success",
-        className: "rounded-lg max-h-full object-cover",
+        className:
+          "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
+        containerClass:
+          "flex items-center justify-center h-full w-full overflow-hidden",
         fallbackSrc:
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23433772' d='M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9A3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42c-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3a3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9c-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65c2.56.34 4.45 1.51 4.45 2.9V20Z'/%3E%3C/svg%3E",
       },
@@ -328,49 +337,49 @@ const DATA = {
   services: [
     {
       title: "University Selection & Admission Guidance",
-      icon: "🏫",
+      icon: <University size={32} className="text-black" />,
       description:
         "Personalized university selection based on your academic profile, budget, and career goals.",
     },
     {
       title: "Document Preparation & Verification",
-      icon: "📋",
+      icon: <FileCheck size={32} className="text-black" />,
       description:
         "Complete assistance with application forms, document verification, and translation services.",
     },
     {
       title: "Visa Application & Interview Preparation",
-      icon: "🛂",
+      icon: <TicketsPlane size={32} className="text-black" />,
       description:
         "Step-by-step guidance for visa application and mock interviews to ensure visa success.",
     },
     {
       title: "Accommodation & Pre-Departure Assistance",
-      icon: "🏠",
+      icon: <House size={32} className="text-black" />,
       description:
         "Securing comfortable and affordable accommodation before you arrive in Georgia.",
     },
     {
       title: "Airport Pickup & University Registration",
-      icon: "✈",
+      icon: <Send size={32} className="text-black" />,
       description:
         "Smooth arrival with pickup service and assistance with university registration process.",
     },
     {
       title: "Ongoing Academic & Personal Support",
-      icon: "📚",
+      icon: <LibraryBig size={32} className="text-black" />,
       description:
         "Regular check-ins and assistance with academic challenges throughout your program.",
     },
     {
       title: "Career Guidance & Placement Assistance",
-      icon: "💼",
+      icon: <Briefcase size={32} className="text-black" />,
       description:
         "Career counseling, internship opportunities, and job placement support after graduation.",
     },
     {
       title: "Alumni Network & Mentorship",
-      icon: "👥",
+      icon: <Users size={32} className="text-black" />,
       description:
         "Connect with successful alumni and receive mentorship from practicing doctors.",
     },
@@ -1228,7 +1237,7 @@ const Home = () => {
      * Handle image click events - detects double-clicks for zoom toggle
      * @param {Event} e - Click event
      */
-    const handleImageClick = (e) => {
+    const handleImageClick = () => {
       const currentTime = new Date().getTime();
       const clickTimeDiff = currentTime - lastClickTime.current;
 
@@ -1612,154 +1621,83 @@ const Home = () => {
     );
   };
 
+  // Auto-slide effect for carousel
+  useEffect(() => {
+    // Set up auto-slide timer
+    const autoSlideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    }, 5000); // 5 seconds interval
+
+    // Cleanup timer on component unmount
+    return () => {
+      clearInterval(autoSlideTimer);
+    };
+  }, [totalSlides]);
+
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section - Dynamic carousel with multiple content types */}
-      <div
-        ref={heroSectionRef}
-        className="relative h-[450px] z-0"
-        style={{
-          paddingTop: "0px", // Dynamically adjusted by useEffect
-        }}
-      >
-        {/* Carousel slides */}
+      {/* Hero Section with exact styling matching University page's header */}
+      <div ref={heroSectionRef} className="hero-section">
         {DATA.carouselSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out`}
+            style={{
+              opacity: currentSlide === index ? 1 : 0,
+              visibility: currentSlide === index ? "visible" : "hidden",
+              zIndex: currentSlide === index ? 10 : 0,
+            }}
           >
-            <div className="max-w-7xl mx-auto px-4 md:px-8 h-full">
-              <div className="flex flex-col md:flex-row items-center justify-between h-full py-4">
-                {/* Content side */}
-                <div className="md:w-5/12 lg:w-5/12 md:pr-4">
-                  <div className="space-y-3">
-                    {/* Main heading */}
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                      {slide.title}
-                    </h1>
+            {/* Background Image */}
+            <img
+              src={slide.image.src}
+              alt={slide.image.alt}
+              className="hero-image"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = slide.image.fallbackSrc;
+              }}
+            />
 
-                    {/* Subtitle with conditional rendering */}
-                    <div className="py-2">
-                      {index === 0 ? (
-                        <>
-                          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#232a36] leading-tight">
-                            Don't Miss Your Dream
-                          </h2>
-                          <h3 className="text-lg md:text-xl lg:text-2xl">
-                            Study{" "}
-                            <span className="text-[#e44e50]">
-                              MBBS in Georgia
-                            </span>
-                          </h3>
-                        </>
-                      ) : (
-                        <div className="text-base md:text-lg lg:text-xl">
-                          {slide.subtitle}
-                        </div>
-                      )}
+            {/* Dark Overlay */}
+            <div className="hero-overlay"></div>
+
+            <div className="hero-content">
+              <div className="hero-content-wrapper">
+                {/* Content with subtle entrance animation */}
+                <div
+                  className={currentSlide === index ? "animate-fade-in" : ""}
+                >
+                  {slide.title}
+
+                  <div className="mt-2">{slide.subtitle}</div>
+
+                  {slide.description && (
+                    <p className="hero-description">{slide.description}</p>
+                  )}
+
+                  {/* Call to action buttons */}
+                  {slide.buttons && (
+                    <div className="hero-buttons">
+                      {slide.buttons.map((button, idx) => (
+                        <Link
+                          key={idx}
+                          to={
+                            button.text === "Learn More"
+                              ? "/AboutGeorgia"
+                              : button.to
+                          }
+                          className={`hero-button ${
+                            button.primary
+                              ? "hero-button-primary"
+                              : "hero-button-secondary"
+                          }`}
+                        >
+                          {button.text}
+                        </Link>
+                      ))}
                     </div>
-
-                    {/* Description */}
-                    <p className="text-sm md:text-base text-[#4a5568] line-clamp-2 md:line-clamp-3 max-w-md">
-                      {slide.description}
-                    </p>
-
-                    {/* Optional statistics grid */}
-                    {slide.stats && (
-                      <div className="grid grid-cols-2 gap-3 py-2 max-w-md">
-                        {slide.stats.map((stat, idx) => (
-                          <div
-                            key={idx}
-                            className="text-center p-2 bg-red-50 rounded-lg shadow-sm hover:shadow transition-shadow duration-300"
-                          >
-                            <h3 className="text-lg md:text-xl font-bold text-[#e44e50]">
-                              {stat.value}
-                            </h3>
-                            <p className="text-xs md:text-sm text-[#4a5568]">
-                              {stat.label}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Optional testimonial quote */}
-                    {slide.testimonial && (
-                      <div className="bg-white p-2 rounded-lg shadow-md max-w-md border-l-2 border-red-400">
-                        <p className="text-[#4a5568] italic text-xs md:text-sm line-clamp-2">
-                          "{slide.testimonial.quote}"
-                        </p>
-                        <div className="mt-1 flex items-center">
-                          <div className="h-5 w-5 rounded-full bg-gray-300"></div>
-                          <div className="ml-2">
-                            <p className="font-medium text-xs">
-                              {slide.testimonial.name}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              {slide.testimonial.designation}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Action buttons */}
-                    {slide.buttons && (
-                      <div
-                        className={`${
-                          slide.buttons.length > 1 ? "flex gap-3" : ""
-                        } pt-2`}
-                      >
-                        {slide.buttons.map((button, idx) => (
-                          <Link
-                            key={idx}
-                            to={
-                              button.text === "Learn More"
-                                ? "/AboutGeorgia"
-                                : button.to
-                            }
-                            className={`inline-block px-4 py-2 md:px-5 md:py-2 ${
-                              button.primary
-                                ? "bg-red-500 text-white hover:bg-red-600 shadow-sm"
-                                : "border border-red-500 text-red-500 hover:bg-red-50"
-                            } font-medium rounded-lg transition text-xs md:text-sm ${
-                              button.className || ""
-                            }`}
-                          >
-                            {button.text}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Image side */}
-                <div className="md:w-6/12 lg:w-6/12 flex justify-center mt-4 md:mt-0">
-                  <div className="bg-white p-4 rounded-lg shadow-md w-full max-h-[320px] flex items-center justify-center overflow-hidden transition-transform hover:shadow-lg duration-300">
-                    <div
-                      className={
-                        slide.image.containerClass ||
-                        "h-full w-full flex items-center justify-center"
-                      }
-                    >
-                      <img
-                        src={slide.image.src}
-                        alt={slide.image.alt}
-                        className={`${
-                          index === 0
-                            ? "w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48"
-                            : "max-h-[300px] w-auto object-contain rounded-lg"
-                        } transition-all duration-500 hover:scale-105 shadow-sm`}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = slide.image.fallbackSrc;
-                        }}
-                      />
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1769,30 +1707,29 @@ const Home = () => {
         {/* Navigation controls */}
         <button
           onClick={goToPrevSlide}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 rounded-full z-20 transition-all duration-300"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={18} className="text-gray-800" />
+          <ChevronLeft size={20} className="text-white" />
         </button>
 
         <button
           onClick={goToNextSlide}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 md:p-3 rounded-full shadow-lg z-20 transition-all hover:scale-110 duration-300"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-2 rounded-full z-20 transition-all duration-300"
           aria-label="Next slide"
         >
-          <ChevronRight size={18} className="text-gray-800" />
+          <ChevronRight size={20} className="text-white" />
         </button>
 
-        {/* Pagination indicators */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
           {[...Array(totalSlides)].map((_, i) => (
             <button
               key={i}
               onClick={() => goToSlide(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 currentSlide === i
                   ? "bg-red-500 scale-125"
-                  : "bg-gray-400 hover:bg-gray-600 hover:scale-110"
+                  : "bg-gray-400 hover:bg-gray-300"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             ></button>
@@ -1813,6 +1750,22 @@ const Home = () => {
           div::-webkit-scrollbar-thumb {
             background-color: rgba(203, 213, 225, 0.5);
             border-radius: 20px;
+          }
+
+          /* Content fade-in animation */
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
           }
         `}
       </style>
@@ -1884,16 +1837,101 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Flip card CSS */}
-      <style>
-        {`
-          .perspective { perspective: 1200px; }
-          .transform-style-preserve-3d { transform-style: preserve-3d; }
-          .backface-hidden { backface-visibility: hidden; }
-          .rotate-y-180 { transform: rotateY(180deg); }
-          .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
-        `}
-      </style>
+      {/* Why Choose Us - Grid Section */}
+      <section className="py-20 bg-white flex flex-col items-center">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Why Choose <span className="text-red-500">SR Counselling</span> for
+          Your Georgian Journey?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {DATA.whyUsFeatures.map((feature, idx) => (
+            <div
+              key={idx}
+              className="relative w-72 h-44 mx-auto cursor-pointer perspective"
+              onMouseEnter={() =>
+                setFlipped(flipped.map((f, i) => (i === idx ? true : f)))
+              }
+              onMouseLeave={() =>
+                setFlipped(flipped.map((f, i) => (i === idx ? false : f)))
+              }
+            >
+              <div
+                className={`transition-transform duration-500 transform-style-preserve-3d w-full h-full ${
+                  flipped[idx] ? "rotate-y-180" : ""
+                }`}
+              >
+                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border border-gray-100 backface-hidden">
+                  <div className="bg-red-500 text-white rounded-full p-4 mb-4 shadow-lg">
+                    {feature.icon}
+                  </div>
+                  <h4 className="text-lg font-semibold text-[#232a36]">
+                    {feature.front}
+                  </h4>
+                </div>
+                <div className="absolute w-full h-full flex flex-col items-center justify-center bg-red-500 text-white rounded-xl shadow-lg border border-red-200 rotate-y-180 backface-hidden px-6">
+                  <h4 className="text-lg font-bold mb-2">{feature.title}</h4>
+                  <p className="text-sm">{feature.back}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats Bar */}
+        <div className="w-full max-w-3xl bg-gray-50 rounded-lg shadow flex flex-wrap justify-center items-center gap-6 py-6 px-4 mb-12">
+          {DATA.srStats.map((stat, idx) => (
+            <div key={idx} className="flex flex-col items-center mx-4">
+              <span className="text-2xl font-bold text-red-500">
+                {stat.value}
+              </span>
+              <span className="text-xs text-gray-600">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Logo, tagline, CTA - with larger logo and removed SR Counselling text */}
+        <div className="flex flex-col items-center">
+          <img src={srLogo} alt="SR Counselling" className="h-24 w-24 mb-6" />
+          {/* Text "SR Counselling" removed */}
+          <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
+            Let us guide you to your dream medical career in Georgia with
+            expertise, support, and trust.
+          </p>
+          <a
+            href="https://www.srcounselling.in/about.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition"
+          >
+            <span>Learn More About Us</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 ml-2 flex-shrink-0"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        {/* Flip card CSS */}
+        <style>
+          {`
+            .perspective { perspective: 1200px; }
+            .transform-style-preserve-3d { transform-style: preserve-3d; }
+            .backface-hidden { backface-visibility: hidden; }
+            .rotate-y-180 { transform: rotateY(180deg); }
+            .rotate-y-180 .backface-hidden { backface-visibility: hidden; }
+          `}
+        </style>
+      </section>
+
+      {/* Additional Sections */}
       <OurServices />
       <StudentTestimonials />
       <WallOfFame />

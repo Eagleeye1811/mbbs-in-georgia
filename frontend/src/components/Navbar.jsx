@@ -2,42 +2,134 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
+/**
+ * Navigation items configuration
+ * Defines the main navigation structure for the application
+ */
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About Georgia", href: "/about-georgia" },
-  { name: "How To Apply", href: "/how-to-apply" },
   { name: "Universities", href: "/universities" },
-  { name: "Student Testimonials", href: "/testimonials" },
-  { name: "FAQs", href: "/faq" },
   { name: "Student LifeStyle", href: "/students-life" },
-]; 
+  { name: "Student Testimonials", href: "/testimonials" },
+  { name: "How To Apply", href: "/how-to-apply" },
+  { name: "FAQs", href: "/faq" },
+];
 
+/**
+ * Navbar component - Fixed top navigation with responsive design
+ * Includes language selection and mobile responsive menu
+ * @returns {JSX.Element} The rendered navbar
+ */
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  /**
+   * Updates navbar height variable and handles scroll events
+   */
+  useEffect(() => {
+    // Function to update CSS variable with navbar height
+    const updateNavbarHeight = () => {
+      const navbar = document.querySelector("nav");
+      if (navbar) {
+        const height = navbar.offsetHeight;
+        document.documentElement.style.setProperty(
+          "--navbar-height",
+          `${height}px`
+        );
+      }
+    };
+
+    // Handle scroll events for visual changes
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    // Initial setup
+    updateNavbarHeight();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateNavbarHeight);
+
+    // Handle Google Translate iframe changes which can affect layout
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "childList" &&
+          (document.querySelector(".skiptranslate") ||
+            document.querySelector(".goog-te-banner-frame"))
+        ) {
+          updateNavbarHeight();
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateNavbarHeight);
+      observer.disconnect();
+    };
+  }, [menuOpen]);
+
+  /**
+   * Initialize Google Translate when component mounts
+   */
+  useEffect(() => {
+    if (window.google && window.google.translate) {
+      window.googleTranslateElementInit();
+    }
+  }, [menuOpen]);
+
+  /**
+   * Handles navigation and closes mobile menu
+   * @param {string} href - Target path to navigate to
+   */
   const handleNavClick = (href) => {
     navigate(href);
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    // Ensure that the Google Translate widget is initialized
-    if (window.google && window.google.translate) {
-      window.googleTranslateElementInit();
-    }
-  }, []);
-
+  /**
+   * Handles language selection change
+   * @param {Event} event - The change event from select element
+   */
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
 
     try {
-      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+      if (
+        window.google &&
+        window.google.translate &&
+        window.google.translate.TranslateElement
+      ) {
         const translateSelect = document.querySelector(".goog-te-combo");
         if (translateSelect) {
           translateSelect.value = selectedLanguage;
           translateSelect.dispatchEvent(new Event("change"));
+
+          // After translation, force navbar height recalculation
+          setTimeout(() => {
+            const navbar = document.querySelector("nav");
+            if (navbar) {
+              const height = navbar.offsetHeight;
+              document.documentElement.style.setProperty(
+                "--navbar-height",
+                `${height}px`
+              );
+            }
+          }, 500);
         } else {
           console.error("Google Translate dropdown not found.");
         }
@@ -50,98 +142,108 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#232a36] w-full shadow ">
-      <div className="max-w-[1440px] mx-auto px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="georgia-logo text-white text-2xl font-bold mr-16 hover:text-[#FF6B4E]">
-            GEORGIA
-          </div>
+    <>
+      <nav
+        className={`bg-[#232a36] w-full shadow fixed top-0 left-0 z-50 transition-all duration-200 ${
+          scrolled ? "shadow-md" : ""
+        }`}
+      >
+        <div className="max-w-[1440px] mx-auto px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="georgia-logo text-white text-2xl font-bold mr-16 hover:text-[#FF6B4E]">
+              GEORGIA
+            </div>
 
-          {/* Center nav items */}
-          <div className="hidden lg:flex flex-grow justify-center">
-            <div className="flex space-x-6">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`text-sm font-medium px-2 py-2 rounded-md transition ${
-                    location.pathname === item.href
-                      ? "bg-red-500 text-white"
-                      : "text-white hover:bg-gray-700"
-                  }`}
+            {/* Desktop navigation items */}
+            <div className="hidden lg:flex flex-grow justify-center">
+              <div className="flex space-x-6">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className={`text-sm font-medium px-2 py-2 rounded-md transition ${
+                      location.pathname === item.href
+                        ? "bg-red-500 text-white"
+                        : "text-white hover:bg-gray-700"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Language selector */}
+            <div className="lang">
+              <select id="languageSelect" onChange={handleLanguageChange}>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="bn">Bengali</option>
+                <option value="te">Telugu</option>
+                <option value="ml">Malayalam</option>
+                <option value="gu">Gujarati</option>
+                <option value="kn">Kannada</option>
+                <option value="mr">Marathi</option>
+              </select>
+            </div>
+
+            {/* Mobile menu toggle button */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-white p-2"
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {item.name}
-                </button>
-              ))}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={
+                      menuOpen
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
+                  />
+                </svg>
+              </button>
             </div>
           </div>
+        </div>
 
-          {/* Google Translate Button */}
-          <div className="lang">
-      <select id="languageSelect" onChange={handleLanguageChange}>
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="ta">Tamil</option>
-        <option value="bn">Bengali</option>
-        <option value="te">Telugu</option>
-        <option value="ml">Malayalam</option>
-        <option value="gu">Gujarati</option>
-        <option value="kn">Kannada</option>
-        <option value="mr">Marathi</option>
-      </select>
-      </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white p-2"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+        {/* Mobile menu items */}
+        {menuOpen && (
+          <div className="lg:hidden flex flex-col gap-1 py-3 bg-[#232a36]">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavClick(item.href)}
+                className={`px-3 py-2 text-left text-sm font-medium transition ${
+                  location.pathname === item.href
+                    ? "bg-red-500 text-white"
+                    : "text-white hover:bg-gray-700"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    menuOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
-            </button>
+                {item.name}
+              </button>
+            ))}
+            <div className="px-3 py-2">
+              <div id="google_translate_element"></div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+      </nav>
 
-      {/* Mobile Menu Items */}
-      {menuOpen && (
-        <div className="lg:hidden flex flex-col gap-1 py-3 ">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => handleNavClick(item.href)}
-              className={`px-3 py-2 text-left text-sm font-medium transition ${
-                location.pathname === item.href
-                  ? "bg-red-500 text-white"
-                  : "text-white hover:bg-gray-700"
-              }`}
-            >
-              {item.name}
-            </button>
-          ))}
-          <div className="px-3 py-2">
-            <div id="google_translate_element"></div>
-          </div>
-        </div>
-      )}
-    </nav>
+      {/* Spacer div that takes up exactly the same space as the navbar */}
+      <div id="navbar-spacer" aria-hidden="true"></div>
+    </>
   );
 };
 
