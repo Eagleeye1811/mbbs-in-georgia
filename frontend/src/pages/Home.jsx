@@ -76,7 +76,7 @@ const DATA = {
     {
       title: (
         <>
-          <h2 className="text-5xl">
+          <h2 className="text-5xl playfair-display">
             <span className="text-[#232a36]">Missed </span>
             <span className="text-red-400 ">NEET?</span>
           </h2>
@@ -84,7 +84,7 @@ const DATA = {
       ),
       subtitle: (
         <>
-          <h2 className="text-lg  font-semibold text-[#232a36]">
+          <h2 className="text-lg  font-semibold  text-[#232a36]">
             Don't Miss Your Dream
           </h2>
           <h3 className="text-3xl">
@@ -110,13 +110,13 @@ const DATA = {
     {
       title: (
         <>
-          <span className="text-[#232a36]">Explore</span>
-          <span className="text-red-400"> Universities</span>
+          <span className="text-[#232a36] playfair-display">Explore</span>
+          <span className="text-red-400 playfair-display"> Universities</span>
         </>
       ),
       subtitle: (
         <>
-          <h2 className="text-5xl font-semibold text-[#232a36]">
+          <h2 className="text-5xl playfair-display text-[#232a36]">
             Find the Perfect Medical University
           </h2>
           <h3 className="text-3xl">
@@ -139,8 +139,10 @@ const DATA = {
     {
       title: (
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          <span className="text-[#232a36]">Student Success</span>
-          <span className="text-red-400"> Stories</span>
+          <span className="text-[#232a36] playfair-display">
+            Student Success
+          </span>
+          <span className="text-red-400 playfair-display"> Stories</span>
         </h1>
       ),
       subtitle: (
