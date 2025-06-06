@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
+
 /**
  * Navigation items configuration
  * Defines the main navigation structure for the application
@@ -152,6 +153,11 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="georgia-logo text-white text-2xl font-bold mr-16 hover:text-[#FF6B4E]">
+              <img
+              src="/Georgia_logo.png"
+              alt="Georgia Logo"
+              className="w-12 h-12 inline-block mr-2 object-contain mb-1"
+              ></img>
               GEORGIA
             </div>
 
@@ -173,6 +179,8 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
+
+            
 
             {/* Language selector */}
             <div className="lang">
@@ -243,6 +251,7 @@ const Navbar = () => {
 
       {/* Spacer div that takes up exactly the same space as the navbar */}
       <div id="navbar-spacer" aria-hidden="true"></div>
+      
     </>
   );
 };
