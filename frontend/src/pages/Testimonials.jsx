@@ -12,7 +12,7 @@ const Testimonials = () => {
           className="hero-image"
         />
         {/* Keep the existing gradient overlay */}
-        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent"></div>
+        <div className="hero-overlay bg-gradient-to-r from-black/10 to-transparent"></div>
 
         <div className="hero-content">
           <div className="hero-content-wrapper">
