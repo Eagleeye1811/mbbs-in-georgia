@@ -1,7 +1,7 @@
 import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube} from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Adjust the path if needed
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
