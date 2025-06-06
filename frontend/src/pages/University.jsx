@@ -2,17 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UniversityCard from "../components/UniversityCard";
 
-// Import university images
-import university1Logo from "/Caucasus_University.jpg";
-import university2Logo from "/TSM_University.jpeg";
-import university3Logo from "/Ilia_State_University.jpg";
-import university4Logo from "/Caucasus_International_University.jpg";
-import university5Logo from "/New_Vision_University.webp";
-import university6Logo from "/David_Tvildiani_Medical_University.webp";
-import university7Logo from "/ALTE_University.png";
-import university8Logo from "/IBSU_University.webp";
-import university9Logo from "/ATSU_University.jpg";
-import university10Logo from "/Geomedi_Medical_University.jpeg";
 
 // Statistics data
 const stats = [
@@ -25,12 +14,11 @@ const stats = [
 // Universities data
 const universities = [
   {
-    image: university1Logo,
+    image: "./Uni-photos/Caucasus_University.jpg",
     name: "Caucasus University",
     location: "Tbilisi, Georgia",
     year: 2004,
     type: "Private",
-    path: "/universities/caucasus-university",
     highlights: [
       "Affordable Fees",
       "Modern Campus",
@@ -39,12 +27,11 @@ const universities = [
     ],
   },
   {
-    image: university2Logo,
+    image: "./Uni-photos/TSM_University.jpeg",
     name: "Tbilisi State Medical University",
     location: "Tbilisi, Georgia",
     year: 1918,
     type: "Public",
-    path: "/universities/tbilisi-state-medical-university",
     highlights: [
       "Top-Ranked Programs",
       "Experienced Faculty",
@@ -53,12 +40,11 @@ const universities = [
     ],
   },
   {
-    image: university3Logo,
+    image: "./Uni-photos/Ilia_State_University.jpg",
     name: "Ilia State University",
     location: "Tbilisi, Georgia",
     year: 2006,
     type: "Public",
-    path: "/universities/ilia-state-university",
     highlights: [
       "Innovative Research",
       "Affordable Tuition",
@@ -67,12 +53,11 @@ const universities = [
     ],
   },
   {
-    image: university4Logo,
+    image: "./Uni-photos/Caucasus_International_University.jpg",
     name: "Caucasus International University",
     location: "Tbilisi, Georgia",
     year: 1995,
     type: "Private",
-    path: "/universities/caucasus-international-university",
     highlights: [
       "Student-Centered Learning",
       "Affordable Fees",
@@ -81,12 +66,11 @@ const universities = [
     ],
   },
   {
-    image: university5Logo,
+    image: "./Uni-photos/New_Vision_University.webp",
     name: "New Vision University",
     location: "Tbilisi, Georgia",
     year: 2013,
     type: "Private",
-    path: "/universities/new-vision-university",
     highlights: [
       "Modern Facilities",
       "Affordable Fees",
@@ -95,12 +79,11 @@ const universities = [
     ],
   },
   {
-    image: university6Logo,
+    image: "./Uni-photos/David_Tvildiani_Medical_University.webp",
     name: "David Tvildiani Medical University",
     location: "Tbilisi, Georgia",
     year: 1989,
     type: "Private",
-    path: "/universities/david-tvildiani-medical-university",
     highlights: [
       "Medical Excellence",
       "Affordable Tuition",
@@ -109,12 +92,11 @@ const universities = [
     ],
   },
   {
-    image: university7Logo,
+    image: "./Uni-photos/ALTE_University.png",
     name: "ALTE University",
     location: "Tbilisi, Georgia",
     year: 2002,
     type: "Private",
-    path: "/universities/alte-university",
     highlights: [
       "Innovative Programs",
       "Affordable Fees",
@@ -123,12 +105,11 @@ const universities = [
     ],
   },
   {
-    image: university8Logo,
+    image: "./Uni-photos/IBSU_University.webp",
     name: "International Black Sea University (IBSU)",
     location: "Tbilisi, Georgia",
     year: 1995,
     type: "Private",
-    path: "/universities/ibsu-university",
     highlights: [
       "Diverse Community",
       "Affordable Tuition",
@@ -137,12 +118,11 @@ const universities = [
     ],
   },
   {
-    image: university9Logo,
+    image: "./Uni-photos/ATSU_University.jpg",
     name: "Akaki Tsereteli State University (ATSU)",
     location: "Tbilisi, Georgia",
     year: 1930,
     type: "Private",
-    path: "/universities/georgian-national-university-seu",
     highlights: [
       "Student-Centered Learning",
       "Affordable Fees",
@@ -151,12 +131,11 @@ const universities = [
     ],
   },
   {
-    image: university10Logo,
+    image: "./Uni-photos/Geomedi_Medical_University.jpeg",
     name: "Geomedi Medical University",
     location: "Tbilisi, Georgia",
     year: 1998,
     type: "Private",
-    path: "/universities/geomedi-medical-university",
     highlights: [
       "Medical Excellence",
       "Affordable Tuition",
@@ -178,8 +157,7 @@ export default function University() {
       const matchesFilter =
         active === "all" ||
         (active === "public" && university.type === "Public") ||
-        (active === "private" && university.type === "Private") ||
-        (active === "tbilisi" && university.location.includes("Tbilisi"));
+        (active === "private" && university.type === "Private");
 
       const matchesSearch =
         university.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -198,8 +176,7 @@ export default function University() {
         return (
           active === "all" ||
           (active === "public" && university.type === "Public") ||
-          (active === "private" && university.type === "Private") ||
-          (active === "tbilisi" && university.location.includes("Tbilisi"))
+          (active === "private" && university.type === "Private")
         );
       });
       setFilteredUniversities(updatedUniversities);

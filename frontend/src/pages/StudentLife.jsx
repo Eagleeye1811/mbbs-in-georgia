@@ -31,8 +31,6 @@ const StudentLife = () => {
               Studying in Georgia isn't just about earning a degree; it's about
               discovering who you are in a world far from home
             </p>
-
-
           </div>
         </div>
       </div>
