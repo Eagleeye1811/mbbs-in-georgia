@@ -16,7 +16,7 @@ const Testimonials = () => {
 
         <div className="hero-content">
           <div className="hero-content-wrapper">
-            <h1 className="hero-title">
+            <h1 className="hero-title ">
               Student <span className="hero-accent">Testimonials</span>
             </h1>
             <p className="hero-subtitle">

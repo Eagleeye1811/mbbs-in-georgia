@@ -124,15 +124,15 @@ function Faq() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full">
             <div className="md:w-3/5 mb-8 md:mb-0 md:pr-8">
               <h1 className="text-5xl font-bold mb-4">
-                <span className="text-white inline-block transition-transform duration-300 hover:translate-x-2">
+                <span className="text-white inline-block playfair-display transition-transform duration-300 hover:translate-x-2">
                   Frequently Asked
                 </span>
                 <br />
-                <span className="text-[#ff5a5f] inline-block transition-all duration-300 hover:text-[#ff7b80] hover:translate-x-2">
+                <span className="text-[#ff5a5f] inline-block playfair-display transition-all duration-300 hover:text-[#ff7b80] hover:translate-x-2">
                   Questions
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-2xl transition-all duration-300 hover:text-white">
+              <p className="text-xl text-gray-300 max-w-2xl baskervville transition-all duration-300 hover:text-white">
                 Everything you need to know about studying MBBS in Georgia
               </p>
 
