@@ -11,12 +11,13 @@ const Testimonials = () => {
           alt="Student Testimonials"
           className="hero-image"
         />
-        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent absolute inset-0"></div>
+        {/* Keep the existing gradient overlay */}
+        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent"></div>
 
-        <div className="hero-content absolute inset-0 flex items-center justify-center z-10">
-          <div className="hero-content-wrapper text-center text-white">
-            <h1 className="hero-title text-5xl font-bold">
-              Student <span className="hero-accent text-red-500">Testimonials</span>
+        <div className="hero-content">
+          <div className="hero-content-wrapper">
+            <h1 className="hero-title">
+              Student <span className="hero-accent">Testimonials</span>
             </h1>
             <p className="hero-subtitle text-lg mt-4">
               Hear directly from our students about their experiences studying
