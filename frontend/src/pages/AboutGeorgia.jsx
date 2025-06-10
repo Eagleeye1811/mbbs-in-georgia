@@ -1,53 +1,32 @@
 import React, { useEffect, useRef } from "react";
-import "./AboutGeorgia.css"
+import "./AboutGeorgia.css";
 import { useState } from "react";
 
 import {
   Trees,
-  BookOpen,      // For education
-  Banknote,      // For economy/money
-  School,        // For universities
-  Globe,         // For nature
-  Handshake,     // For hospitality
+  BookOpen, // For education
+  Banknote, // For economy/money
+  School, // For universities
+  Globe, // For nature
+  Handshake, // For hospitality
   Plane,
   Home,
   BadgeCheck,
   ShieldCheck,
   Coins,
-  BriefcaseBusiness
+  BriefcaseBusiness,
 } from "lucide-react";
 
-
-import georgia from "../assets/About Georgia/georgia.jpg";
-import tibilisi from "../assets/About Georgia/tibilisi.jpg";
-import tibilisi1 from "../assets/About Georgia/tibilisi1.jpeg";
-import tibilisi2 from "../assets/About Georgia/tibilisi2.jpeg";
-import tibilisi3 from "../assets/About Georgia/tibilisi3.jpeg";
-import tibilisi4 from "../assets/About Georgia/tibilisi4.jpeg";
-import tibilisi5 from "../assets/About Georgia/tibilisi5.jpeg";
-import tibilisi6 from "../assets/About Georgia/tibilisi6.jpg";
-import tibilisi7 from "../assets/About Georgia/tibilisi7.jpg";
-
-const tbilisiImages = [tibilisi3, tibilisi1, tibilisi2, tibilisi, tibilisi4, tibilisi5, tibilisi6, tibilisi7];
-
-import khinkali from "../assets/About Georgia/khinkali.jpg";
-import khachapuri from "../assets/About Georgia/khachapuri.webp";
-import lobio from "../assets/About Georgia/lobio.webp";
-import churchkhela from "../assets/About Georgia/churchkhela.jpg";
-import chicken from "../assets/About Georgia/chicken.jpg"
-import pkhali from "../assets/About Georgia/pkhali.jpeg"
-
-import mountain from "../assets/About Georgia/kazbeki_mountain.jpeg"
-import cave from "../assets/About Georgia/cave.jpg"
-import beach from "../assets/About Georgia/beach.webp"
-import mtskheta from "../assets/About Georgia/mtskheta.jpg"
-import borjomi from "../assets/About Georgia/borjomi.jpg"
-import caucasus from "../assets/About Georgia/caucasus.jpg"
-import cave2 from "../assets/About Georgia/cave2.jpg"
-import cave3 from "../assets/About Georgia/cave3.jpeg"
-import ananuri from "../assets/About Georgia/ananuri.jpg"
- 
-
+const tbilisiImages = [
+  "./About Georgia/tibilisi3.jpeg",
+  "./About Georgia/tibilisi1.jpeg",
+  "./About Georgia/tibilisi2.jpeg",
+  "./About Georgia/tibilisi.jpg",
+  "./About Georgia/tibilisi4.jpeg",
+  "./About Georgia/tibilisi5.jpeg",
+  "./About Georgia/tibilisi6.jpg",
+  "./About Georgia/tibilisi7.jpg",
+];
 
 const AboutGeorgia = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,7 +45,7 @@ const AboutGeorgia = () => {
   // Parallax tilt effect for cuisine cards
   useEffect(() => {
     const cards = cuisineSectionRef.current
-      ? cuisineSectionRef.current.querySelectorAll('.famous-cuisine-tilt')
+      ? cuisineSectionRef.current.querySelectorAll(".famous-cuisine-tilt")
       : [];
     function handleTilt(e) {
       const card = e.currentTarget;
@@ -87,16 +66,16 @@ const AboutGeorgia = () => {
       card.style.transform = "";
       card.style.boxShadow = "";
     }
-    cards.forEach(card => {
-      card.addEventListener('mousemove', handleTilt);
-      card.addEventListener('mouseleave', resetTilt);
-      card.addEventListener('blur', resetTilt);
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", handleTilt);
+      card.addEventListener("mouseleave", resetTilt);
+      card.addEventListener("blur", resetTilt);
     });
     return () => {
-      cards.forEach(card => {
-        card.removeEventListener('mousemove', handleTilt);
-        card.removeEventListener('mouseleave', resetTilt);
-        card.removeEventListener('blur', resetTilt);
+      cards.forEach((card) => {
+        card.removeEventListener("mousemove", handleTilt);
+        card.removeEventListener("mouseleave", resetTilt);
+        card.removeEventListener("blur", resetTilt);
       });
     };
   }, []);
@@ -106,17 +85,15 @@ const AboutGeorgia = () => {
       {/* Header */}
       <div className="relative isolate overflow-hidden bg-gray-900 h-[450px]">
         <img
-          src={georgia}
+          src= {georgia}
           alt="About Georgia"
           className="absolute inset-0 -z-10 w-full h-full object-cover object-center brightness-50"
         />
         <div className="flex flex-col items-center justify-center h-full text-center">
           {/* Title Section */}
           <div className="max-w-3xl">
-            <h1 className="hero-title playfair-display">
-              Georgia <span className="text-white playfair-display">–</span>{" "}
-              More Than a{" "}
-              <span className="text-red-400 playfair-display">Destination</span>
+            <h1 className="hero-title">
+              Georgia <span className="text-white">–</span> More Than a <span className="text-red-400">Destination</span>
             </h1>
             <p className="hero-subtitle">
               Discover the magic of Georgia: where ancient culture, breathtaking
@@ -395,34 +372,34 @@ const AboutGeorgia = () => {
             {
               dish: "Khinkali",
               desc: "These are savory meat dumplings, traditionally boiled and eaten with the broth. They are often served with a dipping sauce and are a staple in Georgian cuisine. ",
-              img: khinkali,
+              img: khinkali
             },
             {
               dish: "Adjarian Khachapuri: ",
               desc: "This is a unique variation of Khachapuri, shaped like a boat and filled with cheese, butter, and a fried egg. It's a delicious and visually appealing dish.  ",
-              img: khachapuri,
+              img: khachapuri
             },
             {
               dish: "Lobio",
               desc: "Lobio is a hearty red bean stew, often served with a walnut sauce and herbs. It's a vegetarian staple and is a good source of protein and fiber. ",
-              img: lobio,
+              img: lobio
             },
             {
               dish: "Churchkhela",
               desc: "Churchkhela is a popular Georgian snack made by dipping strings of nuts—usually walnuts or hazelnuts—into concentrated grape juice thickened with flour, then drying them to form a chewy, naturally sweet treat often called “Georgian candy.”",
-              img: churchkhela,
+              img: churchkhela
             },
-            // --- Add your new cards below ---
+            // --- Updated image paths below ---
             {
               dish: "Shkmeruli",
               desc: "This traditional Georgian dish features crispy chicken simmered in a rich, creamy garlic sauce, offering a bold and comforting flavor that's a favorite in Georgian cuisine.",
-              img: chicken, // Replace with your image import or URL
+              img: chicken // Replace with your image import or URL
             },
             {
               dish: "Pkhali",
               desc: "Pkhali is a dish made from various vegetables, such as spinach, beets, or carrots, cooked with a walnut sauce. It's a refreshing and flavorful vegetarian option. ",
-              img: pkhali, // Replace with your image import or URL
-            },
+              img: pkhali // Replace with your image import or URL
+            }
           ].map((item, index) => (
             <div
               key={index}
@@ -460,56 +437,56 @@ const AboutGeorgia = () => {
               title: "Kazbegi Mountains",
               desc: "Located in the northern part of Georgia near the Russian border, Mount Kazbek is one of the highest peaks in the Caucasus Mountains, rising to 5,047 meters. It is a dormant stratovolcano wrapped in myth and legend—Georgian folklore says it’s where Prometheus was chained as punishment by the gods. The nearby town of Stepantsminda (formerly Kazbegi) is the gateway for tourists and trekkers. The Gergeti Trinity Church, perched dramatically on a hill at 2,170 meters with the snow-covered Kazbek in the background.",
               image: mountain,
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Uplistsikhe Caves",
               desc: "Uplistsikhe, meaning “Lord’s Fortress,” is an extraordinary archaeological site carved out of rock by ancient inhabitants over 3,000 years ago. The city was a vital cultural and political center in ancient Georgia, blending pagan and Christian traditions as evidenced by its temples and early churches. Visitors can explore ancient streets, wine cellars, an amphitheater, and even a pagan temple. The site’s rocky terraces and spectacular views over the Mtkvari River make it a must-visit for history lovers and adventurers.",
               image: cave,
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Batumi Seaside",
               desc: "Batumi, often called the “Pearl of the Black Sea,” is Georgia’s leading resort city. The Batumi Seaside Boulevard, stretching along the coast for over 7 kilometers, is full of palm trees, sculptures, musical fountains, and art installations. It's ideal for sunset walks, cycling, and enjoying the seaside vibe. The pebble beaches are clean and popular in summer, while the modern skyline, with buildings like the Alphabet Tower and dancing fountains, reflects Batumi’s dynamic development. With casinos, restaurants, and cultural events, Batumi blends beach relaxation with urban energy.",
               image: beach,
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Mtskheta",
               desc: "Mtskheta is one of the oldest and most sacred cities in Georgia and a UNESCO World Heritage Site. It was the capital of the early Georgian Kingdom of Iberia and the place where Christianity was proclaimed the state religion in the 4th century. Its centerpiece is the Svetitskhoveli Cathedral, a masterpiece of Georgian medieval architecture believed to house the robe of Christ. Jvari Monastery, standing on a hilltop overlooking the confluence of the Aragvi and Mtkvari rivers, offers a spiritual and scenic experience. Visiting Mtskheta is like stepping back into Georgia’s ancient spiritual and cultural roots.",
               image: mtskheta,
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Borjomi National Park",
               desc: "Borjomi National Park, located in central Georgia, is famous for its mineral-rich springs that have been used for therapeutic purposes for centuries. The park covers a vast area of mixed forest, rivers, and mountain landscapes, offering excellent hiking, birdwatching, and picnic spots. The Borjomi mineral water brand, exported globally, originates here. The park’s natural beauty combined with its health and wellness significance makes it a popular retreat for both tourists and locals.",
               image: borjomi, // Replace with your image
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Prometheus Cave (Tskaltubo)",
               desc: "Prometheus Cave, located near the spa town of Tskaltubo, is one of Georgia’s most impressive natural wonders. The cave stretches for several kilometers, featuring stunning stalactites, stalagmites, underground rivers, and waterfalls. The well-lit tourist pathways guide visitors through the mysterious chambers, where the interplay of natural formations and artificial lighting creates a magical atmosphere. The cave is also an ecological treasure trove with diverse flora and fauna living in its microclimate.",
               image: cave2, // Replace with your image
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Caucasus Mountains",
               desc: "The Caucasus Mountains stretch across northern Georgia, forming a stunning natural barrier between Europe and Asia. Home to towering peaks like Mount Kazbek and Mount Shkhara, the range offers breathtaking scenery and is perfect for trekking, skiing, and mountaineering. Regions like Svaneti and Kazbegi showcase ancient villages, medieval towers, and rich biodiversity. With their mix of adventure, history, and natural beauty, the Caucasus are among Georgia’s top attractions.",
               image: caucasus, // Replace with your image
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Vardzia Cave Monastery",
               desc: "Vardzia is an awe-inspiring medieval cave city carved into the cliffs of the Erusheti Mountain in southern Georgia. Founded in the 12th century by Queen Tamar, it served as a refuge from invading armies and as a monastic center. The complex once housed over 2,000 monks and included churches, living quarters, libraries, and tunnels. Exploring Vardzia’s labyrinthine caves offers a glimpse into Georgia’s rich religious and cultural history amidst breathtaking natural surroundings.",
               image: cave3, // Replace with your image
-              color: "text-gray-800",
+              color: "text-gray-800"
             },
             {
               title: "Ananuri Fortress",
               desc: "Located on the banks of the Aragvi River, about 70 km from Tbilisi, the Ananuri Fortress is a fine example of medieval Georgian architecture. Built in the 16th and 17th centuries, it served as a strategic stronghold for the Aragvi dynasty. The complex includes churches, watchtowers, and stone walls, all set against the beautiful Zhinvali Reservoir with its striking blue waters. With a mix of history, scenic views, and ancient charm, it’s a popular stop for tourists traveling to Kazbegi and offers a peaceful glimpse into Georgia’s feudal past.",
               image: ananuri, // Replace with your image
-              color: "text-gray-800",
-            },
+              color: "text-gray-800"
+            }
           ].map((place, index) => (
             <div key={index} className="relative group perspective">
               <div className="relative w-full h-[420px] transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180">

@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import aeroplaneImg from "../assets/aeroplane_f.png";
-// Import the new background image
-import heroSectionImg from "../assets/georgia-how to apply.webp";
-import documentList from "../assets/Document_Checklist.pdf";
-import nmcRegulations from "../assets/nmc-regulations.pdf"; // You'll need to add this PDF to your assets
 
 // Update the applicationSteps array with the more detailed descriptions
 const applicationSteps = [
@@ -132,7 +127,7 @@ const HowToApply = () => {
   const handleDownloadPdf = () => {
     // Create a link element
     const link = document.createElement("a");
-    link.href = nmcRegulations;
+    link.href = "./nmc-regulations.pdf"; 
     link.download = "NMC-Regulations.pdf";
     document.body.appendChild(link);
     link.click();
@@ -144,7 +139,7 @@ const HowToApply = () => {
   const handleDownloadDocumentChecklist = () => {
     // Create a link element
     const link = document.createElement("a");
-    link.href = documentList;
+    link.href = "./Document_Checklist.pdf"; // Direct path to the PDF
     link.download = "Document_Checklist.pdf";
     document.body.appendChild(link);
     link.click();
@@ -153,16 +148,15 @@ const HowToApply = () => {
 
   return (
     <>
-      {/* Updated hero section to match University page styling */}
-      <div
-        className="hero-section"
-        style={{
-          backgroundImage: `url(${heroSectionImg})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      {/* Updated hero section to use direct image path */}
+      <div className="hero-section">
+        {/* Use an img tag with direct path instead of background-image style */}
+        <img
+          src="./georgia-how to apply.webp"
+          alt="How to Apply"
+          className="absolute inset-0 -z-10 w-full h-full object-cover object-center"
+        />
+
         {/* Dark overlay for text readability */}
         <div className="hero-overlay"></div>
 
@@ -244,7 +238,7 @@ const HowToApply = () => {
                 <span className="text-xs mt-1 font-medium">GEORGIA</span>
               </div>
 
-              {/* Flying airplane - position adjusted for new curve */}
+              {/* Flying airplane - ensure image path is direct */}
               <div
                 className="absolute z-20 transform -translate-x-1/2 transition-all duration-700 ease-in-out"
                 style={{
@@ -254,9 +248,9 @@ const HowToApply = () => {
                   filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2))",
                 }}
               >
-                {/* Actual airplane image */}
+                {/* Actual airplane image with direct path */}
                 <img
-                  src={aeroplaneImg}
+                  src="./aeroplaneImg.png"
                   alt="Airplane"
                   className="w-16 h-auto"
                 />

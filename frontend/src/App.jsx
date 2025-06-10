@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import AboutGeorgia from "./pages/AboutGeorgia";
-import Faq from "./pages/Faq";
-import HowToApply from "./pages/HowToApply";
-import Testimonials from "./pages/Testimonials";
-import University from "./pages/University";
-import Footer from "./components/Footer";
-import ContactUs from "./pages/ContactUs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsConditions from "./pages/TermsConditions";
-import StudentLife from "./pages/StudentLife";
-import UniversityDetailPage from "./pages/UniversityDetailPage";
+import Navbar from "../src/components/Navbar";
+import Home from "../src/pages/Home";
+import AboutGeorgia from "../src/pages/AboutGeorgia";
+import Faq from "../src/pages/Faq";
+import HowToApply from "../src/pages/HowToApply";
+import Testimonials from "../src/pages/Testimonials";
+import University from "../src/pages/University";
+import Footer from "../src/components/Footer";
+import ContactUs from "../src/pages/ContactUs";
+import PrivacyPolicy from "../src/pages/PrivacyPolicy";
+import TermsConditions from "../src/pages/TermsConditions";
+import StudentLife from "../src/pages/StudentLife";
+import UniversityDetailPage from "../src/pages/UniversityDetailPage";
 
 const App = () => {
   // Add this effect to handle translation events

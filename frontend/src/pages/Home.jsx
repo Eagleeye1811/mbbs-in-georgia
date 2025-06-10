@@ -27,9 +27,8 @@ import {
   FaShieldVirus,
   FaPassport,
 } from "react-icons/fa";
-import srLogo from "../assets/logo.png";
-import mbbsimage1 from "../assets/mbbsimage1.jpg";
-import mbbsimage3 from "../assets/mbbsimage3.jpg";
+
+
 /**
  * Constants and data objects for the entire application
  * Grouped for easy maintenance and modifications
@@ -111,7 +110,7 @@ const DATA = {
         { to: "/about-georgia", text: "Learn More", primary: false },
       ],
       image: {
-        src: mbbsimage1,
+        src: "./mbbsimage1.jpg",
         alt: "Medical Student",
         className:
           "w-full h-auto object-contain transform hover:scale-105 transition-all duration-500 max-h-[350px]",
@@ -142,7 +141,7 @@ const DATA = {
         { to: "/Universities", text: "View All Universities", primary: true },
       ],
       image: {
-        src: "/src/assets/home_Img_2.png",
+        src: "./home_Img_2.png",
         alt: "Georgian University",
         className:
           "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
@@ -172,7 +171,7 @@ const DATA = {
         { to: "/Testimonials", text: "Read More Stories", primary: true },
       ],
       image: {
-        src: mbbsimage3,
+        src: "./mbbsimage3.jpg",
         alt: "Student Success",
         className:
           "w-full h-auto object-cover rounded-lg shadow-md transform hover:scale-105 transition-all duration-500 max-h-[350px]",
@@ -1176,7 +1175,7 @@ const Home = () => {
     // Generate array of image data
     const srImages = Array.from({ length: totalImages }, (_, i) => ({
       id: i + 1,
-      src: `/src/assets/SR images/${i + 1}.jpg`,
+      src: `./SR images/${i + 1}.jpg`,
       alt: `SR Counselling moment ${i + 1}`,
       featured: false, // All images same size
       // Use the wallOfFameImages array for captions in a circular manner
@@ -1891,7 +1890,7 @@ const Home = () => {
 
         {/* Logo, tagline, CTA - with larger logo and removed SR Counselling text */}
         <div className="flex flex-col items-center">
-          <img src={srLogo} alt="SR Counselling" className="h-24 w-24 mb-6" />
+          <img src="./logo.png" alt="SR Counselling" className="h-24 w-24 mb-6" />
           {/* Text "SR Counselling" removed */}
           <p className="text-center text-lg text-[#4a5568] max-w-xl mb-6">
             Let us guide you to your dream medical career in Georgia with
