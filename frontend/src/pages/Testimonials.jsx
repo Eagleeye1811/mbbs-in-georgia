@@ -5,21 +5,20 @@ const Testimonials = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Fixed to remove white gap */}
-      <div className="hero-section">
+      <div className="hero-section relative">
         <img
           src="/Testimonial/georgia.webp"
           alt="Student Testimonials"
           className="hero-image"
         />
-        {/* Keep the existing gradient overlay */}
-        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent"></div>
+        <div className="hero-overlay bg-gradient-to-r from-black/50 to-transparent absolute inset-0"></div>
 
-        <div className="hero-content">
-          <div className="hero-content-wrapper">
-            <h1 className="hero-title">
-              Student <span className="hero-accent">Testimonials</span>
+        <div className="hero-content absolute inset-0 flex items-center justify-center z-10">
+          <div className="hero-content-wrapper text-center text-white">
+            <h1 className="hero-title text-5xl font-bold">
+              Student <span className="hero-accent text-red-500">Testimonials</span>
             </h1>
-            <p className="hero-subtitle">
+            <p className="hero-subtitle text-lg mt-4">
               Hear directly from our students about their experiences studying
               MBBS in Georgia
             </p>
@@ -31,7 +30,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Recent Blogs */}
         <section className="mb-12">
-          <div className="bg-gray-100  py-10 px-8 rounded-2xl shadow-xl border border-gray-200">
+          <div className="bg-gray-100 py-10 px-8 rounded-2xl shadow-xl border border-gray-200">
             <h2 className="text-5xl font-bold mb-6 text-center">
               <span className="text-gray-800">Recent </span>
               <span className="text-red-500">Blogs</span>
@@ -41,22 +40,19 @@ const Testimonials = () => {
                 {
                   imageSrc: "/Testimonial/nurses.webp",
                   title: "MBBS in GEORGIA",
-                  excerpt:
-                    "Georgia is a top choice for Indian medical students....",
+                  excerpt: "Georgia is a top choice for Indian medical students....",
                   link: "https://www.kg2pgeduhub.com/blogs/mbbs-in-georgia/",
                 },
                 {
                   imageSrc: "/Testimonial/university.webp",
                   title: "The Ultimate Guide to Study MBBS in Georgia",
-                  excerpt:
-                    "Are you dreaming of becoming a doctor and exploring the world?...",
+                  excerpt: "Are you dreaming of becoming a doctor and exploring the world?...",
                   link: "https://www.globaladmissions.com/blog/the-ultimate-guide-to-study-mbbs-in-georgia",
                 },
                 {
                   imageSrc: "/Testimonial/doctors.webp",
                   title: "Indian Students in Georgia: Experiences & Advice",
-                  excerpt:
-                    "Studying abroad is a thrilling experience, but it also...",
+                  excerpt: "Studying abroad is a thrilling experience, but it also...",
                   link: "https://www.acadfly.com/blogs/indian-students-in-georgia-experience",
                 },
               ].map((blog, index) => (
@@ -82,9 +78,9 @@ const Testimonials = () => {
                       {blog.excerpt}
                     </p>
                     <div className="flex items-center text-red-500 font-medium mt-auto">
-                      <span className="align-middle">Read More</span>
+                      <span>Read More</span>
                       <svg
-                        className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform align-middle"
+                        className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -117,64 +113,52 @@ const Testimonials = () => {
                 {
                   name: "Ritu Panjwani",
                   image: "https://randomuser.me/api/portraits/men/1.jpg",
-                  quote:
-                    "Sr counseling is the best, Hardik Sir will give you the best guidance possible based on your GRE, toefl and finances, the preparation for visa interviews is great as well.",
+                  quote: "Sr counseling is the best, Hardik Sir will give you the best guidance possible based on your GRE, toefl and finances, the preparation for visa interviews is great as well.",
                 },
                 {
                   name: "Pruthvi Mulik",
                   image: "https://randomuser.me/api/portraits/women/2.jpg",
-                  quote:
-                    "It was very pleasant and smooth experience with SR counseling in this Covid situation. I highly recommend to join them for your bright future",
+                  quote: "It was very pleasant and smooth experience with SR counseling in this Covid situation. I highly recommend to join them for your bright future",
                 },
                 {
                   name: "Ameeta",
                   image: "https://randomuser.me/api/portraits/men/3.jpg",
-                  quote:
-                    "Excellent counseling by Hardik sir. The staff is good in assistance and quick response..",
+                  quote: "Excellent counseling by Hardik sir. The staff is good in assistance and quick response..",
                 },
                 {
                   name: "Shivani Darekar",
                   image: "https://randomuser.me/api/portraits/women/4.jpg",
-                  quote:
-                    "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential.",
+                  quote: "I honestly don’t know where to start, but I just want to say the biggest thank you to Neerav sir, Ravi sir, and Sanghini ma’am for helping me realise my true potential.",
                 },
                 {
                   name: "Kesha Dalal",
                   image: "https://randomuser.me/api/portraits/men/5.jpg",
-                  quote:
-                    "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa. ",
+                  quote: "My experience with SR Consultancy for my study abroad process was the best, and I couldn't be more satisfied with their expertise and support for filing the visa. ",
                 },
                 {
                   name: "Bhavesh Mhatre",
                   image: "https://randomuser.me/api/portraits/women/6.jpg",
-                  quote:
-                    "The SR counselling service played a crucial role in simplifying the complex US university admission process for me. ",
+                  quote: "The SR counselling service played a crucial role in simplifying the complex US university admission process for me. ",
                 },
                 {
                   name: "Tanisha Luhadia",
                   image: "https://randomuser.me/api/portraits/men/7.jpg",
-                  quote:
-                    "I had an amazing experience with SR Counselling. Nirav Sir and Sangini Ma'am provided me with invaluable assistance throughout my counselling journey.",
+                  quote: "I had an amazing experience with SR Counselling. Nirav Sir and Sangini Ma'am provided me with invaluable assistance throughout my counselling journey.",
                 },
                 {
                   name: "Nitya Patel",
                   image: "https://randomuser.me/api/portraits/women/8.jpg",
-                  quote:
-                    "My experience with SR COUNSELLING has been amazing. The journey between LOR and last mock interview was fabulous and all the staff over their were so helpful.",
+                  quote: "My experience with SR COUNSELLING has been amazing. The journey between LOR and last mock interview was fabulous and all the staff over their were so helpful.",
                 },
                 {
                   name: "Jeel Patel",
                   image: "https://randomuser.me/api/portraits/men/9.jpg",
-                  quote:
-                    "Sr counselling helps me through my entire going to us journey. Specially sangini mam and ravi sir helps me the most for my university admission to visa proration seamlessly.",
+                  quote: "Sr counselling helps me through my entire going to us journey. Specially sangini mam and ravi sir helps me the most for my university admission to visa proration seamlessly.",
                 },
               ].map((testimonial, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl 
-                transition-all duration-700 transform hover:-translate-y-2 
-                hover:bg-gradient-to-br from-gray-200 via-gray-300 to-purple-100 
-                animate-fade-in-up cursor-pointer h-full flex flex-col min-h-[3px]"
+                  className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 hover:bg-gradient-to-br from-gray-200 via-gray-300 to-purple-100 animate-fade-in-up cursor-pointer h-full flex flex-col min-h-[3px]"
                   style={{
                     animationDelay: `${index * 200}ms`,
                     animationFillMode: "backwards",
@@ -185,17 +169,12 @@ const Testimonials = () => {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-16 h-16 rounded-full border-2 border-indigo-500 object-cover 
-                      transform group-hover:scale-110 transition-all duration-700 
-                      group-hover:rotate-6 bg-white"
+                        className="w-16 h-16 rounded-full border-2 border-indigo-500 object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:rotate-6 bg-white"
                         style={{
                           boxShadow: "0 4px 16px 0 rgba(80,80,80,0.10)",
                         }}
                       />
-                      <div
-                        className="absolute -bottom-1 -right-1 bg-gradient-to-r from-gray-600 to-purple-600 rounded-full p-1.5 
-                      transform group-hover:scale-110 transition-all duration-500 z-20"
-                      >
+                      <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-gray-600 to-purple-600 rounded-full p-1.5 transform group-hover:scale-110 transition-all duration-500 z-20">
                         <svg
                           className="w-3.5 h-3.5 text-white"
                           viewBox="0 0 24 24"
@@ -209,34 +188,20 @@ const Testimonials = () => {
                       <h3 className="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition-colors">
                         {testimonial.name}
                       </h3>
-                      <p className="text-red-600 text-sm font-medium">
-                        {testimonial.batch}
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        {testimonial.location}
-                      </p>
+                      <p className="text-red-600 text-sm font-medium">{testimonial.batch}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.location}</p>
                     </div>
                   </div>
 
-                  <blockquote
-                    className="relative mt-6 transform transition-all duration-500 
-                  group-hover:translate-x-2"
-                  >
+                  <blockquote className="relative mt-6 transform transition-all duration-500 group-hover:translate-x-2">
                     <svg
-                      className="absolute -top-2 -left-2 h-8 w-8 text-gray-300 
-                    transform -translate-x-2 -translate-y-2 
-                    group-hover:text-purple-200 transition-colors duration-500 
-                    group-hover:rotate-12"
+                      className="absolute -top-2 -left-2 h-8 w-8 text-gray-300 transform -translate-x-2 -translate-y-2 group-hover:text-purple-200 transition-colors duration-500 group-hover:rotate-12"
                       fill="currentColor"
                       viewBox="0 0 32 32"
                     >
                       <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                     </svg>
-                    <p
-                      className="text-gray-600 italic pl-6 leading-relaxed 
-                    group-hover:text-gray-700 transition-colors transform 
-                    group-hover:scale-105 duration-500"
-                    >
+                    <p className="text-gray-600 italic pl-6 leading-relaxed group-hover:text-gray-700 transition-colors transform group-hover:scale-105 duration-500">
                       "{testimonial.quote}"
                     </p>
                   </blockquote>
